@@ -75,8 +75,8 @@ The input I distrust most is the **five-year FCFF growth path**. NVIDIA’s unus
 
 ## Checkout
 
-- [Markdown analysis](https://github.com/CinderZhang/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/nvda-dcf-lab.md)
-- [Python model](https://github.com/CinderZhang/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/dcf.py)
+- [Markdown analysis](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/nvda-dcf-lab.md)
+- [Python model](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/dcf.py)
 
 These links become live after the files are committed and pushed to the repository’s `main` branch.
 
