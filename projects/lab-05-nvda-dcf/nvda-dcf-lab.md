@@ -77,4 +77,3 @@ The input I distrust most is the **five-year FCFF growth path**. NVIDIA’s unus
 
 - [Markdown analysis](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/nvda-dcf-lab.md)
 - [Python model](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/dcf.py)
-
