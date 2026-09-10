@@ -20,9 +20,9 @@
 
 **$224.35 per share as of September 10, 2026, 1:37:33 p.m. EDT**, from [Yahoo Finance’s NVDA quote](https://sg.finance.yahoo.com/quote/NVDA/). This timestamped observed price is the reverse-DCF target.
 
-## Training validation before the company run
+## Training-case validation
 
-The script silently asserts every supplied training checkpoint before printing NVIDIA’s results. If any check fails, the program stops.
+Before applying NVIDIA’s inputs, the model reproduced the supplied training-case checkpoints:
 
 | WACC \ terminal growth | 2% | 3% | 4% |
 |---:|---:|---:|---:|
@@ -30,11 +30,11 @@ The script silently asserts every supplied training checkpoint before printing N
 | 10% | $24.36 | **$27.50** | $31.69 |
 | 11% | $21.06 | $23.41 | $26.44 |
 
-The training reverse DCF also reproduces a **+1.78 percentage-point uniform shift** to all five explicit growth rates for a $30.00 target, holding starting FCFF, 10% WACC, 3% terminal growth, $50 cash, $300 debt, 50 diluted shares, and the five-year structure fixed.
+The training reverse DCF reproduced a **+1.78 percentage-point uniform shift** to all five explicit growth rates for a $30.00 target, holding starting FCFF, 10% WACC, 3% terminal growth, $50 cash, $300 debt, 50 diluted shares, and the five-year structure fixed.
 
 ## I — NVIDIA through the model
 
-Running `python dcf.py` from this folder produces the required twelve company lines, followed by the sensitivity and reverse-DCF blocks. (In this repository's current PowerShell environment, the equivalent verified command is `.\.venv\Scripts\python.exe projects\lab-05-nvda-dcf\dcf.py` from the repository root.)
+Running `python dcf.py` produces the company valuation, sensitivity table, and reverse DCF.
 
 | Output | Result |
 |---|---:|
@@ -78,14 +78,3 @@ The input I distrust most is the **five-year FCFF growth path**. NVIDIA’s unus
 - [Markdown analysis](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/nvda-dcf-lab.md)
 - [Python model](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-05-nvda-dcf/dcf.py)
 
-These links become live after the files are committed and pushed to the repository’s `main` branch.
-
-## Rubric audit
-
-| Criterion | Evidence for the 5-point anchor |
-|---|---|
-| Grid and direction | Base is centered; both monotonic directions are checked; $55.59–$72.40 is read from the corners. |
-| Reverse DCF | Training +1.78 shift is reproduced first; solved variable and held-fixed list are stated; company no-solution result is reported correctly. |
-| Inputs and sources | Exactly five input rows are presented. Every row has value, unit, date, locator, and status; the interest proxy and forecasts are labeled estimates. |
-| Reasonableness | $62.72 is beside $224.35; 0.28× is explicitly outside the band; growth is named and explained as the least-trusted input. |
-| Conditional call | A real watch-defer call, a measurable $72.40 flip condition, and quarterly operating margin monitoring item are included. |
