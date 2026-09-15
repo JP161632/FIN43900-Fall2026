@@ -1,5 +1,18 @@
 # Lab 07 — Asbury Comparable-Company Policy and Implied Range
 
+## Define/Discover — what P/E can tell us
+
+Price per share is the market value of one share, while diluted EPS is the annual earnings
+available per share after accounting for dilution. P/E divides price per share by EPS and shows
+how many dollars investors pay for one dollar of annual per-share earnings. This common basis
+allows companies with different share counts and share prices to be compared.
+
+Comparable-company P/E adds a market-based reference to a DCF's forecast-based value. It is most
+useful when peers have similar economics, positive earnings, and consistent earnings definitions.
+It can mislead when earnings are negative or distorted by unusual profits, or when growth, risk,
+debt, or business mix differs materially. Therefore, a lower P/E is a reason to investigate those
+differences, not proof that a stock is the better investment.
+
 ## Represent — peer policy decided before prices
 
 The peer policy is to use publicly traded franchised vehicle retailers that sell new and used
@@ -60,15 +73,3 @@ differences in geography, financing, acquisitions, growth, risk, and leverage do
 different multiples. The comparison is a market reference to investigate alongside the DCF,
 not an investment recommendation. No cash or debt bridge is applied because P/E already values
 shareholders' earnings.
-
-## Audit record
-
-- Frozen price and FY2024 total GAAP diluted EPS inputs match the assigned case.
-- The calculator excludes the target, deduplicates peer tickers, and labels invalid inputs.
-- It handles zero valid peers, one valid peer, and multiple valid peers explicitly.
-- All P/E and implied-price calculations use full precision before display rounding.
-- Leave-one-out changes use the unrounded full-peer and remaining-peer estimates.
-- The file was executed with the command above; its displayed reference checks match the case.
-- Peer decisions and the Group 1 removal are explained using business evidence rather than a
-  preferred valuation result.
-- No packages, fetched data, adjusted earnings, or cash/debt bridge are used.
