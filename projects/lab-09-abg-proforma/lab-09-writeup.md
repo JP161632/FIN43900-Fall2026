@@ -90,18 +90,18 @@ The present value of cash flows after 2030 is **79.8%** of total equity value, a
 From the repository root, run:
 
 ```text
-python proforma.py
+python projects/lab-09-abg-proforma/proforma.py
 ```
 
 If `python` is not available on the terminal PATH, use the existing Windows virtual environment:
 
 ```text
-.\.venv\Scripts\python.exe proforma.py
+.\.venv\Scripts\python.exe projects\lab-09-abg-proforma\proforma.py
 ```
 
 The file uses only the Python standard library.
 
 ## GitHub checkout links
 
-- [proforma.py](https://github.com/JP161632/FIN43900-Fall2026/blob/main/proforma.py)
-- [lab-09-writeup.md](https://github.com/JP161632/FIN43900-Fall2026/blob/main/lab-09-writeup.md)
+- [proforma.py](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-09-abg-proforma/proforma.py)
+- [lab-09-writeup.md](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-09-abg-proforma/lab-09-writeup.md)
