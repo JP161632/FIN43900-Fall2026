@@ -101,16 +101,21 @@ def build_projection():
             - DEBT_REPAYMENT
         )
 
-        cash = opening["cash"] + fcfe - SHARE_BUYBACK
+        cash_before_revolver = opening["cash"] + fcfe - SHARE_BUYBACK
+        cash = cash_before_revolver
         revolver = opening["revolver"]
+        revolver_cash_flow = 0.0
         if cash < MINIMUM_CASH:
-            draw = min(MINIMUM_CASH - cash, REVOLVER_LIMIT - revolver)
+            available_capacity = max(0.0, REVOLVER_LIMIT - revolver)
+            draw = min(MINIMUM_CASH - cash, available_capacity)
             cash += draw
             revolver += draw
+            revolver_cash_flow = draw
         elif cash > MINIMUM_CASH and revolver > 0:
-            repayment = min(cash - MINIMUM_CASH, revolver)
-            cash -= repayment
-            revolver -= repayment
+            revolver_repayment = min(cash - MINIMUM_CASH, revolver)
+            cash -= revolver_repayment
+            revolver -= revolver_repayment
+            revolver_cash_flow = -revolver_repayment
 
         assets = cash + inventory + ppe + other_assets
         liabilities_and_equity = (
@@ -147,6 +152,8 @@ def build_projection():
             "Debt repayment": DEBT_REPAYMENT,
             "Share buyback": SHARE_BUYBACK,
             "Free cash flow to equity": fcfe,
+            "Revolver draw / (repayment)": revolver_cash_flow,
+            "Net change in cash": cash - opening["cash"],
             "Balance-sheet gap": gap,
         }
 
@@ -201,7 +208,8 @@ def main():
             "Net income", "Depreciation", "Impairment", "Capital spending",
             "Change in inventory", "Change in other working capital",
             "Change in floor plan", "Debt repayment", "Share buyback",
-            "Free cash flow to equity",
+            "Free cash flow to equity", "Revolver draw / (repayment)",
+            "Net change in cash",
         ],
         forecast,
     )
