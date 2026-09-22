@@ -84,24 +84,3 @@ If FY2026 cash is incorrectly held at the opening $40.4 million instead of the c
 | Value per share | $291.75 | - |
 
 The present value of cash flows after 2030 is **79.8%** of total equity value, approximately the expected 80%. This concentration also shows why the valuation is especially sensitive to the cost of equity, terminal growth, and sustainable FCFE.
-
-## Run instructions
-
-From the repository root, run:
-
-```text
-python projects/lab-09-abg-proforma/proforma.py
-```
-
-If `python` is not available on the terminal PATH, use the existing Windows virtual environment:
-
-```text
-.\.venv\Scripts\python.exe projects\lab-09-abg-proforma\proforma.py
-```
-
-The file uses only the Python standard library.
-
-## GitHub checkout links
-
-- [proforma.py](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-09-abg-proforma/proforma.py)
-- [lab-09-writeup.md](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-09-abg-proforma/lab-09-writeup.md)
