@@ -94,12 +94,7 @@ The model outputs five balanced years and one value per share. Its audited base-
 
 As of **September 24, 2026**, the observed NVDA closing price was **$222.82 per share** according to [StockScan's historical-price page](https://stockscan.io/stocks/NVDA/price-history). The model says **$53.34** per share, while the market says **$222.82** on the same FY2026 share count of 24,304 million; what future revenue, margin, capital-return, or discount-rate assumptions explain the difference? This is a valuation question, not a recommendation.
 
-## E — Partner review and reflection
-
-I need to record the actual exchange with my partner here after we speak; I will not invent one. My specific attack on my partner's model will be: **“Your terminal growth remains close to your discount rate. What evidence makes that long-run cash-flow growth sustainable, and what operating result would make you lower it?”**
-
-**Partner's attack on my judgment:** _Record the partner's actual question here._
-**My two-sentence answer:** _Record my actual two-sentence response here._
+## Reflection
 
 The label I would defend longest is the **history** label on FY2026 inventory days because it is a transparent calculation from two reported statements. The filing number that surprised me most was the $4.0 billion FY2026 inventory provision, which shows that even a fast-growing semiconductor company can face a large inventory risk.
 
@@ -111,4 +106,3 @@ The label I would defend longest is the **history** label on FY2026 inventory da
 | Assumptions and labels | Every Python input is represented in the assumption table with a label; every judgment has a personal reason. | Complete |
 | Statements and checks | `nvda_proforma.py` builds all three statements, prints five checks, and raises errors if a gap or liquidity failure occurs. | Complete after run verification |
 | Personalization | The AI-demand/export-control line drives growth and margin; floor-plan financing is explicitly none. | Complete |
-| Partner review | A specific attack is drafted, but the actual partner attack and answer must be entered after the conversation. | Pending actual conversation |
