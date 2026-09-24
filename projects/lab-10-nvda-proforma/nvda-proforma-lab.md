@@ -97,12 +97,3 @@ As of **September 24, 2026**, the observed NVDA closing price was **$222.82 per 
 ## Reflection
 
 The label I would defend longest is the **history** label on FY2026 inventory days because it is a transparent calculation from two reported statements. The filing number that surprised me most was the $4.0 billion FY2026 inventory provision, which shows that even a fast-growing semiconductor company can face a large inventory risk.
-
-## Rubric audit before submission
-
-| Criterion | Evidence in this folder | Status |
-|---|---|---|
-| History and sources | Seven requested history items across three years; each row cites the relevant 10-K; two FY2026 figures manually confirmed. | Complete |
-| Assumptions and labels | Every Python input is represented in the assumption table with a label; every judgment has a personal reason. | Complete |
-| Statements and checks | `nvda_proforma.py` builds all three statements, prints five checks, and raises errors if a gap or liquidity failure occurs. | Complete after run verification |
-| Personalization | The AI-demand/export-control line drives growth and margin; floor-plan financing is explicitly none. | Complete |
