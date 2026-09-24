@@ -1,4 +1,4 @@
-# Lab 09 — NVIDIA integrated pro forma
+# Lab 10 — NVIDIA integrated pro forma
 
 **Company:** NVIDIA Corporation (NASDAQ: NVDA)
 **Units:** USD millions except percentages and per-share amounts
