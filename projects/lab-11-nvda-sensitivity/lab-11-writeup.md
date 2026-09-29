@@ -88,7 +88,7 @@ Growth increases both profit and investment requirements. Higher growth can redu
 
 ## Cash-flow correction and valuation
 
-Lab 10's line labeled FCFE deducts common dividends and repurchases. This extension preserves it as **legacy cash after payouts** and independently computes FCFE before distributions. The base bridge is 221,034.189247 + 974 + 20,000 = 242,008.189247. Original cash and statement values remain unchanged. FCFE is cash available to equity after reinvestment and net debt repayment, before shareholder distributions. [Damodaran's definitions](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/definitions.html).
+Lab 10's line labeled FCFE deducts common dividends and repurchases. This extension preserves it as **legacy cash after payouts** and independently computes FCFE before distributions. The base bridge is 221,034.189247 + 974 + 20,000 = 242,008.189247. Original cash and statement values remain unchanged. FCFE is cash available to equity after reinvestment and net debt repayment, before shareholder distributions.
 
 ### Why value per share is not yet reported
 
@@ -98,7 +98,7 @@ A number can be calculated, but the current model does not yet support reporting
 - **Discount rate:** Lab 5 labels 15.88% as WACC, while Lab 10 labels the same number as cost of equity. FCFF uses WACC; FCFE uses cost of equity. Reusing the number alone does not establish that it is appropriate for both.
 - **Terminal cash flow:** Lab 10 assumes 3% perpetual growth, but final-year revenue growth is 10% in the base case, with continuing debt repayments and changing reinvestment. A sustainable terminal-year cash flow must be reconciled with the long-run growth and financing assumptions before applying the perpetuity formula.
 
-These distinctions follow the separation of equity cash flow, firm cash flow and their discount rates in [Damodaran's valuation definitions](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/definitions.html).
+
 
 ### How the earlier valuation work can provide an answer
 
@@ -119,8 +119,3 @@ After those changes, the base and all six sensitivity cases would need to be rer
 ## Changed-result verification
 
 All six sensitivity cases reset the other independent assumptions to base. Each lower or higher case changes only its selected input path; each base case changes none. Signed output differences, spans across valid runs and the higher-margin profit/tax/working-capital bridge were independently recomputed.
-
-## Submission files
-
-- [Lab 11 write-up on GitHub](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-11-nvda-sensitivity/lab-11-writeup.md)
-- [NVIDIA sensitivity model on GitHub](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-11-nvda-sensitivity/nvda_sensitivity.py)
