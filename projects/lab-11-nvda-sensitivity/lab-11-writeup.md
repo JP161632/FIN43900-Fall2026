@@ -2,7 +2,7 @@
 
 ## Operating assumptions and tested ranges
 
-Paths list FY2027, FY2028, FY2029, FY2030 and FY2031 in order.
+Paths list FY2027, FY2028, FY2029, FY2030 and FY2031 in order. Revenue growth is the percentage change from prior-year revenue; gross margin is gross profit as a percentage of current-year revenue. Both are independent operating inputs, not calculated statement totals. They are stored as `REVENUE_GROWTH` and `GROSS_MARGIN` in `BASE_INPUTS` in [nvda_sensitivity.py](nvda_sensitivity.py); `DRIVERS` stores the tested paths. The full base assumption set is preserved separately and deep-copied for every run. The original Lab 10 model remains unchanged.
 
 | Independent input | Lower | Base | Higher |
 |---|---|---|---|
@@ -28,6 +28,8 @@ Outputs are **FY2031E, USD millions**. Changes are changed output minus base. Fr
 
 ## Main driver over the tested ranges
 
+Each span is the maximum minus minimum across the three valid lower/base/higher outputs, calculated before rounding. Span units are USD millions. Value-per-share spans are unavailable because valuation remains unresolved.
+
 | Driver | Operating-profit span | FCFE span |
 |---|---:|---:|
 | Revenue growth | 139,036.76 | 70,659.93 |
@@ -39,11 +41,50 @@ Outputs are **FY2031E, USD millions**. Changes are changed output minus base. Fr
 
 All 40 annual checks across the initial base, six sensitivity cases and restored base pass. Every base statement cell and independent input matches after restoration; maximum difference is zero against a 0.000001 USD million tolerance. Balance-sheet gaps must be below 0.05 USD million and annual cash at least 10,000 USD million. The sensitivity tables above retain the visible results; the Python model retains all annual statement details and accounting checks.
 
+
+| Run | Annual checks | Largest absolute balance-sheet gap | Lowest annual cash |
+|---|---|---:|---:|
+| Base before | 5/5 PASS | 1.164e-10 | 86,433.667510 |
+| REVENUE_GROWTH / lower | 5/5 PASS | 1.164e-10 | 88,341.146029 |
+| REVENUE_GROWTH / base | 5/5 PASS | 1.164e-10 | 86,433.667510 |
+| REVENUE_GROWTH / higher | 5/5 PASS | 2.328e-10 | 84,526.188991 |
+| GROSS_MARGIN / lower | 5/5 PASS | 2.328e-10 | 80,768.696950 |
+| GROSS_MARGIN / base | 5/5 PASS | 1.164e-10 | 86,433.667510 |
+| GROSS_MARGIN / higher | 5/5 PASS | 2.328e-10 | 92,098.638069 |
+| Base restored | 5/5 PASS | 1.164e-10 | 86,433.667510 |
+
+Amounts above are USD millions; each annual check also verifies the cash, PP&E and equity rollforwards and the FCFE-to-cash payout bridge. No tested run failed. An invalid run is flagged by the code and must be investigated before comparing complete three-case spans; failed cases must not be ranked. Signed cash flows are retained even when negative. No terminal value is generated.
+
+| FY2031 base comparison | Before sensitivity | After restoration | Difference |
+|---|---:|---:|---:|
+| Operating profit | 331,370.934759 | 331,370.934759 | 0.000000 |
+| FCFE | 242,008.189247 | 242,008.189247 | 0.000000 |
+
+Every original Lab 10 statement value was also compared with the new base and matched exactly, including cash after payouts. The FCFE label correction is reconciled below; it does not change the forecast statements.
+
 ## Trace of the higher-margin result
 
 Revenue remains at base. Extra gross profit equals 2% of revenue; SG&A consumes 3% of that extra gross profit and R&D is unchanged. FY2031 operating profit increases 10,333.702193. After the 15.1% tax rate, its contribution to FCFE is 8,773.313162. Lower cost of revenue reduces inventory investment but also reduces payable financing; the net contribution is 179.633498. Together these explain the FCFE increase of 8,952.946660. Capex and depreciation remain unchanged. Direct subtraction confirms 250,961.135907 - 242,008.189247 = +8,952.946660.
 
-Growth increases both profit and investment requirements. Higher growth can reduce first-year cash despite higher profit because receivables and the other-assets aggregate absorb cash; final-year compounding ultimately produces the positive effects shown above. Revenue assumptions and the classification of other assets therefore merit further research.
+
+Selected FY2031 statement evidence, USD millions:
+
+| Statement line | Base | Higher margin | Signed change |
+|---|---:|---:|---:|
+| Revenue | 532,665.061500 | 532,665.061500 | +0.000000 |
+| Gross profit | 388,845.494895 | 399,498.796125 | +10,653.301230 |
+| SG&A | 11,665.364847 | 11,984.963884 | +319.599037 |
+| R&D | 45,809.195289 | 45,809.195289 | +0.000000 |
+| Operating income | 331,370.934759 | 341,704.636952 | +10,333.702193 |
+| Tax | 49,997.902149 | 51,558.291180 | +1,560.389031 |
+| Net income | 281,114.032611 | 289,887.345772 | +8,773.313162 |
+| Change in inventory | 4,477.570567 | 4,145.898673 | -331.671894 |
+| Change in accounts payable | 2,052.518348 | 1,900.479952 | -152.038396 |
+| Capital spending | 14,904.103500 | 14,904.103500 | +0.000000 |
+| Depreciation | 9,084.590320 | 9,084.590320 | +0.000000 |
+| FCFE before shareholder payouts | 242,008.189247 | 250,961.135907 | +8,952.946660 |
+
+Growth increases both profit and investment requirements. Higher growth can reduce first-year cash despite higher profit because receivables and the other-assets aggregate absorb cash; final-year compounding ultimately produces the positive effects shown above. For example, higher-growth FY2027 ending cash is 84,526.188991 versus 86,433.667510 at base, a decrease of 1,907.478519 USD million despite higher profit. Revenue assumptions and the classification of other assets therefore merit further research.
 
 ## Cash-flow correction and valuation
 
@@ -78,3 +119,8 @@ After those changes, the base and all six sensitivity cases would need to be rer
 ## Changed-result verification
 
 All six sensitivity cases reset the other independent assumptions to base. Each lower or higher case changes only its selected input path; each base case changes none. Signed output differences, spans across valid runs and the higher-margin profit/tax/working-capital bridge were independently recomputed.
+
+## Submission files
+
+- [Lab 11 write-up on GitHub](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-11-nvda-sensitivity/lab-11-writeup.md)
+- [NVIDIA sensitivity model on GitHub](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-11-nvda-sensitivity/nvda_sensitivity.py)
