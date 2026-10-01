@@ -177,8 +177,3 @@ These corrections leave the saved conditional Watch/Defer conclusion unchanged: 
 The question that changed my thinking was whether growth looked dominant because I tested a 10-percentage-point total growth range against a 4-percentage-point total margin range. I now understand that “growth is by far the most important driver” overstates what the test establishes: the wider range and five-year compounding contribute to the ranking.
 
 Competition from custom chips could motivate a separate 4–5 percentage-point margin-compression scenario. That is a research hypothesis, not a computed result or evidence that margin would affect equity value as much as a demand slowdown. I would first compare the resulting signed cash flows, and compare equity values only after resolving the valuation method. My improved conclusion is that growth dominates **over the original tested ranges**, while margin risk deserves a separately justified test.
-
-## Checkout
-
-- [Lab 12 review note on GitHub](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-12-nvda-review/lab-12-writeup.md)
-- Existing analysis and Python links are above. No new model or computation is required for this lab.
