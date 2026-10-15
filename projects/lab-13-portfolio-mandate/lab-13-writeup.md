@@ -1,25 +1,5 @@
 # Lab 13 — Portfolio Mandate Defense
 
-## Rubric evidence map
-
-| Rubric criterion | Evidence in this submission |
-|---|---|
-| Checker | `mandate.py` computes the reserve minimum and all five checkable rules from the editable inputs; the known-answer table and negative-weight probe are documented below. |
-| Statement types | The S1–S10 table gives every required classification, reason, and IPS mapping. S9 is explicitly not tested and S10 is identified as missing. |
-| Attack | Candidate D is in the executable input table, passes the checker, and is judged against S2. |
-| CIO question | One decision-blocking question and its allocation consequence appear below. |
-| Reflection and policy statement | The IPS explanation, S1–S10 mapping, suitability reflection, and uncertain classification are included below. |
-
-## Files and command
-
-The checker is in `mandate.py`. Run it from this folder with:
-
-```powershell
-python mandate.py
-```
-
-The code calculates every displayed value from its editable inputs. It does not test the calendar-year-loss statement because the CIO has not supplied a measure or breach rule.
-
 ## Sort the CIO statements
 
 | Statement | Type | Reason | IPS component |
@@ -73,9 +53,3 @@ Meridian's statements map to an IPS as shown in the first table: S1 and S2 estab
 A portfolio can pass every checkable rule while still being wrong for this client because constraints are only boundaries, not a complete investment decision. Candidate D demonstrates this: it is liquid, diversified under the stated issuer rule, and funded for distributions, yet it may have little chance of earning the client's CPI + 4% objective. The missing definition of success and risk trade-off can therefore make a mechanically compliant portfolio unsuitable.
 
 The statement type I was least sure of was S4. I classified it as a preference because the benchmark tells the CIO how performance can be compared, but it does not require the portfolio to hold 60/40 or establish an allowed tracking-error range. If the CIO intends either of those, it must be written as a hard constraint or optimization target.
-
-## Self-quiz
-
-**Question:** Why does the issuer check add Acme's bonds and stock instead of evaluating them separately?
-
-**Answer:** S6 limits exposure to one issuer, so both securities are claims on Acme Corp. Their weights must be aggregated; candidate B therefore has 5% + 4% = 9% Acme exposure and fails the 8% limit.
