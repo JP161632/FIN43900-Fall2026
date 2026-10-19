@@ -1,9 +1,7 @@
-# AI-authored directional test plan
+# Directional test prediction - written before execution
 
-Written before model execution on 2026-10-19. This plan is AI-authored and does not satisfy the human AI-off Locked Changed-Input Record.
+Prepared October 19, 2026 by Codex. **AI-authored, not the required human AI-off Locked Changed-Input Record.** Git history records this file before the first rebuilt-model execution.
 
-Freeze operating forecasts, terminal growth and the enterprise-to-equity bridge. Increase WACC by 0.0100 (100 basis points). Expected direction: enterprise value and per-share value fall because both explicit discount factors and the terminal capitalization denominator increase. Apply the same committee thresholds before and after; a change in price does not by itself require a change in action. Preserve values and actual decision effects in the executed validation output.
+Change only base WACC from its calculated decimal to that decimal plus 0.01 (one percentage point). Hold operating forecasts, terminal growth and all bridge assumptions fixed; discount-dependent claim PVs still recompute. Prediction: enterprise value and per-share equity value fall. Expected decision effect: WATCH / DEFER persists at the historical $218.36 price because the entry ceiling becomes lower. If value rises, inspect discount exponents, terminal denominator and claim sign/timing. If action does not change, document the margin-of-safety threshold rather than imply sensitivity caused initiation.
 
-Separate highest-risk failure: deliberately add back recurring stock compensation without an offsetting cost or dilution. Expected direction: equity value rises incorrectly. Quantify the valuation distortion, then reject the treatment against the filing and the economic claim on shareholders.
-
-Other failure tests: inject a one-million-dollar balance-sheet error, missing source date, duplicate peer, nonpositive share count, and terminal growth at or above WACC. Each must produce an explicit error. Validate monotonicity only for positive operating cash flows under a fixed bridge.
+The model's tests will record the old/new inputs, actual results and action effect. This prediction must never be relabeled as human work.
