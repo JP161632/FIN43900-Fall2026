@@ -6,14 +6,9 @@
     "22 finance tests passed",
     "Fresh environment and all four deterministic hashes match",
     "Shared12-row manifest schema matches course template",
-    "All 50 frozen artifact hashes match"
+    "All 51 frozen artifact hashes match"
   ],
   "open_items": [
-    "Research-Evolution.pdf: missing access_checked",
-    "Repository: missing access_checked",
-    "Visible executed output: missing access_checked",
-    "Decision memo or deck: missing access_checked",
-    "Validation-and-AI-Use.pdf: missing access_checked",
     "Video 1: missing location_or_url, access_checked, frozen_or_commit_id, duration_or_as_of, timestamp_index",
     "Transcript Video 1: missing location_or_url, access_checked, frozen_or_commit_id",
     "Video 2: missing location_or_url, access_checked, frozen_or_commit_id, duration_or_as_of, timestamp_index",
