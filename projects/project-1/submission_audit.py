@@ -39,7 +39,7 @@ def main():
         text=(ROOT/f'docs/transcript-video-{i}.txt').read_text(encoding='utf-8')
         review=json.loads((ROOT/'evidence/video-review.json').read_text(encoding='utf-8'))
         item=next(x for x in review['videos'] if x['video']==i)
-        check(f'Transcript{i} imported integrity','NOT RECORDED' not in text and len(text.split())>200 and hashlib.sha256((ROOT/item['transcript']).read_bytes()).hexdigest()==item['transcript_sha256'],'Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement')
+        check(f'Transcript{i} imported integrity','NOT RECORDED' not in text and len(text.split())>200 and hashlib.sha256((ROOT/item['transcript']).read_bytes()).hexdigest()==item['transcript_sha256'],'Student-requested editorial value corrections logged; audio alignment remains unverified')
     metadata=json.loads((ROOT/'evidence/video-metadata.json').read_text(encoding='utf-8'))
     check('Video links and duration limits',len(metadata['videos'])==3 and all(x.get('player_status')=='OK' and 0<x['duration_seconds']<=(180 if x['video']==1 else 300) for x in metadata['videos']),'Anonymous metadata only; correct video numbering; full playback not reviewed')
     steps=(ROOT/'Student next steps.md').read_text(encoding='utf-8')

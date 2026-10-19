@@ -15,7 +15,7 @@ def main():
     metadata=json.loads((ROOT/'evidence/video-metadata.json').read_text(encoding='utf-8'))
     prior_path=ROOT/'evidence/video-review.json'
     prior=json.loads(prior_path.read_text(encoding='utf-8')) if prior_path.exists() else {}
-    if prior.get('student_confirmed_corrections'):
+    if prior.get('student_confirmed_corrections') or prior.get('student_requested_value_corrections'):
         raise SystemExit('Reviewed corrections exist; preserve them rather than reimporting source text.')
     records=[]
     for video in metadata['videos']:

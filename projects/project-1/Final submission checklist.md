@@ -1,6 +1,6 @@
 # NVIDIA Project 1 - final submission review
 
-Reviewed October 19, 2026. **Technical checks pass; final submission is not yet verified complete.** Three video links and supplied transcripts are now included; durations pass. Material transcript/speech discrepancies and timestamp indices require closure; see docs/video-review.md. This review does not change the earlier frozen evidence or certify a rubric score.
+Reviewed October 19, 2026. **Technical checks pass; final submission is not yet verified complete.** Three video links and supplied transcripts are now included; durations pass. Financial transcript text is editorially corrected; audio alignment and timestamp indices still require verification; see docs/video-review.md. This review does not change the earlier frozen evidence or certify a rubric score.
 
 ## Upload videos and obtain transcripts
 
@@ -48,3 +48,5 @@ Commands executed in this review:
 ```
 
 Observed: technical audit PASS; model PASS 15/15; base value $118.58 per share; WATCH / DEFER. The manifest now includes supplied video/transcript links; text review and observed index still need closure. GitHub submission/main had no newer commits than local HEAD when checked. No final-completion claim is justified until the missing evidence is incorporated, the PDFs/status/manifest are reconciled, a final immutable snapshot is made and actual access is checked. Preserve the earlier freeze; do not run a generator that resets newly supplied evidence to pending.
+
+Correction update: At student request, material transcript values were editorially reconciled to the model. Corrections are logged in evidence/video-review.json and disclosed in each transcript. Actual audio alignment and observed timestamp indices remain unverified. This supersedes earlier findings of incorrect values in the current text, without certifying the recordings.

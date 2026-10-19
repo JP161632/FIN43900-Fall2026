@@ -1,5 +1,5 @@
 {
-  "scope": "Text/model comparison and anonymous public metadata; audio and full visual performance not reviewed",
+  "scope": "Text/model comparison, student-requested editorial value corrections and anonymous metadata; audiovisual performance not reviewed",
   "student_confirmed_corrections": false,
   "videos": [
     {
@@ -8,10 +8,29 @@
       "duration_seconds": 173,
       "transcript": "docs/transcript-video-1.txt",
       "provided_source_sha256": "3967cbac86a599349d0efab34a1ea60e98ce7d21d172d32c746f4fc8b451b5cf",
-      "transcript_sha256": "2b32985619b91d1ea6c805a223844a3b1cc4500f2abcea88c92dbc53509384c2",
-      "editing": "Paragraph breaks and speaker-name omission only; financial wording preserved pending audio confirmation.",
+      "transcript_sha256": "cc34a14be01adb728ce1da931ddbccdd13eb18d7826028674dece3de33b629c9",
+      "editing": "Paragraph breaks, speaker-name omission and student-requested model-value corrections; audio not independently verified.",
       "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
-      "review_status": "TEXT REVIEWED; material caption/speech discrepancies require student audio confirmation"
+      "review_status": "MODEL VALUES CORRECTED; audio alignment and observed timestamps unverified",
+      "before_value_corrections_sha256": "2b32985619b91d1ea6c805a223844a3b1cc4500f2abcea88c92dbc53509384c2",
+      "value_corrections": [
+        {
+          "supplied_text": "15.8% um WACC",
+          "corrected_text": "15.88% um WACC"
+        },
+        {
+          "supplied_text": "annual weighted donated shares",
+          "corrected_text": "annual weighted diluted shares"
+        },
+        {
+          "supplied_text": "Its base reference is about $190 with a casual range of 56 to 212.",
+          "corrected_text": "Its base reference is about $118.58 with a causal range of $55.93 to $212.08."
+        },
+        {
+          "supplied_text": "SCFF architecture",
+          "corrected_text": "FCFF architecture"
+        }
+      ]
     },
     {
       "video": 2,
@@ -19,10 +38,21 @@
       "duration_seconds": 178,
       "transcript": "docs/transcript-video-2.txt",
       "provided_source_sha256": "3ea8c37cf688245a211d379a3beb0cd1ef3d9bb1a4e07fc249d7826f32f6d1ff",
-      "transcript_sha256": "22d0601001c608d2512604ab38e3331b9b24096974b16ad9d4e97ade1fb41114",
-      "editing": "Paragraph breaks and speaker-name omission only; financial wording preserved pending audio confirmation.",
+      "transcript_sha256": "0d67deb8f3c71dfdeff2dbea7f8e3a86ab53c1d087b333447ae8681faea1135a",
+      "editing": "Paragraph breaks, speaker-name omission and student-requested model-value corrections; audio not independently verified.",
       "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
-      "review_status": "TEXT REVIEWED; material caption/speech discrepancies require student audio confirmation"
+      "review_status": "MODEL VALUES CORRECTED; audio alignment and observed timestamps unverified",
+      "before_value_corrections_sha256": "22d0601001c608d2512604ab38e3331b9b24096974b16ad9d4e97ade1fb41114",
+      "value_corrections": [
+        {
+          "supplied_text": "all passes base of $118.",
+          "corrected_text": "all passes base of $118.58."
+        },
+        {
+          "supplied_text": "raising whack from about 13.9 to 14.9% lowers value from $1808 to $180.38.",
+          "corrected_text": "raising WACC from about 13.9% to 14.9% lowers value from $118.58 to $108.38."
+        }
+      ]
     },
     {
       "video": 3,
@@ -30,10 +60,29 @@
       "duration_seconds": 180,
       "transcript": "docs/transcript-video-3.txt",
       "provided_source_sha256": "23c7d12c05becacd1a68cf3b003dc9a834548715cab821c3ccb0e295a5e3c56e",
-      "transcript_sha256": "57a0e18a3794083299ebe64e69a63eb84a1ce996fc0154a71e03e37cd5007dba",
-      "editing": "Paragraph breaks and speaker-name omission only; financial wording preserved pending audio confirmation.",
+      "transcript_sha256": "40610b1b66bb39949c04f93f2542ae4a9a6bf6998759a674a0058ad924effde9",
+      "editing": "Paragraph breaks, speaker-name omission and student-requested model-value corrections; audio not independently verified.",
       "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
-      "review_status": "TEXT REVIEWED; material caption/speech discrepancies require student audio confirmation"
+      "review_status": "MODEL VALUES CORRECTED; audio alignment and observed timestamps unverified",
+      "before_value_corrections_sha256": "57a0e18a3794083299ebe64e69a63eb84a1ce996fc0154a71e03e37cd5007dba",
+      "value_corrections": [
+        {
+          "supplied_text": "the casual range is about 56 to $200 per share with the base reference near one 119.",
+          "corrected_text": "the causal range is $55.93 to $212.08 per share with the base reference at $118.58."
+        },
+        {
+          "supplied_text": "Adding one percentage point to WCC lowers value to about $118",
+          "corrected_text": "Adding one percentage point to WACC lowers value to $108.38"
+        },
+        {
+          "supplied_text": "produce value nearly $65.",
+          "corrected_text": "produce value of $55.93."
+        },
+        {
+          "supplied_text": "Collection days about 95",
+          "corrected_text": "Collection days above 95"
+        }
+      ]
     }
   ],
   "issues": [
@@ -41,49 +90,52 @@
       "video": 1,
       "passage": "base reference is about $190",
       "model_value": "$118.58 (about $119)",
-      "status": "UNRESOLVED"
+      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
     },
     {
       "video": 1,
       "passage": "15.8% WACC; annual weighted donated shares; SCFF; casual range",
       "model_value": "Prior Lab 5 WACC 15.88%; annual weighted diluted shares; FCFF; causal range",
-      "status": "UNRESOLVED"
+      "status": "NUMERICAL/ASSOCIATED TERM CORRECTIONS APPLIED; OTHER SPEECH UNVERIFIED"
     },
     {
       "video": 1,
       "passage": "unrealized investment gains of nonoperating cash generation",
       "model_value": "Unrealized investment gains are not operating cash generation",
-      "status": "UNRESOLVED"
+      "status": "AUDIO WORDING STILL UNVERIFIED"
     },
     {
       "video": 2,
       "passage": "from $1808 to $180.38",
       "model_value": "$118.58 to $108.38 when WACC rises 1 percentage point",
-      "status": "UNRESOLVED"
+      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
     },
     {
       "video": 3,
       "passage": "casual range is about 56 to $200",
       "model_value": "causal range $55.93-$212.08 (about $56-$212)",
-      "status": "UNRESOLVED"
+      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
     },
     {
       "video": 3,
       "passage": "Adding one percentage point to WCC lowers value to about $118",
       "model_value": "WACC increase lowers value to $108.38",
-      "status": "UNRESOLVED"
+      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
     },
     {
       "video": 3,
       "passage": "low case ... value nearly $65",
       "model_value": "Low-case value $55.93 (about $56)",
-      "status": "UNRESOLVED"
+      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
     },
     {
       "video": 3,
       "passage": "Collection days about 95",
       "model_value": "Collection days above 95 is the monitoring threshold",
-      "status": "UNRESOLVED"
+      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
     }
-  ]
+  ],
+  "student_requested_value_corrections": true,
+  "correction_utc": "2026-10-19T18:19:04.897954+00:00",
+  "audio_alignment_confirmed": false
 }

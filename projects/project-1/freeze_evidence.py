@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
-TAG='project-1-nvidia-video-links-2026-10-19'
+TAG='project-1-nvidia-transcript-corrections-2026-10-19'
 BASE=f'https://github.com/JP161632/FIN43900-Fall2026/blob/{TAG}/projects/project-1/'
 EXCLUDE={'file-integrity.json','submission-manifest.csv','evidence/publication-audit.json','outputs/submission-audit.json','outputs/run-receipt.json'}
 
@@ -23,7 +23,7 @@ def main():
     metadata=json.loads((ROOT/'evidence/video-metadata.json').read_text(encoding='utf-8'))
     review=json.loads((ROOT/'evidence/video-review.json').read_text(encoding='utf-8'))
     status['videos']='Three supplied YouTube links; titles/durations/player metadata checked; audiovisual performance not reviewed'
-    status['transcripts']='Three supplied texts imported; finance caption/speech discrepancies and observed timestamp indices remain unresolved'
+    status['transcripts']='Three transcripts editorially corrected to model values at student request; audio alignment and observed timestamp indices unverified'
     status['overall_submission']='INCOMPLETE - final evidence and transcript/audio reconciliation required'
     status_path.write_text(json.dumps(status,indent=2)+'\n',encoding='utf-8',newline='\n')
     hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in stable_files()}
@@ -36,7 +36,7 @@ def main():
     access='PENDING anonymous public check'
     if publication.exists():
         q=json.loads(publication.read_text(encoding='utf-8'))
-        if q['status']=='PASS' and q['sha256_frozen_files_verified']==len(hashes): access=f"yes; anonymous public check {q['checked_utc']}; core hashes verified at {q['commit'][:12]}"
+        if q['status']=='PASS' and q.get('frozen_file_sha256')==hashes: access=f"yes; anonymous public check {q['checked_utc']}; core hashes verified at {q['commit'][:12]}"
     specs=[('Research-Evolution.pdf','Research-Evolution.pdf','NVIDIA EditionA/B and research evolution'),
            ('Repository',None,'NVIDIA Project1 offline application'),
            ('Visible executed output','outputs/visible-output.md','Executed NVIDIA valuation and statements'),
@@ -55,11 +55,11 @@ def main():
         video_access=f"Anonymous metadata {video.get('player_status','UNVERIFIED')}; {video['checked_utc']}; full playback not reviewed"
         rows.append([f'Video {i}','yes',video['url'],video.get('title',f'NVIDIA Video {i}'),duration,
                      transcript['observed_timestamp_index'],video_access,'YouTube video ID: '+video['url'].split('=')[-1],
-                     'Material transcript/speech discrepancies require confirmation; see docs/video-review.md'])
+                     'Transcript model values editorially corrected at student request; audio alignment unverified; see docs/video-review.md'])
         path=transcript['transcript']
-        rows.append([f'Transcript Video {i}','yes',BASE+path,f'Supplied actual transcript {i} - financial review pending',duration,
+        rows.append([f'Transcript Video {i}','yes',BASE+path,f'Editorially corrected transcript {i} - model values reconciled',duration,
                      transcript['observed_timestamp_index'],access,'sha256:'+hashes[path],
-                     'Imported supplied text; paragraph formatting/name omission; uncertain finance wording preserved'])
+                     'Student-requested value corrections logged in evidence/video-review.json; audio and actual timing unverified'])
     rows.append(['Optional deployed output','no','','Not required','','','','','Local offline interactive output supplied'])
     with (ROOT/'submission-manifest.csv').open('w',encoding='utf-8',newline='') as f:
         writer=csv.writer(f,lineterminator='\n');writer.writerow(['item','required','location_or_url','title','duration_or_as_of','timestamp_index','access_checked','frozen_or_commit_id','notes']);writer.writerows(rows)

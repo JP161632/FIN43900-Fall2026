@@ -193,7 +193,7 @@ Tool/interface: Codex based on GPT-6 (system-exposed identity); exact backend bu
 
 ## Freeze and access status
 
-File-integrity.json hashes stable artifacts; submission-manifest.csv lists 11 required items plus optional deployment. Three YouTube links and supplied transcripts are included. Metadata confirms durations 2:53/2:58/3:00 and correct Video 2/3 mapping; full playback is unreviewed. Supplied transcripts contain material numerical discrepancies; docs/video-review.md records audio-confirmation and timestamp gaps. No uncertain speech was silently corrected. The video-links snapshot uses a new immutable tag; prior tags remain unchanged. Publication-audit.json records GitHub access and hashes. Original checkpoint, human-lock and partner evidence remain unresolved. GitHub is not Brightspace submission; final due October 19 2026 11:59 PM course time.
+File-integrity.json hashes stable artifacts; submission-manifest.csv lists 11 required items plus optional deployment. Three YouTube links and supplied transcripts are included. Metadata confirms durations 2:53/2:58/3:00 and correct Video 2/3 mapping; full playback is unreviewed. At student request, transcript figures were editorially corrected to model values; the edit log and audio/timestamp limits are in docs/video-review.md. These corrections do not certify what was spoken. The corrected-transcript snapshot uses a new immutable tag; prior tags remain unchanged. Publication-audit.json records GitHub access and hashes. Original checkpoint, human-lock and partner evidence remain unresolved. GitHub is not Brightspace submission; final due October 19 2026 11:59 PM course time.
 ''')
     for i in range(1,4):
         path=ROOT/f'docs/transcript-video-{i}.txt'

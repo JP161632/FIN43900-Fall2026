@@ -30,3 +30,5 @@ Recover original baseline PDF/first receipt; author/precommit/execute the real A
 ## Supplied-video update
 
 Three actual transcript texts and correctly matched YouTube links are now included. Public metadata confirms durations 2:53/2:58/3:00, within limits. Full audiovisual review is not established. The text review finds material base-value, changed-input and downside discrepancies requiring audio confirmation. See docs/video-review.md and evidence/video-review.json. Earlier missing-recording findings are superseded by this qualified receipt, not by an assertion of full communication credit.
+
+Correction update: At student request, material transcript values were editorially reconciled to the model. Corrections are logged in evidence/video-review.json and disclosed in each transcript. Actual audio alignment and observed timestamp indices remain unverified. This supersedes earlier findings of incorrect values in the current text, without certifying the recordings.

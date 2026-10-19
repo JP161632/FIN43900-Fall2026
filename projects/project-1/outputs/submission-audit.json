@@ -56,17 +56,17 @@
     {
       "check": "Transcript1 imported integrity",
       "status": "PASS",
-      "detail": "Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement"
+      "detail": "Student-requested editorial value corrections logged; audio alignment remains unverified"
     },
     {
       "check": "Transcript2 imported integrity",
       "status": "PASS",
-      "detail": "Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement"
+      "detail": "Student-requested editorial value corrections logged; audio alignment remains unverified"
     },
     {
       "check": "Transcript3 imported integrity",
       "status": "PASS",
-      "detail": "Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement"
+      "detail": "Student-requested editorial value corrections logged; audio alignment remains unverified"
     },
     {
       "check": "Video links and duration limits",

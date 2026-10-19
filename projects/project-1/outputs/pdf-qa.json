@@ -49,7 +49,7 @@
     {
       "file": "Validation-and-AI-Use.pdf",
       "pages": 4,
-      "sha256": "92135f7aeba5f9ebf1d611adc56a6da17616be9ff9ae8948779065fdd9a599c7",
+      "sha256": "7b0e364a20066f8ff5d3b548c066d1e600656629bd51c8fb25ec0dfd869d6a91",
       "page_checks": [
         {
           "page": 1,
@@ -68,7 +68,7 @@
         },
         {
           "page": 4,
-          "text_characters": 1764,
+          "text_characters": 1800,
           "out_of_page_blocks": []
         }
       ]
