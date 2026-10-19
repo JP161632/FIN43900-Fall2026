@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "source_question": "lessons/week-07/student-handout.md: Three evidence surfaces",
+  "page_map": {
+    "Research-Evolution.pdf:Initial thesis": 3,
+    "Research-Evolution.pdf:A-to-B and prior-lab evidence table": 1,
+    "Research-Evolution.pdf:Attribution of research changes": 2,
+    "Research-Evolution.pdf:AI output independently corrected": 2,
+    "Decision-Memo.pdf:Committee ask and valuation range": 1,
+    "Decision-Memo.pdf:Disagreement across methods": 2,
+    "Decision-Memo.pdf:Conditions, reversal triggers": 2
+  },
+  "script_word_counts": {
+    "1": 327,
+    "2": 343,
+    "3": 369
+  },
+  "numbers_checked_against": "outputs/results.json and validation-results.json",
+  "old_lab_hash_verified": "a40f09d61551323ef6fb2920d2106e7629ac590ca59f8b523d6d8c69b4ede7a3",
+  "fcff_arithmetic_error_millions": 0.0,
+  "limitations": "Evidence navigation/script audit, not observed video performance or human-history certification",
+  "financial_result_sha256": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc",
+  "proof_anchor_and_local_links_checked": 31,
+  "broken_local_or_anchor_links": [],
+  "browser_visual_check": "Not available: no enabled browser surface; PDF pages visually checked; student HTML rehearsal required"
+}

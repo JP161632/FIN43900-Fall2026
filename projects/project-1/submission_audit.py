@@ -28,7 +28,7 @@ def main():
             if re.search('Sales'+'force|\\b'+'CRM'+'\\b',path.read_text(encoding='utf-8'),re.I):stale.append(path.name)
     check('NVIDIA-only active target',not stale,stale)
     pdf=json.loads((ROOT/'outputs/pdf-qa.json').read_text(encoding='utf-8'))
-    check('PDF page/bounds checks',pdf['total_pages']==10 and all(not p['out_of_page_blocks'] for f in pdf['files'] for p in f['page_checks']),'All10pages rendered; visual review completed separately')
+    check('PDF page/bounds checks',len(pdf['files'])==3 and pdf['total_pages']==sum(f['pages'] for f in pdf['files']) and all(not p['out_of_page_blocks'] for f in pdf['files'] for p in f['page_checks']),f"All{pdf['total_pages']}pages rendered; visual review completed separately")
     for name,stem in [('Decision-Memo','decision-memo'),('Research-Evolution','research-evolution'),('Validation-and-AI-Use','validation-and-ai-use')]:
         actual=hashlib.sha256((ROOT/f'{name}.pdf').read_bytes()).hexdigest(); record=next(x for x in pdf['files'] if x['file']==f'{name}.pdf')
         check(name+' copy/hash',actual==record['sha256'] and (ROOT/f'{name}.pdf').read_bytes()==(ROOT/f'docs/{stem}.pdf').read_bytes(),'Root/docs same PDF; current render receipt hash')
@@ -38,7 +38,10 @@ def main():
     for i in [1,2,3]:
         check(f'Transcript{i} truthful status','NOT RECORDED' in (ROOT/f'docs/transcript-video-{i}.txt').read_text(encoding='utf-8'),'Pending marker deliberately not claimed completed')
     steps=(ROOT/'Student next steps.md').read_text(encoding='utf-8')
-    check('Three recording routes and scripts',all(s in steps for s in ['Video1 -','Video2 -','Video3 -','Script:','AI-off','maximum3:00','maximum5:00']), 'Exact file/action routes, planned indices, distinct scripts, authentic-evidence prerequisites')
+    check('Three recording routes and scripts',all(s.lower() in steps.lower() for s in ['Video1 -','Video2 -','Video3 -','Script:','AI-off','maximum3:00','maximum5:00']), 'Exact file/action routes, planned indices, distinct scripts, authentic-evidence prerequisites')
+    recording=json.loads((ROOT/'outputs/recording-script-audit.json').read_text(encoding='utf-8'))
+    check('Recording evidence numbers and scripts',recording['status']=='PASS' and recording['financial_result_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest() and recording['script_word_counts']['1']<=355,'Question-to-claim-to-readable-evidence mapping; figures independently matched to saved results')
+    check('Recording guide single version',steps==(ROOT/'docs/recording-guide.md').read_text(encoding='utf-8'),'Student next steps and audited guide agree; generator preserves current route')
     with (ROOT/'submission-manifest.csv').open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
     check('Uniform manifest',len(rows)==12 and sum(x['required']=='yes' for x in rows)==11,'11required+optionaldeployment; videos honestly blank')
     freeze=json.loads((ROOT/'file-integrity.json').read_text(encoding='utf-8'))

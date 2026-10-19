@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
-TAG='project-1-nvidia-2026-10-19'
+TAG='project-1-nvidia-recording-audit-2026-10-19'
 BASE=f'https://github.com/JP161632/FIN43900-Fall2026/blob/{TAG}/projects/project-1/'
 EXCLUDE={'file-integrity.json','submission-manifest.csv','evidence/publication-audit.json','outputs/submission-audit.json','outputs/run-receipt.json'}
 
@@ -41,7 +41,7 @@ def main():
     access='PENDING anonymous public check'
     if publication.exists():
         q=json.loads(publication.read_text(encoding='utf-8'))
-        if q['status']=='PASS': access=f"yes; anonymous public check {q['checked_utc']}; core hashes verified at {q['commit'][:12]}"
+        if q['status']=='PASS' and q['sha256_frozen_files_verified']==len(hashes): access=f"yes; anonymous public check {q['checked_utc']}; core hashes verified at {q['commit'][:12]}"
     specs=[('Research-Evolution.pdf','Research-Evolution.pdf','NVIDIA EditionA/B and research evolution'),
            ('Repository',None,'NVIDIA Project1 offline application'),
            ('Visible executed output','outputs/visible-output.md','Executed NVIDIA valuation and statements'),

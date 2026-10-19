@@ -74,6 +74,16 @@
       "detail": "Exact file/action routes, planned indices, distinct scripts, authentic-evidence prerequisites"
     },
     {
+      "check": "Recording evidence numbers and scripts",
+      "status": "PASS",
+      "detail": "Question-to-claim-to-readable-evidence mapping; figures independently matched to saved results"
+    },
+    {
+      "check": "Recording guide single version",
+      "status": "PASS",
+      "detail": "Student next steps and audited guide agree; generator preserves current route"
+    },
+    {
       "check": "Uniform manifest",
       "status": "PASS",
       "detail": "11required+optionaldeployment; videos honestly blank"
@@ -81,7 +91,7 @@
     {
       "check": "Frozen file integrity",
       "status": "PASS",
-      "detail": "47 stable SHA256matches; exclusions explicit"
+      "detail": "55 stable SHA256matches; exclusions explicit"
     },
     {
       "check": "Interactive output controls",

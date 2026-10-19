@@ -1,0 +1,28 @@
+# Recording script and screen evidence audit
+
+Audited against Week7 “Three evidence surfaces,” the supplied Project1 rubric, the course research-evolution template and the actual NVIDIA lab/output artifacts. Result: **REVISED**. The prior scripts were directionally relevant but did not establish all important claims on screen. Use the revised Student next steps.md and outputs/recording-proof.html.
+
+| Finding | Why the prior route was weak | Repair / exact evidence |
+|---|---|---|
+| Video1 lacked a concrete earlier-value comparison | Explaining code corrections does not itself show research evolution or defensible valuation. | Show original EditionA research admission; original Lab5 base62.72 and55.59-72.40 grid; then current118.58base and55.93-212.08causal range. Distinguish interval definitions and date/share/method changes. |
+| Attribution too general | A-to-B movement cannot all be credited to AI, or to unverified partner discussion. | Added attribution to Research-Evolution: course architecture; student-supplied target/baseline/labs; prior recorded limitations; AI-assisted rebuild; sources/tests supporting acceptance. No claim to know who authored every older passage. |
+| Source ledger was being used as independent proof | Our own source summary only points to evidence. | Show the SEC balance sheet itself: cash22,443/debtsecurities34,143/equities42,783 with period/row labels; optionally independently corroborate issuer release. |
+| Numeric movement could be falsely attributed | Data base, operating forecast, WACC, terminal/bridge and shares all changed. | R1/R2 display basis changes; script explicitly rejects a single-cause historical price attribution. Controlled WACC test is separately identified. |
+| Video2 showed a PASS count without arithmetic | Reproduction is necessary but not a known-answer validation. | V1 displays published1624.87EV/27.50share versus actual results, nine tested gridcells, and company year1 FCFF arithmetic. |
+| High-risk test lacked observed failure detail | Saying errors stop does not prove a relevant test caught one. | V2 shows the quantified financial-asset diagnostic and exact caught cash/source errors. Distinguishes a passing rejection test from a successful corrupted model. Diagnostic is not called a complete alternative valuation. |
+| Changed-input discussion could omit decision effect/chronology | Value direction alone is insufficient; retrospective wording cannot prove a pre-run human prediction. | V3 shows13.90->14.90%WACC,118.58->108.38value, watch/defer unchanged and threshold reason. V4 identifies actual artifact limitations; no invented history. |
+| Video3 risked becoming a dashboard tour | Committee asks for action/conditions/reversal, not UI features. | Memo first; bridge/sensitivity as support; peer-method disagreement; low-regime operating evidence; reverseDCF; metric/window/price-conditioned ask. |
+| Generic monitoring language lacked an evidence window | “Watch growth” is not an actionable reversal rule. | Review each filing; two-quarter DCgrowth<20% durability trigger; DSO>95/GM<70% conversion risks; material guarantees/capacityloss immediate review; refreshed entryceiling94.87 plus evidence gates. |
+| Claimed preparation constraints could exceed supplied rules | The shared checklist specifies time limits, not every recording preference. | Guide labels screen layout/webcam/timing suggestions appropriately. Video1<=3min, Videos2/3<=5min; observed timestamps required after recording. |
+
+## What this audit can and cannot establish
+
+The new guide names a readable screen for each substantive claim. Script word counts, PDF heading pages, original Lab5 hash, figure matches and FCFF arithmetic are checked in outputs/recording-script-audit.json. Supporting proof panels are generated from actual saved results and link to original lab, filing, code and validation artifacts. They are reading aids, not invented recordings or new prediction events.
+
+PDF layout was visually checked from all10rendered pages. This session exposed no browser surface, and the in-app browser could not be opened, so no actual browser screenshot/rehearsal is claimed. HTML anchor destinations/local links and the existing dashboard's control logic are checked separately; the student must verify the final recording zoom and browser display during rehearsal.
+
+At the time of this local audit, no new original EditionA PDF/receipt, completed human timing record or confirmed partner attribution had been added here. A student may have those elsewhere; they must supply the actual artifacts for final-package inclusion. Three videos and actual transcripts remain unobserved. Consequently this is a recording-preparation audit, not certification of maximum rubric points or completed submission. The instructor's reported AI-humanization exception should be described accurately without altering the original event chronology.
+
+## Rehearsal acceptance standard
+
+A cold reviewer should be able to pause Video1 and identify an earlier estimate, later estimate, source/test and decision effect; pause Video2 and locate a real formula plus expected/actual numeric or rejected-input outcome; and pause Video3 and state the dated committee action, defended range, conditions and reversal rule. If a spoken claim lacks readable evidence, revise the scene or qualify/remove the claim. Keep final narration consistent with the actual artifacts supplied.

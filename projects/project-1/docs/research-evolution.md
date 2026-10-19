@@ -25,6 +25,12 @@ At 218.36, WATCH/DEFER; intrinsic causal range$56-$212, base reference$119; appr
 | Latest source definition: securities/cash and debt changed | Annual 62,556 includes equity holdings; debt 8,468 stale after new issuance. | Latest cash+debtsecurities 56,586, separate public/private recoveries, debt 33,366 book/31,400 fair. Definition check executed. |
 | Pending acquisition headlines | Retention is service compensation; control synergy not public-share multiple. | Purchase cash 11,900 and retention 1,000 modeled conservatively, no incremental operating benefit. |
 
+## Attribution of research changes
+
+Course requirements supplied the five-year FCFF framework with articulated statements, evidence boundaries and validation standards. Existing student-supplied NVIDIA materials supplied the target, initial research-admission question and prior lab trail. Labs 10-12 already recorded investment classification, cash-flow labeling and sensitivity limitations before the October 19 rebuild; their existence is independently inspectable, but this package cannot establish who authored every older passage. The Lab 12 record reports partner questions; attribution remains qualified until confirmed.
+
+Codex assisted the October 19 filing research, code rebuild, scenario assumptions, documentation and checks. The revised forecast and discount-rate choices are analyst assumptions that the student must evaluate and defend; they are not new reported facts or automatically the student's independently authored judgment. Sources and executed tests justify accepting or qualifying those outputs. The move from Lab 5's 62.72 to the current base 118.58 cannot be credited to AI alone: reporting base, operating forecast, WACC, reinvestment, bridge and share basis all changed. No controlled dollar-by-dollar historical attribution is asserted. The action stays watch/defer from Lab 5 to B, while Edition A was admission to research rather than a buy decision.
+
 ## AI output independently corrected
 
 Material output at issue: prior forecast treated broad other-assets balances as operating reinvestment and labeled cash after payouts as FCFE. Independent evidence: Q2 balance and Notes 5/6 identify 42,783 marketable equity,51,157 private holdings and investment components in other assets. Disposition **CORRECTED**: financial investments are CFI/assets/bridge items; FCFF retains operating NWC only. Quantified deliberately wrong scaling is in validation-results.json. This is a check against primary financial definitions, not another AI's agreement.

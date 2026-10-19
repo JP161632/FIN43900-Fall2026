@@ -1,135 +1,157 @@
-# Student next steps
+# Student next steps - audited recording guide
 
-This is the exact recording/submission handoff for the NVIDIA Project1 package. Scripts are **AI-written preparation**, not transcripts or proof that you performed a task. Read, understand and personalize them; say only what you can explain and actually did. You cannot get full credit from videos alone while the human evidence below is missing.
+**Use this guide instead of the earlier recording route.** It is also saved as `Student next steps.md` in the Project1 folder. Every timed scene below names the question it proves, the exact file/heading to show and the evidence to point at. Timings are planning targets; replace them with observed indices after recording. Scripts are preparation aids, not actual transcripts.
 
-## Complete these before recording
+## What the three videos must prove
 
-1. Recover the original EditionA PDF and first successful Brightspace checkpoint receipt. Do not recreate or alter them. The unchanged NVIDIA Markdown is already preserved and typeset as a reading appendix, but it is not proof of the submitted PDF/receipt. If never submitted, tell the instructor and request how to handle the missing checkpoint; no AI can backdate compliance. EditionB date addendum is already documented.
-2. Confirm whether October 1 Lab12's reported partner answers came from a real discussion. If so, verify exact wording/role/date, avoid private information and record what actually changed with independent evidence. If draft/AI-written or uncertain, leave them qualified and obtain actual partner review. A clearly marked fictional sample is in evidence/assumption-challenges.md; never claim it was spoken. Record the real challenge and response; the model need not change if you can justify why.
-3. Complete the **human AI-off locked changed-input exercise** below. You must author the prediction yourself before the run. This cannot be filled retrospectively by AI. The assistant's existing WACC test does not count as your human lock.
-4. Open outputs/dashboard.html locally in a browser and check labels. Open outputs/visible-output.md, Research-Evolution.pdf, Decision-Memo.pdf and Validation-and-AI-Use.pdf. Check that the numbers below still match outputs/results.json. Use the included dated historical valuation; do not describe $218.36 as today's quote.
+The course's Week7 handout gives three distinct questions:
 
-## Human AI-off lock - exact procedure
-
-Close AI tools for the prediction. In evidence/locked-changed-input-record.md, write your own name/role as appropriate under course privacy rules, actual UTC time, one load-bearing input you independently choose, its JSON path, old/new numeric values and units, why you expect a direction, expected enterprise/share-value direction and expected committee-action effect. Do not copy the assistant WACC prediction or invent an earlier timestamp. Do not run or edit the model until the prediction is saved and committed.
-
-From the repository root, while prediction exists and before changing input/running:
-
-```powershell
-git add -- projects/project-1/evidence/locked-changed-input-record.md
-git commit -m "Lock my AI-off prediction before changed-input run"
-git rev-parse HEAD
-git show -s --format=%cI HEAD
-```
-
-Save that commit ID/time in a **separate** results addendum after the run, retaining the original committed prediction. Run an unchanged baseline into .build/student-baseline, edit just your chosen field in data/inputs.json using a text editor, then run into .build/student-changed. These commands assume your terminal is at the repository root and Python3.10+ is installed:
-
-```powershell
-python projects/project-1/run.py --all --output projects/project-1/.build/student-baseline
-python projects/project-1/run.py --all --output projects/project-1/.build/student-changed
-```
-
-Execute the second command only after making the single edit. Preserve both results.json files in evidence/student-lock-baseline.json and evidence/student-lock-changed.json; include actual values, direction, action and decision threshold, diagnosis if wrong or no-change reason. Capture console exit/failure messages; an honest failed prediction is useful if diagnosed. Restore **only your own single input edit** from the original value; do not use a destructive repository reset. Rerun normal outputs and compare their hashes with the frozen snapshot. Have the assistant audit your completed record after you provide it. The final PDF/manifest/freeze must be regenerated to include authentic evidence, not left marked pending.
-
-## Setup for all three videos
-
-Use screen recording with clear audio and a small webcam view unless your instructor approved an accommodation. 1080p, browser zoom125-150%, hide notifications/private tabs, keep financial rows readable. Say “NVIDIA” and “free cash flow to the firm”; distinguish millions from billions. Record three separate files. Aim Video1 2:40-2:55 (hard maximum3:00), Video2 about3:00 (maximum5:00), Video3 about3:00 (maximum5:00). Practice once; scripts are roughly three minutes at a clear speaking pace with short cursor pauses. Trim dead time, not substantive evidence.
-
-Use a fresh clone or separate folder and a fresh Python environment for the cold run. From a terminal in the Project1 directory:
-
-```powershell
-python -m venv .build/student-venv
-.\.build\student-venv\Scripts\python.exe run.py --all --output .build/student-cold-output
-```
-
-No pip install is required for the engine. On macOS/Linux use .build/student-venv/bin/python. Keep the terminal/output and actual first failure/resolution (if any). The assistant already ran cold_run.py in a clean no-pip environment; the receipt honestly identifies the assistant. **Your recording must show your own clean run**, and your log should identify you and the actual observed result. Do not describe the assistant receipt as your run.
-
-## Video1 - research evolution, target2:50; maximum3:00
-
-Record these screens in this order; all timings are **planned**, replace with observed indices later:
-
-| Time | Exact screen/action | Point to show |
+| Video | Exact evidence question | What your recording must demonstrate |
 |---|---|---|
-| 0:00-0:35 | Research-Evolution.pdf first page, baseline/addendum | September 1 admission thesis versus September 10 decision; checkpoint evidence status. |
-| 0:35-1:15 | Same PDF A-to-B table, then original Lab10/11 writeups if legible | Financial investment classification and signed cash-flow error corrected. |
-| 1:15-1:55 | data/source-map.md share/investment/debt reconciliation; optionally SEC Q2Note5 in another tab | Independent source check, exact basis and dates, no AI agreement as validation. |
-| 1:55-2:30 | evidence/assumption-challenges.md, prior Lab12 and actual confirmed partner entry | Actual challenge/disposition, qualified attribution, what changes the forecast. |
-| 2:30-2:50 | outputs/visible-output.md top | Final range/action, real remaining evidence status. |
+| 1 | What changed or remained stable after project-specific research; what drove it; and what evidence justified it? | Earlier view/value -> a sourced challenge/correction -> revised assumptions/value -> changed or unchanged decision. Identify course, prior-lab, AI and qualified peer contributions accurately. |
+| 2 | How does the submitted code produce the result, and what high-risk test passed or failed? | Trace one company driver through statements/FCFF/valuation, run the application, and show numerical known-answer/changed-input/failure evidence. A PASS count alone is insufficient. |
+| 3 | What should the committee do, under what conditions, and what would reverse the decision? | Defend dated action/range, method disagreement, downside and measurable entry/reversal triggers. The product supports your argument; the video is not a feature tour. |
 
-Script (read naturally, about3minutes; use the truthful status sentence specified below):
+Source: `lessons/week-07/student-handout.md`, “Three evidence surfaces”; attribution guidance: `projects/templates/research-evolution-template.md`. Maximum3:00 for Video1; maximum5:00 each for Video2/3. Aim Video1 2:45-2:55 and Videos2/3 approximately3:00-3:30; slow down rather than racing through important evidence. Course checklist sets the limits; the timings below are suggested routes, not extra course requirements. Webcam overlay is optional here unless the instructor separately requires it; prioritize legible screens and clear audio.
 
-“This project asks whether a fund with no NVIDIA position should initiate, watch or defer, or not initiate over a twelve-to-twenty-four-month horizon. I used my earlier NVIDIA labs as the research trail. EditionA was dated September first. Its word ‘initiate’ meant start valuation research, not buy the stock. EditionB uses the September tenth close, and that date change is disclosed.
+## Open these tabs before recording
 
-The biggest improvement was connecting the operating forecast to a defensible valuation. Lab10 had company-specific growth, margin, working-capital and equipment drivers, but broad other-assets balances mixed operating items with financial investments. Lab11 also identified problems with labeling cash after distributions and handling negative cash flows. Those errors could produce a model that balances while still valuing the wrong economics.
+All paths below start at `projects/project-1/` unless marked **course repository**. Open Markdown in VS Code's preview (Ctrl+Shift+V) or GitHub's rendered view, not a tiny raw-text pane. Use browser/PDF zoom125-150%. Hide private tabs/notifications.
 
-The rebuilt model separates financial investments from operating working capital, keeps signed cash flows, and discounts free cash flow to the firm at WACC. I checked definitions against NVIDIA's filing and its earnings release. At July twenty-sixth, cash plus debt securities was fifty-six-point-six billion dollars. Marketable equity holdings were separate. Debt also increased substantially, so the earlier annual debt balance was stale.
-
-The review question I focus on is whether Data Center growth is durable. Supplier commitments tell us what NVIDIA may have to buy; they do not prove customers will accept systems and pay. That distinction affects the growth, inventory, collection and downside assumptions. The challenge record distinguishes verified finance evidence, qualified prior discussion and a fictional AI practice answer. A generated practice answer is not partner evidence.
-
-The resulting causal range is about 56 to 212 dollars per share, with a base reference around 119. At the dated price of two hundred eighteen dollars and thirty-six cents, I would watch or defer. I would reconsider only with a sufficient price cushion and evidence supporting demand, cash collection and margins. The original checkpoint receipt, the human prediction exercise and the recordings are separate evidence requirements; the status record identifies what is actually complete.”
-
-Before recording: if you have supplied the original checkpoint/lock/partner evidence and we updated the package, replace only the last status sentence with the factual completed status. Never say you submitted or completed evidence unless you did. The script does not invent a past partner quote.
-
-## Video2 - code ownership and validation, target3:00; maximum5:00
-
-Prepare code tabs before recording: data/inputs.json; model.py at forecast, valuation and dcf_cashflows; outputs/validation-results.json; your genuine locked record/addendum. Open terminal in a fresh project copy/environment as above. Record the command execution, not only a screenshot.
-
-| Time | Exact screen/action | Point to show |
+| Tab | Open this exact file | Park it here |
 |---|---|---|
-| 0:00-0:35 | inputs.json then model.py forecast | Fact/assumption separation; statement driver to FCFF. |
-| 0:35-1:10 | model.py near cash/equity checks and valuation terminal | No balancing plug; retainedSBCcost; g/ROIC reinvestment. |
-| 1:10-1:45 | Terminal: run fresh-venv command shown above | End-to-end result and actual15tests; first failure/resolution if present. |
-| 1:45-2:25 | outputs/validation-results.json: officialknownanswers, contamination experiment, downside | Expected values from course answers; highest-risk deliberately wrong input. |
-| 2:25-3:00 | Your locked record at precommit plus actual-results addendum | Show author/time/immutablecommit, old/new units, prediction BEFORErun, actualdirection/action and diagnosis. |
+| A | `Research-Evolution.pdf` | Page3, “Initial thesis - initiate” in the preserved EditionA reading appendix. The original submitted PDF/receipt, if supplied, is preferable for proving actual checkpoint history. |
+| B | **Course repository:** `projects/lab-05-nvda-dcf/nvda-dcf-lab.md` | Ctrl+F **“I — NVIDIA through the model”**; show “Value per diluted share” and then scroll slightly to **“E — Sensitivity grid and reverse DCF.”** |
+| C | `outputs/recording-proof.html` | Open locally in a browser. Buttons jump to Research evolution, Numerical validation or Committee evidence. This is a reading aid generated from actual saved results, with links to the underlying artifacts. It does not create new test runs. |
+| D | NVIDIA Q2 10-Q | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm ; browser Ctrl+F **“42,783”**. Show the balance-sheet row label and July26/January25 column headings. The exact rows are copied in proof panelR3 for readability if the SEC site cannot load. |
+| E | `data/inputs.json` and `model.py` in editor tabs | inputs: Ctrl+F **`"dso":75`**. model: Ctrl+F **`b['ar']=`**, then **`fcff=nopat`**, then **`terminal=rows`**. Code anchors are safer than line numbers, which change with edits. |
+| F | Terminal | Course repository root, the `FIN43900-Fall2026` folder. Prepare the fresh-venv command below before Video2. |
+| G | `outputs/dashboard.html` | Open locally by double-clicking it in File Explorer; select **base** and **Income statement**. GitHub source preview does not run HTML. |
+| H | `Decision-Memo.pdf` | Page1 “Committee ask and valuation range.” Page2 “Disagreement across methods and market expectations,” then “Conditions, reversal triggers and next evidence.” |
+
+You need A-D for Video1, C/E/F for Video2 and C/G/H for Video3. Do not switch through every file in the repository. Keep this guide or printed script outside the recorded screen.
+
+## Video1 - research evolution with defensible values
+
+The strongest story is **research admission -> initial dated valuation -> identified limits -> corrected/current valuation -> decision held with stricter conditions**. Do not claim that EditionA recommended buying. Do not describe the entire price-estimate change as the impact of AI or one corrected input. Lab5's grid interval and the final causal interval have different definitions.
+
+| Planned time | Exact screen and scroll/action | Claim the visible evidence proves |
+|---|---|---|
+| 0:00-0:25 | TabA, page3, **“Initial thesis - initiate.”** Point to the sentence saying preliminary research admission, not a buy recommendation. | The original question and uncertainty existed before the completed valuation. Do not call this newly typeset appendix an original checkpoint receipt. |
+| 0:25-0:55 | TabB, **“I — NVIDIA through the model.”** Point to **62.7184**, then the grid's **55.59 / 72.40** endpoints and **15.88%** base WACC. | A concrete earlier valuation existed. It used annual data/annual weighted shares, not the final rolling forecast. |
+| 0:55-1:35 | TabC, **Research evolution**, panel **R1 Before and after**, then **R2 Why it changed / attribution**. | Annual revenue215,938 -> LTM302,970; WACC15.88% ->13.90%; share basis24,514 ->24,242; final base$118.58. Multiple basis/assumption changes mean no single-cause price bridge. |
+| 1:35-2:05 | TabD, find **42,783**. Keep cash22,443, debt securities34,143 and equity securities42,783 visible with labels/date. | Independent primary evidence supports separating investments from operatingNWC/cash. This is stronger than showing only our own source ledger. |
+| 2:05-2:30 | TabC, **R3 Independent correction and test**, then **R4 What changed the judgment**. | Source-backed classification, a quantified diagnostic and a challengeable forecast support the revision. Show the prior-lab limitation rather than claim the model was right merely because it balanced. |
+| 2:30-2:55 | TabC, **R4** current value/action card. | Final causal range$55.93-$212.08, base$118.58, date and price218.36, watch/defer held from Lab5 to finalB. Uncertainty changes conditions rather than disappearing. |
 
 Script:
 
-“The application runs locally with Python's standard library. The input file separates reported history, market observations, common forecast assumptions and causal cases. The source map gives the date, definition and transformation for each material input group. It needs no credentials or live data connection.
+<!-- SCRIPT1 -->
+“My research began with a question, not a buy recommendation: could NVIDIA turn rapid Data Center growth into durable owner cash flows at a reasonable price? EditionA admitted NVIDIA for deeper research.
 
-The forecast function starts with the July balance sheet and produces five rolling years of income, balance-sheet and cash-flow statements. Data Center and Edge revenue drive margins and expenses. Collection days, inventory days and payment days drive working capital. Capital spending and depreciation roll property and equipment forward. Cash comes from operating, investing and financing flows. Equity comes from retained income and distributions; neither is a balancing plug.
+The first completed DCF, in Lab5, estimated sixty-two dollars and seventy-two cents per share. Its discount-rate and terminal-growth grid ran from about fifty-six to seventy-two dollars. It used the annual filing, a fifteen-point-eight-eight-percent WACC and annual weighted diluted shares. Its watch-defer conclusion was conditional, and the reverse-DCF search did not find a solution within its limited bracket.
 
-Free cash flow to the firm starts with after-tax operating profit, adds depreciation and amortization, and subtracts operating capital spending and working-capital investment. Stock compensation remains an economic cost through cash replacement. Financial investments and dividends are kept outside FCFF. The terminal calculation requires reinvestment equal to growth divided by terminal return on invested capital, so perpetual growth is not free.
+The later labs exposed why I should not simply carry that number forward. Lab11 withheld a new valuation while investment classification, cash-flow labels and terminal assumptions remained unresolved. Those are finance problems that a balanced spreadsheet cannot rule out.
 
-I am now running the project in this fresh environment. The visible output reports the decision and the validation count. The test file compares the DCF engine with the course's independently published answers, including all nine sensitivity cells. Other tests check statement articulation, cash, equity, valuation bridges and the expected effect of discount rates and terminal growth.
+Here is the independent filing check. July cash and debt securities total fifty-six-point-six billion dollars, while marketable equity investments are a separate forty-two-point-eight billion. Financial holdings should not grow automatically as operating working capital, and unrealized investment gains are not operating cash generation.
 
-The highest-risk experiment deliberately repeats the old investment-classification mistake. Scaling the investment portfolio as operating working capital creates false cash investment. Another failure test forces an unsupported cash deficit and requires the model to stop. Negative cash flows are preserved instead of silently dropped.
+The revised model uses a trailing operating base, five linked statements and an explicit ownership bridge. First-year FCFF is about one hundred ninety-one billion, versus one hundred thirty-one billion in Lab5, with different forecast windows. Its base reference is about one hundred nineteen dollars, with a causal range of fifty-six to two hundred twelve. That range is a set of different operating cases, not the same sensitivity interval as Lab5. The value change also reflects the reporting base, forecast, WACC, terminal reinvestment and share basis; I cannot assign it all to one correction.
 
-The required human locked exercise is separate from the assistant's WACC test. Here I show the record's actual status, the prediction commit if completed, and the observed results if available. A complete record needs my own AI-off prediction before execution, old and new units, actual valuation direction, decision effect, and a diagnosis or a threshold-based reason the action stayed unchanged. I do not claim missing evidence as completed.”
+Course requirements drove the FCFF architecture. Earlier labs recorded the limitations. AI assisted the rebuild and checks; filings and numerical tests support accepting or qualifying its output. Growth, discount-rate and investment-recovery choices remain assumptions to challenge.
 
-For maximum-credit completion, finish the human exercise first and use the final30seconds to **read your actual old/new values, predicted/actual direction and action effect from your record**, in your words. This intentionally cannot supply a prediction for you. If incomplete, the honest pending line above is accurate but leaves rubric points unresolved.
+The later watch-defer action held at the dated two-hundred-eighteen-dollar market price. What evolved was the evidence and the conditions for acting, not a claim that uncertainty disappeared.”
+<!-- /SCRIPT1 -->
 
-## Video3 - committee defense and live product demo, target3:00; maximum5:00
+If you discuss a real partner contribution, use your completed actual review record and replace a sentence about earlier lab limitations with that specific challenge and its tested effect. Do not read a fictional practice response as partner testimony. The existing Lab12 discussion is qualified until attribution is confirmed.
 
-Use outputs/dashboard.html in your browser. This is a locally opened interactive artifact, not a deployed website. Pre-open Decision-Memo.pdf in another tab. Keep most recording time on the running product. Selectors display executed engine results; they do not run a live market-data calculation.
+## Video2 - code to output, numerical benchmark and high-risk test
 
-| Time | Exact screen/action | Point to show |
+Prepare the new no-pip environment **before recording**, from the course repository root:
+
+```powershell
+.\.venv\Scripts\python.exe -m venv --without-pip projects/project-1/.build/video-venv
+```
+
+During the recording, execute the following. It reads the submitted project, uses the fresh environment and writes to a separate directory without overwriting frozen outputs:
+
+```powershell
+.\projects\project-1\.build\video-venv\Scripts\python.exe projects/project-1/run.py --all --output projects/project-1/.build/video-cold-output
+```
+
+The assistant's separate cold_run.py receipt proves a copied-project/new-venv reproduction. Your command above demonstrates your own fresh-environment execution and ownership; do not call the assistant's earlier log your recorded run. Preserve the actual console result and any first failure/resolution.
+
+| Planned time | Exact screen and scroll/action | Evidence to point at |
 |---|---|---|
-| 0:00-0:35 | Dashboard base case cards | User, date, market, range and conditionalaction. |
-| 0:35-1:05 | Scroll to EV/common-equity bridge; change Statement to Cashflow | Cash/investments/debt/dilution plus operating source ofvalue. |
-| 1:05-1:40 | Scroll to WACC-growth grid; click a row; show reverseDCF | Sensitivity, terminal dependence and market-impliedgrowth. |
-| 1:40-2:15 | Return case selector, choose low | Actual case value/action changes, explain causalinputs. |
-| 2:15-2:35 | Choose high then base | Upside conditions, range rather than single target. |
-| 2:35-3:00 | Memo page2 monitoring/conditions, then dashboardbase | Committee ask and exact reversal triggers. |
+| 0:00-0:25 | TabE, inputs.json **`"dso":75`**, then model.py **`b['ar']=`**. | One driver becomes AR through revenue*days/365; this enters operatingNWC and cash flow. |
+| 0:25-0:55 | model.py **`delta_nwc=`**, **`fcff=nopat`**, then **`terminal=rows`**. | Show actual formulas, cash/equity checks, FCFF at WACC and terminal reinvestment. Avoid reading unrelated functions. |
+| 0:55-1:20 | TabF, run command above. | Successful end-to-end execution and actual PASS15/15; if it fails, show/diagnose the failure rather than read the success line. |
+| 1:20-1:50 | TabC, **Numerical validation**, panel **V1 Known answer and company arithmetic**. | Published training EV1,624.87 / price27.50 versus actual; year1 NOPAT+D&A-capex-deltaNWC=191,481.49M. These are arithmetic evidence, not a PASS banner. |
+| 1:50-2:20 | TabC, **V2 Highest-risk failure evidence**. Optionally click through to validation-results.json/test code. | Financial-asset contamination creates false discounted investment; a deliberately unsupported cash deficit produces an explicit error. Passing the test means the bad input was rejected. |
+| 2:20-2:55 | TabC, **V3 Changed input: prediction versus result**. | WACC13.90->14.90%, value$118.58->$108.38, unchanged watch/defer, and why the action threshold did not change. |
+| 2:55-3:15 | Your completed locked record/addendum **if supplied**, otherwise TabC **V4 Evidence boundary**. | Actual prediction author/time/precommit plus result and decision effect. The existing assistant technical test is not a completed human lock. If an instructor exception applies, identify the revised designation accurately. |
 
 Script:
 
-“My committee recommendation is watch or defer. The fund has no position, so it can wait for a price that compensates for uncertainty. This application values NVIDIA at the September tenth, twenty-twenty-six close of two hundred eighteen dollars and thirty-six cents. My causal intrinsic range is about 56 to 212 dollars per share. The base reference is about 119; it is not a precise target or a probability-weighted forecast.
+<!-- SCRIPT2 -->
+“I will show how one input reaches the valuation, then the evidence that the model handles important errors.
 
-Here is the enterprise-to-equity bridge. Operating value comes from five years of statement-driven FCFF and a reinvestment-supported terminal value. The bridge then handles cash, financial investments, debt, acquisition costs and other claims separately. The diluted share proxy is twenty-four-point-two-four-two billion. Investment holdings are not treated as cash or scaled with operating revenue.
+The base collection assumption is seventy-five days. In the forecast, revenue times collection days divided by three hundred sixty-five produces receivables. Receivables feed operating working capital; the change in working capital reduces operating cash flow and FCFF. Cash is calculated from the cash-flow statement, and equity rolls through retained income. Neither is a balancing plug.
 
-The base discount rate is about 13.9 percent, and terminal growth is three percent. About 65 percent of enterprise value comes from the terminal value, which limits confidence. This sensitivity grid shows how discount rate and growth affect value. The market-implied test requires roughly 20 extra percentage points of Data Center growth in every explicit year, if all other base assumptions remain fixed. That is a demanding conditional expectation, not proof the market is wrong.
+FCFF starts with after-tax operating profit, adds depreciation and amortization, and subtracts operating capital spending and working-capital investment. In the first forecast year, the result is approximately one hundred ninety-one point five billion dollars. The terminal formula requires reinvestment for growth, and operating cash flows are discounted at WACC before the ownership bridge.
 
-I am switching to the low case. Deployment and financing slow, margins weaken, collections take longer and inventory builds. Supply losses and guarantee exposure compound the pressure. Value falls to about 56 dollars, and the risk gate changes the action to do not initiate. Supplier commitments are an obligation risk, not a guaranteed sales backlog.
+I am running the submitted project in a new environment without third-party packages. The console reports the observed result. That alone does not establish financial correctness, so here are numerical checks.
 
-The high case requires stronger, durable demand and better execution, and reaches about 212 dollars. Peer multiples suggest different market expectations, but AMD and Broadcom have different margins and business mixes, and historical earnings lag current growth. I do not average those prices with the DCF.
+The course's published training case gives enterprise value of one thousand six hundred twenty-four point eight seven million dollars and twenty-seven dollars fifty per share. The engine reproduces those answers and all nine sensitivity cells within rounding tolerance.
 
-I would consider initiation only below roughly 95 dollars using the refreshed base estimate, with demand, collections, margins and commitments validated. Sustained Data Center growth below twenty percent, collection days above ninety-five, gross margin below seventy percent or material guarantee losses would push me toward no initiation. The committee's action today is to keep NVIDIA on watch and require that evidence before committing capital.”
+The highest-risk diagnostic repeats the old mistake of scaling financial investments as operating assets. In that bounded calculation, it creates about one hundred twenty-six billion dollars of false discounted investment. This illustrates the danger; it is not a complete alternative valuation. A separate forced cash deficit is rejected with an explicit funding error. A passing failure test means the bad input was caught.
 
-## After recording - final review and freeze
+The changed-input result also has the expected direction: raising WACC from about thirteen-point-nine to fourteen-point-nine percent lowers value from one hundred eighteen dollars fifty-eight to one hundred eight dollars thirty-eight. Watch-defer remains because the market price still fails the entry threshold. That explains the unchanged action rather than pretending every sensitivity must reverse the decision.
 
-1. Save distinct Video1/2/3 recordings; use stable unlisted hosting or repository-compatible links the instructor can access. Don't commit large raw recordings to Git. Keep titles and durations factual. Only you can grant/upload from accounts unavailable to the assistant.
-2. Replace docs/transcript-video-1.txt, -2.txt and -3.txt with corrected **actual** transcripts and observed timestamp indices. Fix NVIDIA/NVDA, FCFF, WACC, period dates, figures, sources and attribution. Do not paste preparation scripts unless they match what you actually said.
-3. Provide the video URLs, actual durations, actual transcripts and completed checkpoint/locked/partner evidence for a final consistency review. The assistant can audit supplied evidence, update PDFs/status/manifest and create a **new** final freeze tag. The current technical tag must remain immutable; it is not a claim videos are complete.
-4. Test repository and every video/transcript link in a logged-out/incognito browser; confirm audio, readable output and captions. Ensure the instructional team can access private/unlisted items. Record observed check times, not assumed access.
-5. Fill submission-manifest.csv with final stable URLs, titles, durations, observed timestampindices, accesschecks and finaltag/filehashes. Include all11requiredrows; optionaldeploymentcanremainunused.
-6. Submit the seven-part final bundle through the **final assignment** Brightspace page by October 19,2026 at11:59PM course time, and save the successful receipt. The EditionA checkpoint has its separate designated submission page. GitHub upload does not submit Brightspace. No grade is guaranteed; inspect the current docs/rubric-audit.md for unresolved requirements.
+The technical prediction and outcome are visible here. Any required human prediction timing and authorship must be supported by the separate actual record, rather than inferred from this retrospective explanation.”
+<!-- /SCRIPT2 -->
+
+If your completed record is available, replace the last paragraph with its actual committed prediction, timestamp, old/new units, predicted/actual direction and decision effect. Do not read guessed values. The local locked-changed-input-record.md currently says INCOMPLETE; a humanized retrospective draft is not an original pre-run artifact. Your reported in-class permission can change the permitted designation, but not the actual chronology.
+
+## Video3 - defend the committee action
+
+| Planned time | Exact screen and scroll/action | Decision evidence to show |
+|---|---|---|
+| 0:00-0:25 | TabH, memo **page1 / Committee ask and valuation range**. | No-position user,12-24month horizon, September10 date,218.36 price, causal range and conditional action. |
+| 0:25-0:55 | TabG dashboard, **Enterprise to common equity**. | EV/equity/share bridge; investments counted once; debt and dilution. |
+| 0:55-1:20 | Dashboard **WACC-growth sensitivity**; click the base-WACC/g3% row, then the WACC+1pp/g3% row. | Values$118.58 and$108.38, with same operating forecast. Current grid row5 and row8 excluding the header. Explain TVshare65.1% rather than imply precision. |
+| 1:20-1:40 | TabH memo **page2 / Disagreement across methods**; TabC **C2 Method disagreement** if you need larger numbers. | Peer intervals, business/denominator differences and why no mechanical average. |
+| 1:40-2:10 | Dashboard top, select **low**, then scroll to **Five rolling forecast years**, Income statement. | Low value$55.93/DO NOT INITIATE; show weaker operating results, not only a different dropdown label. The risk gate is an explicit adverse-regime policy, not proof from price alone. |
+| 2:10-2:30 | Dashboard **Reverse DCF and conditions**, or TabC **C3 Market expectation**. | Market price requires +19.82pp in every DCgrowth assumption with all other base inputs fixed; not a unique market forecast. |
+| 2:30-3:10 | TabH memo **page2 / Conditions, reversal triggers and next evidence**; TabC **C4 Committee monitoring** for the compact checklist. | Entrybelow$94.87 after refreshed evidence; report-by-report monitoring; two-quarter growth trigger, collection/margin risks and immediate review of material losses. Finish with the committee ask. |
+
+Script:
+
+<!-- SCRIPT3 -->
+“For a fund with no current NVIDIA position and a twelve-to-twenty-four-month decision horizon, I recommend watch or defer. This is a September tenth, twenty-twenty-six valuation at a market price of two hundred eighteen dollars thirty-six, not a current quote.
+
+The causal range is about fifty-six to two hundred twelve dollars per share, with a base reference near one hundred nineteen. These are different operating regimes, not confidence limits or precise price targets.
+
+Here is how operating value reaches shareholders. The model adds separately valued cash and investments, subtracts debt and other claims, and divides common equity by the diluted-share proxy. It does not count financial investments again as operating working capital.
+
+Base WACC is about thirteen-point-nine percent, and terminal growth is three percent with explicit reinvestment. Roughly sixty-five percent of enterprise value comes from the terminal period. The sensitivity grid therefore matters: adding one percentage point to WACC lowers value to about one hundred eight dollars even with the same operating forecast.
+
+Peer references disagree with DCF. Historical P/E suggests about three hundred seventy-one to nine hundred thirty-one dollars, while EV-to-sales suggests about two hundred thirteen to two hundred fifty-two. Annual earnings lag current growth; AMD's margins and Broadcom's software mix differ from NVIDIA. Two qualified peers provide context, not a reason to average away the disagreement.
+
+In the low case, deployments and financing slow, margins weaken and collections take longer. Additional supply losses and guarantee exposure produce a value near fifty-six dollars. We classify that adverse operating regime as do not initiate; the decision reflects the assumptions and risk policy, not simply a lower price estimate.
+
+At fixed base assumptions, the market price requires roughly twenty additional percentage points of Data Center growth in every forecast year. That is one demanding conditional explanation, not proof the market is wrong.
+
+I would consider initiation only below roughly ninety-five dollars using a refreshed base estimate and supported demand, margins and collections. Review each quarterly filing: two consecutive quarters of Data Center growth below twenty percent, collection days above ninety-five, gross margin below seventy percent, or material guarantee losses would challenge the thesis. The committee should keep NVIDIA on watch, refresh the evidence and require that price cushion before committing capital.”
+<!-- /SCRIPT3 -->
+
+## Evidence still needed and final handoff
+
+Your statement that the labs/data are complete does not automatically update files saved elsewhere. In this local package, original checkpoint PDF/first receipt, completed human prediction timing record and confirmed partner attribution are still not present, and transcripts are pending. Use the completed actual records if you have them; do not spend video time reading blank placeholders as evidence. No script can prove an event without its artifact.
+
+For the originally specified human lock, author the prediction with AI off before a new test, save old/new values/units and expected direction/action, commit it, then execute and append actual outcomes/diagnosis. If the instructor authorized a different AI-assisted exercise, record that permitted designation without claiming an AI-off event occurred. Never backdate an explanatory draft.
+
+After recording, replace docs/transcript-video-1.txt through -3.txt with corrected actual speech and observed indices. Upload the three videos with stable accessible links. Update submission-manifest.csv with real titles/durations/access checks. Confirm speech, memo, visible output and validation agree. A later final-video freeze must use a new immutable tag; the recording-audit tag is not a completed-video submission. Submit the final bundle through Brightspace and retain its receipt; GitHub upload is separate. Check the assignment header for the enforced deadline/timezone.
+
+## Final rehearsal check
+
+For each scene, pause on a readable number or passage while making its claim. If you cannot point to evidence, remove or qualify the claim. Do not add invented sources, personally performed analyses, peer statements or completed events. If a live run fails, preserve the failure and diagnosis. Do not use “AI agrees” or “all tests pass” as a substitute for the specific source/arithmetic/failure evidence above. Keep the original videos and correct substantive transcript mistakes after recording.

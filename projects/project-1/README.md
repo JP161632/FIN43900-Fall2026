@@ -4,6 +4,8 @@
 
 Start with [Student next steps](Student%20next%20steps.md): exact three-video recording routes, ~3minute scripts, human-evidence procedure and submission instructions. [Rubric audit](docs/rubric-audit.md) distinguishes verified technical work from missing human evidence. No full-score claim is made.
 
+The [audited recording guide](docs/recording-guide.md) replaces the earlier route. Open [recording-proof.html](outputs/recording-proof.html) locally for readable before/after valuation evidence, numerical test outcomes and committee conditions; use the original lab/filing/code links to substantiate claims. [Script audit](docs/recording-script-audit.md) explains the repairs. It is a preparation aid, not an observed recording or a substitute for authentic student evidence.
+
 ## Review without running
 
 - [Decision-Memo.pdf](Decision-Memo.pdf): committee range, conditions and risks, <=2pages.
@@ -45,4 +47,6 @@ EditionA September1 Markdown is preserved byte-identical in evidence/, hash in R
 
 **Still required from student:** original checkpoint PDF/first successful Brightspace receipt; authentic AI-off locked prediction and observed result; confirmation/actual partner review; three bounded recordings and corrected actual transcripts; final link checks/manifest and Brightspace final receipt. Fictional rehearsal language is labeled and cannot count as partner testimony. AI assistance: Codex based on GPT-6, October19; exact backend version unexposed. The student must understand and defend all submitted content.
 
-Technical freeze tag: `project-1-nvidia-2026-10-19`. The manifest has11required entries plus optional deployment. File-integrity.json provides stable hashes; publication-audit.json records actual public access after upload. Videos will require a subsequent immutable final tag. Do not move old frozen tags. The GitHub repository is not the Brightspace submission location.
+Initial technical freeze tag: `project-1-nvidia-2026-10-19`. Updated recording-evidence snapshot: `project-1-nvidia-recording-audit-2026-10-19`; old tags remain immutable. The manifest has11required entries plus optional deployment. File-integrity.json provides stable hashes; publication-audit.json records actual public access after upload. Videos will require a subsequent immutable final tag. The GitHub repository is not the Brightspace submission location.
+
+Authoring order after changes: `build_package.py`, `build_documents.py`, `render_pdf_qa.py`, then `build_recording_evidence.py` to refresh actual PDF heading pages, proof panels and recording scripts. The final command regenerates Student next steps.md from the recording-guide template and actual saved values. Finance results remain unchanged by this documentation-only build.
