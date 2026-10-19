@@ -1,7 +1,7 @@
 {
   "scope": "Technical evidence and supplied video/transcript snapshot; final evidence review INCOMPLETE",
   "tag": "project-1-nvidia-transcript-corrections-2026-10-19",
-  "created_utc": "2026-10-19T18:19:58.527431+00:00",
+  "created_utc": "2026-10-19T18:20:26.557814+00:00",
   "algorithm": "sha256",
   "excluded": [
     "evidence/publication-audit.json",
