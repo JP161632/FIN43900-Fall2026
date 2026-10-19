@@ -5,6 +5,10 @@
   "human_locked_record": "EXECUTED: student-authored prediction and exact 2.5% input/action precommitted 5a9de1d; direction/action matched; assistant execution and reported instructor wording permission recorded",
   "partner_review": "SUPPLIED / ATTRIBUTED: student-confirmed Antigravity log, peer challenge, October1; independent checks and accepted/corrected dispositions recorded",
   "videos": "Three supplied YouTube links; titles/durations/player metadata checked; audiovisual performance not reviewed",
-  "transcripts": "Three transcripts editorially corrected to model values at student request; audio alignment and observed timestamp indices unverified",
-  "brightspace_final_receipt": "NOT PROVIDED; GitHub is not submission"
+  "transcripts": "Three edited transcripts cleaned/reconciled to model; later written addendum separate; actual caption-cue indices supplied; audio alignment unverified",
+  "brightspace_final_receipt": "NOT PROVIDED; GitHub is not submission",
+  "audio_edits": "NOT PERFORMED: public media metadata/captions retrievable; audible editing method/replacement narration still needs selection",
+  "text_audit": "PASS: edited transcripts factually reconciled; later updates explicitly separate from original speech",
+  "estimated_grade": "Assistant estimate 288.75/300 (96.25%) under reported classroom wording permission; not an actual or guaranteed grade",
+  "timestamp_indices": "SUPPLIED: actual public YouTube automatic-caption cue starts, with topic links; no invented script timing"
 }

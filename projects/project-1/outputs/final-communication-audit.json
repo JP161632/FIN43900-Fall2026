@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Research evolution values",
+      "status": "PASS",
+      "detail": "Earlier/current valuation, range and dated price match saved evidence"
+    },
+    {
+      "check": "Investment-gain correction",
+      "status": "PASS",
+      "detail": "No unrealized investment gains treated as operating cash"
+    },
+    {
+      "check": "Code/validation values",
+      "status": "PASS",
+      "detail": "Driver, FCFF, known answers and WACC test reconciled"
+    },
+    {
+      "check": "Committee values and triggers",
+      "status": "PASS",
+      "detail": "Range, bridge context, sensitivity and monitoring conditions consistent"
+    },
+    {
+      "check": "Transcript 1 edit boundary/hash",
+      "status": "PASS",
+      "detail": "Editorially corrected text; no independently verified verbatim audio claim"
+    },
+    {
+      "check": "Transcript 2 edit boundary/hash",
+      "status": "PASS",
+      "detail": "Editorially corrected text; no independently verified verbatim audio claim"
+    },
+    {
+      "check": "Transcript 3 edit boundary/hash",
+      "status": "PASS",
+      "detail": "Editorially corrected text; no independently verified verbatim audio claim"
+    },
+    {
+      "check": "Later updates separately labeled",
+      "status": "PASS",
+      "detail": "Written addendum covers actual later results without inventing original speech"
+    },
+    {
+      "check": "Observed caption-cue indices",
+      "status": "PASS",
+      "detail": "Actual source-caption topic times replace planned/guessed timing; audio alignment is a separate check"
+    },
+    {
+      "check": "Score arithmetic and non-certification",
+      "status": "PASS",
+      "detail": "Estimate totals correctly; no actual grade or audio modification implied"
+    },
+    {
+      "check": "Selected authoritative source comparison",
+      "status": "PASS",
+      "detail": "Fresh SEC/issuer observation record matches model/source-map definitions"
+    }
+  ],
+  "scope": "Edited text, addendum, observed caption-cue indices, grade arithmetic and selected historical facts; actual audio alignment remains unverified",
+  "financial_results_sha256": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc"
+}

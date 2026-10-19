@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
-TAG='project-1-nvidia-locked-growth-2026-10-19'
+TAG='project-1-nvidia-final-audit-2026-10-19'
 BASE=f'https://github.com/JP161632/FIN43900-Fall2026/blob/{TAG}/projects/project-1/'
 EXCLUDE={'file-integrity.json','submission-manifest.csv','evidence/publication-audit.json','outputs/submission-audit.json','outputs/run-receipt.json'}
 
@@ -23,7 +23,7 @@ def main():
     metadata=json.loads((ROOT/'evidence/video-metadata.json').read_text(encoding='utf-8'))
     review=json.loads((ROOT/'evidence/video-review.json').read_text(encoding='utf-8'))
     status['videos']='Three supplied YouTube links; titles/durations/player metadata checked; audiovisual performance not reviewed'
-    status['transcripts']='Three transcripts editorially corrected to model values at student request; audio alignment and observed timestamp indices unverified'
+    status['transcripts']='Three edited transcripts cleaned/reconciled to model; later written addendum separate; actual caption-cue indices supplied; audio alignment unverified'
     status['overall_submission']='INCOMPLETE - final evidence and transcript/audio reconciliation required'
     status_path.write_text(json.dumps(status,indent=2)+'\n',encoding='utf-8',newline='\n')
     hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in stable_files()}
@@ -55,11 +55,11 @@ def main():
         video_access=f"Anonymous metadata {video.get('player_status','UNVERIFIED')}; {video['checked_utc']}; full playback not reviewed"
         rows.append([f'Video {i}','yes',video['url'],video.get('title',f'NVIDIA Video {i}'),duration,
                      transcript['observed_timestamp_index'],video_access,'YouTube video ID: '+video['url'].split('=')[-1],
-                     'Transcript model values editorially corrected at student request; audio alignment unverified; see docs/video-review.md'])
+                     'Edited text/model consistency checked; original audio unreviewed; written updates separately labeled; see docs/video-review.md'])
         path=transcript['transcript']
-        rows.append([f'Transcript Video {i}','yes',BASE+path,f'Editorially corrected transcript {i} - model values reconciled',duration,
+        rows.append([f'Transcript Video {i}','yes',BASE+path,f'Edited transcript {i} - factual/terminology review completed',duration,
                      transcript['observed_timestamp_index'],access,'sha256:'+hashes[path],
-                     'Student-requested value corrections logged in evidence/video-review.json; audio and actual timing unverified'])
+                     'Recognition/factual edits logged; source-caption timing supplied; audio alignment unverified; later results: docs/post-recording-validation-addendum.md'])
     rows.append(['Optional deployed output','no','','Not required','','','','','Local offline interactive output supplied'])
     with (ROOT/'submission-manifest.csv').open('w',encoding='utf-8',newline='') as f:
         writer=csv.writer(f,lineterminator='\n');writer.writerow(['item','required','location_or_url','title','duration_or_as_of','timestamp_index','access_checked','frozen_or_commit_id','notes']);writer.writerows(rows)

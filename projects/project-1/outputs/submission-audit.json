@@ -1,12 +1,17 @@
 {
   "technical_audit": "PASS",
   "submission_complete": false,
-  "rubric_score": "Not certified; original baseline receipt/PDF and audio/timestamp verification remain unresolved; student growth prediction/run and attributed peer review supplied, with authorship/policy basis documented",
+  "rubric_score": "Not certified; original baseline receipt/PDF and actual audio alignment remain unresolved; student growth prediction/run and attributed peer review supplied, with authorship/policy basis documented",
   "checks": [
     {
       "check": "Finance validation",
       "status": "PASS",
       "detail": "15claim-focused tests, actual results in validation-results.json"
+    },
+    {
+      "check": "Final edited text and labeled written updates",
+      "status": "PASS",
+      "detail": "Transcript facts/terms, corrected gain treatment, distinct written addendum, selected primary-source checks and score arithmetic verified; audio/timing not inferred"
     },
     {
       "check": "Attributed peer challenge and independent follow-up",
@@ -111,17 +116,23 @@
     {
       "check": "Uniform manifest",
       "status": "PASS",
-      "detail": "11required+optionaldeployment; supplied video/transcript links populated; timestamp and speech review pending"
+      "detail": "11required+optionaldeployment; supplied video/transcript links and observed caption-cue indices populated; actual audio alignment unverified"
     },
     {
       "check": "Frozen file integrity",
       "status": "PASS",
-      "detail": "87 stable SHA256matches; exclusions explicit"
+      "detail": "95 stable SHA256matches; exclusions explicit"
     },
     {
       "check": "Interactive output controls",
       "status": "PASS",
       "detail": "PASS: base/low/high case, income/BS/CF selectors, bridge, sensitivity click and reverse DCF"
     }
-  ]
+  ],
+  "assistant_estimated_score": {
+    "points": 288.75,
+    "maximum": 300,
+    "percent": 96.25,
+    "scope": "Conditional document/code self-review, not actual grading or verified audio"
+  }
 }

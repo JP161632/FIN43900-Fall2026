@@ -1,0 +1,170 @@
+{
+  "retrieved_utc": "2026-10-19T21:21:19.603505+00:00",
+  "tool": "yt-dlp standalone 2026.08.19; anonymous metadata and public captions; no account cookies",
+  "scope": "Observed caption-cue chapter indices, not invented script timing or audio verification",
+  "videos": [
+    {
+      "video": 1,
+      "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0",
+      "duration_seconds": 173,
+      "chapters": [
+        {
+          "timestamp": "00:19",
+          "caption_start_seconds": 19.28,
+          "topic": "Earlier Lab 5 valuation",
+          "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0&t=19s"
+        },
+        {
+          "timestamp": "01:13",
+          "caption_start_seconds": 73.36,
+          "topic": "Later-lab limitations",
+          "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0&t=73s"
+        },
+        {
+          "timestamp": "01:31",
+          "caption_start_seconds": 91.84,
+          "topic": "Independent filing check",
+          "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0&t=91s"
+        },
+        {
+          "timestamp": "02:04",
+          "caption_start_seconds": 124.0,
+          "topic": "Revised valuation and cases",
+          "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0&t=124s"
+        },
+        {
+          "timestamp": "02:28",
+          "caption_start_seconds": 148.16,
+          "topic": "Research attribution and AI assistance",
+          "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0&t=148s"
+        },
+        {
+          "timestamp": "02:41",
+          "caption_start_seconds": 161.84,
+          "topic": "Conditional action held",
+          "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0&t=161s"
+        }
+      ],
+      "redacted_caption_timing_sha256": "c1864acfe445d5474b484d1d0a5e1e1ac1486cb9748abe468fe0e28af12c4f6c"
+    },
+    {
+      "video": 2,
+      "url": "https://www.youtube.com/watch?v=ASztkYCwwW8",
+      "duration_seconds": 178,
+      "chapters": [
+        {
+          "timestamp": "00:22",
+          "caption_start_seconds": 22.32,
+          "topic": "Actual code-cell preparation",
+          "url": "https://www.youtube.com/watch?v=ASztkYCwwW8&t=22s"
+        },
+        {
+          "timestamp": "00:32",
+          "caption_start_seconds": 32.48,
+          "topic": "Execute code cell",
+          "url": "https://www.youtube.com/watch?v=ASztkYCwwW8&t=32s"
+        },
+        {
+          "timestamp": "00:46",
+          "caption_start_seconds": 46.56,
+          "topic": "Collection-days to FCFF chain",
+          "url": "https://www.youtube.com/watch?v=ASztkYCwwW8&t=46s"
+        },
+        {
+          "timestamp": "01:42",
+          "caption_start_seconds": 102.0,
+          "topic": "Published known answers",
+          "url": "https://www.youtube.com/watch?v=ASztkYCwwW8&t=102s"
+        },
+        {
+          "timestamp": "01:58",
+          "caption_start_seconds": 118.64,
+          "topic": "Highest-risk diagnostic",
+          "url": "https://www.youtube.com/watch?v=ASztkYCwwW8&t=118s"
+        },
+        {
+          "timestamp": "02:26",
+          "caption_start_seconds": 146.4,
+          "topic": "WACC changed-input test",
+          "url": "https://www.youtube.com/watch?v=ASztkYCwwW8&t=146s"
+        },
+        {
+          "timestamp": "02:49",
+          "caption_start_seconds": 169.6,
+          "topic": "Separate human-record boundary",
+          "url": "https://www.youtube.com/watch?v=ASztkYCwwW8&t=169s"
+        }
+      ],
+      "redacted_caption_timing_sha256": "88b6548955d56175efc494490f5f1bce4f099355a4909be02638bd8e4a0fd7db"
+    },
+    {
+      "video": 3,
+      "url": "https://www.youtube.com/watch?v=m9quX8x7V3I",
+      "duration_seconds": 180,
+      "chapters": [
+        {
+          "timestamp": "00:12",
+          "caption_start_seconds": 12.12,
+          "topic": "Valuation scope and date",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=12s"
+        },
+        {
+          "timestamp": "00:42",
+          "caption_start_seconds": 42.92,
+          "topic": "Causal valuation range",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=42s"
+        },
+        {
+          "timestamp": "00:57",
+          "caption_start_seconds": 57.76,
+          "topic": "Enterprise-to-equity bridge",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=57s"
+        },
+        {
+          "timestamp": "01:10",
+          "caption_start_seconds": 70.88,
+          "topic": "WACC and terminal convention",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=70s"
+        },
+        {
+          "timestamp": "01:24",
+          "caption_start_seconds": 84.32,
+          "topic": "Discount-rate sensitivity",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=84s"
+        },
+        {
+          "timestamp": "01:32",
+          "caption_start_seconds": 92.4,
+          "topic": "Peer-method disagreement",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=92s"
+        },
+        {
+          "timestamp": "01:56",
+          "caption_start_seconds": 116.2,
+          "topic": "Downside changes action",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=116s"
+        },
+        {
+          "timestamp": "02:18",
+          "caption_start_seconds": 138.0,
+          "topic": "Market-implied expectation",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=138s"
+        },
+        {
+          "timestamp": "02:29",
+          "caption_start_seconds": 149.32,
+          "topic": "Entry and monitoring conditions",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=149s"
+        },
+        {
+          "timestamp": "02:51",
+          "caption_start_seconds": 171.4,
+          "topic": "Committee ask",
+          "url": "https://www.youtube.com/watch?v=m9quX8x7V3I&t=171s"
+        }
+      ],
+      "redacted_caption_timing_sha256": "3d1e13a26dc67b1ff945ccdf1b0d1032a48870d7b884c1eb41bba97570d76693"
+    }
+  ],
+  "caption_text_policy": "Raw automatic-caption wording is not republished in the topic index; it can contain recognition errors. Actual cue starts, source video links and redacted source hash establish timing lineage. Financial values come from edited text/model evidence, not uncorrected ASR."
+}

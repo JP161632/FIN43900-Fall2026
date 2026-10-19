@@ -5,7 +5,7 @@
     {
       "file": "Research-Evolution.pdf",
       "pages": 4,
-      "sha256": "0476dc80aecb79caef1c6b44eb22849819ef34e13ec597a8709f1a3fb22bdcf6",
+      "sha256": "b980d9f79cbc8a2d41d30e642bc6fb50406497862d4c9ad9b685d28dc0d7704b",
       "page_checks": [
         {
           "page": 1,
@@ -14,7 +14,7 @@
         },
         {
           "page": 2,
-          "text_characters": 3448,
+          "text_characters": 3465,
           "out_of_page_blocks": []
         },
         {
@@ -32,7 +32,7 @@
     {
       "file": "Decision-Memo.pdf",
       "pages": 2,
-      "sha256": "be77a58193bf084ecb56fed3d688b6c6b21e0485329136972003e482853b0a0f",
+      "sha256": "e6718430a7d47e9095f46f19c4997afa29b23231a03b9e17f6b97eeab40f651c",
       "page_checks": [
         {
           "page": 1,
@@ -41,7 +41,7 @@
         },
         {
           "page": 2,
-          "text_characters": 4086,
+          "text_characters": 4080,
           "out_of_page_blocks": []
         }
       ]
@@ -49,7 +49,7 @@
     {
       "file": "Validation-and-AI-Use.pdf",
       "pages": 4,
-      "sha256": "e17caaab38f437d3fb0bfd6b3e15281542ea0967dceabbae97c5d2673e620424",
+      "sha256": "bc8571513022adb78f55da3cd262d4895469e5a846daca19f574e97d33efd7a7",
       "page_checks": [
         {
           "page": 1,
@@ -68,7 +68,7 @@
         },
         {
           "page": 4,
-          "text_characters": 2802,
+          "text_characters": 2679,
           "out_of_page_blocks": []
         }
       ]

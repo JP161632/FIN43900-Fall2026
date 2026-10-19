@@ -1,5 +1,5 @@
 {
-  "scope": "Text/model comparison, student-requested editorial value corrections and anonymous metadata; audiovisual performance not reviewed",
+  "scope": "Editorial text/model consistency review; distinct written post-recording updates; audiovisual performance not independently verified",
   "student_confirmed_corrections": false,
   "videos": [
     {
@@ -8,10 +8,10 @@
       "duration_seconds": 173,
       "transcript": "docs/transcript-video-1.txt",
       "provided_source_sha256": "3967cbac86a599349d0efab34a1ea60e98ce7d21d172d32c746f4fc8b451b5cf",
-      "transcript_sha256": "cc34a14be01adb728ce1da931ddbccdd13eb18d7826028674dece3de33b629c9",
-      "editing": "Paragraph breaks, speaker-name omission and student-requested model-value corrections; audio not independently verified.",
-      "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
-      "review_status": "MODEL VALUES CORRECTED; audio alignment and observed timestamps unverified",
+      "transcript_sha256": "033bac5009c38dda522122c87c39dde701b7a75c800861219dc3784590589d14",
+      "editing": "Student-requested edited transcript: recognition errors, finance terms, factual statements and readability corrected; original supplied text retained in Git history; audio not independently verified",
+      "observed_timestamp_index": "00:19 Earlier Lab 5 valuation; 01:13 Later-lab limitations; 01:31 Independent filing check; 02:04 Revised valuation and cases; 02:28 Research attribution and AI assistance; 02:41 Conditional action held",
+      "review_status": "TEXT/MODEL RECONCILED; source-caption chapter times observed; actual audio alignment unverified",
       "before_value_corrections_sha256": "2b32985619b91d1ea6c805a223844a3b1cc4500f2abcea88c92dbc53509384c2",
       "value_corrections": [
         {
@@ -30,7 +30,11 @@
           "supplied_text": "SCFF architecture",
           "corrected_text": "FCFF architecture"
         }
-      ]
+      ],
+      "before_readability_edit_sha256": "cc34a14be01adb728ce1da931ddbccdd13eb18d7826028674dece3de33b629c9",
+      "readability_edit_utc": "2026-10-19T21:06:50.846522+00:00",
+      "post_recording_updates": "docs/post-recording-validation-addendum.md (written addendum, not original speech)",
+      "timestamp_basis": "Retrieved public YouTube automatic-caption cue starts; rounded down to seconds; topic locator, not verified verbatim speech"
     },
     {
       "video": 2,
@@ -38,10 +42,10 @@
       "duration_seconds": 178,
       "transcript": "docs/transcript-video-2.txt",
       "provided_source_sha256": "3ea8c37cf688245a211d379a3beb0cd1ef3d9bb1a4e07fc249d7826f32f6d1ff",
-      "transcript_sha256": "0d67deb8f3c71dfdeff2dbea7f8e3a86ab53c1d087b333447ae8681faea1135a",
-      "editing": "Paragraph breaks, speaker-name omission and student-requested model-value corrections; audio not independently verified.",
-      "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
-      "review_status": "MODEL VALUES CORRECTED; audio alignment and observed timestamps unverified",
+      "transcript_sha256": "a8fa42353d7c5eb7d5baa95da27a108766ec0ee54fdfbc14a9efb5a66e227dd7",
+      "editing": "Student-requested edited transcript: recognition errors, finance terms, factual statements and readability corrected; original supplied text retained in Git history; audio not independently verified",
+      "observed_timestamp_index": "00:22 Actual code-cell preparation; 00:32 Execute code cell; 00:46 Collection-days to FCFF chain; 01:42 Published known answers; 01:58 Highest-risk diagnostic; 02:26 WACC changed-input test; 02:49 Separate human-record boundary",
+      "review_status": "TEXT/MODEL RECONCILED; source-caption chapter times observed; actual audio alignment unverified",
       "before_value_corrections_sha256": "22d0601001c608d2512604ab38e3331b9b24096974b16ad9d4e97ade1fb41114",
       "value_corrections": [
         {
@@ -52,7 +56,11 @@
           "supplied_text": "raising whack from about 13.9 to 14.9% lowers value from $1808 to $180.38.",
           "corrected_text": "raising WACC from about 13.9% to 14.9% lowers value from $118.58 to $108.38."
         }
-      ]
+      ],
+      "before_readability_edit_sha256": "0d67deb8f3c71dfdeff2dbea7f8e3a86ab53c1d087b333447ae8681faea1135a",
+      "readability_edit_utc": "2026-10-19T21:06:50.846522+00:00",
+      "post_recording_updates": "docs/post-recording-validation-addendum.md (written addendum, not original speech)",
+      "timestamp_basis": "Retrieved public YouTube automatic-caption cue starts; rounded down to seconds; topic locator, not verified verbatim speech"
     },
     {
       "video": 3,
@@ -60,10 +68,10 @@
       "duration_seconds": 180,
       "transcript": "docs/transcript-video-3.txt",
       "provided_source_sha256": "23c7d12c05becacd1a68cf3b003dc9a834548715cab821c3ccb0e295a5e3c56e",
-      "transcript_sha256": "40610b1b66bb39949c04f93f2542ae4a9a6bf6998759a674a0058ad924effde9",
-      "editing": "Paragraph breaks, speaker-name omission and student-requested model-value corrections; audio not independently verified.",
-      "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
-      "review_status": "MODEL VALUES CORRECTED; audio alignment and observed timestamps unverified",
+      "transcript_sha256": "b76352ef6a4b2a079f2b3e2fafcb5af0c447cceb1065364b81295cabb294bd7e",
+      "editing": "Student-requested edited transcript: recognition errors, finance terms, factual statements and readability corrected; original supplied text retained in Git history; audio not independently verified",
+      "observed_timestamp_index": "00:12 Valuation scope and date; 00:42 Causal valuation range; 00:57 Enterprise-to-equity bridge; 01:10 WACC and terminal convention; 01:24 Discount-rate sensitivity; 01:32 Peer-method disagreement; 01:56 Downside changes action; 02:18 Market-implied expectation; 02:29 Entry and monitoring conditions; 02:51 Committee ask",
+      "review_status": "TEXT/MODEL RECONCILED; source-caption chapter times observed; actual audio alignment unverified",
       "before_value_corrections_sha256": "57a0e18a3794083299ebe64e69a63eb84a1ce996fc0154a71e03e37cd5007dba",
       "value_corrections": [
         {
@@ -82,7 +90,11 @@
           "supplied_text": "Collection days about 95",
           "corrected_text": "Collection days above 95"
         }
-      ]
+      ],
+      "before_readability_edit_sha256": "40610b1b66bb39949c04f93f2542ae4a9a6bf6998759a674a0058ad924effde9",
+      "readability_edit_utc": "2026-10-19T21:06:50.846522+00:00",
+      "post_recording_updates": "docs/post-recording-validation-addendum.md (written addendum, not original speech)",
+      "timestamp_basis": "Retrieved public YouTube automatic-caption cue starts; rounded down to seconds; topic locator, not verified verbatim speech"
     }
   ],
   "issues": [
@@ -90,52 +102,56 @@
       "video": 1,
       "passage": "base reference is about $190",
       "model_value": "$118.58 (about $119)",
-      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     },
     {
       "video": 1,
       "passage": "15.8% WACC; annual weighted donated shares; SCFF; casual range",
       "model_value": "Prior Lab 5 WACC 15.88%; annual weighted diluted shares; FCFF; causal range",
-      "status": "NUMERICAL/ASSOCIATED TERM CORRECTIONS APPLIED; OTHER SPEECH UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     },
     {
       "video": 1,
       "passage": "unrealized investment gains of nonoperating cash generation",
       "model_value": "Unrealized investment gains are not operating cash generation",
-      "status": "AUDIO WORDING STILL UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     },
     {
       "video": 2,
       "passage": "from $1808 to $180.38",
       "model_value": "$118.58 to $108.38 when WACC rises 1 percentage point",
-      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     },
     {
       "video": 3,
       "passage": "casual range is about 56 to $200",
       "model_value": "causal range $55.93-$212.08 (about $56-$212)",
-      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     },
     {
       "video": 3,
       "passage": "Adding one percentage point to WCC lowers value to about $118",
       "model_value": "WACC increase lowers value to $108.38",
-      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     },
     {
       "video": 3,
       "passage": "low case ... value nearly $65",
       "model_value": "Low-case value $55.93 (about $56)",
-      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     },
     {
       "video": 3,
       "passage": "Collection days about 95",
       "model_value": "Collection days above 95 is the monitoring threshold",
-      "status": "EDITORIALLY CORRECTED; AUDIO UNVERIFIED"
+      "status": "TEXT CORRECTED; actual audio alignment unverified"
     }
   ],
   "student_requested_value_corrections": true,
   "correction_utc": "2026-10-19T18:19:04.897954+00:00",
-  "audio_alignment_confirmed": false
+  "audio_alignment_confirmed": false,
+  "text_finance_review_complete": true,
+  "readability_edit_utc": "2026-10-19T21:06:50.846522+00:00",
+  "timestamp_indices_observed": true,
+  "timestamp_scope": "Actual public caption-cue times; original audio meaning and edited-text alignment not independently certified"
 }

@@ -18,6 +18,8 @@ def main():
     d=json.loads((ROOT/'data/inputs.json').read_text(encoding='utf-8')); r=json.loads((ROOT/'outputs/results.json').read_text(encoding='utf-8'))
     v=json.loads((ROOT/'outputs/validation-results.json').read_text(encoding='utf-8'))
     check('Finance validation',v['status']=='PASS' and len(v['tests'])==15,'15claim-focused tests, actual results in validation-results.json')
+    comm=json.loads((ROOT/'outputs/final-communication-audit.json').read_text(encoding='utf-8'))
+    check('Final edited text and labeled written updates',comm['status']=='PASS' and comm['financial_results_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest(),'Transcript facts/terms, corrected gain treatment, distinct written addendum, selected primary-source checks and score arithmetic verified; audio/timing not inferred')
     peer=json.loads((ROOT/'outputs/peer-review-checks.json').read_text(encoding='utf-8'))
     peer_status=json.loads((ROOT/'evidence/submission-status.json').read_text(encoding='utf-8'))
     check('Attributed peer challenge and independent follow-up',peer['status']=='PASS' and peer_status['partner_review'].startswith('SUPPLIED') and peer['credit']=='peer challenge' and abs(peer['legacy_margin_trace']['unrounded_reconciliation_error'])<1e-6 and peer['equal_relative_shocks']['gross_margin']['per_share_span']>peer['equal_relative_shocks']['data_center_growth']['per_share_span'] and peer['financial_results_unchanged_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest(),'Student-confirmed Antigravity log; named dispositions; independently reproduced legacy trace and equal-relative range challenge; separate from the student terminal-growth record')
@@ -60,15 +62,17 @@ def main():
     charts=json.loads((ROOT/'outputs/recording-charts-audit.json').read_text(encoding='utf-8'))
     check('Fixed recording charts',charts['status']=='PASS' and charts['pages']==3 and charts['pdf_sha256']==hashlib.sha256((ROOT/'Recording-Charts.pdf').read_bytes()).hexdigest() and all(hashlib.sha256((ROOT/p['file']).read_bytes()).hexdigest()==p['sha256'] for p in charts['pngs']) and charts['financial_results_unchanged_sha256']==recording['financial_result_sha256'],'Three16:9charts; PDF/1920x1080PNGhashes; saved finance results unchanged')
     with (ROOT/'submission-manifest.csv').open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
-    check('Uniform manifest',len(rows)==12 and sum(x['required']=='yes' for x in rows)==11 and all(x['location_or_url'] for x in rows if x['required']=='yes'),'11required+optionaldeployment; supplied video/transcript links populated; timestamp and speech review pending')
+    check('Uniform manifest',len(rows)==12 and sum(x['required']=='yes' for x in rows)==11 and all(x['location_or_url'] for x in rows if x['required']=='yes'),'11required+optionaldeployment; supplied video/transcript links and observed caption-cue indices populated; actual audio alignment unverified')
     freeze=json.loads((ROOT/'file-integrity.json').read_text(encoding='utf-8'))
     mismatches=[n for n,h in freeze['files'].items() if not (ROOT/n).is_file() or hashlib.sha256((ROOT/n).read_bytes()).hexdigest()!=h]
     check('Frozen file integrity',not mismatches,mismatches or f"{len(freeze['files'])} stable SHA256matches; exclusions explicit")
     ui=subprocess.run(['node',str(ROOT/'test_dashboard.cjs')],capture_output=True,text=True)
     check('Interactive output controls',ui.returncode==0,ui.stdout.strip()+ui.stderr.strip())
     result={'technical_audit':'PASS' if all(x['status']=='PASS' for x in checks) else 'FAIL',
-            'submission_complete':False,'rubric_score':'Not certified; original baseline receipt/PDF and audio/timestamp verification remain unresolved; student growth prediction/run and attributed peer review supplied, with authorship/policy basis documented',
+            'submission_complete':False,'rubric_score':'Not certified; original baseline receipt/PDF and actual audio alignment remain unresolved; student growth prediction/run and attributed peer review supplied, with authorship/policy basis documented',
             'checks':checks}
+    grade=json.loads((ROOT/'evidence/rubric-score-estimate.json').read_text(encoding='utf-8'))
+    result['assistant_estimated_score']={'points':grade['estimated_total'],'maximum':grade['maximum'],'percent':grade['estimated_percent'],'scope':'Conditional document/code self-review, not actual grading or verified audio'}
     (ROOT/'outputs/submission-audit.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(result,indent=2))
     if result['technical_audit']!='PASS':raise SystemExit(1)

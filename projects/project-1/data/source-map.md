@@ -33,3 +33,5 @@ All `common`, `cases`, and market beta/ERP/spread/reserves/entry discount are **
 The original NVIDIA labs are indexed and hashed in `evidence/prior-lab-index.json`; source code and observations are reused only where compatible with this date and architecture. Prior Lab10/11 FCFE values are superseded, not rebranded as FCFF.
 
 Revisions: dated changes live in Git and the A/B table. If issuer restates data, retain the prior snapshot, label the correction and rerun outputs/tests; do not silently replace facts. Public issuer/SEC factual inputs are cited for academic use. No paid datasets are redistributed. No credentials, names of classmates, private discussion recordings or personal information are stored. No runtime network or API key is required.
+
+Final selected-source recheck, October 19: SEC FY26 income/end-market tables, July balance sheet/liquidity table and issuer Q2 release match the retained revenue, gross-profit and investment-classification observations. See evidence/final-source-crosscheck.json for source URLs, periods and exact fields. This adds a verification record, not new October facts or altered model inputs.

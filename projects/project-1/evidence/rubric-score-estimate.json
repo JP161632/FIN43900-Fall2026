@@ -1,0 +1,51 @@
+{
+  "assessment_type": "Assistant document/code self-review; not an instructor or automated-grader result",
+  "assumptions": "Reported instructor permission for AI-assisted wording accepted; actual pre-run student prediction/input/action preserved; original checkpoint not supplied here; audio unreviewed",
+  "criteria": [
+    {
+      "name": "Problem definition and decision usefulness",
+      "points": 38.25,
+      "maximum": 45,
+      "band": "Strong"
+    },
+    {
+      "name": "Data integrity and traceability",
+      "points": 45,
+      "maximum": 45,
+      "band": "Decision-ready on examined evidence"
+    },
+    {
+      "name": "Financial soundness and judgment",
+      "points": 60,
+      "maximum": 60,
+      "band": "Decision-ready on examined evidence"
+    },
+    {
+      "name": "Technical execution and usability",
+      "points": 45,
+      "maximum": 45,
+      "band": "Decision-ready for code/repository"
+    },
+    {
+      "name": "Validation, sensitivity and reproducibility",
+      "points": 75,
+      "maximum": 75,
+      "band": "Decision-ready under reported classroom wording permission"
+    },
+    {
+      "name": "Professional communication",
+      "points": 25.5,
+      "maximum": 30,
+      "band": "Strong: source-caption indices supplied; actual audio/edited-text alignment still unverified"
+    }
+  ],
+  "estimated_total": 288.75,
+  "maximum": 300,
+  "estimated_percent": 96.25,
+  "audio_edited": false,
+  "grade_guaranteed": false,
+  "remaining_evidence_gaps": [
+    "Original Edition A checkpoint PDF/first receipt not supplied here",
+    "Actual audio/edited-text alignment and requested audio corrections"
+  ]
+}
