@@ -1,48 +1,34 @@
-# Student next steps - audited recording guide
+# Student next steps - fixed-chart recording guide
 
-**Use this guide instead of the earlier recording route.** It is also saved as `Student next steps.md` in the Project1 folder. Every timed scene below names the question it proves, the exact file/heading to show and the evidence to point at. Timings are planning targets; replace them with observed indices after recording. Scripts are preparation aids, not actual transcripts.
+**No tab tour. Use one fixed chart for each video.** Open `Recording-Charts.pdf`, choose the page for that video, and set the viewer to **Fit page** before recording. Stay on that page. Alternatively open the matching1920x1080PNG in an image viewer and fit the whole image to the window.
 
-## What the three videos must prove
-
-The course's Week7 handout gives three distinct questions:
-
-| Video | Exact evidence question | What your recording must demonstrate |
+| Video | Exactly what to open | During the recording |
 |---|---|---|
-| 1 | What changed or remained stable after project-specific research; what drove it; and what evidence justified it? | Earlier view/value -> a sourced challenge/correction -> revised assumptions/value -> changed or unchanged decision. Identify course, prior-lab, AI and qualified peer contributions accurately. |
-| 2 | How does the submitted code produce the result, and what high-risk test passed or failed? | Trace one company driver through statements/FCFF/valuation, run the application, and show numerical known-answer/changed-input/failure evidence. A PASS count alone is insufficient. |
-| 3 | What should the committee do, under what conditions, and what would reverse the decision? | Defend dated action/range, method disagreement, downside and measurable entry/reversal triggers. The product supports your argument; the video is not a feature tour. |
+| 1 - Research evolution | Recording-Charts.pdf **page1**, or outputs/Video-1-Research-Chart.png | Stay on the same chart for the entire script. Move the cursor to the named boxes; no scrolling or opening sources. |
+| 2 - Code and validation | Recording-Charts.pdf **page2**, or outputs/Video-2-Validation-Chart.png | Stay on the chart. Briefly bring a prepared terminal over it to execute the actual run, then minimize the terminal. No tabs or scrolling. |
+| 3 - Committee defense | Recording-Charts.pdf **page3**, or outputs/Video-3-Committee-Chart.png | Stay on the same chart throughout. Point to the range line, method panel and trigger panel as you speak. |
 
-Source: `lessons/week-07/student-handout.md`, “Three evidence surfaces”; attribution guidance: `projects/templates/research-evolution-template.md`. Maximum3:00 for Video1; maximum5:00 each for Video2/3. Aim Video1 2:45-2:55 and Videos2/3 approximately3:00-3:30; slow down rather than racing through important evidence. Course checklist sets the limits; the timings below are suggested routes, not extra course requirements. Webcam overlay is optional here unless the instructor separately requires it; prioritize legible screens and clear audio.
+The chart footer links point to the original lab, filing, code and executed outputs for grading. They do not need to be opened during Videos1/3. Detailed backup evidence remains in outputs/recording-proof.html and the submission PDFs. This chart is a condensed evidence surface, not a replacement for those submitted records.
 
-## Open these tabs before recording
+## Before recording
 
-All paths below start at `projects/project-1/` unless marked **course repository**. Open Markdown in VS Code's preview (Ctrl+Shift+V) or GitHub's rendered view, not a tiny raw-text pane. Use browser/PDF zoom125-150%. Hide private tabs/notifications.
+Set screen recording to1920x1080 if possible. Fit the chart to the full screen and hide the PDF sidebar/browser controls. Keep this script on paper, a phone or a second display outside the recording area. Start recording only after the correct chart is visible. Webcam layout is a preference unless the instructor separately requires it. Keep audio clear and the chart legible.
 
-| Tab | Open this exact file | Park it here |
+Maximum3:00 for Video1; maximum5:00 each for Videos2/3. Aim about2:45-2:55 for Video1 and about3:00-3:30 for Videos2/3. Timings below are suggestions, not observed transcript indices. After recording, use actual timestamps and corrected actual speech in the transcripts.
+
+## Video1 - one chart, research evolution
+
+Question proved: **What changed or held after project-specific research, what drove it, and what evidence justified it?** The chart shows research admission -> earlier valuation -> correction/evidence -> revised valuation -> action held with conditions. It distinguishes the earlier sensitivity grid from the later causal range, and identifies course/prior-lab/AI/evidence contributions.
+
+| Planned time | Stay on page1; point here | What it proves |
 |---|---|---|
-| A | `Research-Evolution.pdf` | Page{{BASELINE_PAGE}}, “Initial thesis - initiate” in the preserved EditionA reading appendix. The original submitted PDF/receipt, if supplied, is preferable for proving actual checkpoint history. |
-| B | **Course repository:** `projects/lab-05-nvda-dcf/nvda-dcf-lab.md` | Ctrl+F **“I — NVIDIA through the model”**; show “Value per diluted share” and then scroll slightly to **“E — Sensitivity grid and reverse DCF.”** |
-| C | `outputs/recording-proof.html` | Open locally in a browser. Buttons jump to Research evolution, Numerical validation or Committee evidence. This is a reading aid generated from actual saved results, with links to the underlying artifacts. It does not create new test runs. |
-| D | NVIDIA Q2 10-Q | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm ; browser Ctrl+F **“42,783”**. Show the balance-sheet row label and July26/January25 column headings. The exact rows are copied in proof panelR3 for readability if the SEC site cannot load. |
-| E | `data/inputs.json` and `model.py` in editor tabs | inputs: Ctrl+F **`"dso":75`**. model: Ctrl+F **`b['ar']=`**, then **`fcff=nopat`**, then **`terminal=rows`**. Code anchors are safer than line numbers, which change with edits. |
-| F | Terminal | Course repository root, the `FIN43900-Fall2026` folder. Prepare the fresh-venv command below before Video2. |
-| G | `outputs/dashboard.html` | Open locally by double-clicking it in File Explorer; select **base** and **Income statement**. GitHub source preview does not run HTML. |
-| H | `Decision-Memo.pdf` | Page1 “Committee ask and valuation range.” Page2 “Disagreement across methods and market expectations,” then “Conditions, reversal triggers and next evidence.” |
-
-You need A-D for Video1, C/E/F for Video2 and C/G/H for Video3. Do not switch through every file in the repository. Keep this guide or printed script outside the recorded screen.
-
-## Video1 - research evolution with defensible values
-
-The strongest story is **research admission -> initial dated valuation -> identified limits -> corrected/current valuation -> decision held with stricter conditions**. Do not claim that EditionA recommended buying. Do not describe the entire price-estimate change as the impact of AI or one corrected input. Lab5's grid interval and the final causal interval have different definitions.
-
-| Planned time | Exact screen and scroll/action | Claim the visible evidence proves |
-|---|---|---|
-| 0:00-0:25 | TabA, page{{BASELINE_PAGE}}, **“Initial thesis - initiate.”** Point to the sentence saying preliminary research admission, not a buy recommendation. | The original question and uncertainty existed before the completed valuation. Do not call this newly typeset appendix an original checkpoint receipt. |
-| 0:25-0:55 | TabB, **“I — NVIDIA through the model.”** Point to **62.7184**, then the grid's **55.59 / 72.40** endpoints and **15.88%** base WACC. | A concrete earlier valuation existed. It used annual data/annual weighted shares, not the final rolling forecast. |
-| 0:55-1:35 | TabC, **Research evolution**, panel **R1 Before and after**, then **R2 Why it changed / attribution**. | Annual revenue215,938 -> LTM302,970; WACC15.88% ->13.90%; share basis24,514 ->24,242; final base{{BASE_PRICE}}. Multiple basis/assumption changes mean no single-cause price bridge. |
-| 1:35-2:05 | TabD, find **42,783**. Keep cash22,443, debt securities34,143 and equity securities42,783 visible with labels/date. | Independent primary evidence supports separating investments from operatingNWC/cash. This is stronger than showing only our own source ledger. |
-| 2:05-2:30 | TabC, **R3 Independent correction and test**, then **R4 What changed the judgment**. | Source-backed classification, a quantified diagnostic and a challengeable forecast support the revision. Show the prior-lab limitation rather than claim the model was right merely because it balanced. |
-| 2:30-2:55 | TabC, **R4** current value/action card. | Final causal range{{LOW_PRICE}}-{{HIGH_PRICE}}, base{{BASE_PRICE}}, date and price218.36, watch/defer held from Lab5 to finalB. Uncertainty changes conditions rather than disappearing. |
+| 0:00-0:20 | Upper-left: **1 STARTING QUESTION** | Admission to research was not a buy recommendation. |
+| 0:20-0:50 | Upper-middle: **2 EARLIER VALUATION / LAB5** | Earlier62.72base,55.59-72.40grid,WACC15.88%,annualweightedshares. |
+| 0:50-1:15 | Lower-left: **WHAT CHANGED - AND WHY** | Prior lab limits and revised data/FCFF/method, not a claim every dollar came from one fix. |
+| 1:15-1:40 | Lower-middle: **INDEPENDENT SOURCE CHECK** | Filing cash/debtsecurities56,586M versus equitysecurities42,783M; classification correction. |
+| 1:40-2:20 | Upper-right revised valuation, then the note under the top row | Current{{BASE_PRICE}}base and{{LOW_PRICE}}-{{HIGH_PRICE}}causal range; different method/range definitions and forecast windows. |
+| 2:20-2:40 | Bottom **Source of change** band | Accurate contribution/attribution; facts/tests do not make forecast assumptions true. |
+| 2:40-2:55 | Lower-right: **WHAT HELD / WHAT WOULD CHANGE** | Watch/defer held fromLab5; demand/collection/margin evidence and entrycondition govern action. |
 
 Script:
 
@@ -53,7 +39,7 @@ The first completed DCF, in Lab5, estimated sixty-two dollars and seventy-two ce
 
 The later labs exposed why I should not simply carry that number forward. Lab11 withheld a new valuation while investment classification, cash-flow labels and terminal assumptions remained unresolved. Those are finance problems that a balanced spreadsheet cannot rule out.
 
-Here is the independent filing check. July cash and debt securities total fifty-six-point-six billion dollars, while marketable equity investments are a separate forty-two-point-eight billion. Financial holdings should not grow automatically as operating working capital, and unrealized investment gains are not operating cash generation.
+The independent filing check is summarized in the middle box. July cash and debt securities total fifty-six-point-six billion dollars, while marketable equity investments are a separate forty-two-point-eight billion. Financial holdings should not grow automatically as operating working capital, and unrealized investment gains are not operating cash generation.
 
 The revised model uses a trailing operating base, five linked statements and an explicit ownership bridge. First-year FCFF is about one hundred ninety-one billion, versus one hundred thirty-one billion in Lab5, with different forecast windows. Its base reference is about one hundred nineteen dollars, with a causal range of fifty-six to two hundred twelve. That range is a set of different operating cases, not the same sensitivity interval as Lab5. The value change also reflects the reporting base, forecast, WACC, terminal reinvestment and share basis; I cannot assign it all to one correction.
 
@@ -62,33 +48,35 @@ Course requirements drove the FCFF architecture. Earlier labs recorded the limit
 The later watch-defer action held at the dated two-hundred-eighteen-dollar market price. What evolved was the evidence and the conditions for acting, not a claim that uncertainty disappeared.”
 <!-- /SCRIPT1 -->
 
-If you discuss a real partner contribution, use your completed actual review record and replace a sentence about earlier lab limitations with that specific challenge and its tested effect. Do not read a fictional practice response as partner testimony. The existing Lab12 discussion is qualified until attribution is confirmed.
+No need to click a source during this video: the named source/locator and the condensed evidence are visible, and original documents remain linked in the submitted files. Do not present the typeset EditionA summary as proof of an original checkpoint receipt or a fictional response as real partner evidence.
 
-## Video2 - code to output, numerical benchmark and high-risk test
+## Video2 - one chart plus a short actual-run overlay
 
-Prepare the new no-pip environment **before recording**, from the course repository root:
+Question proved: **How does submitted code produce the result, and what high-risk test passed or failed?** Page2 includes actual source excerpts, a driver/statement/FCFF/value chain, independent expected/actual numerical answers, a captured rejected input and the changed-input decision effect.
+
+Prepare the terminal **before recording**, at the course repository root (FIN43900-Fall2026 folder). Create a fresh no-pip environment:
 
 ```powershell
 .\.venv\Scripts\python.exe -m venv --without-pip projects/project-1/.build/video-venv
 ```
 
-During the recording, execute the following. It reads the submitted project, uses the fresh environment and writes to a separate directory without overwriting frozen outputs:
+Have this command ready but do not execute it until the recording is running:
 
 ```powershell
 .\projects\project-1\.build\video-venv\Scripts\python.exe projects/project-1/run.py --all --output projects/project-1/.build/video-cold-output
 ```
 
-The assistant's separate cold_run.py receipt proves a copied-project/new-venv reproduction. Your command above demonstrates your own fresh-environment execution and ownership; do not call the assistant's earlier log your recorded run. Preserve the actual console result and any first failure/resolution.
+For the run, bring the terminal to the foreground over the chart, execute the command, hold the result long enough to read, then minimize it. This is a single short overlay, not a tab tour. Record the actual result; if it fails, preserve the first failure and diagnosis instead of reading a prepared success line. A static chart cannot prove your own live cold run. The assistant's separate copied-project cold-run receipt remains technical backup, not your recording.
 
-| Planned time | Exact screen and scroll/action | Evidence to point at |
+| Planned time | Stay on page2; point/action | What it proves |
 |---|---|---|
-| 0:00-0:25 | TabE, inputs.json **`"dso":75`**, then model.py **`b['ar']=`**. | One driver becomes AR through revenue*days/365; this enters operatingNWC and cash flow. |
-| 0:25-0:55 | model.py **`delta_nwc=`**, **`fcff=nopat`**, then **`terminal=rows`**. | Show actual formulas, cash/equity checks, FCFF at WACC and terminal reinvestment. Avoid reading unrelated functions. |
-| 0:55-1:20 | TabF, run command above. | Successful end-to-end execution and actual PASS15/15; if it fails, show/diagnose the failure rather than read the success line. |
-| 1:20-1:50 | TabC, **Numerical validation**, panel **V1 Known answer and company arithmetic**. | Published training EV1,624.87 / price27.50 versus actual; year1 NOPAT+D&A-capex-deltaNWC={{YEAR1_FCFF}}M. These are arithmetic evidence, not a PASS banner. |
-| 1:50-2:20 | TabC, **V2 Highest-risk failure evidence**. Optionally click through to validation-results.json/test code. | Financial-asset contamination creates false discounted investment; a deliberately unsupported cash deficit produces an explicit error. Passing the test means the bad input was rejected. |
-| 2:20-2:55 | TabC, **V3 Changed input: prediction versus result**. | WACC13.90->14.90%, value{{BASE_PRICE}}->{{CHANGED_PRICE}}, unchanged watch/defer, and why the action threshold did not change. |
-| 2:55-3:15 | Your completed locked record/addendum **if supplied**, otherwise TabC **V4 Evidence boundary**. | Actual prediction author/time/precommit plus result and decision effect. The existing assistant technical test is not a completed human lock. If an instructor exception applies, identify the revised designation accurately. |
+| 0:00-0:35 | Top driver-to-value row, left to right | DSO75 ->receivables ->operatingNWC/FCFF ->ownership value. |
+| 0:35-1:05 | **Source excerpts + terminal math** strip | Actual model expressions, FCFF economics and growth reinvestment. |
+| 1:05-1:25 | Brief terminal overlay; run command and minimize | Your actual fresh-environment execution and observed15-test result. |
+| 1:25-1:55 | Lower-left: **KNOWN ANSWER** | Course answers1624.87EV/27.50share versus actual engine results, not just a PASS label. |
+| 1:55-2:25 | Lower-right: **HIGH-RISK FAILURE EVIDENCE** | Forced cash deficit caught; classification diagnostic quantified and properly limited. |
+| 2:25-2:55 | Lower-middle: **EXPECTED -> ACTUAL -> DECISION** | WACC+1pp,{{BASE_PRICE}}->{{CHANGED_PRICE}},expectedlower/actuallower,watch/defer held for a threshold reason. |
+| 2:55-3:15 | Bottom **Controls / Evidence boundary** | Accounting checks and honest distinction between technical tests and authentic prediction history. |
 
 Script:
 
@@ -110,19 +98,21 @@ The changed-input result also has the expected direction: raising WACC from abou
 The technical prediction and outcome are visible here. Any required human prediction timing and authorship must be supported by the separate actual record, rather than inferred from this retrospective explanation.”
 <!-- /SCRIPT2 -->
 
-If your completed record is available, replace the last paragraph with its actual committed prediction, timestamp, old/new units, predicted/actual direction and decision effect. Do not read guessed values. The local locked-changed-input-record.md currently says INCOMPLETE; a humanized retrospective draft is not an original pre-run artifact. Your reported in-class permission can change the permitted designation, but not the actual chronology.
+The source-code expressions and saved validation outcomes are on the chart. The original code, full numerical tests and cold-run log are linked below it for review; you do not need to open them while narrating. If the instructor specifically requests a separate code-editor demonstration, add it as required; this fixed-chart route does not claim to waive instructor requirements.
 
-## Video3 - defend the committee action
+## Video3 - one chart, committee defense
 
-| Planned time | Exact screen and scroll/action | Decision evidence to show |
+Question proved: **What should the committee do, under what conditions, and what would reverse it?** A stationary committee chart is appropriate here: defend the decision rather than tour interface features.
+
+| Planned time | Stay on page3; point here | What it proves |
 |---|---|---|
-| 0:00-0:25 | TabH, memo **page1 / Committee ask and valuation range**. | No-position user,12-24month horizon, September10 date,218.36 price, causal range and conditional action. |
-| 0:25-0:55 | TabG dashboard, **Enterprise to common equity**. | EV/equity/share bridge; investments counted once; debt and dilution. |
-| 0:55-1:20 | Dashboard **WACC-growth sensitivity**; click the base-WACC/g3% row, then the WACC+1pp/g3% row. | Values{{BASE_PRICE}} and{{CHANGED_PRICE}}, with same operating forecast. Current grid row5 and row8 excluding the header. Explain TVshare{{TV_SHARE}} rather than imply precision. |
-| 1:20-1:40 | TabH memo **page2 / Disagreement across methods**; TabC **C2 Method disagreement** if you need larger numbers. | Peer intervals, business/denominator differences and why no mechanical average. |
-| 1:40-2:10 | Dashboard top, select **low**, then scroll to **Five rolling forecast years**, Income statement. | Low value{{LOW_PRICE}}/DO NOT INITIATE; show weaker operating results, not only a different dropdown label. The risk gate is an explicit adverse-regime policy, not proof from price alone. |
-| 2:10-2:30 | Dashboard **Reverse DCF and conditions**, or TabC **C3 Market expectation**. | Market price requires +{{REVERSE_SHIFT}}pp in every DCgrowth assumption with all other base inputs fixed; not a unique market forecast. |
-| 2:30-3:10 | TabH memo **page2 / Conditions, reversal triggers and next evidence**; TabC **C4 Committee monitoring** for the compact checklist. | Entrybelow{{ENTRY_PRICE}} after refreshed evidence; report-by-report monitoring; two-quarter growth trigger, collection/margin risks and immediate review of material losses. Finish with the committee ask. |
+| 0:00-0:30 | Title/date and upper valuation range | User/horizon/date,218.36market,conditionalwatch/defer and causal range. |
+| 0:30-0:55 | Bottom **Ownership bridge** line | OperatingEV ->adjustments ->common equity /dilutedshares; no free investments. |
+| 0:55-1:20 | **WHY THIS DCF NEEDS CAUTION** | WACC/g/ROIC,terminalshare65.1% and discount-rate sensitivity. |
+| 1:20-1:50 | **WHY METHODS DISAGREE** | Peer references versusDCF; different denominators/mix; no mechanical average. |
+| 1:50-2:15 | **Downside changes action** band | Causal operating/financing deterioration changes action under the declared riskpolicy. |
+| 2:15-2:35 | Lower half of **WHY THIS DCF NEEDS CAUTION** | ReverseDCF marketexpectation is one conditional solution. |
+| 2:35-3:15 | **WHAT WOULD REVERSE THE ACTION**, then entryceilingunder the range | Quarterly review,metric/window triggers and conditionalprice/evidence ask. |
 
 Script:
 
@@ -133,7 +123,7 @@ The causal range is about fifty-six to two hundred twelve dollars per share, wit
 
 Here is how operating value reaches shareholders. The model adds separately valued cash and investments, subtracts debt and other claims, and divides common equity by the diluted-share proxy. It does not count financial investments again as operating working capital.
 
-Base WACC is about thirteen-point-nine percent, and terminal growth is three percent with explicit reinvestment. Roughly sixty-five percent of enterprise value comes from the terminal period. The sensitivity grid therefore matters: adding one percentage point to WACC lowers value to about one hundred eight dollars even with the same operating forecast.
+Base WACC is about thirteen-point-nine percent, and terminal growth is three percent with explicit reinvestment. Roughly sixty-five percent of enterprise value comes from the terminal period. The sensitivity test therefore matters: adding one percentage point to WACC lowers value to about one hundred eight dollars even with the same operating forecast.
 
 Peer references disagree with DCF. Historical P/E suggests about three hundred seventy-one to nine hundred thirty-one dollars, while EV-to-sales suggests about two hundred thirteen to two hundred fifty-two. Annual earnings lag current growth; AMD's margins and Broadcom's software mix differ from NVIDIA. Two qualified peers provide context, not a reason to average away the disagreement.
 
@@ -144,14 +134,8 @@ At fixed base assumptions, the market price requires roughly twenty additional p
 I would consider initiation only below roughly ninety-five dollars using a refreshed base estimate and supported demand, margins and collections. Review each quarterly filing: two consecutive quarters of Data Center growth below twenty percent, collection days above ninety-five, gross margin below seventy percent, or material guarantee losses would challenge the thesis. The committee should keep NVIDIA on watch, refresh the evidence and require that price cushion before committing capital.”
 <!-- /SCRIPT3 -->
 
-## Evidence still needed and final handoff
+## After recording
 
-Your statement that the labs/data are complete does not automatically update files saved elsewhere. In this local package, original checkpoint PDF/first receipt, completed human prediction timing record and confirmed partner attribution are still not present, and transcripts are pending. Use the completed actual records if you have them; do not spend video time reading blank placeholders as evidence. No script can prove an event without its artifact.
+Replace docs/transcript-video-1.txt through -3.txt with corrected **actual** speech and observed timestamps. Provide videoURLs,titles,durations and accesschecks for the finalmanifest and consistencyreview. Original videos are still required; charts/scripts do not count as recordings. A final-video freeze needs a new immutabletag and the Brightspace finalsubmission receipt.
 
-For the originally specified human lock, author the prediction with AI off before a new test, save old/new values/units and expected direction/action, commit it, then execute and append actual outcomes/diagnosis. If the instructor authorized a different AI-assisted exercise, record that permitted designation without claiming an AI-off event occurred. Never backdate an explanatory draft.
-
-After recording, replace docs/transcript-video-1.txt through -3.txt with corrected actual speech and observed indices. Upload the three videos with stable accessible links. Update submission-manifest.csv with real titles/durations/access checks. Confirm speech, memo, visible output and validation agree. A later final-video freeze must use a new immutable tag; the recording-audit tag is not a completed-video submission. Submit the final bundle through Brightspace and retain its receipt; GitHub upload is separate. Check the assignment header for the enforced deadline/timezone.
-
-## Final rehearsal check
-
-For each scene, pause on a readable number or passage while making its claim. If you cannot point to evidence, remove or qualify the claim. Do not add invented sources, personally performed analyses, peer statements or completed events. If a live run fails, preserve the failure and diagnosis. Do not use “AI agrees” or “all tests pass” as a substitute for the specific source/arithmetic/failure evidence above. Keep the original videos and correct substantive transcript mistakes after recording.
+The local original checkpointPDF/receipt and completed human-lock timingrecord are still not supplied here. Use actual completed artifacts if saved elsewhere. Your reported instructor permission to humanize wording can change the permitted designation, but not actual authorship/timing history. Do not read an unfilled record as completed evidence. None of these reminders require switching away from the chart during the recording.

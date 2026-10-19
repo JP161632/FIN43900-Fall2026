@@ -38,10 +38,12 @@ def main():
     for i in [1,2,3]:
         check(f'Transcript{i} truthful status','NOT RECORDED' in (ROOT/f'docs/transcript-video-{i}.txt').read_text(encoding='utf-8'),'Pending marker deliberately not claimed completed')
     steps=(ROOT/'Student next steps.md').read_text(encoding='utf-8')
-    check('Three recording routes and scripts',all(s.lower() in steps.lower() for s in ['Video1 -','Video2 -','Video3 -','Script:','AI-off','maximum3:00','maximum5:00']), 'Exact file/action routes, planned indices, distinct scripts, authentic-evidence prerequisites')
+    check('Three recording routes and scripts',all(s.lower() in steps.lower() for s in ['Video1 -','Video2 -','Video3 -','Script:','maximum3:00','maximum5:00','Recording-Charts.pdf','--without-pip']), 'Fixed chart routes, timing limits, distinct scripts and actual fresh-environment run instructions; human-history status checked separately')
     recording=json.loads((ROOT/'outputs/recording-script-audit.json').read_text(encoding='utf-8'))
     check('Recording evidence numbers and scripts',recording['status']=='PASS' and recording['financial_result_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest() and recording['script_word_counts']['1']<=355,'Question-to-claim-to-readable-evidence mapping; figures independently matched to saved results')
     check('Recording guide single version',steps==(ROOT/'docs/recording-guide.md').read_text(encoding='utf-8'),'Student next steps and audited guide agree; generator preserves current route')
+    charts=json.loads((ROOT/'outputs/recording-charts-audit.json').read_text(encoding='utf-8'))
+    check('Fixed recording charts',charts['status']=='PASS' and charts['pages']==3 and charts['pdf_sha256']==hashlib.sha256((ROOT/'Recording-Charts.pdf').read_bytes()).hexdigest() and all(hashlib.sha256((ROOT/p['file']).read_bytes()).hexdigest()==p['sha256'] for p in charts['pngs']) and charts['financial_results_unchanged_sha256']==recording['financial_result_sha256'],'Three16:9charts; PDF/1920x1080PNGhashes; saved finance results unchanged')
     with (ROOT/'submission-manifest.csv').open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
     check('Uniform manifest',len(rows)==12 and sum(x['required']=='yes' for x in rows)==11,'11required+optionaldeployment; videos honestly blank')
     freeze=json.loads((ROOT/'file-integrity.json').read_text(encoding='utf-8'))
