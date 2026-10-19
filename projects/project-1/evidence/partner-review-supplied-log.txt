@@ -1,0 +1,66 @@
+PARTNER REVIEW LOG: LAB 12 ADVERSARIAL REVIEW & PEER CHALLENGE
+
+Date & Time: Thursday, October 1, 2026 | 13:40 - 14:06 EDT
+Context: Lab 12 In-Class Peer Cross-Examination (NVIDIA Corporation / NVDA)
+Primary Driver / Attribution Label: PEER CHALLENGE (Permitted course label: "peer challenge")
+
+[13:42 EDT] PARTNER (Comments & General Assessment):
+"I reviewed your NVIDIA pro-forma and sensitivity models. Your accounting separation
+between true Free Cash Flow to Equity (FCFE) and cash after share repurchases is a
+major strength-it prevents NVIDIA's $20B annual buyback program from being treated as
+an operating cost. You also clearly demonstrated the working-capital 'tug-of-war'
+where early hypergrowth drains cash into inventory and receivables before turning into
+free cash flow."
+
+CHALLENGE 1: DATA CENTER DEMAND DURABILITY & FASTER FADE
+[13:47 EDT] PARTNER (Challenged Claim):
+"Your NVIDIA valuation depends on continued data center demand. What specific
+evidence supports your growth assumptions, and how would your value change if that
+growth fades faster than you expected?"
+
+[13:48 EDT] MY RESPONSE:
+"Our baseline growth is anchored in NVIDIA's FY2026 Form 10-K, where Data Center
+revenue surged to $193.7B ($215.9B total), backed by multi-year cloud hyperscaler
+infrastructure capex commitments and backordered supply agreements for Blackwell.
+If demand fades faster than expected-tested in our Lab 11 lower-growth case where
+growth slows by 5 percentage points faster each year (25% fading down to 5%)-FY2031
+operating profit falls by $63.7B (-19.2%) and annual FCFE drops by $33.6B (-13.9%),
+severely compressing equity value."
+
+MY DISPOSITION ON CHALLENGE 1: [CORRECTED / QUALIFIED]
+Rationale: I qualified my partner's concern. While confirming that a faster
+growth fade wipes out tens of billions in cash flow, I demonstrated that even
+under that severe downside fade, NVIDIA still generates over $208B in annual
+FCFE by FY2031. However, I defended my Watch-Defer recommendation because the
+current market price ($224.35) prices in perfection with zero margin of safety.
+
+CHALLENGE 2: RANGE-SELECTION BIAS IN SENSITIVITY DRIVER RANKING
+[13:50 EDT] PARTNER (Challenged Claim):
+"In your Lab 11 results, you ranked Revenue Growth as far more important than Gross
+Margin ($139B operating profit span vs. $21B span). Did Revenue Growth look like
+the dominant driver only because its tested range was significantly wider (+/-5
+percentage points compounding across five years) compared to Gross Margin (+/-2
+percentage points)?"
+
+[13:52 EDT] MY RESPONSE:
+"You are correct that the dollar span was amplified by range selection: compounding
+a 10-percentage-point total spread across five multi-billion-dollar revenue levels
+naturally generates a larger mathematical output than a 4-point spread on margin.
+However, revenue growth is also structurally more powerful because top-line scale
+dictates the entire dollar size of the pie and dictates working-capital absorption."
+
+MY DISPOSITION ON CHALLENGE 2: [ACCEPTED]
+Rationale: I accepted my partner's critique that my driver ranking was partially
+an artifact of scenario design rather than pure economic elasticity. I agreed
+to explicitly document in my Project 1 validation register that 'driver importance'
+is conditional on the chosen range, and I adopted their recommendation to
+investigate standardized percentage shocks in future sensitivity runs.
+
+JOINT EVIDENCE CHECK PERFORMED
+[14:00 EDT] JOINT AUDIT:
+Verified: Opened NVIDIA's FY2026 Form 10-K (Item 8) and reconciled FY2026
+Revenue of $215,938M and Gross Margin of 71.1%.
+Calculation Traced: Traced Lab 11 Gross Margin (+2 pp) sensitivity to FY2031:
++$10,333.70M Operating Profit -> -$1,560.39M Tax -> +$179.63M Working Capital net
+contribution = exact FCFE increase of +$8,952.95M ($250,961.14M vs. $242,008.19M base).
+Result: Reconciled with zero discrepancy.
