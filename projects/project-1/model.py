@@ -87,6 +87,12 @@ def nwc(b):
 def forecast(d,case='base',growth_shift=0,margin_shift=0):
     require(case in d['cases'],'Unknown case')
     c=d['cases'][case]; x=d['common']; b=opening(d); result=[]; base=ltm(d)
+    require(d['market']['shares']>0,'Diluted shares must be positive')
+    for name in ('tax_rate','rd_ratio','sga_gp_ratio','capex_ratio','ppe_depreciation'):
+        require(0<=x[name]<1,f'{name} must be a decimal rate between zero and one')
+    require(x['capex_ratio']>0 and x['minimum_cash']>=0,'Capex must be positive and cash floor nonnegative')
+    require(all(len(c[k])==5 for k in ('data_center_growth','edge_growth','gross_margin','risk_charge')),'Five annual case driver values required')
+    require(c['dso']>0 and c['inventory_days']>0 and c['dpo']>0,'Working-capital days must be positive')
     dc=base['data_center']; edge=base['revenue']-dc
     for i in range(5):
         prev=copy.deepcopy(b)
@@ -95,7 +101,9 @@ def forecast(d,case='base',growth_shift=0,margin_shift=0):
         revenue=dc+edge; gm=c['gross_margin'][i]+margin_shift
         require(revenue>0 and 0<gm<1,'Invalid revenue or margin')
         cost=revenue*(1-gm); gp=revenue-cost
-        rd=revenue*x['rd_ratio']; sga=gp*x['sga_gp_ratio']; charge=c['risk_charge'][i]
+        retention=d['history']['pending_retention_cash_substitute'] if i==0 else 0
+        acquisition=d['history']['pending_acquisition_cash'] if i==0 else 0
+        rd=revenue*x['rd_ratio']; sga=gp*x['sga_gp_ratio']+retention; charge=c['risk_charge'][i]
         ebit=gp-rd-sga-charge; interest=prev['debt']*(d['market']['risk_free']+d['market']['debt_spread'])
         pretax=ebit-interest; tax=max(pretax,0)*x['tax_rate']; ni=pretax-tax
         dep=prev['ppe']*x['ppe_depreciation']; amort=min(x['amortization'][i],prev['intangibles']); da=dep+amort
@@ -108,7 +116,8 @@ def forecast(d,case='base',growth_shift=0,margin_shift=0):
         delta_nwc=nwc(b)-nwc(prev)
         cfo=ni+da-delta_nwc
         investment=x['new_investments'][i]; b['private_investments']+=investment
-        cfi=-capex-investment
+        cfi=-capex-investment-acquisition
+        b['goodwill']+=acquisition  # Illustrative unallocated acquisition asset; zero incremental operating benefit.
         groq=prev['purchase_consideration'] if i==0 else 0
         b['purchase_consideration']-=groq
         dividends=d['market']['shares']*x['dividend_per_share']; cff=-dividends-x['buybacks']-groq
@@ -124,10 +133,10 @@ def forecast(d,case='base',growth_shift=0,margin_shift=0):
         near(fcff,cfo+interest*(1-x['tax_rate'])-capex,'FCFF from CFO')
         result.append({'year':2027+i,'period_end':f'{2027+i}-07-26','data_center_revenue':dc,'edge_revenue':edge,
             'income_statement':{'revenue':revenue,'cost_of_revenue':cost,'gross_profit':gp,'rd':rd,'sga':sga,
-                'risk_charge':charge,'ebit':ebit,'interest_expense':interest,'pretax_income':pretax,'tax':tax,'net_income':ni},
+                'risk_charge':charge,'retention_included_in_sga':retention,'ebit':ebit,'interest_expense':interest,'pretax_income':pretax,'tax':tax,'net_income':ni},
             'balance_sheet':dict(b,total_assets=a,total_liabilities=l),
             'cash_flow':{'net_income':ni,'depreciation_amortization':da,'delta_operating_nwc':delta_nwc,
-                'cfo':cfo,'capex':capex,'financial_investment_purchases':investment,'cfi':cfi,'dividends':dividends,
+                'cfo':cfo,'capex':capex,'financial_investment_purchases':investment,'acquisition_cash':acquisition,'cfi':cfi,'dividends':dividends,
                 'purchase_consideration_paid':groq,'buybacks':x['buybacks'],'cff':cff,'cash_start':prev['cash'],
                 'cash_change':delta_cash,'cash_end':b['cash']},
             'fcff':fcff,'nopat':nopat,'checks':{'balance_error':a-l-b['equity'],
@@ -157,10 +166,12 @@ def valuation(d,case='base',wacc=None,growth=None,growth_shift=0,margin_shift=0)
     require(0<=g<roic,'Terminal growth must be below terminal ROIC')
     # Terminal NOPAT grows at g; reinvestment = g/ROIC, rather than free perpetual growth.
     terminal=rows[-1]['nopat']*(1+g)*(1-g/roic)
-    flows=[r['fcff'] for r in rows]; flows[0]*=1-e
+    flows=[r['fcff'] for r in rows]
+    retention=d['history']['pending_retention_cash_substitute']*(1-d['common']['tax_rate'])
+    flows[0]=(flows[0]+retention)*(1-e)-retention  # Pending retention not incurred before valuation.
     r=dcf_cashflows(flows,w,g,terminal,[i+1-e for i in range(5)])
     b=opening(d); first=rows[0]['cash_flow']
-    rollcash=b['cash']+e*first['cash_change']
+    rollcash=b['cash']+e*(first['cash_change']+first['acquisition_cash']+retention)
     public=b['public_investments']*c['public_recovery']
     private=(b['private_investments']+e*first['financial_investment_purchases'])*c['private_recovery']
     # Future financial investments are assumed worth cost upon purchase; no operating FCFF or speculative return.
@@ -173,7 +184,8 @@ def valuation(d,case='base',wacc=None,growth=None,growth_shift=0,margin_shift=0)
             'public_investments_net':public,'private_other_investments_net':private,
             'less_debt_fair_value':-d['market']['debt_fair_value'],
             'less_purchase_consideration':-d['history']['groq_consideration']*(1-e),
-            'less_future_investment_loss_pv':-future_loss,'less_guarantee_claim_pv':-guarantee}
+            'less_future_investment_loss_pv':-future_loss,'less_guarantee_claim_pv':-guarantee,
+            'less_pending_acquisition_cash_pv':-d['history']['pending_acquisition_cash']/(1+w)**(1-e)}
     equity=r['enterprise_value']+sum(bridge.values()); price=equity/d['market']['shares']
     require(equity>0,'Equity is nonpositive')
     entry=price*(1-d['market']['entry_discount'])
@@ -194,10 +206,14 @@ def comparables(d):
     pe=statistics.median(p['pe_annual_gaap'] for p in peers)
     sales=statistics.median(p['ev_annual_sales'] for p in peers)
     v=valuation(d); eps=d['history']['FY26']['diluted_eps']
+    subject_ev=d['market']['price']*d['market']['shares']+d['history']['BS_Jul26']['debt_current']+d['history']['BS_Jul26']['debt_long']-d['history']['BS_Jul26']['cash']-d['history']['BS_Jul26']['debt_securities']
+    comparison_bridge=d['history']['BS_Jul26']['cash']+d['history']['BS_Jul26']['debt_securities']-d['history']['BS_Jul26']['debt_current']-d['history']['BS_Jul26']['debt_long']
     return {'policy_record':'evidence/peer-policy.md','peers':peers,'median_pe':pe,'median_ev_sales':sales,
+        'subject_pe_annual_gaap':d['market']['price']/eps,'subject_ev_annual_sales':subject_ev/d['history']['FY26']['revenue'],
+        'comparison_cash_less_book_debt_bridge':comparison_bridge,
         'pe_implied_prices':[p['pe_annual_gaap']*eps for p in peers],
         'median_pe_implied_price':pe*eps,
-        'ev_sales_implied_prices':[(p['ev_annual_sales']*d['history']['FY26']['revenue']+sum(v['bridge'].values()))/d['market']['shares'] for p in peers],
+        'ev_sales_implied_prices':[(p['ev_annual_sales']*d['history']['FY26']['revenue']+comparison_bridge)/d['market']['shares'] for p in peers],
         'warning':'Same-date unadjusted closes; latest-quarter diluted share proxies and financial bridges; latest ANNUAL GAAP earnings/sales for every name. Fiscal years differ and are stale versus AI growth. Not a TTM, forward or clean pure-play valuation.'}
 
 

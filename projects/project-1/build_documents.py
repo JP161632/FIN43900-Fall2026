@@ -87,7 +87,7 @@ def story_from_md(text,s):
 
 def footer(canvas,doc):
     canvas.saveState(); canvas.setFont('Helvetica',8); canvas.setFillColor(colors.HexColor('#526477'))
-    canvas.drawString(54,30,'Project 1 Salesforce | Historical valuation 2026-08-27 | AI use disclosed')
+    canvas.drawString(54,30,'Project 1 NVIDIA | Historical valuation 2026-09-10 | AI use disclosed')
     canvas.drawRightString(558,30,str(doc.page)); canvas.restoreState()
 
 

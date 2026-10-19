@@ -9,7 +9,8 @@
     "BS_Jul26":{"cash":22443,"debt_securities":34143,"equity_securities":42783,"ar":63059,"inventory":31575,"prepaid":3409,"ppe":14285,"rou":5390,"goodwill":21125,"intangibles":2998,"dta":12159,"private_investments":51157,"other_assets":15746,"assets":320272,"ap":15059,"accrued":26960,"debt_current":1000,"debt_long":32366,"lease_long":4985,"other_liabilities":10918,"liabilities":91288,"equity":228984},
     "other_assets_investments":{"locked_public":4957,"equity_method_rounded":3300,"derivatives":824},
     "groq_consideration":986,
-    "q2_revenue":96221,"q2_data_center":89023,"q3_guidance":108000,"annual_h20_net_charge":4320
+    "q2_revenue":96221,"q2_data_center":89023,"q3_guidance":108000,"annual_h20_net_charge":4320,
+    "pending_acquisition_cash":11900,"pending_retention_cash_substitute":1000
   },
   "common": {"rd_ratio":0.086,"sga_gp_ratio":0.03,"tax_rate":0.18,"capex_ratio":0.03,"ppe_depreciation":0.25,"prepaid_ratio":0.011,"other_operating_assets_ratio":0.022,"operating_accrual_ratio":0.12,"dividend_per_share":1.0,"new_investments":[19500,2500,2000,1000,0],"amortization":[879.5,718.5,585,498,275.5],"minimum_cash":10000,"buybacks":0,"stock_compensation":"cash replacement; cost retained; no addback; fixed diluted proxy"},
   "cases": {

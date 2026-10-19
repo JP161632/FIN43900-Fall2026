@@ -1,0 +1,57 @@
+"""Audit artifact consistency; do not misrepresent missing human evidence as complete."""
+import csv
+import hashlib
+import json
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+ROOT=Path(__file__).resolve().parent
+
+
+def main():
+    checks=[]
+    def check(name,condition,detail):
+        checks.append({'check':name,'status':'PASS' if condition else 'FAIL','detail':detail})
+    d=json.loads((ROOT/'data/inputs.json').read_text(encoding='utf-8')); r=json.loads((ROOT/'outputs/results.json').read_text(encoding='utf-8'))
+    v=json.loads((ROOT/'outputs/validation-results.json').read_text(encoding='utf-8'))
+    check('Finance validation',v['status']=='PASS' and len(v['tests'])==15,'15claim-focused tests, actual results in validation-results.json')
+    baseline=hashlib.sha256((ROOT/'evidence/edition-a-existing-nvidia-unchanged.md').read_bytes()).hexdigest()
+    check('EditionA byte preservation',baseline.upper()=='FF289D7D83BF56F977D5D3F85F7CDF13125841075D5E8A59AF03FA845D39ED6B','Preservation only; checkpointPDF/receipt still missing')
+    cold=json.loads((ROOT/'evidence/cold-run-receipt.json').read_text(encoding='utf-8'))
+    check('Fresh no-pip environment',cold['status']=='PASS' and all(x['match'] for x in cold['output_hash_matches'].values()),'Assistant clean run; not student recorded ownership')
+    stale=[]
+    for path in ROOT.rglob('*'):
+        if not path.is_file() or any(x in path.parts for x in ['.build','__pycache__']):continue
+        if path.suffix in ['.md','.json','.csv','.txt','.html']:
+            if re.search('Sales'+'force|\\b'+'CRM'+'\\b',path.read_text(encoding='utf-8'),re.I):stale.append(path.name)
+    check('NVIDIA-only active target',not stale,stale)
+    pdf=json.loads((ROOT/'outputs/pdf-qa.json').read_text(encoding='utf-8'))
+    check('PDF page/bounds checks',pdf['total_pages']==10 and all(not p['out_of_page_blocks'] for f in pdf['files'] for p in f['page_checks']),'All10pages rendered; visual review completed separately')
+    for name,stem in [('Decision-Memo','decision-memo'),('Research-Evolution','research-evolution'),('Validation-and-AI-Use','validation-and-ai-use')]:
+        actual=hashlib.sha256((ROOT/f'{name}.pdf').read_bytes()).hexdigest(); record=next(x for x in pdf['files'] if x['file']==f'{name}.pdf')
+        check(name+' copy/hash',actual==record['sha256'] and (ROOT/f'{name}.pdf').read_bytes()==(ROOT/f'docs/{stem}.pdf').read_bytes(),'Root/docs same PDF; current render receipt hash')
+    check('Memo length',next(x for x in pdf['files'] if x['file']=='Decision-Memo.pdf')['pages']<=2,'Maximum2pages')
+    visible=(ROOT/'outputs/visible-output.md').read_text(encoding='utf-8')
+    check('Visible decision / all statements',all(t in visible for t in ['WATCH / DEFER','five-year income','five-year balance','five-year cash','Market-implied','218.36']), 'Material result viewable without execution')
+    for i in [1,2,3]:
+        check(f'Transcript{i} truthful status','NOT RECORDED' in (ROOT/f'docs/transcript-video-{i}.txt').read_text(encoding='utf-8'),'Pending marker deliberately not claimed completed')
+    steps=(ROOT/'Student next steps.md').read_text(encoding='utf-8')
+    check('Three recording routes and scripts',all(s in steps for s in ['Video1 -','Video2 -','Video3 -','Script:','AI-off','maximum3:00','maximum5:00']), 'Exact file/action routes, planned indices, distinct scripts, authentic-evidence prerequisites')
+    with (ROOT/'submission-manifest.csv').open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
+    check('Uniform manifest',len(rows)==12 and sum(x['required']=='yes' for x in rows)==11,'11required+optionaldeployment; videos honestly blank')
+    freeze=json.loads((ROOT/'file-integrity.json').read_text(encoding='utf-8'))
+    mismatches=[n for n,h in freeze['files'].items() if not (ROOT/n).is_file() or hashlib.sha256((ROOT/n).read_bytes()).hexdigest()!=h]
+    check('Frozen file integrity',not mismatches,mismatches or f"{len(freeze['files'])} stable SHA256matches; exclusions explicit")
+    ui=subprocess.run(['node',str(ROOT/'test_dashboard.cjs')],capture_output=True,text=True)
+    check('Interactive output controls',ui.returncode==0,ui.stdout.strip()+ui.stderr.strip())
+    result={'technical_audit':'PASS' if all(x['status']=='PASS' for x in checks) else 'FAIL',
+            'submission_complete':False,'rubric_score':'Not certified; missing original baseline receipt/PDF, authentic human lock, confirmed partner review and recordings/transcripts',
+            'checks':checks}
+    (ROOT/'outputs/submission-audit.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
+    print(json.dumps(result,indent=2))
+    if result['technical_audit']!='PASS':raise SystemExit(1)
+
+
+if __name__=='__main__':main()

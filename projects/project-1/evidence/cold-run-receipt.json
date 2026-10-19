@@ -1,0 +1,38 @@
+{
+  "timestamp_utc": "2026-10-19T16:28:44.250208+00:00",
+  "operator": "Codex assistant, not a recorded student run",
+  "environment": "new venv with no pip or third-party model packages; copied project; no network/credentials",
+  "setup_exit": 0,
+  "setup_stderr": "",
+  "command": "<fresh-venv-python> <copied-project>/run.py --all --output <fresh-output>",
+  "first_failure": null,
+  "resolution": "not needed if no failure",
+  "output_hash_matches": {
+    "results.json": {
+      "reference": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc",
+      "fresh": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc",
+      "match": true
+    },
+    "validation-results.json": {
+      "reference": "83a8a8426a8b35d053da8d53076f6a420d3faf25f53dbf9a376538e5cd4be777",
+      "fresh": "83a8a8426a8b35d053da8d53076f6a420d3faf25f53dbf9a376538e5cd4be777",
+      "match": true
+    },
+    "visible-output.md": {
+      "reference": "e71d76cd28a3413b7d262edbc674b063f3f617414cc8d50e7fee8e80fb8d4b5e",
+      "fresh": "e71d76cd28a3413b7d262edbc674b063f3f617414cc8d50e7fee8e80fb8d4b5e",
+      "match": true
+    },
+    "dashboard.html": {
+      "reference": "3723c3ba565b73ed21683c47325b5282eaef30d20599b07489abcf35c6a17503",
+      "fresh": "3723c3ba565b73ed21683c47325b5282eaef30d20599b07489abcf35c6a17503",
+      "match": true
+    }
+  },
+  "python": "3.13.15 (main, Sep  1 2026, 14:16:48) [MSC v.1944 64 bit (AMD64)]",
+  "exit_code": 0,
+  "stdout": "NVIDIA: PASS 15/15 tests; WATCH/DEFER; base $118.58; outputs: fresh-output\n",
+  "stderr": "",
+  "elapsed_seconds": 0.716,
+  "status": "PASS"
+}

@@ -1,0 +1,2 @@
+NOT RECORDED - Video 2. This is a status marker, not a transcript.
+After recording, replace with a corrected verbatim transcript of what was actually said, with observed timestamps. Preparation scripts are in Student next steps.md.

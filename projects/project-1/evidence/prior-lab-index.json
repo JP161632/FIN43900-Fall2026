@@ -1,0 +1,56 @@
+[
+  {
+    "path": "projects/lab-05-nvda-dcf/dcf.py",
+    "sha256": "e15ae46f6144057ec4036cfb95160984e894d628a47802abd6daba2d1267cbe4",
+    "last_commit": "28482369fb69873725e8d40996a8c7e09f174cd6",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-05-nvda-dcf/nvda-dcf-lab.md",
+    "sha256": "a40f09d61551323ef6fb2920d2106e7629ac590ca59f8b523d6d8c69b4ede7a3",
+    "last_commit": "97bc343f7a8ab613325c49b4dcd4966d62cff48e",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-08-nvda-pe/lab-08-writeup.md",
+    "sha256": "c60c53001a0c545a275858b03d43c119911eb5b663e2e11ba4ec131aedc7b74f",
+    "last_commit": "5f95636e8fc2d812172bcb1dc6a73a188b2401b4",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-08-nvda-pe/nvda_pe_comps.py",
+    "sha256": "f95a711273a781ff5769829574b82ae6c3d92c0bff7d59f645217b28a6eacd2f",
+    "last_commit": "5f95636e8fc2d812172bcb1dc6a73a188b2401b4",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-10-nvda-proforma/nvda-proforma-lab.md",
+    "sha256": "b3363b465784c1e47a01d4778ae81da165ce2fe29e22f88a11733124ad37225f",
+    "last_commit": "f0ed60c4ab0f0bb8d9f7217dbfd8dcbedd172cf4",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-10-nvda-proforma/nvda_proforma.py",
+    "sha256": "26490175ea6026146b77da8e01a72133c0641e546ee46c60140e4c0f44e72493",
+    "last_commit": "e57c5a15cb2defad2d27aedf0b9c109c86701805",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-11-nvda-sensitivity/lab-11-writeup.md",
+    "sha256": "0000e2dc0a3e5496b658bd1e771073b8c276865e3c4cb3e11778d0452feaff57",
+    "last_commit": "68236e9f934401efb02b639462e316db55bd6677",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-11-nvda-sensitivity/nvda_sensitivity.py",
+    "sha256": "be199f699360041d2b2bbbb255c8220c7ebea378801b170b7eb4ed7050602cc9",
+    "last_commit": "7e0d6283334c119e549b2c3729e591e261cda008",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  },
+  {
+    "path": "projects/lab-12-nvda-review/lab-12-writeup.md",
+    "sha256": "44bf571ba839e3b9ac4504ec6c0cc57f06ea4a6062b601786c8d1e43f8d24e54",
+    "last_commit": "0ef4c821fb921394c50162364df2ee6030286b12",
+    "use": "Historical research trail, not unqualified final valuation evidence"
+  }
+]

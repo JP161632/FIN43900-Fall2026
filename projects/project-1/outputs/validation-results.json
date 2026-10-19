@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "test": "Official training DCF and nine cells",
+      "claim": "Published independent known answers, not self-generated expectations",
+      "status": "PASS",
+      "result": {
+        "ev": 1624.8685199098418,
+        "grid": [
+          [
+            28.598850582928744,
+            32.942594335725296,
+            39.02383558964048
+          ],
+          [
+            24.356422648726173,
+            27.497370398196836,
+            31.68530073082439
+          ],
+          [
+            21.057925415989104,
+            23.41403273251337,
+            26.443313568044573
+          ]
+        ],
+        "benchmark": "lessons/week-03/teach-dcf-worked-example.md"
+      }
+    },
+    {
+      "test": "Official Week2 FCFF and bridge",
+      "claim": "Units and senior-claim signs",
+      "status": "PASS",
+      "result": {
+        "fcff": 77.5,
+        "equity": 820,
+        "price": 8.2,
+        "benchmark": "lessons/week-02/starter/mini_case.csv"
+      }
+    },
+    {
+      "test": "Historical source reconciliations",
+      "claim": "Income, balance sheets and cash reconciliation across filings",
+      "status": "PASS",
+      "result": {
+        "income_cash_periods": 3,
+        "balance_dates": 2,
+        "max_income_cash_error": 0
+      }
+    },
+    {
+      "test": "Independent source / definition check",
+      "claim": "Prevent cash-label, debt-basis and interest-rate-column contamination",
+      "status": "PASS",
+      "result": {
+        "evidence": "Issuer Q2 release BS independently compared with 10-Q BS/Notes5,10,11; Treasury Sep10 10Yr (not real yield)",
+        "cash_like": 56586,
+        "marketable_equity_excluded": 42783,
+        "book_debt": 33366,
+        "fair_debt": 31400,
+        "risk_free": 0.0495
+      }
+    },
+    {
+      "test": "25 forecast statement articulations",
+      "claim": "Every causal case and named what-if",
+      "status": "PASS",
+      "result": {
+        "years": 25,
+        "maximum_error_millions": 2.3283064365386963e-10,
+        "no_plug": "Cash from cash flow; equity from retained earnings; minimum cash enforced"
+      }
+    },
+    {
+      "test": "Prewritten directional changed input",
+      "claim": "Expected and actual valuation/action effect",
+      "status": "PASS",
+      "result": {
+        "prediction": "evidence/directional-test-precommit.md (AI-authored; not human lock)",
+        "old_wacc": 0.13896509736724513,
+        "new_wacc": 0.14896509736724514,
+        "old_price": 118.58486735166377,
+        "new_price": 108.37851365729144,
+        "expected_direction": "lower",
+        "actual_direction": "lower",
+        "old_action": "WATCH / DEFER",
+        "new_action": "WATCH / DEFER",
+        "decision_effect": "Deferral persists because price remains above the base entry ceiling; discount-rate risk strengthens caution"
+      }
+    },
+    {
+      "test": "WACC / growth monotonicity",
+      "claim": "Test expected direction over 32 admissible comparisons",
+      "status": "PASS",
+      "result": "Higher WACC lowers value; higher g raises it even after terminal reinvestment; full bridge recomputed"
+    },
+    {
+      "test": "Invalid terminal / units rejected",
+      "claim": "Fail loudly rather than create infinite value",
+      "status": "PASS",
+      "result": [
+        "Require 0 <= g < WACC",
+        "WACC must be a decimal below 1",
+        "Terminal growth must be below terminal ROIC"
+      ]
+    },
+    {
+      "test": "EV / equity / share bridge",
+      "claim": "No duplicate non-operating investments, debt at fair value",
+      "status": "PASS",
+      "result": {
+        "equity": 2874734.3543390334,
+        "dilution_test": "2% more shares lowers value; dividend cash also recomputed"
+      }
+    },
+    {
+      "test": "Corrupt source / liquidity failure injection",
+      "claim": "Highest-risk classification and unsupported financing cannot silently pass",
+      "status": "PASS",
+      "result": [
+        "BS_Jul26 assets: 320273 != 320272",
+        "base year1 cash below floor; explicit funding needed"
+      ]
+    },
+    {
+      "test": "Highest-risk investment contamination experiment",
+      "claim": "Quantify the prior-lab error rather than trust a balancing model",
+      "status": "PASS",
+      "result": {
+        "financial_portfolio_excluded_from_nwc": 103021,
+        "wrong_scaling_explicit_ev_drag": 126463.72972160792,
+        "minimum_wrong_price_drag": 5.21672014361884,
+        "diagnosis": "Repeats the Lab10/11 investment-classification failure; false operating reinvestment is not economic capex"
+      }
+    },
+    {
+      "test": "Signed cash-flow regression",
+      "claim": "Reject the old practice of dropping negative forecast flows",
+      "status": "PASS",
+      "result": "Negative year1 FCFF reduces EV by90.9091; no nonpositive-flow filter"
+    },
+    {
+      "test": "SBC free-cash-flow overstatement challenge",
+      "claim": "Economic cost retained; quantified intentionally wrong addback",
+      "status": "PASS",
+      "result": {
+        "cost_treatment": "SBC expense retained, cash substitute, no addback, fixed shares",
+        "minimum_wrong_five_year_value_inflation_per_share": 1.0450018556651153,
+        "warning": "Terminal inflation would make the full error larger"
+      }
+    },
+    {
+      "test": "Peer policy and consistent definitions",
+      "claim": "Dates, fiscal-period limits and EV/equity definitions",
+      "status": "PASS",
+      "result": {
+        "policy": "Retained from Lab8; AMD use / AVGO qualify before new multiple calculations",
+        "annual_gaap_only": true,
+        "no_lease_debt": "Operating leases treated as operating in all EV calculations"
+      }
+    },
+    {
+      "test": "Highest-risk causal downside and reverse DCF",
+      "claim": "Limitation changes action; market expectation solves within bracket",
+      "status": "PASS",
+      "result": {
+        "base_action": "WATCH / DEFER",
+        "downside_action": "DO NOT INITIATE",
+        "minimum_low_case_cash_after_hypothetical_year3_claim": 376201.3647226627,
+        "cause": "Demand/collection/margin deterioration plus guarantee losses breaches the risk gate",
+        "reverse_dc_shift": 0.1981961962529647
+      }
+    }
+  ],
+  "human_evidence_status": "INCOMPLETE: genuine human AI-off locked prediction and observed recording/transcripts not provided"
+}

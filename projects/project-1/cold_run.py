@@ -64,7 +64,7 @@ Console output:
 {result.get('stdout','')}{result.get('stderr','')}
 ```
 
-All four deterministic financial/output files must match the frozen reference. The volatile run receipt is expected to have a new timestamp and is not compared. The course known answers, source checks, accounting/terminal/bridge checks, highest-risk SBC failure and decision-altering downside run inside this clean execution.
+All four deterministic financial/output files must match the frozen reference. The volatile run receipt is expected to have a new timestamp and is not compared. The course known answers, source checks, accounting/terminal/bridge checks, highest-risk investment/SBC failure and decision-altering downside run inside this clean execution.
 
 **No recording was made of a student performing this run.** This is useful technical reproduction evidence; it does not substitute for the student's Video2/code ownership or human AI-off locked changed-input exercise. Follow the README in a genuinely clean environment and record the required defense.
 '''

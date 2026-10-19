@@ -1,0 +1,77 @@
+{
+  "status": "rendered; visual review recorded in rubric audit",
+  "total_pages": 10,
+  "files": [
+    {
+      "file": "Research-Evolution.pdf",
+      "pages": 4,
+      "sha256": "f0829ccfbe3205f1a5108541f91b9a244843661f0fa803c0ad4ceaafe296137b",
+      "page_checks": [
+        {
+          "page": 1,
+          "text_characters": 3257,
+          "out_of_page_blocks": []
+        },
+        {
+          "page": 2,
+          "text_characters": 2506,
+          "out_of_page_blocks": []
+        },
+        {
+          "page": 3,
+          "text_characters": 2352,
+          "out_of_page_blocks": []
+        },
+        {
+          "page": 4,
+          "text_characters": 1812,
+          "out_of_page_blocks": []
+        }
+      ]
+    },
+    {
+      "file": "Decision-Memo.pdf",
+      "pages": 2,
+      "sha256": "97b608c9d4658cc3e48bd50d4d170a5d96859d03b22024a651fcc739149a10b7",
+      "page_checks": [
+        {
+          "page": 1,
+          "text_characters": 3061,
+          "out_of_page_blocks": []
+        },
+        {
+          "page": 2,
+          "text_characters": 3992,
+          "out_of_page_blocks": []
+        }
+      ]
+    },
+    {
+      "file": "Validation-and-AI-Use.pdf",
+      "pages": 4,
+      "sha256": "fb5caca3769cc8c77c8daee25f55140638649d8e7227747964f85ed097c958a4",
+      "page_checks": [
+        {
+          "page": 1,
+          "text_characters": 2645,
+          "out_of_page_blocks": []
+        },
+        {
+          "page": 2,
+          "text_characters": 2707,
+          "out_of_page_blocks": []
+        },
+        {
+          "page": 3,
+          "text_characters": 4033,
+          "out_of_page_blocks": []
+        },
+        {
+          "page": 4,
+          "text_characters": 1693,
+          "out_of_page_blocks": []
+        }
+      ]
+    }
+  ]
+}

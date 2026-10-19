@@ -87,6 +87,24 @@ def validate(d):
         cash=copy.deepcopy(d); cash['common']['new_investments'][0]=1e7
         return [result,rejects(lambda:forecast(cash),'cash below floor')]
     record('Corrupt source / liquidity failure injection','Highest-risk classification and unsupported financing cannot silently pass',broken)
+    def contamination():
+        b=opening(d); correct=valuation(d); portfolio=b['public_investments']+b['private_investments']
+        rev0=ltm(d)['revenue']; prior=portfolio; extra=[]
+        for y in correct['forecast']:
+            wrong=portfolio*y['income_statement']['revenue']/rev0
+            extra.append(wrong-prior); prior=wrong
+        ev_drag=sum(z/(1+correct['wacc'])**t for z,t in zip(extra,correct['discount_times']))
+        assert ev_drag>0
+        return {'financial_portfolio_excluded_from_nwc':portfolio,'wrong_scaling_explicit_ev_drag':ev_drag,
+                'minimum_wrong_price_drag':ev_drag/d['market']['shares'],
+                'diagnosis':'Repeats the Lab10/11 investment-classification failure; false operating reinvestment is not economic capex'}
+    record('Highest-risk investment contamination experiment','Quantify the prior-lab error rather than trust a balancing model',contamination)
+    def signed():
+        full=dcf_cashflows([-100,100,100,100,100],.10,.03)
+        dropped=dcf_cashflows([0,100,100,100,100],.10,.03)
+        near(dropped['enterprise_value']-full['enterprise_value'],100/1.1,'signed negative FCFF preserved')
+        return 'Negative year1 FCFF reduces EV by90.9091; no nonpositive-flow filter'
+    record('Signed cash-flow regression','Reject the old practice of dropping negative forecast flows',signed)
     def sbc():
         b=valuation(d); addback=ltm(d)['sbc']; require_cost=all('cash replacement' in d['common']['stock_compensation'] for _ in [0])
         assert require_cost
@@ -101,6 +119,8 @@ def validate(d):
             near(x['ev_annual_sales']*x['annual_revenue'],x['enterprise_value_proxy'],'EV/sales')
             near(x['pe_annual_gaap']*x['annual_eps'],x['price'],'P/E')
             assert x['price_date']=='2026-09-10' and x['annual_publication']<='2026-09-10' and x['quarter_publication']<='2026-09-10'
+        for x,price in zip(p['peers'],p['ev_sales_implied_prices']):
+            near(price*d['market']['shares']-p['comparison_cash_less_book_debt_bridge'],x['ev_annual_sales']*d['history']['FY26']['revenue'],'same comparison EV convention backsolve')
         return {'policy':'Retained from Lab8; AMD use / AVGO qualify before new multiple calculations',
                 'annual_gaap_only':True,'no_lease_debt':'Operating leases treated as operating in all EV calculations'}
     record('Peer policy and consistent definitions','Dates, fiscal-period limits and EV/equity definitions',peer)
@@ -108,7 +128,11 @@ def validate(d):
         r=all_results(d); assert r['cases']['low']['per_share']<r['cases']['base']['per_share']<r['cases']['high']['per_share']
         assert r['cases']['low']['action']=='DO NOT INITIATE'
         assert r['cases']['base']['action']=='WATCH / DEFER'
+        low=r['cases']['low']; claim=d['cases']['low']['guarantee_claim']; start=d['cases']['low']['claim_year']
+        cash_after_call=min(y['cash_flow']['cash_end']-claim for i,y in enumerate(low['forecast'],1) if i>=start)
+        assert cash_after_call>=d['common']['minimum_cash']
         return {'base_action':r['cases']['base']['action'],'downside_action':r['cases']['low']['action'],
+                'minimum_low_case_cash_after_hypothetical_year3_claim':cash_after_call,
                 'cause':'Demand/collection/margin deterioration plus guarantee losses breaches the risk gate',
                 'reverse_dc_shift':r['reverse_dcf']['constant_increment_to_each_dc_growth']}
     record('Highest-risk causal downside and reverse DCF','Limitation changes action; market expectation solves within bracket',risk)
