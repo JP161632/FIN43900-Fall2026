@@ -34,3 +34,7 @@ The student supplied an Antigravity-produced log and confirms the actual October
 | Relative growth-versus-margin importance | peer challenge at 13:50; ACCEPTED. Original ranking depends on tested ranges. Equal +/-5% relative final-model shocks give margin $14.04/share span versus DC growth $8.89. | Different ranges, horizon or output metric may change the ranking; economic probability is not inferred from equal shocks. Margin has the larger span in this executed diagnostic. |
 
 Full source, timing, roles, corrections, joint trace and action implications: evidence/partner-review-record.md; supplied-log transcription; outputs/peer-review-checks.json. Follow-up executed by the assistant October 19 after precommit e0f6521, not backdated to class and not used as the student's terminal-growth lock. Earlier fictional practice text is excluded from actual peer evidence and remains only in prior immutable history.
+
+## Student terminal-growth challenge and observed result
+
+Student prediction was preserved and fully specified before execution at 5a9de1d. At fixed operating forecasts/WACC/ROIC/bridge/shares, terminal growth 3.0% to 2.5% lowers value $118.58 to $116.57 (-1.70%), with WATCH / DEFER unchanged. Reinvestment falls from 12% to 10%, partly offsetting the lower-growth effect. The modest result supports direction, not a quantified “much lower” claim. Full evidence: locked-changed-input-record.md and locked-growth-results.json. The 3% base assumption remains separately identifiable.

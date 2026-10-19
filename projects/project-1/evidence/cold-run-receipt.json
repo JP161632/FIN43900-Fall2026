@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-10-19T20:47:30.981984+00:00",
+  "timestamp_utc": "2026-10-19T20:57:34.528909+00:00",
   "operator": "Codex assistant, not a recorded student run",
   "environment": "new venv with no pip or third-party model packages; copied project; no network/credentials",
   "setup_exit": 0,
@@ -19,13 +19,13 @@
       "match": true
     },
     "visible-output.md": {
-      "reference": "2f1ce9aaa3798983e0dece7f595fe17b6ad94ce82846e4a41063ef997d01e074",
-      "fresh": "2f1ce9aaa3798983e0dece7f595fe17b6ad94ce82846e4a41063ef997d01e074",
+      "reference": "e01bd9a540714a0e8f6ea5df61f552773b74d32b6d3d79f85ca16c2b27af4934",
+      "fresh": "e01bd9a540714a0e8f6ea5df61f552773b74d32b6d3d79f85ca16c2b27af4934",
       "match": true
     },
     "dashboard.html": {
-      "reference": "890763a92b4cc71fd9e8d690cf688f150ed95d0521c9a2488cb4530551a03bc1",
-      "fresh": "890763a92b4cc71fd9e8d690cf688f150ed95d0521c9a2488cb4530551a03bc1",
+      "reference": "6afdad5c7b4feac0dfdbc46047b4e8ab13664dae7a96dd6d11d06b572e14e65c",
+      "fresh": "6afdad5c7b4feac0dfdbc46047b4e8ab13664dae7a96dd6d11d06b572e14e65c",
       "match": true
     }
   },
@@ -33,6 +33,6 @@
   "exit_code": 0,
   "stdout": "NVIDIA: PASS 15/15 tests; WATCH/DEFER; base $118.58; outputs: fresh-output\n",
   "stderr": "",
-  "elapsed_seconds": 1.096,
+  "elapsed_seconds": 1.42,
   "status": "PASS"
 }

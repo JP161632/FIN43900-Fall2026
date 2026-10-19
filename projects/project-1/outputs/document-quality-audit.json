@@ -8,7 +8,7 @@
   "files": [
     {
       "file": "Research-Evolution.pdf",
-      "sha256": "8c495c5dcc533423d9b02aeef94139a7cd54518129ab4c7759c3c11afd2224e0",
+      "sha256": "0476dc80aecb79caef1c6b44eb22849819ef34e13ec597a8709f1a3fb22bdcf6",
       "pages": [
         {
           "page": 1,
@@ -43,7 +43,7 @@
     },
     {
       "file": "Decision-Memo.pdf",
-      "sha256": "45acb86d5a10cb4427718cc7aad6f1b44acf24eeb154009a698c2e8339db829a",
+      "sha256": "be77a58193bf084ecb56fed3d688b6c6b21e0485329136972003e482853b0a0f",
       "pages": [
         {
           "page": 1,
@@ -54,7 +54,7 @@
         },
         {
           "page": 2,
-          "word_count": 545,
+          "word_count": 559,
           "bounds": "PASS",
           "word_overlap": "PASS",
           "replacement_glyphs": false
@@ -64,7 +64,7 @@
     },
     {
       "file": "Validation-and-AI-Use.pdf",
-      "sha256": "dbb6d0624e6ae15265a8de6b965236f6ca4f5429c8bbca915859a007330acf26",
+      "sha256": "e17caaab38f437d3fb0bfd6b3e15281542ea0967dceabbae97c5d2673e620424",
       "pages": [
         {
           "page": 1,
@@ -82,20 +82,20 @@
         },
         {
           "page": 3,
-          "word_count": 413,
+          "word_count": 419,
           "bounds": "PASS",
           "word_overlap": "PASS",
           "replacement_glyphs": false
         },
         {
           "page": 4,
-          "word_count": 367,
+          "word_count": 368,
           "bounds": "PASS",
           "word_overlap": "PASS",
           "replacement_glyphs": false
         }
       ],
-      "clickable_links": 17
+      "clickable_links": 18
     },
     {
       "file": "Recording-Charts.pdf",

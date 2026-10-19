@@ -41,4 +41,4 @@ The $20,000m buyback figure is a legacy forecast assumption, not evidence of a f
 - Independent reproduction and equal-shock results: outputs/peer-review-checks.json; executable run_peer_review_checks.py.
 - Source/model context: preserved Lab 11 code and Lab 12 writeup; source map and driver challenges.
 - Attribution status: **student-confirmed, credited peer discussion supplied**. Financial claims are accepted, corrected or qualified as above; no independent audio certification is implied.
-- The separate human locked record still needs the exact new terminal-growth rate and predicted recommendation before its changed run.
+- The separate student terminal-growth record is now executed: precommit 5a9de1d, g 3% to 2.5%, $118.58 to $116.57 and WATCH / DEFER unchanged; its authorship/policy basis is documented separately.

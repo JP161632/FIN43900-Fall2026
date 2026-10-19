@@ -80,7 +80,7 @@ The current test recomputes discount-dependent bridge claim PVs, holding operati
 
 ## V4 Evidence boundary
 
-[Current human-lock record](../evidence/locked-changed-input-record.md) remains markedINCOMPLETE; [humanized response draft](../docs/changed-input-response-draft.md) was written after the test. Use your actual completed artifact if saved elsewhere. A reported instructor exception can change which exercise is permitted, but cannot create a past AI-off prediction. Original checkpointPDF/receipt and confirmed partner attribution are also not supplied in this local package. These limits are separate from 15 passing financial tests and a reproducible assistant cold run. A new recorded student run must show what actually happened.
+[Current student locked record](../evidence/locked-changed-input-record.md) now preserves prediction precommit 5a9de1d and executed terminal growth 3%->2.5%: $118.58->$116.57 (-1.70%), WATCH/DEFER unchanged. The earlier [humanized WACC draft](../docs/changed-input-response-draft.md) is separate historical rehearsal. Attributed peer review is supplied. Original checkpoint and audio/timestamp verification remain open; recorded performances are not inferred from technical tests.
 
 ## C1 Dated action and causal range
 

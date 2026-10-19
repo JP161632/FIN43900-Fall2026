@@ -1,5 +1,6 @@
 """Audit artifact consistency; do not misrepresent missing human evidence as complete."""
 import csv
+import datetime as dt
 import hashlib
 import json
 from pathlib import Path
@@ -19,7 +20,11 @@ def main():
     check('Finance validation',v['status']=='PASS' and len(v['tests'])==15,'15claim-focused tests, actual results in validation-results.json')
     peer=json.loads((ROOT/'outputs/peer-review-checks.json').read_text(encoding='utf-8'))
     peer_status=json.loads((ROOT/'evidence/submission-status.json').read_text(encoding='utf-8'))
-    check('Attributed peer challenge and independent follow-up',peer['status']=='PASS' and peer_status['partner_review'].startswith('SUPPLIED') and peer['credit']=='peer challenge' and abs(peer['legacy_margin_trace']['unrounded_reconciliation_error'])<1e-6 and peer['equal_relative_shocks']['gross_margin']['per_share_span']>peer['equal_relative_shocks']['data_center_growth']['per_share_span'] and peer['financial_results_unchanged_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest(),'Student-confirmed Antigravity log; named dispositions; independently reproduced legacy trace and equal-relative range challenge; separate from pending human lock')
+    check('Attributed peer challenge and independent follow-up',peer['status']=='PASS' and peer_status['partner_review'].startswith('SUPPLIED') and peer['credit']=='peer challenge' and abs(peer['legacy_margin_trace']['unrounded_reconciliation_error'])<1e-6 and peer['equal_relative_shocks']['gross_margin']['per_share_span']>peer['equal_relative_shocks']['data_center_growth']['per_share_span'] and peer['financial_results_unchanged_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest(),'Student-confirmed Antigravity log; named dispositions; independently reproduced legacy trace and equal-relative range challenge; separate from the student terminal-growth record')
+    locked=json.loads((ROOT/'evidence/locked-growth-results.json').read_text(encoding='utf-8'))
+    artifact_matches=all(hashlib.sha256((ROOT/x['output_path']).read_bytes()).hexdigest()==x['sha256'] and hashlib.sha256((ROOT/x['log_path']).read_bytes()).hexdigest()==x['log_sha256'] and json.loads((ROOT/x['log_path']).read_text(encoding='utf-8'))['return_code']==0 for x in locked['runs'].values())
+    spec_committed=subprocess.run(['git','show',locked['prediction_commit']+':projects/project-1/evidence/locked-growth-precommit.json'],cwd=ROOT.parents[1],capture_output=True,text=True,check=True).stdout
+    check('Student prediction precommit and executed growth comparison',locked['status']=='EXECUTED / PASS' and dt.datetime.fromisoformat(locked['prediction_commit_time'])<dt.datetime.fromisoformat(locked['started_utc']) and json.loads(spec_committed)==locked['specification'] and artifact_matches and locked['expected_direction_matches'] and locked['expected_action_matches'] and locked['operating_forecast_unchanged'] and locked['financial_results_unchanged_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest(),'Student-selected 3% to 2.5%; immutable prediction before run; $118.58 to $116.57 (-1.70%); unchanged WATCH/DEFER; modest magnitude explicitly assessed; assistant execution and instructor-permission basis recorded')
     baseline=hashlib.sha256((ROOT/'evidence/edition-a-existing-nvidia-unchanged.md').read_bytes()).hexdigest()
     check('EditionA byte preservation',baseline.upper()=='FF289D7D83BF56F977D5D3F85F7CDF13125841075D5E8A59AF03FA845D39ED6B','Preservation only; checkpointPDF/receipt still missing')
     cold=json.loads((ROOT/'evidence/cold-run-receipt.json').read_text(encoding='utf-8'))
@@ -62,7 +67,7 @@ def main():
     ui=subprocess.run(['node',str(ROOT/'test_dashboard.cjs')],capture_output=True,text=True)
     check('Interactive output controls',ui.returncode==0,ui.stdout.strip()+ui.stderr.strip())
     result={'technical_audit':'PASS' if all(x['status']=='PASS' for x in checks) else 'FAIL',
-            'submission_complete':False,'rubric_score':'Not certified; original baseline receipt/PDF, human lock, timestamp index and material speech/caption reconciliation remain unresolved',
+            'submission_complete':False,'rubric_score':'Not certified; original baseline receipt/PDF and audio/timestamp verification remain unresolved; student growth prediction/run and attributed peer review supplied, with authorship/policy basis documented',
             'checks':checks}
     (ROOT/'outputs/submission-audit.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(result,indent=2))

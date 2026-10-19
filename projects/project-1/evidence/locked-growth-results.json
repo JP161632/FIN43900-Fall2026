@@ -1,0 +1,83 @@
+{
+  "status": "EXECUTED / PASS",
+  "prediction_commit": "5a9de1da7f280857b3c132af59f06e76a58faff0",
+  "prediction_commit_time": "2026-10-19T16:54:56-04:00",
+  "prediction_specification_sha256": "367cbc0592c7722b51b6525c30a98136bd6d9b3bbec68592197bc34e78710fd3",
+  "started_utc": "2026-10-19T20:55:33.484427+00:00",
+  "ended_utc": "2026-10-19T20:55:33.928167+00:00",
+  "operator": "Assistant executing the student-authored, committed prediction",
+  "specification": {
+    "prediction_source": "Student conversation messages; original text preserved at d9f1f52 and full numerical/action specification in the commit containing this file",
+    "specification_captured_utc": "2026-10-19T20:54:17+00:00",
+    "input_path": "cases.base.terminal_growth",
+    "cli_override": "--growth",
+    "old_value": 0.03,
+    "new_value": 0.025,
+    "units": "decimal annual nominal terminal growth rate; 3.0% to 2.5%, minus 0.5 percentage point / 50 basis points",
+    "student_expected_valuation_direction": "lower",
+    "student_expected_magnitude": "much lower; qualitative only, no numerical threshold supplied",
+    "student_expected_action": "WATCH / DEFER",
+    "student_reason": "Lower long-run growth should lower valuation",
+    "held_fixed": [
+      "five-year operating forecasts",
+      "WACC",
+      "terminal ROIC",
+      "bridge assumptions",
+      "diluted-share proxy"
+    ],
+    "consistent_derived_change": "Terminal reinvestment updates as growth / terminal ROIC; terminal NOPAT growth and WACC-minus-growth denominator update",
+    "prediction_author": "student",
+    "recording_and_execution": "assistant, after the precommit",
+    "ai_wording_permission": "Student previously reported instructor permission; no independent AI-off attestation is fabricated"
+  },
+  "runs": {
+    "baseline": {
+      "output_path": "evidence/locked-growth/baseline/scenario.json",
+      "sha256": "8b797ab0e61bc9634fe84c62fc3aafdede0cd9b05eb3d1a750dd4a9384f37cb3",
+      "log_path": "evidence/locked-growth/baseline/execution-log.json",
+      "log_sha256": "c11689fc3181f7d23e1364c3a7954db3e62a9783b497b0b2bf921a86830bf930",
+      "growth": 0.03,
+      "per_share": 118.58486735166377,
+      "enterprise_value_millions": 2793797.327340747,
+      "equity_value_millions": 2874734.3543390334,
+      "terminal_fcff_millions": 373739.903520876,
+      "pv_terminal_millions": 1819080.1718563216,
+      "terminal_share": 0.65111386357714,
+      "entry_ceiling": 94.86789388133103,
+      "action": "WATCH / DEFER"
+    },
+    "changed": {
+      "output_path": "evidence/locked-growth/changed/scenario.json",
+      "sha256": "839d6ef721a863df333cf3790c2e71202494e1d36e2f6bb83c3e29b814c0ca14",
+      "log_path": "evidence/locked-growth/changed/execution-log.json",
+      "log_sha256": "6a8f6986eabc8a7f90483d833626d3883a2587e7a4889e75af03cbfa50bb9833",
+      "growth": 0.025,
+      "per_share": 116.56710034098701,
+      "enterprise_value_millions": 2744882.619467921,
+      "equity_value_millions": 2825819.646466207,
+      "terminal_fcff_millions": 380378.48742057383,
+      "pv_terminal_millions": 1770165.4639834953,
+      "terminal_share": 0.6448965982839118,
+      "entry_ceiling": 93.25368027278961,
+      "action": "WATCH / DEFER"
+    }
+  },
+  "actual_direction": "lower",
+  "expected_direction_matches": true,
+  "expected_action_matches": true,
+  "per_share_change": -2.0177670106767636,
+  "per_share_percentage_change": -1.7015383629793712,
+  "operating_forecast_unchanged": true,
+  "held_fixed_checks": [
+    "wacc",
+    "terminal_roic",
+    "diluted_shares",
+    "bridge"
+  ],
+  "original_inputs_unchanged_sha256": "89acf56b128bc556277cefc7f37b297939924f7346231ce41eb4c194c9976d43",
+  "financial_results_unchanged_sha256": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc",
+  "magnitude_assessment": "Student predicted much lower without a numerical threshold. Report observed size rather than claiming a quantified magnitude target passed.",
+  "no_change_reason": "Market price $218.36 remains above changed intrinsic value and the 20%-discount entry ceiling; lower terminal growth reinforces deferral.",
+  "mechanism": "Lower terminal g lowers the growth multiplier and increases WACC-minus-g, while lower g/ROIC reinvestment partly offsets the valuation decline. Explicit five-year forecasts stay fixed.",
+  "authorship_boundary": "Student supplied original prediction, exact rate and expected action before this run. Assistant recorded/executed. Instructor AI-wording permission is student-reported; no independent AI-off attestation is invented."
+}

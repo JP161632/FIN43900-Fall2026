@@ -33,7 +33,7 @@ At $218.36, WATCH/DEFER; intrinsic causal range $56-$212, base reference $119; a
 
 Course requirements supplied the FCFF architecture and validation standards. Existing student materials supplied NVIDIA and the prior lab trail; Labs 10-12 already recorded classification and sensitivity concerns. Student confirms the October 1 peer discussion; Antigravity supplied its log. Other older authorship is not independently established. Codex assisted research, coding, assumptions, drafting and checks. Sources/tests validate implementation, not forecast truth. The later watch/defer action held; evidence and conditions evolved.
 
-The [attributed peer review](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-peer-review-2026-10-19/projects/project-1/evidence/partner-review-record.md) is now credited. A follow-up using equal +/-5% relative driver shocks produces a $14.04/share margin span versus $8.89 for Data Center growth; this rejects a universal growth-dominance claim.
+The [attributed peer review](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-locked-growth-2026-10-19/projects/project-1/evidence/partner-review-record.md) is now credited. A follow-up using equal +/-5% relative driver shocks produces a $14.04/share margin span versus $8.89 for Data Center growth; this rejects a universal growth-dominance claim.
 
 ## AI output independently corrected
 
@@ -41,9 +41,9 @@ Earlier treatment scaled investments as operating reinvestment and mislabeled ca
 
 ## Unresolved evidence that limits credit
 
-Three bounded videos and editorially corrected transcripts are supplied; audio alignment/timestamp indices remain unverified. Original checkpoint PDF/receipt and the human locked exercise remain unresolved; attributed peer evidence is now supplied. Assistant tests or scripts do not prove human events. No maximum-credit claim is certified.
+Three bounded videos and editorially corrected transcripts are supplied; audio alignment/timestamp indices remain unverified. Student terminal-growth test is executed and attributed peer evidence is supplied; original checkpoint PDF/receipt remains missing. Assistant tests or scripts do not prove human events. No maximum-credit claim is certified.
 
-Evidence locations: [data/source-map.md](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-peer-review-2026-10-19/projects/project-1/data/source-map.md); [evidence/prior-lab-index.json](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-peer-review-2026-10-19/projects/project-1/evidence/prior-lab-index.json); [evidence/assumption-challenges.md](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-peer-review-2026-10-19/projects/project-1/evidence/assumption-challenges.md); [evidence/video-review.json](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-peer-review-2026-10-19/projects/project-1/evidence/video-review.json); [outputs/validation-results.json](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-peer-review-2026-10-19/projects/project-1/outputs/validation-results.json). Full baseline hash follows in the appendix.
+Evidence locations: [data/source-map.md](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-locked-growth-2026-10-19/projects/project-1/data/source-map.md); [evidence/prior-lab-index.json](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-locked-growth-2026-10-19/projects/project-1/evidence/prior-lab-index.json); [evidence/assumption-challenges.md](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-locked-growth-2026-10-19/projects/project-1/evidence/assumption-challenges.md); [evidence/video-review.json](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-locked-growth-2026-10-19/projects/project-1/evidence/video-review.json); [outputs/validation-results.json](https://github.com/JP161632/FIN43900-Fall2026/blob/project-1-nvidia-locked-growth-2026-10-19/projects/project-1/outputs/validation-results.json). Full baseline hash follows in the appendix.
 
 <!-- pagebreak -->
 ## Existing EditionA text - reading reproduction only

@@ -1,12 +1,12 @@
 # Assistant clean-environment cold run
 
-Run UTC: 2026-10-19T20:47:30.981984+00:00. Operator: Codex assistant. Status: **PASS**.
+Run UTC: 2026-10-19T20:57:34.528909+00:00. Operator: Codex assistant. Status: **PASS**.
 
 Isolation: a new temporary project copy and a new Python virtual environment created with `python -m venv --without-pip`. No model package installation, credentials or data fetches. The current workspace's site-packages are not inherited.
 
 Exact logical command: `<fresh-venv-python> <copied-project>/run.py --all --output <fresh-output>`. Temporary absolute paths are deliberately omitted from the public record.
 
-First failure: None observed. Resolution: not needed if no failure. Measured setup and execution time: 1.096 seconds. Runtime and byte-for-byte output hashes are in `cold-run-receipt.json`.
+First failure: None observed. Resolution: not needed if no failure. Measured setup and execution time: 1.42 seconds. Runtime and byte-for-byte output hashes are in `cold-run-receipt.json`.
 
 Console output:
 

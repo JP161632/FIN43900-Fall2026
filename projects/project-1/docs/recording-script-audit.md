@@ -28,3 +28,5 @@ At the time of this local audit, no new original EditionA PDF/receipt, completed
 ## Rehearsal acceptance standard
 
 A cold reviewer should be able to pause Video1 and identify an earlier estimate, later estimate, source/test and decision effect; pause Video2 and locate a real formula plus expected/actual numeric or rejected-input outcome; and pause Video3 and state the dated committee action, defended range, conditions and reversal rule. If a spoken claim lacks readable evidence, revise the scene or qualify/remove the claim. Keep final narration consistent with the actual artifacts supplied.
+
+Student growth-lock closure update: complete numerical/action prediction committed at5a9de1d before execution. g3%->2.5% lowers value $118.58->$116.57 (-1.70%); WATCH/DEFER holds. Full artifacts/hashes and magnitude diagnosis are in evidence/locked-changed-input-record.md and locked-growth-results.json. Earlier missing/partial-test findings are superseded by this executed record; reported instructor wording permission and actual authorship/execution are documented without inventing an AI-off attestation. Use snapshot project-1-nvidia-locked-growth-2026-10-19.

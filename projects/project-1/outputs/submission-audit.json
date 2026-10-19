@@ -1,7 +1,7 @@
 {
   "technical_audit": "PASS",
   "submission_complete": false,
-  "rubric_score": "Not certified; original baseline receipt/PDF, human lock, timestamp index and material speech/caption reconciliation remain unresolved",
+  "rubric_score": "Not certified; original baseline receipt/PDF and audio/timestamp verification remain unresolved; student growth prediction/run and attributed peer review supplied, with authorship/policy basis documented",
   "checks": [
     {
       "check": "Finance validation",
@@ -11,7 +11,12 @@
     {
       "check": "Attributed peer challenge and independent follow-up",
       "status": "PASS",
-      "detail": "Student-confirmed Antigravity log; named dispositions; independently reproduced legacy trace and equal-relative range challenge; separate from pending human lock"
+      "detail": "Student-confirmed Antigravity log; named dispositions; independently reproduced legacy trace and equal-relative range challenge; separate from the student terminal-growth record"
+    },
+    {
+      "check": "Student prediction precommit and executed growth comparison",
+      "status": "PASS",
+      "detail": "Student-selected 3% to 2.5%; immutable prediction before run; $118.58 to $116.57 (-1.70%); unchanged WATCH/DEFER; modest magnitude explicitly assessed; assistant execution and instructor-permission basis recorded"
     },
     {
       "check": "EditionA byte preservation",
@@ -111,7 +116,7 @@
     {
       "check": "Frozen file integrity",
       "status": "PASS",
-      "detail": "80 stable SHA256matches; exclusions explicit"
+      "detail": "87 stable SHA256matches; exclusions explicit"
     },
     {
       "check": "Interactive output controls",

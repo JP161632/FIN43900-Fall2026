@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-10-19T20:55:33.705673+00:00",
+  "ended_utc": "2026-10-19T20:55:33.902407+00:00",
+  "command_from_project_folder": "python run.py --growth 0.025 --output evidence/locked-growth/changed",
+  "return_code": 0,
+  "stdout": "{\n  \"case\": \"base\",\n  \"wacc\": 0.13896509736724513,\n  \"growth\": 0.025,\n  \"per_share\": 116.56710034098701,\n  \"action\": \"WATCH / DEFER\"\n}\n",
+  "stderr": ""
+}

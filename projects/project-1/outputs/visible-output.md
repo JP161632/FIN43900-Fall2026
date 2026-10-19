@@ -192,4 +192,4 @@ Revisit after each filing. Initiation requires price below the base entry ceilin
 
 Engine validation: **PASS**, 15/15 tests. Read validation-results.json for observed outcomes.
 
-Student-confirmed peer challenge is documented in evidence/partner-review-record.md; three videos/transcripts are supplied. Still unresolved: original EditionA PDF/first Brightspace receipt, completed locked-input exercise, and audio/timestamp checks. Student prediction is preserved before the new terminal-growth run; exact new rate/action are pending. This package does not claim a full score or Brightspace submission.
+Student-confirmed peer challenge is documented in evidence/partner-review-record.md; three videos/transcripts are supplied. Student terminal-growth test is executed: precommit 5a9de1d, 3% to 2.5%, $118.58 to $116.57 (-1.70%), WATCH/DEFER unchanged. Original EditionA PDF/first receipt and audio/timestamp verification remain unresolved. See evidence/locked-changed-input-record.md for authorship and timing. This package does not claim a full score or Brightspace submission.
