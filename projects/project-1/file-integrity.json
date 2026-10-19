@@ -1,7 +1,7 @@
 {
   "scope": "Technical evidence snapshot; human/video submission INCOMPLETE",
   "tag": "project-1-nvidia-recording-audit-2026-10-19",
-  "created_utc": "2026-10-19T17:02:13.994772+00:00",
+  "created_utc": "2026-10-19T17:03:24.095085+00:00",
   "algorithm": "sha256",
   "excluded": [
     "evidence/publication-audit.json",
@@ -26,7 +26,7 @@
     "cold_run.py": "20e6293a5f4c3b824a85c4ad390cef6527763d7d01dfb479375f157f0c6a0980",
     "data/inputs.json": "89acf56b128bc556277cefc7f37b297939924f7346231ce41eb4c194c9976d43",
     "data/source-map.md": "0f135bce3eb67240b3449c900e327ea32bcf3f8c9057ed1e25df928b353deb13",
-    "docs/changed-input-response-draft.md": "1377ed90ca95e95542881b5165095c1ccdb845f214f0d61fdfe8122cfc33d7cc",
+    "docs/changed-input-response-draft.md": "6598f34101810dc43dbfe0096fbc8cdb9546694413645d7b07e7f22dd397a410",
     "docs/decision-memo.md": "652c876d5692dbf49ff5fe1714f69e731a87935e7b016e1b8769d97f3452059b",
     "docs/decision-memo.pdf": "923e3061523c78db8f74236af2b4baa36ed4e41e74953b6be9e08f2a051579de",
     "docs/recording-guide-template.md": "f24051e07a1f97001cb60a920a0f11655d932d6837c8534acf0e2db07904ee60",
