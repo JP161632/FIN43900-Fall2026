@@ -1,7 +1,7 @@
 {
   "scope": "Technical evidence snapshot; human/video submission INCOMPLETE",
   "tag": "project-1-nvidia-2026-10-19",
-  "created_utc": "2026-10-19T16:29:55.243517+00:00",
+  "created_utc": "2026-10-19T16:30:34.327755+00:00",
   "algorithm": "sha256",
   "excluded": [
     "evidence/publication-audit.json",
