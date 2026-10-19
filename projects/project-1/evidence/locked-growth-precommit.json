@@ -1,0 +1,18 @@
+{
+  "prediction_source": "Student conversation messages; original text preserved at d9f1f52 and full numerical/action specification in the commit containing this file",
+  "specification_captured_utc": "2026-10-19T20:54:17+00:00",
+  "input_path": "cases.base.terminal_growth",
+  "cli_override": "--growth",
+  "old_value": 0.03,
+  "new_value": 0.025,
+  "units": "decimal annual nominal terminal growth rate; 3.0% to 2.5%, minus 0.5 percentage point / 50 basis points",
+  "student_expected_valuation_direction": "lower",
+  "student_expected_magnitude": "much lower; qualitative only, no numerical threshold supplied",
+  "student_expected_action": "WATCH / DEFER",
+  "student_reason": "Lower long-run growth should lower valuation",
+  "held_fixed": ["five-year operating forecasts", "WACC", "terminal ROIC", "bridge assumptions", "diluted-share proxy"],
+  "consistent_derived_change": "Terminal reinvestment updates as growth / terminal ROIC; terminal NOPAT growth and WACC-minus-growth denominator update",
+  "prediction_author": "student",
+  "recording_and_execution": "assistant, after the precommit",
+  "ai_wording_permission": "Student previously reported instructor permission; no independent AI-off attestation is fabricated"
+}
