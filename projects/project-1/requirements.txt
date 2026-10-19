@@ -1,0 +1,2 @@
+# Valuation application and tests: Python >=3.10 standard library only.
+# No pip installation, credentials, network calls, pandas or finance-provider dependency.

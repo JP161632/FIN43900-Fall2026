@@ -1,0 +1,29 @@
+{
+  "valuation_date": "2026-08-27",
+  "information_cutoff": "2026-08-27T16:00:00-04:00",
+  "units": "USD millions except USD per share and shares in millions",
+  "market": {"price":252.05,"price_source":"CRM_PRICE","ordinary_shares":823,"ordinary_shares_date":"2026-08-20","diluted_shares":824,"diluted_share_basis":"823 latest ordinary shares plus 1 incremental share from Q2 diluted 821 minus basic 820; proxy, not a fully diluted option valuation","risk_free":0.0467,"risk_free_source":"UST","equity_risk_premium":0.045,"beta":1.15,"cost_of_debt":0.055,"debt_market_value":36800,"finance_leases":633},
+  "historical": {
+    "fy26":{"subscription":39388,"services":2137,"revenue":41525,"subscription_cogs":6796,"services_cogs":2474,"rd":5993,"sm":14345,"ga":3000,"restructuring":586,"ebit":8331,"investment_gains":1017,"other_income_net_interest":172,"tax":2063,"net_income":7457,"diluted_eps":7.8,"diluted_shares":956,"da":3631,"acquired_amortization":1687,"commission_amortization":2197,"sbc":3509,"cfo":14996,"capex":594,"cfi":-8590,"cff":-8079,"fx":152,"begin_cash":8848,"end_cash":7327},
+    "h1fy27":{"subscription":21413,"services":1065,"revenue":22478,"subscription_cogs":3974,"services_cogs":1245,"rd":3314,"sm":7628,"ga":1465,"restructuring":174,"ebit":4678,"interest":790,"investment_gains":3171,"other_income":214,"tax":1640,"net_income":5633,"da":1951,"acquired_amortization":1083,"commission_amortization":1173,"sbc":1763,"cfo":7970,"capex":316,"cfi":-3380,"cff":-3543,"fx":-64,"begin_cash":7327,"end_cash":8310},
+    "h1fy26":{"subscription":18987,"services":1078,"revenue":20065,"subscription_cogs":3256,"services_cogs":1251,"rd":2941,"sm":6872,"ga":1431,"restructuring":40,"ebit":4274,"interest":135,"investment_gains":-57,"other_income":298,"tax":952,"net_income":3428,"da":1660,"acquired_amortization":775,"commission_amortization":1089,"sbc":1607,"cfo":7216,"capex":314,"cfi":-402,"cff":-5423,"fx":126,"begin_cash":8848,"end_cash":10365},
+    "bs_jan26":{"cash":7327,"securities":2238,"ar":14339,"commission_current":2075,"prepaid":2243,"ppe":3120,"rou":2003,"commission_noncurrent":2985,"investments":7591,"goodwill":57941,"intangibles":6815,"other_assets":3628,"total_assets":112305,"ap_other_current":8253,"lease_current":548,"deferred_revenue":24317,"debt_current":4000,"debt_noncurrent":10439,"lease_noncurrent":2189,"other_noncurrent_liabilities":3417,"total_liabilities":53163,"equity":59142},
+    "bs_jul26":{"cash":8310,"securities":3093,"ar":6320,"commission_current":2074,"prepaid":2286,"ppe":3042,"rou":1787,"commission_noncurrent":2870,"investments":11324,"goodwill":59250,"intangibles":6142,"other_assets":3122,"total_assets":109620,"ap_other_current":7018,"lease_current":531,"deferred_revenue":18787,"debt_current":0,"debt_noncurrent":39288,"lease_noncurrent":1924,"other_noncurrent_liabilities":3694,"total_liabilities":71242,"equity":38378}
+  },
+  "normalization":{"informatica_total_runrate":1800,"informatica_total_ltm":1299,"informatica_subscription_runrate":1736,"informatica_subscription_ltm":1256,"incremental_ebita_margin":0.25,"recurring_restructure_rate":0.005,"tax_rate":0.235},
+  "forecast":{"capex_rate":0.015,"depreciation_opening_ppe":0.20,"commission_add_rate":0.065,"commission_amort_opening":0.45,"sbc_rate":0.08,"margin_calibration_sbc_rate":0.08,"subscription_cogs_rate_ex_acquired_amort":0.175,"services_cogs_rate":1.15,"rd_rate":0.15,"ga_rate":0.063,"operating_cash_rate":0.02,"dividend_per_share":1.76,"debt_repayments":[0,6000,4250,0,7500],"finance_lease_principal":[220,148,119,97,49],"acquired_amortization":[1588.5,1344,976.5,630.5,400],"terminal_roic":0.20,"terminal_ebita_margin":0.28,"minimum_cash":2000},
+  "cases":{
+    "low":{"retention":0.92,"expansion":[0.07,0.07,0.07,0.06,0.06],"new_business":0.02,"services_growth":-0.04,"ebita_margin":[0.23,0.23,0.235,0.24,0.24],"wacc":0.105,"g":0.02,"investment_realization":0.25},
+    "base":{"retention":0.95,"expansion":[0.10,0.10,0.09,0.08,0.07],"new_business":0.04,"services_growth":0.00,"ebita_margin":[0.265,0.275,0.285,0.29,0.29],"wacc":null,"g":0.03,"investment_realization":0.50},
+    "high":{"retention":0.97,"expansion":[0.11,0.11,0.10,0.09,0.08],"new_business":0.05,"services_growth":0.02,"ebita_margin":[0.28,0.295,0.31,0.32,0.32],"wacc":0.0825,"g":0.035,"investment_realization":0.75}
+  },
+  "what_if_assumptions":{
+    "churn_and_collections":{"retention":0.90,"expansion":[0.06,0.06,0.06,0.06,0.06],"new_business":0.02,"ebita_margin":[0.20,0.20,0.21,0.22,0.23],"extra_receivable_days":15,"deferred_ratio_drop":0.05},
+    "ai_hosting_cost":{"ebita_margin_delta":-0.03},
+    "cash_acquisitions_no_benefit":{"cash_cost":5100}
+  },
+  "peers":[
+    {"ticker":"ADBE","status":"qualify","price":289.15,"price_date":"2026-08-27","price_source":"ADBE_PRICE","ordinary_shares":399,"shares_date":"2026-05-29","cash_and_securities":5626,"financial_debt":6645,"balance_date":"2026-05-29","annual_revenue":23769,"annual_diluted_eps":16.70,"annual_end":"2025-11-28","annual_available":"2026-01-15","annual_source":"ADBE_K","balance_source":"ADBE_Q","reason":"Mature subscription economics; creative and consumer mix weakens enterprise CRM comparability"},
+    {"ticker":"NOW","status":"qualify","price":138.43,"price_date":"2026-08-27","price_source":"NOW_PRICE","ordinary_shares":1034,"shares_date":"2026-06-30","cash_and_securities":6707,"financial_debt":7517,"balance_date":"2026-06-30","annual_revenue":13278,"annual_diluted_eps":1.67,"annual_end":"2025-12-31","annual_available":"2026-01-28","annual_source":"NOW_ANNUAL","balance_source":"NOW_Q","reason":"Enterprise workflow overlap; faster growth and acquisition disruption make it an upper growth reference; all shares/EPS post 5-for-1 split"}
+  ]
+}

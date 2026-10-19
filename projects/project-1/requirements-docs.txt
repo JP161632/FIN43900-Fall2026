@@ -1,0 +1,4 @@
+# Only needed to rebuild PDFs and render their pages; not needed to run the model.
+reportlab==5.0.1
+pymupdf==2.0
+pypdf==6.21.1

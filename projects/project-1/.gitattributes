@@ -1,0 +1,3 @@
+* text eol=lf
+*.pdf binary
+evidence/edition-a-existing-nvidia-unchanged.md -text -diff
