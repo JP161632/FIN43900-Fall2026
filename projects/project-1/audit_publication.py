@@ -40,7 +40,7 @@ def main():
         checked=list(pool.map(verify,frozen['files'].items()))
     result={'status':'PASS','checked_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'access':'Anonymous public GitHub API and raw file requests; no credentials',
             'ref':args.ref,'commit':commit,'git_blob_files_verified':count,'sha256_frozen_files_verified':len(checked),
-            'frozen_files':checked,'scope':'Published technical package; videos and human evidence remain incomplete'}
+            'frozen_files':checked,'scope':'Published technical package, supplied transcript bytes and video-link records; audiovisual, timestamp and human-evidence review remains incomplete'}
     if not args.verify_only:(ROOT/'evidence/publication-audit.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps({k:z for k,z in result.items() if k!='frozen_files'},indent=2))
 

@@ -1,0 +1,89 @@
+{
+  "scope": "Text/model comparison and anonymous public metadata; audio and full visual performance not reviewed",
+  "student_confirmed_corrections": false,
+  "videos": [
+    {
+      "video": 1,
+      "url": "https://www.youtube.com/watch?v=k8gWr7TUtx0",
+      "duration_seconds": 173,
+      "transcript": "docs/transcript-video-1.txt",
+      "provided_source_sha256": "3967cbac86a599349d0efab34a1ea60e98ce7d21d172d32c746f4fc8b451b5cf",
+      "transcript_sha256": "2b32985619b91d1ea6c805a223844a3b1cc4500f2abcea88c92dbc53509384c2",
+      "editing": "Paragraph breaks and speaker-name omission only; financial wording preserved pending audio confirmation.",
+      "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
+      "review_status": "TEXT REVIEWED; material caption/speech discrepancies require student audio confirmation"
+    },
+    {
+      "video": 2,
+      "url": "https://www.youtube.com/watch?v=ASztkYCwwW8",
+      "duration_seconds": 178,
+      "transcript": "docs/transcript-video-2.txt",
+      "provided_source_sha256": "3ea8c37cf688245a211d379a3beb0cd1ef3d9bb1a4e07fc249d7826f32f6d1ff",
+      "transcript_sha256": "22d0601001c608d2512604ab38e3331b9b24096974b16ad9d4e97ade1fb41114",
+      "editing": "Paragraph breaks and speaker-name omission only; financial wording preserved pending audio confirmation.",
+      "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
+      "review_status": "TEXT REVIEWED; material caption/speech discrepancies require student audio confirmation"
+    },
+    {
+      "video": 3,
+      "url": "https://www.youtube.com/watch?v=m9quX8x7V3I",
+      "duration_seconds": 180,
+      "transcript": "docs/transcript-video-3.txt",
+      "provided_source_sha256": "23c7d12c05becacd1a68cf3b003dc9a834548715cab821c3ccb0e295a5e3c56e",
+      "transcript_sha256": "57a0e18a3794083299ebe64e69a63eb84a1ce996fc0154a71e03e37cd5007dba",
+      "editing": "Paragraph breaks and speaker-name omission only; financial wording preserved pending audio confirmation.",
+      "observed_timestamp_index": "PENDING: supplied transcript has no timestamps; caption endpoint returned empty response",
+      "review_status": "TEXT REVIEWED; material caption/speech discrepancies require student audio confirmation"
+    }
+  ],
+  "issues": [
+    {
+      "video": 1,
+      "passage": "base reference is about $190",
+      "model_value": "$118.58 (about $119)",
+      "status": "UNRESOLVED"
+    },
+    {
+      "video": 1,
+      "passage": "15.8% WACC; annual weighted donated shares; SCFF; casual range",
+      "model_value": "Prior Lab 5 WACC 15.88%; annual weighted diluted shares; FCFF; causal range",
+      "status": "UNRESOLVED"
+    },
+    {
+      "video": 1,
+      "passage": "unrealized investment gains of nonoperating cash generation",
+      "model_value": "Unrealized investment gains are not operating cash generation",
+      "status": "UNRESOLVED"
+    },
+    {
+      "video": 2,
+      "passage": "from $1808 to $180.38",
+      "model_value": "$118.58 to $108.38 when WACC rises 1 percentage point",
+      "status": "UNRESOLVED"
+    },
+    {
+      "video": 3,
+      "passage": "casual range is about 56 to $200",
+      "model_value": "causal range $55.93-$212.08 (about $56-$212)",
+      "status": "UNRESOLVED"
+    },
+    {
+      "video": 3,
+      "passage": "Adding one percentage point to WCC lowers value to about $118",
+      "model_value": "WACC increase lowers value to $108.38",
+      "status": "UNRESOLVED"
+    },
+    {
+      "video": 3,
+      "passage": "low case ... value nearly $65",
+      "model_value": "Low-case value $55.93 (about $56)",
+      "status": "UNRESOLVED"
+    },
+    {
+      "video": 3,
+      "passage": "Collection days about 95",
+      "model_value": "Collection days above 95 is the monitoring threshold",
+      "status": "UNRESOLVED"
+    }
+  ]
+}

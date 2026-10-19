@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
-TAG='project-1-nvidia-recording-charts-2026-10-19'
+TAG='project-1-nvidia-video-links-2026-10-19'
 BASE=f'https://github.com/JP161632/FIN43900-Fall2026/blob/{TAG}/projects/project-1/'
 EXCLUDE={'file-integrity.json','submission-manifest.csv','evidence/publication-audit.json','outputs/submission-audit.json','outputs/run-receipt.json'}
 
@@ -18,24 +18,19 @@ def stable_files():
 
 
 def main():
+    status_path=ROOT/'evidence/submission-status.json'
+    status=json.loads(status_path.read_text(encoding='utf-8'))
+    metadata=json.loads((ROOT/'evidence/video-metadata.json').read_text(encoding='utf-8'))
+    review=json.loads((ROOT/'evidence/video-review.json').read_text(encoding='utf-8'))
+    status['videos']='Three supplied YouTube links; titles/durations/player metadata checked; audiovisual performance not reviewed'
+    status['transcripts']='Three supplied texts imported; finance caption/speech discrepancies and observed timestamp indices remain unresolved'
+    status['overall_submission']='INCOMPLETE - final evidence and transcript/audio reconciliation required'
+    status_path.write_text(json.dumps(status,indent=2)+'\n',encoding='utf-8',newline='\n')
     hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in stable_files()}
-    receipt={'scope':'Technical evidence snapshot; human/video submission INCOMPLETE','tag':TAG,
+    receipt={'scope':'Technical evidence and supplied video/transcript snapshot; final evidence review INCOMPLETE','tag':TAG,
              'created_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'algorithm':'sha256',
              'excluded':sorted(EXCLUDE),'exclusion_reason':'Avoid self-reference and volatile execution/publication/access receipts; Git commit still covers tracked files',
              'files':hashes}
-    (ROOT/'file-integrity.json').write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8',newline='\n')
-    status={
-        'technical_package':'EXECUTED / FROZEN; publication checked separately',
-        'overall_submission':'INCOMPLETE - authentic student evidence required',
-        'edition_a_markdown':'preserved unchanged; original submitted PDF/receipt missing',
-        'human_locked_record':'INCOMPLETE; AI-authored directional test is separate',
-        'partner_review':'prior Lab12 reported discussion, authenticity/attribution unconfirmed',
-        'videos':'NOT RECORDED', 'transcripts':'status markers only',
-        'brightspace_final_receipt':'NOT PROVIDED; GitHub is not submission'}
-    # Status is intentionally generated before re-freezing so its stable bytes are included on the next call.
-    (ROOT/'evidence/submission-status.json').write_text(json.dumps(status,indent=2)+'\n',encoding='utf-8',newline='\n')
-    hashes['evidence/submission-status.json']=hashlib.sha256((ROOT/'evidence/submission-status.json').read_bytes()).hexdigest()
-    receipt['files']=dict(sorted(hashes.items()))
     (ROOT/'file-integrity.json').write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8',newline='\n')
     publication=ROOT/'evidence/publication-audit.json'
     access='PENDING anonymous public check'
@@ -51,14 +46,24 @@ def main():
     for title,path,description in specs:
         url=BASE+path if path else f'https://github.com/JP161632/FIN43900-Fall2026/tree/{TAG}/projects/project-1'
         rows.append([title,'yes',url,description,'Valuation2026-09-10; prepared2026-10-19','',access,
-                     'sha256:'+hashes[path] if path else TAG,'Technical freeze; not a completed video/human-evidence submission'])
+                     'sha256:'+hashes[path] if path else TAG,'Evidence snapshot; unresolved requirements documented in evidence/submission-status.json'])
     for i in range(1,4):
-        rows.append([f'Video {i}','yes','',f'NVIDIA Video{i} - NOT RECORDED','','','','','Max3:00 for Video1; max5:00 for Video2/3. Planned scripts are not observed timestamps.'])
-        rows.append([f'Transcript Video {i}','yes','',f'Corrected actual transcript{i} - NOT AVAILABLE','','','','',f'docs/transcript-video-{i}.txt is a status marker, not a completed transcript'])
+        video=next(x for x in metadata['videos'] if x['video']==i)
+        transcript=next(x for x in review['videos'] if x['video']==i)
+        seconds=video.get('duration_seconds')
+        duration=f'{seconds//60}:{seconds%60:02d}' if seconds is not None else 'PENDING'
+        video_access=f"Anonymous metadata {video.get('player_status','UNVERIFIED')}; {video['checked_utc']}; full playback not reviewed"
+        rows.append([f'Video {i}','yes',video['url'],video.get('title',f'NVIDIA Video {i}'),duration,
+                     transcript['observed_timestamp_index'],video_access,'YouTube video ID: '+video['url'].split('=')[-1],
+                     'Material transcript/speech discrepancies require confirmation; see docs/video-review.md'])
+        path=transcript['transcript']
+        rows.append([f'Transcript Video {i}','yes',BASE+path,f'Supplied actual transcript {i} - financial review pending',duration,
+                     transcript['observed_timestamp_index'],access,'sha256:'+hashes[path],
+                     'Imported supplied text; paragraph formatting/name omission; uncertain finance wording preserved'])
     rows.append(['Optional deployed output','no','','Not required','','','','','Local offline interactive output supplied'])
     with (ROOT/'submission-manifest.csv').open('w',encoding='utf-8',newline='') as f:
         writer=csv.writer(f,lineterminator='\n');writer.writerow(['item','required','location_or_url','title','duration_or_as_of','timestamp_index','access_checked','frozen_or_commit_id','notes']);writer.writerows(rows)
-    print(f'Frozen {len(hashes)} stable files; manifest11required+1optional; student evidence remains incomplete')
+    print(f'Frozen {len(hashes)} stable files; 3video URLs and transcripts included; final evidence review incomplete')
 
 
 if __name__=='__main__': main()

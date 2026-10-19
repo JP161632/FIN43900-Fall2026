@@ -36,7 +36,12 @@ def main():
     visible=(ROOT/'outputs/visible-output.md').read_text(encoding='utf-8')
     check('Visible decision / all statements',all(t in visible for t in ['WATCH / DEFER','five-year income','five-year balance','five-year cash','Market-implied','218.36']), 'Material result viewable without execution')
     for i in [1,2,3]:
-        check(f'Transcript{i} truthful status','NOT RECORDED' in (ROOT/f'docs/transcript-video-{i}.txt').read_text(encoding='utf-8'),'Pending marker deliberately not claimed completed')
+        text=(ROOT/f'docs/transcript-video-{i}.txt').read_text(encoding='utf-8')
+        review=json.loads((ROOT/'evidence/video-review.json').read_text(encoding='utf-8'))
+        item=next(x for x in review['videos'] if x['video']==i)
+        check(f'Transcript{i} imported integrity','NOT RECORDED' not in text and len(text.split())>200 and hashlib.sha256((ROOT/item['transcript']).read_bytes()).hexdigest()==item['transcript_sha256'],'Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement')
+    metadata=json.loads((ROOT/'evidence/video-metadata.json').read_text(encoding='utf-8'))
+    check('Video links and duration limits',len(metadata['videos'])==3 and all(x.get('player_status')=='OK' and 0<x['duration_seconds']<=(180 if x['video']==1 else 300) for x in metadata['videos']),'Anonymous metadata only; correct video numbering; full playback not reviewed')
     steps=(ROOT/'Student next steps.md').read_text(encoding='utf-8')
     check('Three recording routes and scripts',all(s.lower() in steps.lower() for s in ['Video1 -','Video2 -','Video3 -','Script:','maximum3:00','maximum5:00','Recording-Charts.pdf','--without-pip']), 'Fixed chart routes, timing limits, distinct scripts and actual fresh-environment run instructions; human-history status checked separately')
     recording=json.loads((ROOT/'outputs/recording-script-audit.json').read_text(encoding='utf-8'))
@@ -45,14 +50,14 @@ def main():
     charts=json.loads((ROOT/'outputs/recording-charts-audit.json').read_text(encoding='utf-8'))
     check('Fixed recording charts',charts['status']=='PASS' and charts['pages']==3 and charts['pdf_sha256']==hashlib.sha256((ROOT/'Recording-Charts.pdf').read_bytes()).hexdigest() and all(hashlib.sha256((ROOT/p['file']).read_bytes()).hexdigest()==p['sha256'] for p in charts['pngs']) and charts['financial_results_unchanged_sha256']==recording['financial_result_sha256'],'Three16:9charts; PDF/1920x1080PNGhashes; saved finance results unchanged')
     with (ROOT/'submission-manifest.csv').open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
-    check('Uniform manifest',len(rows)==12 and sum(x['required']=='yes' for x in rows)==11,'11required+optionaldeployment; videos honestly blank')
+    check('Uniform manifest',len(rows)==12 and sum(x['required']=='yes' for x in rows)==11 and all(x['location_or_url'] for x in rows if x['required']=='yes'),'11required+optionaldeployment; supplied video/transcript links populated; timestamp and speech review pending')
     freeze=json.loads((ROOT/'file-integrity.json').read_text(encoding='utf-8'))
     mismatches=[n for n,h in freeze['files'].items() if not (ROOT/n).is_file() or hashlib.sha256((ROOT/n).read_bytes()).hexdigest()!=h]
     check('Frozen file integrity',not mismatches,mismatches or f"{len(freeze['files'])} stable SHA256matches; exclusions explicit")
     ui=subprocess.run(['node',str(ROOT/'test_dashboard.cjs')],capture_output=True,text=True)
     check('Interactive output controls',ui.returncode==0,ui.stdout.strip()+ui.stderr.strip())
     result={'technical_audit':'PASS' if all(x['status']=='PASS' for x in checks) else 'FAIL',
-            'submission_complete':False,'rubric_score':'Not certified; missing original baseline receipt/PDF, authentic human lock, confirmed partner review and recordings/transcripts',
+            'submission_complete':False,'rubric_score':'Not certified; original baseline receipt/PDF, human lock, partner review, timestamp index and material speech/caption reconciliation remain unresolved',
             'checks':checks}
     (ROOT/'outputs/submission-audit.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(result,indent=2))

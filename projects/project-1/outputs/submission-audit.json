@@ -1,7 +1,7 @@
 {
   "technical_audit": "PASS",
   "submission_complete": false,
-  "rubric_score": "Not certified; missing original baseline receipt/PDF, authentic human lock, confirmed partner review and recordings/transcripts",
+  "rubric_score": "Not certified; original baseline receipt/PDF, human lock, partner review, timestamp index and material speech/caption reconciliation remain unresolved",
   "checks": [
     {
       "check": "Finance validation",
@@ -54,19 +54,24 @@
       "detail": "Material result viewable without execution"
     },
     {
-      "check": "Transcript1 truthful status",
+      "check": "Transcript1 imported integrity",
       "status": "PASS",
-      "detail": "Pending marker deliberately not claimed completed"
+      "detail": "Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement"
     },
     {
-      "check": "Transcript2 truthful status",
+      "check": "Transcript2 imported integrity",
       "status": "PASS",
-      "detail": "Pending marker deliberately not claimed completed"
+      "detail": "Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement"
     },
     {
-      "check": "Transcript3 truthful status",
+      "check": "Transcript3 imported integrity",
       "status": "PASS",
-      "detail": "Pending marker deliberately not claimed completed"
+      "detail": "Supplied actual text; financial speech/caption confirmation remains a separate readiness requirement"
+    },
+    {
+      "check": "Video links and duration limits",
+      "status": "PASS",
+      "detail": "Anonymous metadata only; correct video numbering; full playback not reviewed"
     },
     {
       "check": "Three recording routes and scripts",
@@ -91,12 +96,12 @@
     {
       "check": "Uniform manifest",
       "status": "PASS",
-      "detail": "11required+optionaldeployment; videos honestly blank"
+      "detail": "11required+optionaldeployment; supplied video/transcript links populated; timestamp and speech review pending"
     },
     {
       "check": "Frozen file integrity",
       "status": "PASS",
-      "detail": "61 stable SHA256matches; exclusions explicit"
+      "detail": "68 stable SHA256matches; exclusions explicit"
     },
     {
       "check": "Interactive output controls",

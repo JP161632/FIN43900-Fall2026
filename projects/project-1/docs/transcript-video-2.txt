@@ -1,2 +1,13 @@
-NOT RECORDED - Video 2. This is a status marker, not a transcript.
-After recording, replace with a corrected verbatim transcript of what was actually said, with observed timestamps. Preparation scripts are in Student next steps.md.
+Hi everyone. [Speaker introduction omitted for privacy.] Uh now I'll be moving on uh into video two. Uh I'll show how one input reaches evaluation then the evidence that the model handles uh or then the evidence that the model handles for important errors. Um so right now I uh I ran the pre pre-recording today. So now this is going to be an actual project cell run uh with the base of expected success to be all passes base of $118. Um, and then watch defer as being the final answer.
+
+So, let's run this code here. And that's exactly what we got. Um, so that's kind of how it works. Um, and now we're going to go back to uh our chart. Uh, so we can get into explaining um, video number two.
+
+The base collection assumption is 75 days. In the forecast, revenue times collection days divided by 365 produces receivables. Uh receivables feed operating working capital. The change in working capital reduces operating cash flow and free cash flow. Cash is calculated from the cash flow statement and equity rolls through the retain income.
+
+Neither is a balancing fl. Free cash flow starts with after tax operating profit adds depreciation to mortization and subtracts operating capital spending and working capital investment. In the first forecast year, the result is approximately 191.5 billion. The term ter terminal formula requires reinvestment for growth and operating cash flows and are discount or discounted at whack before the ownership bridge. I'm running the submitted project in a new environment without third party packages.
+
+So the console reports the observed results that alone does not establish financial correctness. So here here are the numerical checks. The course's published training case gives enterprise value of $1,624.87 million and $27.50 per share. The engine reproduces those answers in all nine sensitivity cells within rounding tolerance. The highest risk diagnostic diagnostic repeats the old mistake of scaling financial investments as operating assets.
+
+In that bound calculation, it creates about 126 billion of false discounted investment. This illustrates a danger. It's not a complete alternative valuation. A separate forced cash deficit is rejected with an explicit funding error. A passing failure means that bad input was caught.
+
+The change in input results also have also has the expected direction raising whack from about 13.9 to 14.9% lowers value from $1808 to $180.38. Watch defer remains because the price the price market or the market price still fails the entry threshold that explains the unchanged action rather than pretending every sensitivity must reverse the direction. The technical prediction outcomes are visible here. Any required human prediction, timing and authorship must be supported by the separate actual record rather than inferred from this retrospective explanation.
