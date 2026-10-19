@@ -1,17 +1,17 @@
 # Locked Changed-Input Record - human requirement
 
-Status: **INCOMPLETE. No human-authored AI-off prediction/precommit has been supplied.**
+Status: **PARTIAL. Student terminal-growth prediction preserved before execution at commit d9f1f52; exact new rate and expected recommendation still required before the changed run.**
 
-This is an unfilled procedure/record, not evidence of a completed event. No assistant-generated text below should be presented as a student's prediction. Follow Student next steps.md with AI closed and preserve the committed original.
+Original wording and the pre-run boundary are in student-terminal-growth-prediction.md. This partial record is not a completed exercise. No assistant-generated text below should be presented as a student's prediction. Follow Student next steps.md with AI closed and preserve the committed original.
 
 | Required field | Actual current evidence |
 |---|---|
-| Human author / actual prediction date-time UTC | Not supplied |
+| Human author / actual prediction date-time UTC | Student supplied original text; preserved October 19 at 20:38:51 UTC; original composition time not independently known |
 | AI-off attestation for prediction | Not supplied; must be true, not retroactive |
-| Input JSON path / old value / new value / units | Human must choose and record before execution |
-| Human expected EV / equity-share direction and reason | Not supplied; do not copy AI test prediction |
+| Input JSON path / old value / new value / units | cases.base.terminal_growth; old 0.03 = 3% yearly; student requests lower, exact new rate pending |
+| Human expected EV / equity-share direction and reason | Student expects valuation to be much lower because long-run growth is slower; no numerical target supplied |
 | Human expected committee action / decision effect | Not supplied |
-| Immutable prediction commit or snapshot ID and timestamp | Not supplied; commit before editing input/running |
+| Immutable prediction commit or snapshot ID and timestamp | d9f1f52 preserves initial wording; completed exact-rate/action specification must also be committed before the run |
 | Baseline run command/output hash/value/action | Not yet executed as a human locked exercise |
 | Changed run command/output hash/value/action | Not yet executed as a human locked exercise |
 | Actual output direction / observed action effect | Not available |

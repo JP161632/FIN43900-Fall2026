@@ -24,14 +24,13 @@ Values below are analyst forecasts/policies, unless labeled reported. Each row s
 | GuaranteeclaimPV:2.5bn base,25bn low,0 high, year3 | Q note10 SB105bncap,3.5bnguarantees,additional56bncloud/third-partyleasecommitments. Expectedlossjudgment, not sumofallcommitmentsasdebt. | Callprobability, fee/recourse/collateral, netcapacityresaleunknown. Baseisillustrative,notactuarial. ClaimcoststaysoutsideoperatingFCFFanddeductedonceasbridgePV;actualcalls requirefundedcashforecastandcouldalteraction. |
 | Marginofsafety20%; no-position12-24monthhorizon | Fundcanwait; highTVshareandwidecausalrangerequirecushion. | 20%isdecisionpolicy,notfact. Entryrequiresrefreshedpriceandcollection/margin/commitmentgates. Riskgatetrueinthecausaldownsideoverridescheapprice. |
 
-## Prior Lab12 review, qualified credit
+## Attributed partner review: peer challenge
 
-The existing October1 Lab12 writeup contains reported partner answers about demand durability, growth sensitivity and DCF/comparables disagreement. This file is evidence of a prior record, not proof of who authored or spoke those answers. Partner identity/model and authentic-review confirmation are not supplied. Pending student confirmation, credit is **prior Lab12 reported discussion, authenticity/attribution unverified**, not an accepted new human review. Its valid numerical challenge remains: growth sensitivity depends on the chosen ranges; a 2pp margin shock is not an immediate $10bn loss in every year. Its invalid proof claim remains rejected: NVIDIA's supplier commitments do not establish customer orders. Lab12's incorrect Note17 export citation is corrected to Item1A; no unsupported China share is used.
+The student supplied an Antigravity-produced log and confirms the actual October 1, 2026, 13:40-14:06 EDT discussion. Credit: **peer challenge**. Antigravity model/version and original export metadata were not supplied. Student-confirmed attribution supersedes the earlier unconfirmed status; factual claims still require checks.
 
-## Fictional rehearsal only - not partner evidence
+| Driver / basis | Attributed challenge and disposition | Evidence that changes the judgment |
+|---|---|---|
+| Data Center growth / demand durability | peer challenge at 13:47; CORRECTED / QUALIFIED. Reproduced legacy lower-growth EBIT/FCFE losses; supplier commitments do not prove orders; old $224.35 is not the final market reference. | Actual customer deliveries/payments, funding and concentration; collection/margin deterioration supports downside. Final FCFF conventions replace legacy valuation limitations. |
+| Relative growth-versus-margin importance | peer challenge at 13:50; ACCEPTED. Original ranking depends on tested ranges. Equal +/-5% relative final-model shocks give margin $14.04/share span versus DC growth $8.89. | Different ranges, horizon or output metric may change the ranking; economic probability is not inferred from equal shocks. Margin has the larger span in this executed diagnostic. |
 
-Question: What evidence would show Data Center growth is not durable enough to justify initiation?
-
-**AI-written fictional sample; never submit as something a partner actually said:** “I’d push back on treating the supply commitments like guaranteed sales. I’d want to see customers actually taking delivery and paying for the systems. If revenue keeps growing but receivables and inventory grow faster, I’d lower the growth case before calling the stock cheap. The other thing I’d check is whether margins hold when the product mix changes. A huge market opportunity doesn’t automatically mean the current share price leaves us enough room for mistakes.”
-
-Ask a real partner to disagree with a load-bearing assumption, obtain their actual response and permission to credit their role without private details, record what changed and independently test it. This sample carries no human-review credit.
+Full source, timing, roles, corrections, joint trace and action implications: evidence/partner-review-record.md; supplied-log transcription; outputs/peer-review-checks.json. Follow-up executed by the assistant October 19 after precommit e0f6521, not backdated to class and not used as the student's terminal-growth lock. Earlier fictional practice text is excluded from actual peer evidence and remains only in prior immutable history.

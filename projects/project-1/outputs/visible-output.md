@@ -192,4 +192,4 @@ Revisit after each filing. Initiation requires price below the base entry ceilin
 
 Engine validation: **PASS**, 15/15 tests. Read validation-results.json for observed outcomes.
 
-Student evidence remains incomplete: original EditionA PDF/first Brightspace receipt, authentic AI-off locked prediction/run, confirmation of partner attribution, three recordings and corrected actual transcripts. Scripts are preparation aids. This package does not claim a full score or a Brightspace submission.
+Student-confirmed peer challenge is documented in evidence/partner-review-record.md; three videos/transcripts are supplied. Still unresolved: original EditionA PDF/first Brightspace receipt, completed locked-input exercise, and audio/timestamp checks. Student prediction is preserved before the new terminal-growth run; exact new rate/action are pending. This package does not claim a full score or Brightspace submission.

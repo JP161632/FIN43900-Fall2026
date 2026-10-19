@@ -77,7 +77,7 @@ def main():
     attribution=table(['Cause','Supported contribution','Limit on attribution'],[
         ['Course instruction','Five-year FCFF/enterprise-equity architecture, validation and decision standard','Instruction supplies method, not NVIDIA fair value'],
         ['Existing student-supplied materials','Target/research-admission question and saved earlier lab outputs','Does not establish authorship of each older passage or original checkpoint receipt'],
-        ['Prior lab analysis/review','Lab11 withholds a new value until classification/discount/terminal issues are resolved','Lab12 reports partner questions; authenticity/credit unconfirmed here'],
+        ['Prior lab analysis/review','Lab11 withholds a new value until classification/discount/terminal issues are resolved','Student confirms October1 peer challenge; Antigravity log and independent follow-up are in evidence/partner-review-record.md'],
         ['AI assistance Oct19','Source organization, rebuild, assumptions/scenarios, tests and documentation','Not all changes were caused by AI; no claim AI-generated assumptions are reported facts'],
         ['Primary evidence + numerical challenge','Latest filing definitions and test results support accepting/correcting/qualifying outputs','Passing accounting checks cannot establish forecast truth']])
     correction=table(['Primary-source fact / July26,2026','Amount USD millions','Model implication'],[

@@ -31,8 +31,10 @@ Numerical corrections and associated terms in this table are now applied, except
 - Video 2 describes a run, the receivables-to-working-capital-to-FCFF chain, known answers, failure injections and changed-input action. Text alone cannot establish visible execution or a clean environment. Its closing sentence correctly leaves human-lock history to separate actual evidence.
 - Video 3 gives horizon/date, conditional watch/defer, terminal dependence, peer disagreement, downside, reverse DCF and monitoring gates. Numerical text is now reconciled with the model; audio alignment remains unverified.
 
-Original Edition A PDF/first checkpoint receipt, completed locked record and confirmed partner challenge remain absent. No full-score or final-completion claim is made. GitHub publication is separate from Brightspace submission.
+Original Edition A PDF/first checkpoint receipt, completed locked record remains absent; attributed partner challenge is now supplied. No full-score or final-completion claim is made. GitHub publication is separate from Brightspace submission.
 
 ## Authorized correction update
 
 The student requested that transcripts reflect correct values. Video 1 now gives base $118.58, range $55.93-$212.08 and prior Lab 5 WACC 15.88%. Video 2 gives the WACC-test change $118.58 to $108.38. Video 3 gives range $55.93-$212.08, base $118.58, increased-WACC value $108.38, downside $55.93 and the above-95-day collections trigger. No audio confirmation, new timestamps or human-lock history is asserted by these edits. Earlier source text remains available in the immutable video-links snapshot.
+
+Peer-review closure update (October 19): The student confirms the actual October 1 discussion and supplied the Antigravity-produced log. Credit is peer challenge. Independent legacy arithmetic and equal-relative final-model shocks are executed in outputs/peer-review-checks.json; range bias is accepted and demand/buyback/price claims corrected or qualified. See evidence/partner-review-record.md. Earlier findings of missing partner attribution are superseded by this supplied evidence. The human terminal-growth lock remains partial, with exact new rate/action still needed.

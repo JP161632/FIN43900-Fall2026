@@ -22,7 +22,9 @@ Word-overlap checks use tight glyph boxes and a conservative area threshold; vis
 | Data integrity /45 | Source dates/definitions, normalizations, fact/assumption boundary, linked evidence and hashes | Disclosed interpolation/proxy/recovery judgments remain uncertain |
 | Financial judgment /60 | Statements, FCFF/WACC/terminal reinvestment, bridge, cases, reverse DCF, peers and triggers | Financing/lease/allocation simplifications affect conviction |
 | Technical execution /45 | Offline application, visible result, clean-run receipt and document templates | Full student execution/ownership performance not reviewed |
-| Validation /75 | 15-test record, published answers, independent definitions, failures and cold run | Human locked record and confirmed partner review incomplete |
+| Validation /75 | 15-test record, published answers, independent definitions, failures and cold run | Human locked record partial; attributed peer review supplied |
 | Communication /30 | Readable consistent PDFs, links, supplied videos/transcripts and manifest | Audio alignment and observed timestamp indices unverified |
 
 **No full-credit or 300/300 certification is justified.** Detected document/layout defects are corrected; missing human history cannot be supplied by formatting or invented evidence. Save the final Brightspace receipt after submitting. Earlier immutable snapshots remain intact; use the new PDF-polish snapshot for revised files.
+
+Peer-review closure update (October 19): The student confirms the actual October 1 discussion and supplied the Antigravity-produced log. Credit is peer challenge. Independent legacy arithmetic and equal-relative final-model shocks are executed in outputs/peer-review-checks.json; range bias is accepted and demand/buyback/price claims corrected or qualified. See evidence/partner-review-record.md. Earlier findings of missing partner attribution are superseded by this supplied evidence. The human terminal-growth lock remains partial, with exact new rate/action still needed.

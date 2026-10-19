@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "executed_utc": "2026-10-19T20:47:16.850525+00:00",
+  "operator": "Assistant; follow-up executed October19, not claimed as the October1 joint event or student lock",
+  "prediction_commit": "e0f65214dc506b81f068677d1a67445ee7178e9f",
+  "credit": "peer challenge",
+  "discussion_date": "2026-10-01",
+  "legacy_model_sha256": "be199f699360041d2b2bbbb255c8220c7ebea378801b170b7eb4ed7050602cc9",
+  "historical_source_check": {
+    "revenue_millions": 215938,
+    "gross_profit_millions": 153463,
+    "gaap_gross_margin": 0.7106808435754708
+  },
+  "legacy_margin_trace": {
+    "operating_income_change": 10333.702193100005,
+    "tax_change": 1560.3890311581054,
+    "net_wc_contribution": 179.6334977013721,
+    "fcfe_increase": 8952.946659643261,
+    "base_fcfe": 242008.18924710783,
+    "higher_margin_fcfe": 250961.1359067511,
+    "rounded_components_sum": 8952.94,
+    "unrounded_reconciliation_error": 1.0913936421275139e-11
+  },
+  "legacy_lower_growth": {
+    "ebit_delta": -63725.17976137495,
+    "fcfe_delta": -33591.002112685994,
+    "fcfe": 208417.18713442184
+  },
+  "equal_relative_shocks": {
+    "data_center_growth": {
+      "lower": {
+        "factor": 0.95,
+        "input_path": "cases.base.data_center_growth",
+        "old_path": [
+          0.4,
+          0.3,
+          0.22,
+          0.15,
+          0.1
+        ],
+        "new_path": [
+          0.38,
+          0.285,
+          0.209,
+          0.1425,
+          0.095
+        ],
+        "per_share": 114.21076025037574,
+        "action": "WATCH / DEFER",
+        "year5_ebit_millions": 481295.2392511296,
+        "year5_fcff_millions": 372401.15888037614,
+        "max_articulation_error_millions": 2.3283064365386963e-10
+      },
+      "higher": {
+        "factor": 1.05,
+        "input_path": "cases.base.data_center_growth",
+        "old_path": [
+          0.4,
+          0.3,
+          0.22,
+          0.15,
+          0.1
+        ],
+        "new_path": [
+          0.42000000000000004,
+          0.315,
+          0.231,
+          0.1575,
+          0.10500000000000001
+        ],
+        "per_share": 123.10285287585661,
+        "action": "WATCH / DEFER",
+        "year5_ebit_millions": 525175.3412682296,
+        "year5_fcff_millions": 404773.18537681806,
+        "max_articulation_error_millions": 5.820766091346741e-11
+      },
+      "per_share_span": 8.89209262548087,
+      "year5_ebit_span_millions": 43880.10201710003,
+      "year5_fcff_span_millions": 32372.02649644192
+    },
+    "gross_margin": {
+      "lower": {
+        "factor": 0.95,
+        "input_path": "cases.base.gross_margin",
+        "old_path": [
+          0.74,
+          0.74,
+          0.735,
+          0.73,
+          0.72
+        ],
+        "new_path": [
+          0.703,
+          0.703,
+          0.6982499999999999,
+          0.6935,
+          0.6839999999999999
+        ],
+        "per_share": 111.56529388889193,
+        "action": "WATCH / DEFER",
+        "year5_ebit_millions": 474173.7256321802,
+        "year5_fcff_millions": 364400.6286759309,
+        "max_articulation_error_millions": 2.3283064365386963e-10
+      },
+      "higher": {
+        "factor": 1.05,
+        "input_path": "cases.base.gross_margin",
+        "old_path": [
+          0.74,
+          0.74,
+          0.735,
+          0.73,
+          0.72
+        ],
+        "new_path": [
+          0.777,
+          0.777,
+          0.77175,
+          0.7665,
+          0.756
+        ],
+        "per_share": 125.60444081443566,
+        "action": "WATCH / DEFER",
+        "year5_ebit_millions": 531519.9419481591,
+        "year5_fcff_millions": 412230.49425456295,
+        "max_articulation_error_millions": 4.656612873077393e-10
+      },
+      "per_share_span": 14.039146925543733,
+      "year5_ebit_span_millions": 57346.216315978905,
+      "year5_fcff_span_millions": 47829.865578632045
+    }
+  },
+  "baseline_per_share": 118.58486735166377,
+  "baseline_action": "WATCH / DEFER",
+  "range_interpretation": "Equal relative driver shocks do not equate economic plausibility, risk or probability; output ranking is conditional on metric and horizon",
+  "financial_results_unchanged_sha256": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc"
+}

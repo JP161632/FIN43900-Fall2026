@@ -24,7 +24,7 @@ Original earlier evidence: [Lab 5 valuation and sensitivity](../../lab-05-nvda-d
 |---|---|---|
 | Course instruction | Five-year FCFF/enterprise-equity architecture, validation and decision standard | Instruction supplies method, not NVIDIA fair value |
 | Existing student-supplied materials | Target/research-admission question and saved earlier lab outputs | Does not establish authorship of each older passage or original checkpoint receipt |
-| Prior lab analysis/review | Lab 11 withholds a new value until classification/discount/terminal issues are resolved | Lab 12 reports partner questions; authenticity/credit unconfirmed here |
+| Prior lab analysis/review | Lab 11 withholds a new value until classification/discount/terminal issues are resolved | Student confirms October 1 peer challenge; Antigravity log and independent follow-up are in evidence/partner-review-record.md |
 | AI assistance Oct 19 | Source organization, rebuild, assumptions/scenarios, tests and documentation | Not all changes were caused by AI; no claim AI-generated assumptions are reported facts |
 | Primary evidence + numerical challenge | Latest filing definitions and test results support accepting/correcting/qualifying outputs | Passing accounting checks cannot establish forecast truth |
 

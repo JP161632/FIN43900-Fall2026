@@ -17,6 +17,9 @@ def main():
     d=json.loads((ROOT/'data/inputs.json').read_text(encoding='utf-8')); r=json.loads((ROOT/'outputs/results.json').read_text(encoding='utf-8'))
     v=json.loads((ROOT/'outputs/validation-results.json').read_text(encoding='utf-8'))
     check('Finance validation',v['status']=='PASS' and len(v['tests'])==15,'15claim-focused tests, actual results in validation-results.json')
+    peer=json.loads((ROOT/'outputs/peer-review-checks.json').read_text(encoding='utf-8'))
+    peer_status=json.loads((ROOT/'evidence/submission-status.json').read_text(encoding='utf-8'))
+    check('Attributed peer challenge and independent follow-up',peer['status']=='PASS' and peer_status['partner_review'].startswith('SUPPLIED') and peer['credit']=='peer challenge' and abs(peer['legacy_margin_trace']['unrounded_reconciliation_error'])<1e-6 and peer['equal_relative_shocks']['gross_margin']['per_share_span']>peer['equal_relative_shocks']['data_center_growth']['per_share_span'] and peer['financial_results_unchanged_sha256']==hashlib.sha256((ROOT/'outputs/results.json').read_bytes()).hexdigest(),'Student-confirmed Antigravity log; named dispositions; independently reproduced legacy trace and equal-relative range challenge; separate from pending human lock')
     baseline=hashlib.sha256((ROOT/'evidence/edition-a-existing-nvidia-unchanged.md').read_bytes()).hexdigest()
     check('EditionA byte preservation',baseline.upper()=='FF289D7D83BF56F977D5D3F85F7CDF13125841075D5E8A59AF03FA845D39ED6B','Preservation only; checkpointPDF/receipt still missing')
     cold=json.loads((ROOT/'evidence/cold-run-receipt.json').read_text(encoding='utf-8'))
@@ -59,7 +62,7 @@ def main():
     ui=subprocess.run(['node',str(ROOT/'test_dashboard.cjs')],capture_output=True,text=True)
     check('Interactive output controls',ui.returncode==0,ui.stdout.strip()+ui.stderr.strip())
     result={'technical_audit':'PASS' if all(x['status']=='PASS' for x in checks) else 'FAIL',
-            'submission_complete':False,'rubric_score':'Not certified; original baseline receipt/PDF, human lock, partner review, timestamp index and material speech/caption reconciliation remain unresolved',
+            'submission_complete':False,'rubric_score':'Not certified; original baseline receipt/PDF, human lock, timestamp index and material speech/caption reconciliation remain unresolved',
             'checks':checks}
     (ROOT/'outputs/submission-audit.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(result,indent=2))

@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
-TAG='project-1-nvidia-pdf-polish-2026-10-19'
+TAG='project-1-nvidia-peer-review-2026-10-19'
 BASE=f'https://github.com/JP161632/FIN43900-Fall2026/blob/{TAG}/projects/project-1/'
 EXCLUDE={'file-integrity.json','submission-manifest.csv','evidence/publication-audit.json','outputs/submission-audit.json','outputs/run-receipt.json'}
 

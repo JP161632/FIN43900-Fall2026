@@ -1,12 +1,17 @@
 {
   "technical_audit": "PASS",
   "submission_complete": false,
-  "rubric_score": "Not certified; original baseline receipt/PDF, human lock, partner review, timestamp index and material speech/caption reconciliation remain unresolved",
+  "rubric_score": "Not certified; original baseline receipt/PDF, human lock, timestamp index and material speech/caption reconciliation remain unresolved",
   "checks": [
     {
       "check": "Finance validation",
       "status": "PASS",
       "detail": "15claim-focused tests, actual results in validation-results.json"
+    },
+    {
+      "check": "Attributed peer challenge and independent follow-up",
+      "status": "PASS",
+      "detail": "Student-confirmed Antigravity log; named dispositions; independently reproduced legacy trace and equal-relative range challenge; separate from pending human lock"
     },
     {
       "check": "EditionA byte preservation",
@@ -106,7 +111,7 @@
     {
       "check": "Frozen file integrity",
       "status": "PASS",
-      "detail": "74 stable SHA256matches; exclusions explicit"
+      "detail": "80 stable SHA256matches; exclusions explicit"
     },
     {
       "check": "Interactive output controls",
