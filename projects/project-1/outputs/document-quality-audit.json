@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "unique_pdf_pages": 13,
+  "checks": "Baseline bytes/text, bounds, significant word overlaps, glyphs, placeholders, memo length, linked local evidence, model values and mirrored PDF copies",
+  "visual_review": "All pages rendered; manual visual inspection recorded in docs/pdf-quality-audit.md",
+  "limitation": "Document QA does not certify source truth, unseen audiovisual performance, human-history evidence or a rubric score",
+  "financial_results_sha256": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc",
+  "files": [
+    {
+      "file": "Research-Evolution.pdf",
+      "sha256": "05c370cabfcd6e6346b5bfb36998ffca6bac2fe6297d997d7b289b0b8521617e",
+      "pages": [
+        {
+          "page": 1,
+          "word_count": 384,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 2,
+          "word_count": 403,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 3,
+          "word_count": 323,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 4,
+          "word_count": 306,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        }
+      ],
+      "clickable_links": 6
+    },
+    {
+      "file": "Decision-Memo.pdf",
+      "sha256": "f369d4d553363c82f45b05043ede1d9024121a1a7dcd447eefcde7d976664c08",
+      "pages": [
+        {
+          "page": 1,
+          "word_count": 469,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 2,
+          "word_count": 553,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        }
+      ],
+      "clickable_links": 7
+    },
+    {
+      "file": "Validation-and-AI-Use.pdf",
+      "sha256": "c3661c8411568000fc4ee5714038c74559a4c933d3fbe6dffddf575c39b15327",
+      "pages": [
+        {
+          "page": 1,
+          "word_count": 345,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 2,
+          "word_count": 396,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 3,
+          "word_count": 392,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 4,
+          "word_count": 351,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        }
+      ],
+      "clickable_links": 16
+    },
+    {
+      "file": "Recording-Charts.pdf",
+      "sha256": "dc840352d5855521b29cae1013c7bafecc97a1385c781f9c38d09aba8e26b1c6",
+      "pages": [
+        {
+          "page": 1,
+          "word_count": 319,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 2,
+          "word_count": 253,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        },
+        {
+          "page": 3,
+          "word_count": 273,
+          "bounds": "PASS",
+          "word_overlap": "PASS",
+          "replacement_glyphs": false
+        }
+      ],
+      "clickable_links": 13
+    }
+  ]
+}

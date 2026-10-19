@@ -14,7 +14,7 @@ import pymupdf
 
 ROOT=Path(__file__).resolve().parent
 W,H=1280,720
-NAVY='#173853';INK='#183044';MUTED='#4c6475';GREEN='#4e7f16';PALE='#eff5e9';BORDER='#d2dde5';BG='#f2f6f9';ORANGE='#aa5515'
+NAVY='#173853';INK='#183044';MUTED='#4c6475';GREEN='#28592e';PALE='#eff5e9';BORDER='#d2dde5';BG='#f5f7fa';ORANGE='#aa5515'
 
 
 def main():
@@ -49,6 +49,7 @@ def main():
     def header(k,title,sub):
         c.setFillColor(colors.HexColor(BG));c.rect(0,0,W,H,fill=1,stroke=0)
         c.setFillColor(colors.HexColor(NAVY));c.rect(0,H-100,W,100,fill=1,stroke=0)
+        c.setFillColor(colors.HexColor(GREEN));c.rect(0,H-104,W,4,fill=1,stroke=0)
         text(k,38,16,1200,11,'#c3e79d',True,maxh=16)
         text(title,38,35,1200,29,'white',True,maxh=38)
         text(sub,38,77,1200,12,'#e0ebf2',maxh=18)
@@ -83,9 +84,9 @@ def main():
     panel(38,118,cw,174,'1  STARTING QUESTION',
           '<b>Research admission, not a buy call</b><br/>Could Data Center growth become durable owner cash flow at a reasonable price?<br/><br/><b>Edition A: Sep 1</b><br/>Demand, margin and valuation were still open.',16)
     panel(38+cw+gap,118,cw,174,'2  EARLIER VALUATION | LAB 5',
-          '<font size="30"><b>$62.72</b></font> base<br/><b>$55.59-$72.40</b> WACC / g grid<br/>WACC 15.88% | 24,514M weighted diluted shares<br/>Watch/defer; limited reverse-DCF bracket failed.',15)
+          '<font size="30"><b>$62.72</b></font> base<br/><br/><b>$55.59-$72.40</b> WACC / g grid<br/>WACC 15.88% | 24,514M weighted diluted shares<br/>Watch/defer; limited reverse-DCF bracket failed.',15)
     panel(38+2*(cw+gap),118,cw,174,'3  REVISED VALUATION | PROJECT 1',
-          f'<font size="30"><b>${b["per_share"]:.2f}</b></font> base<br/><b>${lo["per_share"]:.2f}-${hi["per_share"]:.2f}</b> causal cases<br/>WACC {b["wacc"]:.2%} | 24,242M diluted proxy<br/><b>WATCH / DEFER at $218.36 close</b>',15,PALE)
+          f'<font size="30"><b>${b["per_share"]:.2f}</b></font> base<br/><br/><b>${lo["per_share"]:.2f}-${hi["per_share"]:.2f}</b> causal cases<br/>WACC {b["wacc"]:.2%} | 24,242M diluted proxy<br/><b>WATCH / DEFER at $218.36 close</b>',15,PALE)
     text('The old interval is a sensitivity grid; the new interval is causal scenarios. Different definitions, not a measured improvement in accuracy.',
          42,303,1196,13,MUTED,maxh=22)
     panel(38,339,cw,214,'WHAT CHANGED - AND WHY',

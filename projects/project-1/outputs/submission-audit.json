@@ -49,6 +49,11 @@
       "detail": "Maximum2pages"
     },
     {
+      "check": "All PDF quality checks",
+      "status": "PASS",
+      "detail": "13unique pages: bounds, significant overlaps, glyphs, source text, local evidence targets, result values and identical PDF copies; visual inspection recorded separately"
+    },
+    {
       "check": "Visible decision / all statements",
       "status": "PASS",
       "detail": "Material result viewable without execution"
@@ -101,7 +106,7 @@
     {
       "check": "Frozen file integrity",
       "status": "PASS",
-      "detail": "68 stable SHA256matches; exclusions explicit"
+      "detail": "74 stable SHA256matches; exclusions explicit"
     },
     {
       "check": "Interactive output controls",

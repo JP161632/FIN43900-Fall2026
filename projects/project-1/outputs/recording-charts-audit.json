@@ -9,25 +9,25 @@
     1920,
     1080
   ],
-  "pdf_sha256": "f7c628f6be0b2ad5fd36a2a8a88c57d51c1bd630b6c205017fd38858c7bb9997",
+  "pdf_sha256": "dc840352d5855521b29cae1013c7bafecc97a1385c781f9c38d09aba8e26b1c6",
   "pngs": [
     {
       "file": "outputs/Video-1-Research-Chart.png",
       "width": 1920,
       "height": 1080,
-      "sha256": "6bf53dd897255dd81ef4085cfafd09240bc4ae349dfb6a8933dee4a28735a370"
+      "sha256": "b342ecfa974c40563e433622cf598d5601579e9d4fcf76dbeeb2a663c5fc7e30"
     },
     {
       "file": "outputs/Video-2-Validation-Chart.png",
       "width": 1920,
       "height": 1080,
-      "sha256": "0ea38c8e6e058eda12787c55fe82994591f41dd7055cc606e5f89da7d72cf85e"
+      "sha256": "659f24651dc91a32b030d333c75769f3aa714b6a0e0edce4e97ccd9fd40f174c"
     },
     {
       "file": "outputs/Video-3-Committee-Chart.png",
       "width": 1920,
       "height": 1080,
-      "sha256": "3aab5c696ff9a8d92608eff09f0d0fcb1230bb2b4f56d43b5b95da19ea5e61fd"
+      "sha256": "b49b7582a5c5720b0191607a845c4969124dac9f837480351ddb8a5cf50d210c"
     }
   ],
   "financial_results_unchanged_sha256": "36b319789bf227fd2b5ad3b97c543519c2223f2c9b7bd828e13ed3ad2ef446cc",

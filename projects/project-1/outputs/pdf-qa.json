@@ -5,26 +5,26 @@
     {
       "file": "Research-Evolution.pdf",
       "pages": 4,
-      "sha256": "416b6332bd2fe409f73084e41ae12a39107185273adea77ec3c2451ab90838c5",
+      "sha256": "05c370cabfcd6e6346b5bfb36998ffca6bac2fe6297d997d7b289b0b8521617e",
       "page_checks": [
         {
           "page": 1,
-          "text_characters": 3257,
+          "text_characters": 2762,
           "out_of_page_blocks": []
         },
         {
           "page": 2,
-          "text_characters": 3886,
+          "text_characters": 3201,
           "out_of_page_blocks": []
         },
         {
           "page": 3,
-          "text_characters": 2352,
+          "text_characters": 2283,
           "out_of_page_blocks": []
         },
         {
           "page": 4,
-          "text_characters": 1812,
+          "text_characters": 2138,
           "out_of_page_blocks": []
         }
       ]
@@ -32,16 +32,16 @@
     {
       "file": "Decision-Memo.pdf",
       "pages": 2,
-      "sha256": "923e3061523c78db8f74236af2b4baa36ed4e41e74953b6be9e08f2a051579de",
+      "sha256": "f369d4d553363c82f45b05043ede1d9024121a1a7dcd447eefcde7d976664c08",
       "page_checks": [
         {
           "page": 1,
-          "text_characters": 3061,
+          "text_characters": 3267,
           "out_of_page_blocks": []
         },
         {
           "page": 2,
-          "text_characters": 3992,
+          "text_characters": 4170,
           "out_of_page_blocks": []
         }
       ]
@@ -49,26 +49,26 @@
     {
       "file": "Validation-and-AI-Use.pdf",
       "pages": 4,
-      "sha256": "7b0e364a20066f8ff5d3b548c066d1e600656629bd51c8fb25ec0dfd869d6a91",
+      "sha256": "c3661c8411568000fc4ee5714038c74559a4c933d3fbe6dffddf575c39b15327",
       "page_checks": [
         {
           "page": 1,
-          "text_characters": 2645,
+          "text_characters": 2628,
           "out_of_page_blocks": []
         },
         {
           "page": 2,
-          "text_characters": 2707,
+          "text_characters": 2896,
           "out_of_page_blocks": []
         },
         {
           "page": 3,
-          "text_characters": 4033,
+          "text_characters": 2896,
           "out_of_page_blocks": []
         },
         {
           "page": 4,
-          "text_characters": 1800,
+          "text_characters": 2660,
           "out_of_page_blocks": []
         }
       ]

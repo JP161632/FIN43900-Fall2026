@@ -33,6 +33,8 @@ def main():
         actual=hashlib.sha256((ROOT/f'{name}.pdf').read_bytes()).hexdigest(); record=next(x for x in pdf['files'] if x['file']==f'{name}.pdf')
         check(name+' copy/hash',actual==record['sha256'] and (ROOT/f'{name}.pdf').read_bytes()==(ROOT/f'docs/{stem}.pdf').read_bytes(),'Root/docs same PDF; current render receipt hash')
     check('Memo length',next(x for x in pdf['files'] if x['file']=='Decision-Memo.pdf')['pages']<=2,'Maximum2pages')
+    quality=json.loads((ROOT/'outputs/document-quality-audit.json').read_text(encoding='utf-8'))
+    check('All PDF quality checks',quality['status']=='PASS' and quality['unique_pdf_pages']==13 and all(hashlib.sha256((ROOT/x['file']).read_bytes()).hexdigest()==x['sha256'] for x in quality['files']),'13unique pages: bounds, significant overlaps, glyphs, source text, local evidence targets, result values and identical PDF copies; visual inspection recorded separately')
     visible=(ROOT/'outputs/visible-output.md').read_text(encoding='utf-8')
     check('Visible decision / all statements',all(t in visible for t in ['WATCH / DEFER','five-year income','five-year balance','five-year cash','Market-implied','218.36']), 'Material result viewable without execution')
     for i in [1,2,3]:
