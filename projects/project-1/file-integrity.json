@@ -1,7 +1,7 @@
 {
   "scope": "Technical evidence and supplied video/transcript snapshot; final evidence review INCOMPLETE",
   "tag": "project-1-nvidia-peer-review-2026-10-19",
-  "created_utc": "2026-10-19T20:51:13.867186+00:00",
+  "created_utc": "2026-10-19T20:52:08.886398+00:00",
   "algorithm": "sha256",
   "excluded": [
     "evidence/publication-audit.json",
