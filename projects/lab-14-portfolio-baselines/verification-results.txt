@@ -1,0 +1,110 @@
+Lab 14 actual verification runs
+2026-10-20T18:05:37.921090+00:00
+
+COMMAND: projects\lab-14-portfolio-baselines\portfolio.py
+Lab 14 - course-authored annual training values, not market estimates
+CPI estimate: 2.5%; objective: 6.50%
+Expected-return test only; full mandate compliance needs mandate.py.
+Weights use full precision; displayed rounded weights may not total 100.0%.
+
+Benchmark
+  Treasury bills: 0.0%
+  Treasury 10-year note: 0.0%
+  Investment-grade bond fund: 40.0%
+  Global equity index fund: 60.0%
+  Expected return: 6.80%
+  Volatility: 10.46%
+  Reserve-eligible weight: 0.0%
+  Meets 6.5% objective? yes
+
+Equal weight
+  Treasury bills: 25.0%
+  Treasury 10-year note: 25.0%
+  Investment-grade bond fund: 25.0%
+  Global equity index fund: 25.0%
+  Expected return: 5.20%
+  Volatility: 5.21%
+  Reserve-eligible weight: 50.0%
+  Meets 6.5% objective? no
+
+Inverse volatility
+  Treasury bills: 84.3%
+  Treasury 10-year note: 6.0%
+  Investment-grade bond fund: 7.0%
+  Global equity index fund: 2.6%
+  Expected return: 3.77%
+  Volatility: 1.05%
+  Reserve-eligible weight: 90.3%
+  Meets 6.5% objective? no
+
+
+EXIT CODE: 0
+
+COMMAND: projects\lab-13-portfolio-mandate\mandate.py
+Reserve minimum: 3.0% of the portfolio
+
+Candidate A
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 14.0 pass
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 0.0 pass
+Calendar-year loss: requires CIO clarification
+Verdict: passes every checkable rule
+
+Candidate B
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 1.0 FAIL
+Redeemable in 5 days >= 90.0%: 85.0 FAIL
+Largest single company <= 8.0%: 9.0 FAIL
+Calendar-year loss: requires CIO clarification
+Verdict: fails 3 rule(s)
+
+Candidate C
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 2.0 FAIL
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 8.0 pass
+Calendar-year loss: requires CIO clarification
+Verdict: fails 1 rule(s)
+
+Candidate D
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 100.0 pass
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 0.0 pass
+Calendar-year loss: requires CIO clarification
+Verdict: passes every checkable rule
+
+Candidate E
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 0.0 FAIL
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 0.0 pass
+Calendar-year loss: requires CIO clarification
+Verdict: fails 1 rule(s)
+
+
+EXIT CODE: 0
+
+COMMAND: projects\lab-14-portfolio-baselines\verify_portfolio.py
+
+test_actual_cli_refuses_bad_and_asymmetric_inputs (__main__.PortfolioAudit.test_actual_cli_refuses_bad_and_asymmetric_inputs) ... ok
+test_all_published_baseline_values (__main__.PortfolioAudit.test_all_published_baseline_values) ... ok
+test_benchmark_candidate_e_fails_reserve_only (__main__.PortfolioAudit.test_benchmark_candidate_e_fails_reserve_only) ... ok
+test_changed_correlation_and_restoration (__main__.PortfolioAudit.test_changed_correlation_and_restoration) ... ok
+test_covariance_order_symmetry_and_diagonal (__main__.PortfolioAudit.test_covariance_order_symmetry_and_diagonal) ... ok
+test_independent_two_asset_formula (__main__.PortfolioAudit.test_independent_two_asset_formula) ... ok
+test_invalid_matrices_and_rates (__main__.PortfolioAudit.test_invalid_matrices_and_rates) ... ok
+test_invalid_weight_labels_and_objective_boundary (__main__.PortfolioAudit.test_invalid_weight_labels_and_objective_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.298s
+
+OK
+
+EXIT CODE: 0
