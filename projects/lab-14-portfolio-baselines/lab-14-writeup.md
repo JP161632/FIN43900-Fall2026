@@ -124,12 +124,6 @@ This worked explanation was prepared with AI and independently checked against t
 
 **Baseline to show the CIO first:** the benchmark is the clearest starting comparison because it is the CIO's own reference. Its 6.80% expected return exceeds today's threshold, yet its 0.0% reserve fails the mandate. Showing it first exposes the need to reconcile the benchmark with reserve requirements. Equal weight and inverse volatility then illustrate why reducing risk alone does not deliver the return objective.
 
-## AI use and final audit
-
-AI helped write the Python engine, verification code, and analytical explanations in this writeup. The partner discussion and partner-file results above were supplied by the student. Accepted assistance: reusable covariance functions and executable known-answer/failure-injection checks. Qualified suggestion: treating a return threshold pass as mandate compliance; the benchmark fails the independently run reserve check, and future-loss/turnover questions remain unresolved. The published hand answers are verification targets, not hardcoded engine outputs.
-
-The final executable audit checks all known-answer values, the two-asset hand formula, the 0.50 correlation change and restoration, refusal of 1.3 and asymmetric correlations, covariance ordering and diagonals, valid weights, and candidate E's reserve failure. All **eight tests pass**. The report's tables and commands were reconciled with the saved run log. The human loss-rule interpretation remains for the CIO/instructor to clarify; no optimized adoptable portfolio is claimed.
-
 ## Checkout links
 
 - [Lab 14 writeup](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-14-portfolio-baselines/lab-14-writeup.md)
