@@ -1,0 +1,68 @@
+{
+  "complete_months_only": true,
+  "omitted_partial_month": "2026-10",
+  "return_months": 60,
+  "prices_sha256": "f6d3e15f62efda6f28221339e9e973dbb78bdb4cee7f5c6ae39d8e23505c8389",
+  "sources": [
+    {
+      "ticker": "NVDA",
+      "source": "Yahoo Finance",
+      "currency": "USD",
+      "history_url": "https://finance.yahoo.com/quote/NVDA/history/",
+      "download_url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=1630454400&period2=1790812800&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "retrieved_at_utc": "2026-10-22T17:37:16.737472+00:00",
+      "field": "indicators.adjclose[0].adjclose",
+      "aggregation": "Last actual trading-day adjusted close in each calendar month",
+      "raw_file": "sources/NVDA-yahoo-daily.json",
+      "raw_sha256": "be377e73a67090583ef26d9411da590a835af38a6e2047108797f6fff5eb05f8",
+      "price_rows": 61,
+      "first_price_date": "2021-09-30",
+      "last_price_date": "2026-09-30"
+    },
+    {
+      "ticker": "MSFT",
+      "source": "Yahoo Finance",
+      "currency": "USD",
+      "history_url": "https://finance.yahoo.com/quote/MSFT/history/",
+      "download_url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?period1=1630454400&period2=1790812800&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "retrieved_at_utc": "2026-10-22T17:37:16.997718+00:00",
+      "field": "indicators.adjclose[0].adjclose",
+      "aggregation": "Last actual trading-day adjusted close in each calendar month",
+      "raw_file": "sources/MSFT-yahoo-daily.json",
+      "raw_sha256": "8c4cb5ef8c4a2308e231718d17334ebf199ff6eebddca9b8a8da25c4060d16a2",
+      "price_rows": 61,
+      "first_price_date": "2021-09-30",
+      "last_price_date": "2026-09-30"
+    },
+    {
+      "ticker": "TSM",
+      "source": "Yahoo Finance",
+      "currency": "USD",
+      "history_url": "https://finance.yahoo.com/quote/TSM/history/",
+      "download_url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?period1=1630454400&period2=1790812800&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "retrieved_at_utc": "2026-10-22T17:37:17.301909+00:00",
+      "field": "indicators.adjclose[0].adjclose",
+      "aggregation": "Last actual trading-day adjusted close in each calendar month",
+      "raw_file": "sources/TSM-yahoo-daily.json",
+      "raw_sha256": "a00fa16ce9f7b2d326b36a8a60fa11c08fffb86dc9feeb1b07a99ad25f12e9ac",
+      "price_rows": 61,
+      "first_price_date": "2021-09-30",
+      "last_price_date": "2026-09-30"
+    },
+    {
+      "ticker": "QCOM",
+      "source": "Yahoo Finance",
+      "currency": "USD",
+      "history_url": "https://finance.yahoo.com/quote/QCOM/history/",
+      "download_url": "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?period1=1630454400&period2=1790812800&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "retrieved_at_utc": "2026-10-22T17:37:17.564628+00:00",
+      "field": "indicators.adjclose[0].adjclose",
+      "aggregation": "Last actual trading-day adjusted close in each calendar month",
+      "raw_file": "sources/QCOM-yahoo-daily.json",
+      "raw_sha256": "199f158f3b12d016c6359badd304a462af83d940e7258487c57dddc2dc058725",
+      "price_rows": 61,
+      "first_price_date": "2021-09-30",
+      "last_price_date": "2026-09-30"
+    }
+  ]
+}

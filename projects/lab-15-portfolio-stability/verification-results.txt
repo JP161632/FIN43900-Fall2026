@@ -1,0 +1,13 @@
+test_actual_page_and_engine_source_change (__main__.Lab15Audit.test_actual_page_and_engine_source_change) ... 2026-10-22 13:42:24.065 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_cli_unchanged (__main__.Lab15Audit.test_cli_unchanged) ... ok
+test_csv_estimates_and_rejections (__main__.Lab15Audit.test_csv_estimates_and_rejections) ... ok
+test_known_answers_and_constraints (__main__.Lab15Audit.test_known_answers_and_constraints) ... ok
+test_personal_saved_data_in_actual_page (__main__.Lab15Audit.test_personal_saved_data_in_actual_page) ... 2026-10-22 13:42:29.050 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_personal_source_prices_and_results (__main__.Lab15Audit.test_personal_source_prices_and_results) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 6.559s
+
+OK

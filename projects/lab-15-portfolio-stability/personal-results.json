@@ -1,0 +1,156 @@
+{
+  "objective": 0.1,
+  "reserve_minimum": 0.0,
+  "estimate_label": "Annualized historical arithmetic return estimate; gross of fees, not a forecast",
+  "estimates_all": {
+    "NVDA": {
+      "return": 0.6110807316913489,
+      "volatility": 0.5008839362363169,
+      "reserve_eligible": false
+    },
+    "MSFT": {
+      "return": 0.16429399459797062,
+      "volatility": 0.27308228552350333,
+      "reserve_eligible": false
+    },
+    "TSM": {
+      "return": 0.3651802182408196,
+      "volatility": 0.36784007019219345,
+      "reserve_eligible": false
+    },
+    "QCOM": {
+      "return": 0.18483777590792166,
+      "volatility": 0.4480721272312004,
+      "reserve_eligible": false
+    }
+  },
+  "correlations_all": [
+    [
+      1.0,
+      0.6135730185272614,
+      0.6050578839789915,
+      0.48596599322005274
+    ],
+    [
+      0.6135730185272614,
+      1.0,
+      0.3114960806363533,
+      0.3843706285449883
+    ],
+    [
+      0.6050578839789915,
+      0.3114960806363533,
+      1.0,
+      0.4455711010381355
+    ],
+    [
+      0.48596599322005274,
+      0.3843706285449883,
+      0.4455711010381355,
+      1.0
+    ]
+  ],
+  "metadata_all": {
+    "price_start": "2021-09-30",
+    "price_end": "2026-09-30",
+    "return_start": "2021-10-29",
+    "return_end": "2026-09-30",
+    "price_rows": 61,
+    "return_months": 60
+  },
+  "estimates_36": {
+    "NVDA": {
+      "return": 0.6296415213881174,
+      "volatility": 0.37219658987244586,
+      "reserve_eligible": false
+    },
+    "MSFT": {
+      "return": 0.20913327032461043,
+      "volatility": 0.28491959628389685,
+      "reserve_eligible": false
+    },
+    "TSM": {
+      "return": 0.6248364996825035,
+      "volatility": 0.3076553278144239,
+      "reserve_eligible": false
+    },
+    "QCOM": {
+      "return": 0.2927392093368991,
+      "volatility": 0.4741364626011586,
+      "reserve_eligible": false
+    }
+  },
+  "correlations_36": [
+    [
+      1.0,
+      0.527771233959702,
+      0.5204956550933116,
+      0.403047098953258
+    ],
+    [
+      0.527771233959702,
+      1.0,
+      0.07689242523059524,
+      0.37880388675810434
+    ],
+    [
+      0.5204956550933116,
+      0.07689242523059524,
+      1.0,
+      0.3595381934924781
+    ],
+    [
+      0.403047098953258,
+      0.37880388675810434,
+      0.3595381934924781,
+      1.0
+    ]
+  ],
+  "metadata_36": {
+    "price_start": "2021-09-30",
+    "price_end": "2026-09-30",
+    "return_start": "2023-10-31",
+    "return_end": "2026-09-30",
+    "price_rows": 61,
+    "return_months": 36
+  },
+  "tsm_original_estimate": 0.3651802182408196,
+  "tsm_stressed_estimate": 0.3551802182408196,
+  "runs": {
+    "all_months": {
+      "weights": {
+        "NVDA": 0.0,
+        "MSFT": 0.7,
+        "TSM": 0.25,
+        "QCOM": 0.05
+      },
+      "return": 0.2155427395741804,
+      "volatility": 0.24815211806384596,
+      "reserve": 0
+    },
+    "last_36": {
+      "weights": {
+        "NVDA": 0.0,
+        "MSFT": 0.55,
+        "TSM": 0.45,
+        "QCOM": 0.0
+      },
+      "return": 0.39619972353566235,
+      "volatility": 0.21693333207695428,
+      "reserve": 0
+    },
+    "TSM_minus_1_point": {
+      "weights": {
+        "NVDA": 0.0,
+        "MSFT": 0.7,
+        "TSM": 0.25,
+        "QCOM": 0.05
+      },
+      "return": 0.2130427395741804,
+      "volatility": 0.24815211806384596,
+      "reserve": 0
+    }
+  },
+  "largest_window_change_points": 20.0,
+  "largest_attack_change_points": 0.0
+}
