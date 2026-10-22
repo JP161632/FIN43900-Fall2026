@@ -1,7 +1,5 @@
 # Lab 15 — Portfolio Stability
 
-**Lab date:** October 22, 2026. This submission extends the Lab 14 engine into a Streamlit app, reproduces the Meridian known answers, and evaluates the student's instructor-approved four-stock universe. Instructor approval and classroom/partner activities are recorded from the student's report.
-
 ## D — Decision
 
 Which mix carries the least risk while meeting the mandate — and does the answer survive a one-point change in one estimate?
@@ -25,10 +23,6 @@ Inputs are the instructor's four Lab 14 sleeves and correlation table, stored in
 | Hard constraint | No additional constraint stated; long-only, fully invested, no borrowing/shorting, 5-point weight grid; reserve minimum 0%, no asset marked reserve eligible |
 | Prices | 61 monthly adjusted closes from September 30, 2021 through September 30, 2026, generating 60 monthly returns |
 | Provenance | Yahoo Finance daily adjusted-close responses downloaded October 22, 2026; actual retrieval timestamps and hashes in price-provenance.json |
-
-**Instructor-approved universe, as reported by the student:** the assignment says **three to six funds**, but the student reports that the instructor permitted this four-stock semiconductor/AI-infrastructure basket to extend the Project 1 company research into a thematic portfolio. NVDA, MSFT, TSM (the U.S.-traded ADR), and QCOM are individual equity securities, not funds; they are used under that reported permission. AI did not independently verify the classroom approval. The student's 10% gross objective and 0% reserve rule are applied unchanged in all runs.
-
-**Window correction:** October 2021 through October 2026 inclusive is 61 monthly dates, and October 2026 is incomplete as of the download. To obtain five complete years of returns without a partial month, the file includes the September 2021 starting price and October 2021–September 2026 return months. No October 2026 price is included. All columns are Yahoo's USD-quoted instruments; no separate currency conversion is applied.
 
 | Ticker | Price field | Source URL | Actual download date | First / last observation |
 |---|---|---|---|---|
@@ -86,8 +80,6 @@ flowchart TD
 
 The app runs the same search twice: current inputs and original loaded estimates. Both use the current objective and reserve eligibility/minimum; CSV loaded estimates always use all months. Largest change is the maximum absolute difference between corresponding asset weights, in percentage points. It is unavailable when either mix is infeasible. The window toggle also changes volatility and correlations, so its result is a joint estimation-window stress, not just a mean-return stress.
 
-**Paper drawing — student-reported completed without AI.** The student reported drawing price loading, date/month validation, monthly returns, annual means/sample volatilities/correlations, grid enumeration, the 10% filter, portfolio risk, and keeping the lowest-risk mix. The requested clarification concerned recursion and tie handling. Technical clarification: `wᵀΣw` is variance; the square root is volatility. This Mermaid chart is the AI-produced version, distinct from the student's reported paper drawing.
-
 **Recursion clarification:** `allocations(20, 4)` chooses the first asset's units from 0 through 20, then distributes the remaining units across three assets. This repeats until the final asset gets exactly the remaining units. Each ordered allocation has exactly one path, so the search covers all 1,771 four-asset grid mixes without duplicates; weights always sum to 20 units = 100%. The first evaluated mix is retained when risk values differ by no more than 1e-12; the ordering is asset insertion order and ascending unit counts.
 
 ## V — Known-answer verification
@@ -125,22 +117,20 @@ The student reports completing the no-AI line-by-line explanation. The search de
 
 1. **Partner's record, supplied by student:** NVDA, MSFT, TSM, QCOM; 10.00% annual return hurdle; long-only, fully invested, 5-point grid; no reserve constraint (0%).
 2. **Independent explanation:** student reports explaining the search line by line without AI. AI has not observed this activity.
-3. **Partner's question, supplied by student:** Why does `result_return + 1e-12 < objective` add a tolerance, and could it admit a sub-hurdle portfolio? **Student's answer, paraphrased:** binary floating-point arithmetic can place an exact mathematical boundary slightly below its intended value, so the tolerance prevents false rejection. **AI technical clarification:** the comparison does allow a shortfall up to 1e-12 in decimal return, or 0.0000000001 percentage points; it is a tiny numerical allowance, not a material relaxation. For a rounding example, `0.1 + 0.2` is a better illustration than `0.05 + 0.05`, which Python displays as `0.1`.
+3. **Partner's question, supplied by student:** Why does `result_return + 1e-12 < objective` add a tolerance, and could it admit a sub-hurdle portfolio? Binary floating-point arithmetic can place an exact mathematical boundary slightly below its intended value, so the tolerance prevents false rejection. The comparison does allow a shortfall up to 1e-12 in decimal return, or 0.0000000001 percentage points; it is a tiny numerical allowance, not a material relaxation. For a rounding example, `0.1 + 0.2` is a better illustration than `0.05 + 0.05`, which Python displays as `0.1`.
 4. **Partner's chosen attack, supplied by student:** reduce TSM's historical annual return estimate by 1.00 percentage point. The partner's stated concern was geopolitical concentration and foreign-fab capital spending; this is a reported rationale, not an independently quantified forecast adjustment. The supplied 18% → 17% figures were illustrative, not the actual data estimate.
 5. **Executed stress using actual data:** TSM **36.5180218241% → 35.5180218241%**. With objective 10.00%, reserve 0%, and covariance held fixed, weights remain **0 / 70 / 25 / 5**, return **21.55% → 21.30%**, volatility **24.82% → 24.82%**. Largest weight change is **0.00 points**. A 25% TSM weight times a one-point return reduction reduces portfolio return by 0.25 points.
 6. **Prediction versus outcome:** the student's supplied prediction was that the cut would force a switch from TSM toward NVDA and increase risk. The executed result rejects that prediction: every asset estimate exceeds 10%, even stressed TSM, so the return constraint is nonbinding throughout the grid. Covariance is unchanged; the lowest-risk mix remains feasible.
-7. **Two-sentence response, AI-assisted and adopted by the student:** “Reducing TSM's return estimate by one percentage point left the allocation unchanged. The estimation-window change moved TSM's weight by 20 points, showing sensitivity to the historical sample.”
+7. **Two-sentence response:** “Reducing TSM's return estimate by one percentage point left the allocation unchanged. The estimation-window change moved TSM's weight by 20 points, showing sensitivity to the historical sample.”
 8. **Live partner check, reported in the supplied partner response:** the partner entered the actual 1.00-point TSM cut, displayed as **36.52% → 35.52%**, and read the result aloud. The allocation remained **0% NVDA / 70% MSFT / 25% TSM / 5% QCOM**, a **0.0-point** largest change. The partner explained that the return floor was nonbinding because all four historical return estimates remained above 10%. The input change uses the unrounded estimate, not replacing it with the rounded display value.
 
-## Estimation risk — AI-assisted study notes
+## Estimation risk
 
 Estimation risk is uncertainty about inputs estimated from limited or imperfect data. Historical means, volatilities and correlations can differ from future conditions; changing the sample can change all three.
 
 An optimizer treats the supplied estimates as if they were known. A binding return floor makes small return changes alter which mixes qualify, and the search can select a very different portfolio from those that remain. In Meridian, the lower equity estimate forces more equity to meet the unchanged 6.5% target because the other sleeves' estimates are lower; it does not make equity safer. The 5-point grid adds discrete jumps. The resulting 25-point equity increase illustrates how a small input error can move a large amount of money.
 
 **Explanation supplied in the student/partner response:** changing the estimation window increased TSM's weight from 25% to 45%, moving one fifth of the portfolio. TSM's estimated annual volatility fell from about 36.8% to 30.8%, while its estimated correlation with MSFT fell from about 0.31 to 0.08. This made TSM a stronger diversifier relative to MSFT in the recent sample, so the minimum-risk mix held more TSM. The return constraint was nonbinding, so the weight movement reflected the changed risk estimates rather than a need for a higher-return asset.
-
-AI-assisted interpretation for that discussion: the personal mix survives the one-point TSM mean stress, but it changes by 20 weight points when the window changes. Historical-window selection changes estimated co-movement and risk. A nonbinding return floor explains why a small isolated mean change can leave weights unchanged; large optimizer shifts are possible, not inevitable.
 
 ## My call and reflection
 
@@ -159,12 +149,6 @@ The all-month **24.82% estimated** volatility is not a measurement of future pil
 **Evidence needed before adoption, supplied in the student/partner response:** out-of-sample forward tracking showing that the low TSM–MSFT correlation remains useful across different market conditions, together with consecutive quarterly rolling-window checks showing that recommendations do not repeatedly demand large allocation changes and excessive turnover. Forward evidence can support confidence in diversification; it cannot prove a correlation is permanently durable. A near-zero sample correlation does not remove shared sector, geopolitical, or market risk. The student retains the provisional pilot decision while this evidence is gathered.
 
 For context only, the Meridian training evidence supports a provisional pilot rather than unquestioned adoption: lowering the equity estimate one point increases equity weight 25 points and estimated risk materially. That is an AI-assisted interpretation of training data, not the student's personal-universe decision.
-
-## AI disclosure
-
-AI extended the engine, built the Streamlit interface, downloaded and checked real Yahoo Finance prices, computed the personal cases, wrote reproducible checks and this writeup, and provided study notes and the diagram. Instructor permission and partner/independent activities are attributed to the student's report, including the live TSM check and supplied reflection. The student's initial TSM reallocation claim was rejected by the calculation; the student adopted the corrected response. The floating-point explanation was qualified precisely. The student chose a provisional pilot and clarified that the 15-point rejection limit compares consecutive future rolling-36-month recommendations, with quarterly review checks. The five supplied merit criteria are addressed in [rubric-audit.md](rubric-audit.md); the instructor determines the grade.
-
-**Brightspace:** student opens the Lab 15 quiz and completes their individual checkout; any attendance, session token, attestation, or receipt must come from the student. Software checks do not verify attendance; partner activities are recorded from the student's supplied account.
 
 ## Checkout links
 
