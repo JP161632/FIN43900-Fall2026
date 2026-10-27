@@ -45,4 +45,4 @@ CCC | As-of: +1.82% (February 2026) | Naive: +1.82% (February 2026)
 PASS: known funnel, panel, six signals and named months.
 PASS: April 15 as-of equals naive for every ticker; March 31 input preserved.
 PASS: inclusive cutoff, reversed row order, missing previous calendar month.
-Partner-file exercise and student explanations require student confirmation.
+Partner activities are documented from student reports in the writeup; not authenticated by these software checks.

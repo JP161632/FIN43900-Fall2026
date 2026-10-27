@@ -69,7 +69,13 @@ The responses below are student-supplied reports; AI did not observe the partner
 
 **Least-understood code:** replacing older revisions. The student initially described the key as ticker alone; the actual code uses `(ticker, month)`. The student's stated difficulty was tracking revision replacement without dropping valid records from other measured months.
 
-**AI quiz — answer pending:** Suppose `latest_vintages()` receives AAA January published February 10 (row 1), AAA February published March 25 (row 4), and then AAA February published March 10 (row 2), in that order. With `key = (row["ticker"], row["month"])`, which rows remain, why does row 2 not overwrite row 4, and what would go wrong if the key were only the ticker? The student's answer must precede the AI explanation.
+**AI quiz:** Suppose `latest_vintages()` receives AAA January published February 10 (row 1), AAA February published March 25 (row 4), and then AAA February published March 10 (row 2), in that order. With `key = (row["ticker"], row["month"])`, which rows remain, why does row 2 not overwrite row 4, and what would go wrong if the key were only the ticker?
+
+**Student's answer, supplied before the AI explanation:** Rows 1 and 4 remain: row 1 for January and row 4 for February. Row 2 does not overwrite row 4 because `row["published"] > previous["published"]` evaluates to false: March 10 is earlier than March 25. A ticker-only key would collapse the company's history into one record, preventing month-over-month comparisons.
+
+**AI feedback after the answer:** Correct. Separate `(ticker, month)` keys preserve January and February independently; the strict later-publication comparison retains February's March 25 vintage even when the older one appears later in the input. One refinement to the student's original wording: a ticker-only key would not make every arriving record overwrite the previous one, since the date check still applies. It would retain only the record with the latest publication date for that company, losing the monthly history.
+
+**Partner-role confirmation:** The student confirms both partners swapped roles for both explanations, including completing the five-minute opening exercise comparing the month measured with the publication date.
 
 **No-AI explanation and partner question:** The student reports walking the partner through `latest_vintages()` line by line without AI. The partner asked what happens when two conflicting index values share the exact publication date for the same ticker and month. The student answered that the code checks for that collision and raises `ValueError`, since an unverified same-day contradiction cannot be silently resolved.
 

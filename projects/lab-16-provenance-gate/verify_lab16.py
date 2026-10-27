@@ -41,7 +41,7 @@ def main():
         print('\nPASS: known funnel, panel, six signals and named months.')
         print('PASS: April 15 as-of equals naive for every ticker; March 31 input preserved.')
         print('PASS: inclusive cutoff, reversed row order, missing previous calendar month.')
-        print('Partner-file exercise and student explanations require student confirmation.')
+        print('Partner activities are documented from student reports in the writeup; not authenticated by these software checks.')
     text = output.getvalue()
     Path(__file__).with_name('verification-results.txt').write_text(text, encoding='utf-8')
     print(text, end='')
