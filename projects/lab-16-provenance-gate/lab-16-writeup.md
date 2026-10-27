@@ -61,23 +61,33 @@ AAA uses February's revised 103, published March 25: `(103 / 101 - 1) * 100`. Us
 
 The automated April 15 experiment yields +5.83%, -5.15%, and +1.82%, respectively, in **both** columns. This verifies this submitted implementation; it does not establish that a partner's separate file was run. The delivered date remains March 31.
 
-## Quiz and partner work — awaiting student responses
+## Quiz and partner work
 
-- Month measured versus publication date, explained by student: **pending**.
-- Least-understood line, AI quiz, student's answer before explanation: **pending**.
-- No-AI line-by-line explanation of rule 4, partner's question, and student's answer: **pending**.
-- Partner-file original run, April 15 change and results, and restoration: **pending**.
+The responses below are student-supplied reports; AI did not observe the partner activities.
 
-## Learn on your own — awaiting student responses
+**Month measured versus publication date — student's explanation:** The month measured (event time) represents when the economic activity happened, such as consumer card spending during January or February. The publication date (availability time) is the later calendar day when that data was released and became publicly knowable. A later revision can change the published value. The observation cannot support a trade before its publication date, regardless of when the activity occurred.
 
-1. What is look-ahead bias? **Pending student answer.**
-2. How do event time, publication time, and revisions cause it? **Pending student answer.**
-3. Explain with AAA why +5.83% looks better than anything knowable on March 31. **Pending student answer.**
+**Least-understood code:** replacing older revisions. The student initially described the key as ticker alone; the actual code uses `(ticker, month)`. The student's stated difficulty was tracking revision replacement without dropping valid records from other measured months.
 
-## Reflection — awaiting student responses
+**AI quiz — answer pending:** Suppose `latest_vintages()` receives AAA January published February 10 (row 1), AAA February published March 25 (row 4), and then AAA February published March 10 (row 2), in that order. With `key = (row["ticker"], row["month"])`, which rows remain, why does row 2 not overwrite row 4, and what would go wrong if the key were only the ticker? The student's answer must precede the AI explanation.
 
-1. Which rule removed the row that mattered most, and why? **Pending student answer.**
-2. What would a backtest built on the naive column claim? **Pending student answer.**
+**No-AI explanation and partner question:** The student reports walking the partner through `latest_vintages()` line by line without AI. The partner asked what happens when two conflicting index values share the exact publication date for the same ticker and month. The student answered that the code checks for that collision and raises `ValueError`, since an unverified same-day contradiction cannot be silently resolved.
+
+**Swap and break, reported by student:** The partner's `asof.py` matched the baseline: AAA +1.98%, BBB -1.02%, CCC +0.91%. Setting its `DECISION_DATE` to `2026-04-15` made the as-of and naive columns agree at +5.83%, -5.15%, and +1.82%, respectively. All supplied April releases were then eligible. The student reports immediately restoring `2026-03-31`.
+
+## Learn on your own
+
+**What is look-ahead bias? — student's response:** A backtest incorporates information that was impossible to know on the simulated trade date, making a strategy look artificially effective because it uses future knowledge.
+
+**How does it work? — student's response:** Indexing data by the month measured can falsely treat March data as available on March 31. Publication time determines actual availability, while revisions can introduce changed values published weeks after the cutoff. A point-in-time backtest must use only the vintages available on each decision date.
+
+**Explain with AAA — student's response:** The naive +5.83% relies on row 3's March index of 109.0, released April 10. On March 31, the latest knowable month was February, with a revised index of 103.0 and a +1.98% change from January. Claiming +5.83% on March 31 pretends April 10's release was available ten days early. The two percentages refer to different monthly intervals.
+
+## Reflection
+
+**Which rule removed the row that mattered most? — student's response:** Rule 3, excluding publications after the decision date, removed row 3 (AAA's March index of 109.0, published April 10). That row makes the naive calculation show a stronger +5.83% March signal instead of the knowable +1.98% February signal. Filtering it out prevents a March 31 decision from using April 10's release.
+
+**What would a naive backtest claim? — student's response, edited for precision:** It could claim that the strategy identified AAA's strengthening card-spend trend and BBB's weakening trend on March 31, using signals that actually depended on April releases. If those signals were used to choose long or short positions, the historical results would rely on unavailable information. This table contains index observations, not security prices or realized trading returns, so it cannot establish extraordinary profits, a stock-price surge or drop, or inevitable live-trading losses. Those outcomes would require a defined trading rule, price data, and execution and cost assumptions.
 
 ## Checkout links
 
