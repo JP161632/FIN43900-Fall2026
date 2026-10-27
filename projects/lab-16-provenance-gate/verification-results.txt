@@ -1,0 +1,48 @@
+BASELINE: python asof.py
+Decision date: 2026-03-31; input rows: 12
+Quarantined: no ticker: removed 1; rows 11; remaining 11
+Exact duplicate: removed 1; rows 7; remaining 10
+Published after decision date: removed 3; rows 3, 8, 10; remaining 7
+Older vintage replaced by a revision: removed 1; rows 2; remaining 6
+
+As-of panel
+Row | Ticker | Month measured | Published on | Index
+1 | AAA | 2026-01 | 2026-02-10 | 101.0
+4 | AAA | 2026-02 | 2026-03-25 | 103.0
+5 | BBB | 2026-01 | 2026-02-10 | 98.0
+6 | BBB | 2026-02 | 2026-03-10 | 97.0
+9 | CCC | 2026-01 | 2026-02-10 | 110.0
+12 | CCC | 2026-02 | 2026-03-10 | 111.0
+
+Signals: percent change from the immediately previous calendar month
+AAA | As-of: +1.98% (February 2026) | Naive: +5.83% (March 2026)
+BBB | As-of: -1.02% (February 2026) | Naive: -5.15% (March 2026)
+CCC | As-of: +0.91% (February 2026) | Naive: +1.82% (February 2026)
+
+LATER-CUTOFF EXPERIMENT (in memory; delivered cutoff unchanged)
+Decision date: 2026-04-15; input rows: 12
+Quarantined: no ticker: removed 1; rows 11; remaining 11
+Exact duplicate: removed 1; rows 7; remaining 10
+Published after decision date: removed 0; rows none; remaining 10
+Older vintage replaced by a revision: removed 2; rows 2, 12; remaining 8
+
+As-of panel
+Row | Ticker | Month measured | Published on | Index
+1 | AAA | 2026-01 | 2026-02-10 | 101.0
+3 | AAA | 2026-03 | 2026-04-10 | 109.0
+4 | AAA | 2026-02 | 2026-03-25 | 103.0
+5 | BBB | 2026-01 | 2026-02-10 | 98.0
+6 | BBB | 2026-02 | 2026-03-10 | 97.0
+8 | BBB | 2026-03 | 2026-04-10 | 92.0
+9 | CCC | 2026-01 | 2026-02-10 | 110.0
+10 | CCC | 2026-02 | 2026-04-05 | 112.0
+
+Signals: percent change from the immediately previous calendar month
+AAA | As-of: +5.83% (March 2026) | Naive: +5.83% (March 2026)
+BBB | As-of: -5.15% (March 2026) | Naive: -5.15% (March 2026)
+CCC | As-of: +1.82% (February 2026) | Naive: +1.82% (February 2026)
+
+PASS: known funnel, panel, six signals and named months.
+PASS: April 15 as-of equals naive for every ticker; March 31 input preserved.
+PASS: inclusive cutoff, reversed row order, missing previous calendar month.
+Partner-file exercise and student explanations require student confirmation.
