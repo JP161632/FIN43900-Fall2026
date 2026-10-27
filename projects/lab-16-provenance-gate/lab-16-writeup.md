@@ -101,4 +101,3 @@ The responses below are student-supplied reports; AI did not observe the partner
 - [asof.py](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-16-provenance-gate/asof.py)
 - [Reproducible verification](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-16-provenance-gate/verify_lab16.py)
 - [Executed results](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-16-provenance-gate/verification-results.txt)
-- [Requirement audit](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-16-provenance-gate/rubric-audit.md)
