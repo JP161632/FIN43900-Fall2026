@@ -1,5 +1,5 @@
-Lab 17 audit: preserved source snapshots
-UTC: 2026-10-29T17:53:07.082811+00:00
+Lab 17 audit: live downloads
+UTC: 2026-10-29T18:02:26.406193+00:00
 PASS: BAA October 5 known answer
 PASS: FEDFUNDS October 5 known answer
 PASS: DGS10 October 5 known answer

@@ -1,6 +1,6 @@
 {
-  "audited_at_utc": "2026-10-29T17:53:07.082811+00:00",
-  "mode": "preserved source snapshots",
+  "audited_at_utc": "2026-10-29T18:02:26.406193+00:00",
+  "mode": "live downloads",
   "checks": [
     {
       "check": "BAA October 5 known answer",
@@ -136,6 +136,31 @@
     "December 2024 then": 159536.0,
     "December 2024 today": 158316.0
   },
+  "personal_series": {
+    "series": "DGS10",
+    "comparisons": [
+      {
+        "cutoff": "2026-09-30",
+        "Last measured date known then": "2026-09-29 00:00:00",
+        "Value known then": 5.26,
+        "Last measured date today": "2026-10-27 00:00:00",
+        "Value today": 4.99,
+        "Later values today": 19,
+        "Revised matching dates": 0,
+        "Matching dates compared": 16171
+      },
+      {
+        "cutoff": "2026-10-29",
+        "Last measured date known then": "2026-10-27 00:00:00",
+        "Value known then": 4.99,
+        "Last measured date today": "2026-10-27 00:00:00",
+        "Value today": 4.99,
+        "Later values today": 0,
+        "Revised matching dates": 0,
+        "Matching dates compared": 16190
+      }
+    ]
+  },
   "live_default_diagnostics": {
     "errors": [],
     "exceptions": [],
@@ -143,7 +168,7 @@
     "rows": 4
   },
   "live_ui": {
-    "tested_at_utc": "2026-10-29T17:53:15.472983+00:00",
+    "tested_at_utc": "2026-10-29T18:02:37.601117+00:00",
     "payems_page_rows": [
       {
         "Series": "https://fred.stlouisfed.org/series/BAA",

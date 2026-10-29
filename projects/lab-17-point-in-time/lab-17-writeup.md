@@ -1,12 +1,14 @@
 # Lab 17 — Point-in-Time Audit
 
-**Status: app and common verification complete; student series and personal/partner responses pending.** This is a working submission, not a claim that the remaining exercises were performed.
+**Status: app, DGS10 audit, student explanations, partner response, and admission rule complete; corrected three-value hand check awaiting student recheck.** All 20 automated checks pass. Student-reported activities are distinguished from source verification below.
 
 ## D — Decision
 
 Was each number in your series knowable on the day you would have traded on it — and may Project 2 use it?
 
-The prior portfolio universe is NVDA, MSFT, TSM, and QCOM. The opening rate explanation and partner's recorded reason are awaiting the student's response. The student's prework series has not yet been supplied; no series is presented as their selection without confirmation.
+The portfolio universe is NVDA, MSFT, TSM, and QCOM. The student selected **DGS10**, the 10-year Treasury constant-maturity yield, for this lab.
+
+**Student's opening explanation:** Tech stocks such as NVDA and MSFT have substantial profits expected years in the future; higher interest rates reduce the present value of those future profits. DGS10 is a benchmark input to a valuation's risk-free rate, rather than the complete discount rate for these equities: an equity risk premium and company-specific assumptions also matter. The lab establishes data admissibility, not that this rate predicts the portfolio's returns.
 
 ## R — Real public data
 
@@ -45,13 +47,13 @@ For PAYEMS, the January 15, 2025 vintage ends at December 2024, **159,536 thousa
 Reproduce the preserved evidence and interface checks without requesting new data:
 
 ```powershell
-python projects/lab-17-point-in-time/verify_lab17.py
+python projects/lab-17-point-in-time/verify_lab17.py --series DGS10
 ```
 
 Refresh the evidence from the public endpoints:
 
 ```powershell
-python projects/lab-17-point-in-time/verify_lab17.py --live
+python projects/lab-17-point-in-time/verify_lab17.py --live --series DGS10
 ```
 
 Results: [verification-results.txt](verification-results.txt), with full numeric comparisons in [verification-results.json](verification-results.json). All **20 checks pass** in the delivered audit. Checks include the known answers, PAYEMS, missing days, empty vintages, rejecting a current header as a vintage, eligible older versus forbidden future vintage headers, four initial charts, a fifth typed series, invalid-ID isolation, and empty selection. Seventeen checks use archived evidence or controlled counterexamples; three additional checks exercise the real page with live HTTP downloads, including its October 5 date control and typed PAYEMS probe. The synthetic missing-data counterexample is explicitly separate from live economic evidence.
@@ -59,40 +61,83 @@ Results: [verification-results.txt](verification-results.txt), with full numeric
 To repeat the live page checks as well as the archived evidence checks:
 
 ```powershell
-python projects/lab-17-point-in-time/verify_lab17.py --live-ui
+python projects/lab-17-point-in-time/verify_lab17.py --live-ui --series DGS10
 ```
 
 Running without `--live-ui` writes a 17-check archived audit; include it to reproduce all 20 checks. New downloads can naturally change today's values and counts.
 
 ## E — Student series data card
 
-Pending the student's prework ID. The completed card must identify its source and link, measure, units/seasonal adjustment, publication timing with evidence, revision behavior, and actual download date. The audit must compare September 30, 2026 with October 29, 2026 and preserve both vintage responses. An observation date alone cannot establish its publication day.
+| Field | DGS10 data card |
+|---|---|
+| Source and link | Board of Governors of the Federal Reserve System, H.15 Selected Interest Rates, distributed through [FRED DGS10](https://fred.stlouisfed.org/series/DGS10); historical snapshots through [ALFRED DGS10](https://alfred.stlouisfed.org/series?seid=DGS10). |
+| Measure | Market yield on nominal U.S. Treasury securities at a constant 10-year maturity, quoted on an investment basis. It is a yield-curve measure, not a stock return or a bond's total return. |
+| Units and frequency | Percent per annum; daily; not seasonally adjusted. A value of 4.99 means 4.99%, or 0.0499 as a decimal annual rate. Holidays and other missing observations are not filled. |
+| Publication timing | H.15 is published on business days except holidays ([release description](https://www.federalreserve.gov/releases/h15/About.HTM)); the [October 2026 Federal Reserve calendar](https://www.federalreserve.gov/newsevents/2026-october.htm) schedules it at 4:15 p.m. Eastern. The September 30 ALFRED snapshot ends at the September 29 observation, demonstrating a short, one-business-day lag in that example. At retrieval on October 29, the latest observation was October 27; [FRED's page](https://fred.stlouisfed.org/series/DGS10) recorded its update on October 28 at 3:16 p.m. CDT (4:16 p.m. Eastern). The observation date, source release time, and FRED update time are distinct. |
+| Revisions | Zero revised matching dates between the September 30 vintage and today's download, across 16,171 overlapping valid dates; zero between the October 29 vintage and today's download, across 16,190 dates. No revisions observed in these comparisons does not prove revisions are impossible. |
+| Download date | October 29, 2026: current DGS10 at 18:02:29 UTC; September 30 vintage at 18:02:30 UTC; October 29 vintage at 18:02:30 UTC. Exact timestamps, URLs, and hashes are in [downloads.json](evidence/downloads.json). |
+| Availability rule | Use the latest eligible vintage before the decision's information cutoff. A daily vintage does not certify availability for a morning or other intraday trade. No future observation, future revision, current-history substitution, or forward fill is eligible. |
 
-**Three values checked by hand:** pending the student's own comparison against the FRED page, including each measured date, value, and whether it matched. Automated checks above do not stand in for this requirement.
+### September month-end versus today
+
+| As known on | Last measured date available | Yield (%) | Today's observations after that date | Revised matching dates |
+|---|---|---:|---:|---:|
+| September 30, 2026 | September 29, 2026 | 5.26 | 19 | 0 |
+| October 29, 2026 | October 27, 2026 | 4.99 | 0 | 0 |
+
+The 19 observations after September 29 disappear when the September 30 cutoff is imposed; they were unavailable in that vintage. This daily market-rate series has a short publication lag and no revisions observed here, unlike PAYEMS. The later value of 4.99 is a new measured date, not a revision of September 29's 5.26. Source evidence: [September 30 snapshot](evidence/DGS10_2026-09-30.csv), [October 29 snapshot](evidence/DGS10_2026-10-29.csv), and [comparison results](verification-results.json).
+
+### Three values checked by hand — discrepancy and correction
+
+The student reported checking the following dates against FRED. An independent check of the downloaded [current DGS10 CSV](evidence/DGS10_current.csv) found that all three supplied numbers differ:
+
+| Measured date | Student initially reported (%) | Downloaded FRED value (%) | Audit finding |
+|---|---:|---:|---|
+| January 2, 2026 | 4.57 | **4.19** | Initial report does not match |
+| March 31, 2026 | 4.21 | **4.30** | Initial report does not match |
+| September 1, 2026 | 3.91 | **4.79** | Initial report does not match |
+
+**Student recheck pending:** the corrected values above are source-verified by AI, not yet confirmed by a new student hand check. The student has been asked to revisit these dates on the [FRED page](https://fred.stlouisfed.org/series/DGS10); the audit does not relabel automated correction as a completed manual exercise.
 
 ## V — Fresh eyes
 
-**No-AI line-by-line explanation and swap:** awaiting the student's report. Open `download_vintage` in [asof_app.py](asof_app.py) for the exercise.
+The activities below are student-supplied reports; AI did not observe them.
 
-**Partner's code question and student's answer:** pending.
+**No-AI line-by-line explanation and swap:** The student confirms both partners walked through the code line by line without AI and swapped roles for the questions. The relevant function is `download_vintage` in [asof_app.py](asof_app.py).
 
-**Partner attack:** pending the partner's least-trusted data-card field and specific concern.
+**Partner's code question:** “How does download_vintage() stop the code from grabbing today's updated number instead of the old one?”
 
-**Two-sentence evidence-based response:** pending the actual attack and the selected series evidence.
+**Student's original answer:** “It passes vintage_dates to the ALFRED API, which acts like a time machine and only pulls the exact snapshot available on that cutoff date.”
+
+**Technical correction from the code audit:** This app uses ALFRED's public CSV endpoint, with the singular query parameter `vintage_date=YYYY-MM-DD`, not the keyed API or its plural `vintage_dates` parameter. The function validates the ID, parses and rejects a future cutoff, constructs the ALFRED URL, calls the shared downloader with a vintage-specific expected header, rejects nonmissing observation dates after the cutoff, and returns the response with retrieval provenance. The parser requires the requested series and an eligible vintage header no later than the cutoff, allowing ALFRED's last available vintage; no current-data fallback exists. These checks distinguish a real vintage from today's CSV but do not establish intraday availability.
+
+**Partner attack — least-trusted field: revisions:** “I trust revisions the least. Economic data gets quietly updated weeks later, and if you aren't careful, you accidentally feed future numbers into past dates.”
+
+**Two-sentence evidence-based response:** The [DGS10 September 30 comparison](verification-results.json) has zero revised values across 16,171 matching dates, while the PAYEMS diagnostic shows December 2024 changing from 159,536 to 158,316 and 381 revised dates, so revision risk must be checked for each series rather than assumed away. I will use the ALFRED vintage eligible at each decision cutoff, preserve its source response, and quarantine decisions with missing vintage or release-time evidence rather than substitute today's history.
 
 ## The call
 
-**Student's admit/quarantine/reject choice, series-specific reason, and condition for changing it:** pending.
+**Admit DGS10, subject to the as-of rule below.** The student's choice is to admit because timestamped historical vintages can be checked, and to reject the feed if it strips release information and supplies only a continuously updated current history. The short observed lag and zero observed revisions support this use, but do not replace availability checks or establish predictive value.
 
-Required admission rule: for each decision, use the vintage actually available by that decision's information cutoff. ALFRED's date specifies a daily snapshot and does not establish an intraday release time. Use the prior calendar day's vintage for a conservative next-session rule unless a verified release timestamp permits a same-day observation. Never use today's historical values merely shifted by a fixed lag. Quarantine any decision whose required vintage or availability evidence cannot be verified.
+**Operational as-of rule:** For a trading session on date T, use the latest nonmissing DGS10 observation in the ALFRED vintage dated T minus one calendar day; use only observations in that snapshot and do not fill forward missing observations into invented daily values. This conservatively excludes releases later on T, including its morning and regular-session decisions. A same-day exception requires independently verified release and ingestion timestamps at or before the actual decision time; the daily snapshot alone cannot justify it. Retain revisions already published by the cutoff, but exclude revisions published later; the eligible value need not be the original first print.
+
+**Condition that changes the call:** Reject a feed that loses reconstructable release/vintage provenance and offers only live current values; quarantine individual decisions with unavailable vintage or timing evidence until that evidence is restored. Never replace a missing vintage with today's historical data or assume a fixed lag removes revision risk. This admits the series as an eligible input, not a profitable strategy or a complete equity discount rate.
 
 ## Learn on your own and reflect
 
-Awaiting the student's own answers: what a data card is; which fields prevent a leak; why “cleaned the data” is insufficient; how late the chosen series is published and what the two as-known dates reveal; and what a backtest on today's values would have overstated. The app can establish differences in data availability and revisions; those differences alone do not quantify strategy performance.
+**What is a data card? — student's response:** It is an ID badge for a dataset: where the numbers came from, when they were published, and what flaws to watch for. Here that includes source, measure, units, frequency, release timing, revisions, download date, and an admissibility rule.
+
+**Which fields prevent leaks? — student's response, with technical correction:** Check the actual release timestamp rather than only the measured date, and identify which vintage supplied the value. The student initially required the original first print; the correct rule permits any revision already published by the decision cutoff. Observation date, publication/availability time, vintage date, and retrieval timestamp answer different questions and must not be treated as interchangeable.
+
+**Why is “cleaned the data” insufficient? — student's response:** It says nothing about what actually happened; dropped rows and the reasons for dropping them must be traceable so others can verify the work. Cleaning records complement the data card: a row-removal log alone still does not explain units, release lag, source, or revision policy. This app preserves source CSVs and treats missing days as missing rather than dropping their provenance or inventing values.
+
+**How late is DGS10 published, and what do the dates reveal? — student's explanation, corrected against sources:** The student correctly identified that a late-afternoon release cannot support an earlier morning trade. The [Federal Reserve calendar](https://www.federalreserve.gov/newsevents/2026-october.htm) supplies the 4:15 p.m. Eastern H.15 schedule; the app's daily cutoffs alone do not prove that clock time. In the September 30 snapshot, September 29 is the newest observation; on October 29 at retrieval, October 27 remains newest and FRED records an October 28 update. These observations show a short lag and the need to distinguish the date measured from actual availability, including weekends, holidays, and the download time.
+
+**What could today's values overstate? — student's response, edited for precision:** Feeding revisions published months later into earlier decisions gives a backtest future information and can make the model appear more informative or its timing more feasible than it was. For DGS10, no revisions were observed in the tested comparisons, so the demonstrated risk is primarily assuming a rate was available before release; for PAYEMS, later revisions are directly demonstrated. Neither experiment contains a trading rule or realized portfolio returns, so it cannot establish the amount of overstated performance or that a strategy must fail in live trading.
 
 ## AI assistance and checkout
 
-AI built the app, sourced the public CSVs, wrote the verifier, and drafted this evidence record. Personal explanations, by-hand checks, and partner exercises are recorded only when supplied by the student. No partner activity is claimed as observed by AI.
+AI built the app, sourced the public CSVs and release documentation, wrote the verifier, drafted the data card, and audited the student-supplied responses. The student supplied the series choice, explanations, partner report, and admission decision. Technical edits distinguish the actual CSV parameter, eligible revisions, and daily versus intraday availability; the three reported hand-check values are preserved alongside source corrections, awaiting the student's recheck. No partner activity is claimed as observed by AI.
 
 - [Writeup](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/lab-17-writeup.md)
 - [asof_app.py](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/asof_app.py)
