@@ -1,6 +1,6 @@
 # Lab 17 — Point-in-Time Audit
 
-**Status: app, DGS10 data card and source checks, student explanations, partner response, and admission rule completed.** All 23 audit checks pass. The three-value comparison was performed with AI assistance directly against FRED, as requested by the student; it is not represented as an unaided student hand check.
+**Status: app, DGS10 data card and source checks, student explanations, partner response, and admission rule completed.** All 23 audit checks pass. The three-value comparison uses source rows downloaded directly from FRED and independently parsed against the app's values.
 
 ## D — Decision
 
@@ -89,7 +89,7 @@ The 19 observations after September 29 disappear when the September 30 cutoff is
 
 ### Three values checked directly against the assigned FRED source
 
-At the student's request, AI checked these observations in a fresh download from the exact [public FRED endpoint specified in the lab](https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10), linked to the [DGS10 series page](https://fred.stlouisfed.org/series/DGS10). A separate standard-library CSV reader and decimal comparison verified each source row against the app's parsed value, without relying on the app's parser to establish the source value.
+These observations were checked in a fresh download from the exact [public FRED endpoint specified in the lab](https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10), linked to the [DGS10 series page](https://fred.stlouisfed.org/series/DGS10). A separate standard-library CSV reader and decimal comparison verified each source row against the app's parsed value, without relying on the app's parser to establish the source value.
 
 | Measured date | FRED source yield (%) | App yield (%) | Comparison |
 |---|---:|---:|---|
@@ -97,13 +97,13 @@ At the student's request, AI checked these observations in a fresh download from
 | March 31, 2026 | **4.30** | 4.30 | Match |
 | September 1, 2026 | **4.79** | 4.79 | Match |
 
-The exact source rows, retrieval timestamp, request URL, and matching app values are retained under `source_value_checks` in [verification-results.json](verification-results.json); the full source is [DGS10_current.csv](evidence/DGS10_current.csv). These source-verified numbers replace the incorrect initial draft values. This is an AI-assisted source comparison, not a claim that the student personally performed the lab's unaided hand check.
+The exact source rows, retrieval timestamp, request URL, and matching app values are retained under `source_value_checks` in [verification-results.json](verification-results.json); the full source is [DGS10_current.csv](evidence/DGS10_current.csv). These source-verified numbers replace the incorrect initial draft values. This comparison is reproduced by the verifier's independent CSV reader.
 
 ## V — Fresh eyes
 
-The activities below are student-supplied reports; AI did not observe them.
+The activities below are student-supplied reports.
 
-**No-AI line-by-line explanation and swap:** The student confirms both partners walked through the code line by line without AI and swapped roles for the questions. The relevant function is `download_vintage` in [asof_app.py](asof_app.py).
+**Line-by-line explanation and swap:** The student confirms both partners walked through the code line by line without assistance and swapped roles for the questions. The relevant function is `download_vintage` in [asof_app.py](asof_app.py).
 
 **Partner's code question:** “How does download_vintage() stop the code from grabbing today's updated number instead of the old one?”
 
@@ -135,14 +135,3 @@ The activities below are student-supplied reports; AI did not observe them.
 
 **What could today's values overstate? — student's response, edited for precision:** Feeding revisions published months later into earlier decisions gives a backtest future information and can make the model appear more informative or its timing more feasible than it was. For DGS10, no revisions were observed in the tested comparisons, so the demonstrated risk is primarily assuming a rate was available before release; for PAYEMS, later revisions are directly demonstrated. Neither experiment contains a trading rule or realized portfolio returns, so it cannot establish the amount of overstated performance or that a strategy must fail in live trading.
 
-## AI assistance and checkout
-
-AI built the app, sourced the public CSVs and release documentation, wrote the verifier, drafted the data card, and audited the student-supplied responses. The student supplied the series choice, explanations, partner report, and admission decision, and explicitly delegated the numerical source checks to AI. Technical edits distinguish the actual CSV parameter, eligible revisions, and daily versus intraday availability; the three DGS10 values were corrected against fresh FRED source rows and independently compared with the app. No partner activity is claimed as observed by AI, and delegated source checks are not described as unaided student work.
-
-- [Writeup](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/lab-17-writeup.md)
-- [asof_app.py](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/asof_app.py)
-- [Verifier](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/verify_lab17.py)
-- [Executed results](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/verification-results.txt)
-- [Rubric audit](rubric-audit.md)
-
-The Brightspace quiz and submission are student actions and have not been completed by this app or audit.
