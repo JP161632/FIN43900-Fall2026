@@ -1,0 +1,2 @@
+# Keep source evidence byte-for-byte so SHA-256 hashes survive Windows checkouts.
+evidence/*.csv -text

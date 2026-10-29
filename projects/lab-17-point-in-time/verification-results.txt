@@ -1,0 +1,23 @@
+Lab 17 audit: preserved source snapshots
+UTC: 2026-10-29T17:53:07.082811+00:00
+PASS: BAA October 5 known answer
+PASS: FEDFUNDS October 5 known answer
+PASS: DGS10 October 5 known answer
+PASS: MORTGAGE30US October 5 known answer
+PASS: PAYEMS vintage ends in December 2024 at 159536
+PASS: PAYEMS December 2024 lower today and many revisions
+PASS: Missing dot is not a late value; matching-date revision counted
+PASS: Empty vintage has no invented last date
+PASS: Empty vintage counts available current observations
+PASS: Current CSV rejected when vintage header required
+PASS: ALFRED last-release header earlier than cutoff is accepted
+PASS: Vintage header later than cutoff is rejected
+PASS: Page defaults: four charts, one table, no exceptions
+PASS: Typed PAYEMS adds a fifth chart and table row
+PASS: Unknown ID leaves four other series working
+PASS: Malformed ID rejected without breaking page
+PASS: Empty selection is handled
+PASS: Live page: four charts and four rows without errors
+PASS: Live date widget reproduces all four October 5 answers
+PASS: Live typed PAYEMS and date widget reproduce revision probe
+PAYEMS December 2024: then 159,536; current 158,316; revised dates 381

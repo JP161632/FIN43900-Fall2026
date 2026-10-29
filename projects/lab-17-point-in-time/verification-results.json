@@ -1,0 +1,201 @@
+{
+  "audited_at_utc": "2026-10-29T17:53:07.082811+00:00",
+  "mode": "preserved source snapshots",
+  "checks": [
+    {
+      "check": "BAA October 5 known answer",
+      "passed": true
+    },
+    {
+      "check": "FEDFUNDS October 5 known answer",
+      "passed": true
+    },
+    {
+      "check": "DGS10 October 5 known answer",
+      "passed": true
+    },
+    {
+      "check": "MORTGAGE30US October 5 known answer",
+      "passed": true
+    },
+    {
+      "check": "PAYEMS vintage ends in December 2024 at 159536",
+      "passed": true
+    },
+    {
+      "check": "PAYEMS December 2024 lower today and many revisions",
+      "passed": true
+    },
+    {
+      "check": "Missing dot is not a late value; matching-date revision counted",
+      "passed": true
+    },
+    {
+      "check": "Empty vintage has no invented last date",
+      "passed": true
+    },
+    {
+      "check": "Empty vintage counts available current observations",
+      "passed": true
+    },
+    {
+      "check": "Current CSV rejected when vintage header required",
+      "passed": true
+    },
+    {
+      "check": "ALFRED last-release header earlier than cutoff is accepted",
+      "passed": true
+    },
+    {
+      "check": "Vintage header later than cutoff is rejected",
+      "passed": true
+    },
+    {
+      "check": "Page defaults: four charts, one table, no exceptions",
+      "passed": true
+    },
+    {
+      "check": "Typed PAYEMS adds a fifth chart and table row",
+      "passed": true
+    },
+    {
+      "check": "Unknown ID leaves four other series working",
+      "passed": true
+    },
+    {
+      "check": "Malformed ID rejected without breaking page",
+      "passed": true
+    },
+    {
+      "check": "Empty selection is handled",
+      "passed": true
+    },
+    {
+      "check": "Live page: four charts and four rows without errors",
+      "passed": true
+    },
+    {
+      "check": "Live date widget reproduces all four October 5 answers",
+      "passed": true
+    },
+    {
+      "check": "Live typed PAYEMS and date widget reproduce revision probe",
+      "passed": true
+    }
+  ],
+  "known_answer": [
+    {
+      "series": "BAA",
+      "Last measured date known then": "2026-09-01 00:00:00",
+      "Value known then": 6.47,
+      "Last measured date today": "2026-09-01 00:00:00",
+      "Value today": 6.47,
+      "Later values today": 0,
+      "Revised matching dates": 0,
+      "Matching dates compared": 1293
+    },
+    {
+      "series": "FEDFUNDS",
+      "Last measured date known then": "2026-09-01 00:00:00",
+      "Value known then": 3.75,
+      "Last measured date today": "2026-09-01 00:00:00",
+      "Value today": 3.75,
+      "Later values today": 0,
+      "Revised matching dates": 0,
+      "Matching dates compared": 867
+    },
+    {
+      "series": "DGS10",
+      "Last measured date known then": "2026-10-02 00:00:00",
+      "Value known then": 5.28,
+      "Last measured date today": "2026-10-27 00:00:00",
+      "Value today": 4.99,
+      "Later values today": 16,
+      "Revised matching dates": 0,
+      "Matching dates compared": 16174
+    },
+    {
+      "series": "MORTGAGE30US",
+      "Last measured date known then": "2026-10-01 00:00:00",
+      "Value known then": 7.28,
+      "Last measured date today": "2026-10-29 00:00:00",
+      "Value today": 7.24,
+      "Later values today": 4,
+      "Revised matching dates": 0,
+      "Matching dates compared": 2897
+    }
+  ],
+  "payems_probe": {
+    "Last measured date known then": "2024-12-01 00:00:00",
+    "Value known then": 159536.0,
+    "Last measured date today": "2026-09-01 00:00:00",
+    "Value today": 159044.0,
+    "Later values today": 21,
+    "Revised matching dates": 381,
+    "Matching dates compared": 1032,
+    "December 2024 then": 159536.0,
+    "December 2024 today": 158316.0
+  },
+  "live_default_diagnostics": {
+    "errors": [],
+    "exceptions": [],
+    "charts": 4,
+    "rows": 4
+  },
+  "live_ui": {
+    "tested_at_utc": "2026-10-29T17:53:15.472983+00:00",
+    "payems_page_rows": [
+      {
+        "Series": "https://fred.stlouisfed.org/series/BAA",
+        "Last measured date known then": "2024-12-01 00:00:00",
+        "Value known then": 5.8,
+        "Last measured date today": "2026-09-01 00:00:00",
+        "Value today": 6.47,
+        "Later values today": 21,
+        "Revised matching dates": 0,
+        "Matching dates compared": 1272
+      },
+      {
+        "Series": "https://fred.stlouisfed.org/series/FEDFUNDS",
+        "Last measured date known then": "2024-12-01 00:00:00",
+        "Value known then": 4.48,
+        "Last measured date today": "2026-09-01 00:00:00",
+        "Value today": 3.75,
+        "Later values today": 21,
+        "Revised matching dates": 0,
+        "Matching dates compared": 846
+      },
+      {
+        "Series": "https://fred.stlouisfed.org/series/DGS10",
+        "Last measured date known then": "2025-01-14 00:00:00",
+        "Value known then": 4.78,
+        "Last measured date today": "2026-10-27 00:00:00",
+        "Value today": 4.99,
+        "Later values today": 446,
+        "Revised matching dates": 0,
+        "Matching dates compared": 15744
+      },
+      {
+        "Series": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+        "Last measured date known then": "2025-01-09 00:00:00",
+        "Value known then": 6.93,
+        "Last measured date today": "2026-10-29 00:00:00",
+        "Value today": 7.24,
+        "Later values today": 94,
+        "Revised matching dates": 0,
+        "Matching dates compared": 2807
+      },
+      {
+        "Series": "https://fred.stlouisfed.org/series/PAYEMS",
+        "Last measured date known then": "2024-12-01 00:00:00",
+        "Value known then": 159536.0,
+        "Last measured date today": "2026-09-01 00:00:00",
+        "Value today": 159044.0,
+        "Later values today": 21,
+        "Revised matching dates": 381,
+        "Matching dates compared": 1032
+      }
+    ]
+  },
+  "passed": true
+}
