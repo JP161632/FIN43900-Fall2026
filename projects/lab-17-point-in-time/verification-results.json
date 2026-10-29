@@ -1,5 +1,5 @@
 {
-  "audited_at_utc": "2026-10-29T18:02:26.406193+00:00",
+  "audited_at_utc": "2026-10-29T18:09:57.882006+00:00",
   "mode": "live downloads",
   "checks": [
     {
@@ -48,6 +48,18 @@
     },
     {
       "check": "Vintage header later than cutoff is rejected",
+      "passed": true
+    },
+    {
+      "check": "DGS10 2026-01-02: raw FRED row matches app",
+      "passed": true
+    },
+    {
+      "check": "DGS10 2026-03-31: raw FRED row matches app",
+      "passed": true
+    },
+    {
+      "check": "DGS10 2026-09-01: raw FRED row matches app",
       "passed": true
     },
     {
@@ -161,6 +173,35 @@
       }
     ]
   },
+  "source_value_checks": {
+    "series": "DGS10",
+    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
+    "downloaded_at_utc": "2026-10-29T18:09:59.509601+00:00",
+    "method": "AI verified actual public CSV rows with standard-library csv/Decimal independently of the app parser",
+    "values": [
+      {
+        "measured_date": "2026-01-02",
+        "percent": "4.19",
+        "source_row": "2026-01-02,4.19",
+        "app_value": "4.19",
+        "matched": true
+      },
+      {
+        "measured_date": "2026-03-31",
+        "percent": "4.30",
+        "source_row": "2026-03-31,4.30",
+        "app_value": "4.3",
+        "matched": true
+      },
+      {
+        "measured_date": "2026-09-01",
+        "percent": "4.79",
+        "source_row": "2026-09-01,4.79",
+        "app_value": "4.79",
+        "matched": true
+      }
+    ]
+  },
   "live_default_diagnostics": {
     "errors": [],
     "exceptions": [],
@@ -168,7 +209,7 @@
     "rows": 4
   },
   "live_ui": {
-    "tested_at_utc": "2026-10-29T18:02:37.601117+00:00",
+    "tested_at_utc": "2026-10-29T18:10:18.491467+00:00",
     "payems_page_rows": [
       {
         "Series": "https://fred.stlouisfed.org/series/BAA",

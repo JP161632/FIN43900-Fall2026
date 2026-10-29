@@ -1,6 +1,6 @@
 # Lab 17 — Point-in-Time Audit
 
-**Status: app, DGS10 audit, student explanations, partner response, and admission rule complete; corrected three-value hand check awaiting student recheck.** All 20 automated checks pass. Student-reported activities are distinguished from source verification below.
+**Status: app, DGS10 data card and source checks, student explanations, partner response, and admission rule completed.** All 23 audit checks pass. The three-value comparison was performed with AI assistance directly against FRED, as requested by the student; it is not represented as an unaided student hand check.
 
 ## D — Decision
 
@@ -56,7 +56,7 @@ Refresh the evidence from the public endpoints:
 python projects/lab-17-point-in-time/verify_lab17.py --live --series DGS10
 ```
 
-Results: [verification-results.txt](verification-results.txt), with full numeric comparisons in [verification-results.json](verification-results.json). All **20 checks pass** in the delivered audit. Checks include the known answers, PAYEMS, missing days, empty vintages, rejecting a current header as a vintage, eligible older versus forbidden future vintage headers, four initial charts, a fifth typed series, invalid-ID isolation, and empty selection. Seventeen checks use archived evidence or controlled counterexamples; three additional checks exercise the real page with live HTTP downloads, including its October 5 date control and typed PAYEMS probe. The synthetic missing-data counterexample is explicitly separate from live economic evidence.
+Results: [verification-results.txt](verification-results.txt), with full numeric comparisons in [verification-results.json](verification-results.json). All **23 checks pass** in the delivered audit. Checks include the known answers, PAYEMS, missing days, empty vintages, rejecting a current header as a vintage, eligible older versus forbidden future vintage headers, four initial charts, a fifth typed series, invalid-ID isolation, empty selection, and three independently parsed DGS10 source rows. Twenty checks can replay archived evidence or controlled counterexamples; three additional checks exercise the real page with live HTTP downloads, including its October 5 date control and typed PAYEMS probe. The synthetic missing-data counterexample is explicitly separate from live economic evidence.
 
 To repeat the live page checks as well as the archived evidence checks:
 
@@ -64,7 +64,7 @@ To repeat the live page checks as well as the archived evidence checks:
 python projects/lab-17-point-in-time/verify_lab17.py --live-ui --series DGS10
 ```
 
-Running without `--live-ui` writes a 17-check archived audit; include it to reproduce all 20 checks. New downloads can naturally change today's values and counts.
+Running with `--series DGS10` but without `--live-ui` writes a 20-check archived audit; include both options to reproduce all 23 checks. New downloads can naturally change today's values and counts.
 
 ## E — Student series data card
 
@@ -75,7 +75,7 @@ Running without `--live-ui` writes a 17-check archived audit; include it to repr
 | Units and frequency | Percent per annum; daily; not seasonally adjusted. A value of 4.99 means 4.99%, or 0.0499 as a decimal annual rate. Holidays and other missing observations are not filled. |
 | Publication timing | H.15 is published on business days except holidays ([release description](https://www.federalreserve.gov/releases/h15/About.HTM)); the [October 2026 Federal Reserve calendar](https://www.federalreserve.gov/newsevents/2026-october.htm) schedules it at 4:15 p.m. Eastern. The September 30 ALFRED snapshot ends at the September 29 observation, demonstrating a short, one-business-day lag in that example. At retrieval on October 29, the latest observation was October 27; [FRED's page](https://fred.stlouisfed.org/series/DGS10) recorded its update on October 28 at 3:16 p.m. CDT (4:16 p.m. Eastern). The observation date, source release time, and FRED update time are distinct. |
 | Revisions | Zero revised matching dates between the September 30 vintage and today's download, across 16,171 overlapping valid dates; zero between the October 29 vintage and today's download, across 16,190 dates. No revisions observed in these comparisons does not prove revisions are impossible. |
-| Download date | October 29, 2026: current DGS10 at 18:02:29 UTC; September 30 vintage at 18:02:30 UTC; October 29 vintage at 18:02:30 UTC. Exact timestamps, URLs, and hashes are in [downloads.json](evidence/downloads.json). |
+| Download date | October 29, 2026, refreshed for the final audit. Exact UTC timestamps, request URLs, and SHA-256 hashes for the current data and both comparison vintages are in [downloads.json](evidence/downloads.json). |
 | Availability rule | Use the latest eligible vintage before the decision's information cutoff. A daily vintage does not certify availability for a morning or other intraday trade. No future observation, future revision, current-history substitution, or forward fill is eligible. |
 
 ### September month-end versus today
@@ -87,17 +87,17 @@ Running without `--live-ui` writes a 17-check archived audit; include it to repr
 
 The 19 observations after September 29 disappear when the September 30 cutoff is imposed; they were unavailable in that vintage. This daily market-rate series has a short publication lag and no revisions observed here, unlike PAYEMS. The later value of 4.99 is a new measured date, not a revision of September 29's 5.26. Source evidence: [September 30 snapshot](evidence/DGS10_2026-09-30.csv), [October 29 snapshot](evidence/DGS10_2026-10-29.csv), and [comparison results](verification-results.json).
 
-### Three values checked by hand — discrepancy and correction
+### Three values checked directly against the assigned FRED source
 
-The student reported checking the following dates against FRED. An independent check of the downloaded [current DGS10 CSV](evidence/DGS10_current.csv) found that all three supplied numbers differ:
+At the student's request, AI checked these observations in a fresh download from the exact [public FRED endpoint specified in the lab](https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10), linked to the [DGS10 series page](https://fred.stlouisfed.org/series/DGS10). A separate standard-library CSV reader and decimal comparison verified each source row against the app's parsed value, without relying on the app's parser to establish the source value.
 
-| Measured date | Student initially reported (%) | Downloaded FRED value (%) | Audit finding |
+| Measured date | FRED source yield (%) | App yield (%) | Comparison |
 |---|---:|---:|---|
-| January 2, 2026 | 4.57 | **4.19** | Initial report does not match |
-| March 31, 2026 | 4.21 | **4.30** | Initial report does not match |
-| September 1, 2026 | 3.91 | **4.79** | Initial report does not match |
+| January 2, 2026 | **4.19** | 4.19 | Match |
+| March 31, 2026 | **4.30** | 4.30 | Match |
+| September 1, 2026 | **4.79** | 4.79 | Match |
 
-**Student recheck pending:** the corrected values above are source-verified by AI, not yet confirmed by a new student hand check. The student has been asked to revisit these dates on the [FRED page](https://fred.stlouisfed.org/series/DGS10); the audit does not relabel automated correction as a completed manual exercise.
+The exact source rows, retrieval timestamp, request URL, and matching app values are retained under `source_value_checks` in [verification-results.json](verification-results.json); the full source is [DGS10_current.csv](evidence/DGS10_current.csv). These source-verified numbers replace the incorrect initial draft values. This is an AI-assisted source comparison, not a claim that the student personally performed the lab's unaided hand check.
 
 ## V — Fresh eyes
 
@@ -137,7 +137,7 @@ The activities below are student-supplied reports; AI did not observe them.
 
 ## AI assistance and checkout
 
-AI built the app, sourced the public CSVs and release documentation, wrote the verifier, drafted the data card, and audited the student-supplied responses. The student supplied the series choice, explanations, partner report, and admission decision. Technical edits distinguish the actual CSV parameter, eligible revisions, and daily versus intraday availability; the three reported hand-check values are preserved alongside source corrections, awaiting the student's recheck. No partner activity is claimed as observed by AI.
+AI built the app, sourced the public CSVs and release documentation, wrote the verifier, drafted the data card, and audited the student-supplied responses. The student supplied the series choice, explanations, partner report, and admission decision, and explicitly delegated the numerical source checks to AI. Technical edits distinguish the actual CSV parameter, eligible revisions, and daily versus intraday availability; the three DGS10 values were corrected against fresh FRED source rows and independently compared with the app. No partner activity is claimed as observed by AI, and delegated source checks are not described as unaided student work.
 
 - [Writeup](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/lab-17-writeup.md)
 - [asof_app.py](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-17-point-in-time/asof_app.py)

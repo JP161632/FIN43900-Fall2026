@@ -1,5 +1,5 @@
 Lab 17 audit: live downloads
-UTC: 2026-10-29T18:02:26.406193+00:00
+UTC: 2026-10-29T18:09:57.882006+00:00
 PASS: BAA October 5 known answer
 PASS: FEDFUNDS October 5 known answer
 PASS: DGS10 October 5 known answer
@@ -12,6 +12,9 @@ PASS: Empty vintage counts available current observations
 PASS: Current CSV rejected when vintage header required
 PASS: ALFRED last-release header earlier than cutoff is accepted
 PASS: Vintage header later than cutoff is rejected
+PASS: DGS10 2026-01-02: raw FRED row matches app
+PASS: DGS10 2026-03-31: raw FRED row matches app
+PASS: DGS10 2026-09-01: raw FRED row matches app
 PASS: Page defaults: four charts, one table, no exceptions
 PASS: Typed PAYEMS adds a fifth chart and table row
 PASS: Unknown ID leaves four other series working

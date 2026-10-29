@@ -1,8 +1,11 @@
 """Reproduce live evidence (--live) or re-audit the preserved public downloads."""
 
 import argparse
+import csv
 from datetime import date, datetime, timedelta, timezone
+from decimal import Decimal
 import hashlib
+from io import StringIO
 import json
 from pathlib import Path
 from unittest.mock import patch
@@ -108,6 +111,24 @@ def main():
             vintage = get(series_id, cutoff)
             comparisons.append({"cutoff": cutoff, **app.compare(current["data"], vintage["data"])})
         results["personal_series"] = {"series": series_id, "comparisons": comparisons}
+        if series_id == "DGS10":
+            # Read the actual source rows independently of the app's pandas parser.
+            raw_rows = {r["observation_date"]: r["DGS10"]
+                        for r in csv.DictReader(StringIO(current["csv"]))}
+            checked_values = []
+            for measured_date in ("2026-01-02", "2026-03-31", "2026-09-01"):
+                source_text = raw_rows[measured_date]
+                source_value = Decimal(source_text)
+                app_value = Decimal(str(current["data"].loc[measured_date, "value"]))
+                check(f"DGS10 {measured_date}: raw FRED row matches app", source_value == app_value)
+                checked_values.append({"measured_date": measured_date, "percent": str(source_value),
+                                       "source_row": f"{measured_date},{source_text}",
+                                       "app_value": str(app_value), "matched": source_value == app_value})
+            results["source_value_checks"] = {
+                "series": series_id, "source_url": current["url"],
+                "downloaded_at_utc": current["downloaded_at_utc"],
+                "method": "AI verified actual public CSV rows with standard-library csv/Decimal independently of the app parser",
+                "values": checked_values}
 
     # Exercise the real Streamlit page using archived responses, no additional HTTP requests.
     def fake_current(series_id, download_day):
