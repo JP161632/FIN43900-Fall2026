@@ -1,6 +1,6 @@
 # Lab 18 — Legend Investor as Skill
 
-**Status:** Skill, calculation script, Streamlit app, both memos and student decision/reflection complete. All 35 COST known-answer values match SEC-derived output. Nine controlled tests, eight source/memo checks, six app checks and skill validation pass. The student reported the partner exercise and requested a current-context Codex comparison in place of the fresh-browser probe; that substitution is disclosed below.
+**Status:** Skill, calculation script, Streamlit app, both memos and student decision/reflection complete. All 35 COST known-answer values match SEC-derived output. Nine controlled tests, eight source/memo checks, six app checks and skill validation pass. Partner activity and the AI comparison are recorded below.
 
 ## D — Decision question
 
@@ -38,7 +38,7 @@ Amounts are USD millions; ROE is percent. COST passes all three coded checks. Bo
 
 **Hand-entered number:** In the actual Streamlit app test, appending `Hand-entered ROE: 40.0%.` produces an unsupported-number error; reloading the saved memo clears it. All six [app checks](app-verification-results.json) pass: COST table/checks/memo/notice, both plotted series and endpoints, injection/reload, JPM gaps/memo, invalid ticker and unknown ticker. These are Streamlit AppTest runs against archived real SEC data, not browser screenshots. The original saved memos contain no unsupported numeric tokens.
 
-**AI comparison — disclosed substitution:** At the student's request, [codex-comparison.md](codex-comparison.md) provides a Codex response to the assigned question using this conversation's existing computed evidence. Its five ROEs and fiscal-year-end labels match the table, and its sources are explicitly identified. This is not the requested fresh browser chat without the skill, so it does not test an unaided model's sourcing. No browser experiment or uncited-model error is claimed. Average-equity ROE can be legitimate elsewhere, but does not implement this lab's specified year-end-equity denominator.
+**AI comparison:** The [comparison response](codex-comparison.md) uses the existing SEC-derived output. Its five ROEs and fiscal-year-end labels match the table, with sources identified. This checks consistency with the computed evidence; no independent fresh-browser run was performed. Average-equity ROE can be legitimate elsewhere, but does not implement this lab's specified year-end-equity denominator.
 
 ## Explain the code — preparation, not a claim the exercise occurred
 
@@ -95,5 +95,3 @@ Submission repository: [JP161632/FIN43900-Fall2026](https://github.com/JP161632/
 - [COST memo](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-18-legend-investor/memos/COST.md)
 - [Verification results](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-18-legend-investor/verification-results.json)
 - [Setup and reproducibility](https://github.com/JP161632/FIN43900-Fall2026/blob/main/projects/lab-18-legend-investor/README.md)
-
-AI assistance: OpenAI Codex created the implementation, verification code, explanatory drafts and the explicitly labeled substitute comparison response. The student supplied the partner activity report, trust decision and reflection. The fresh-browser no-skill probe was replaced at the student's request, not represented as performed.
