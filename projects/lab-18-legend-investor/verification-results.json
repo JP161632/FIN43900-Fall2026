@@ -1,0 +1,324 @@
+{
+  "checks": {
+    "COST_all_35_answer_key_values_match": true,
+    "COST_all_three_checks_pass": true,
+    "COST_owner_earnings_and_net_income_up": true,
+    "JPM_capex_and_owner_earnings_missing_all_years": true,
+    "JPM_owner_earnings_checks_not_known": true,
+    "JPM_memo_discloses_owner_earnings_gap": true,
+    "hand_entered_40_percent_flagged": true,
+    "saved_memos_have_no_unsupported_numbers": true
+  },
+  "COST_comparison": [
+    {
+      "fiscal_year_end": "2022-08-28",
+      "field": "revenue",
+      "expected": 226954,
+      "expected_units": "USD millions",
+      "actual_display": "226,954",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2022-08-28",
+      "field": "net_income",
+      "expected": 5844,
+      "expected_units": "USD millions",
+      "actual_display": "5,844",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2022-08-28",
+      "field": "operating_cash_flow",
+      "expected": 7392,
+      "expected_units": "USD millions",
+      "actual_display": "7,392",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2022-08-28",
+      "field": "capital_spending",
+      "expected": 3891,
+      "expected_units": "USD millions",
+      "actual_display": "3,891",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2022-08-28",
+      "field": "equity",
+      "expected": 20642,
+      "expected_units": "USD millions",
+      "actual_display": "20,642",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2022-08-28",
+      "field": "roe",
+      "expected": 28.3,
+      "expected_units": "percent",
+      "actual_display": "28.3%",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2022-08-28",
+      "field": "owner_earnings",
+      "expected": 3501,
+      "expected_units": "USD millions",
+      "actual_display": "3,501",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "field": "revenue",
+      "expected": 242290,
+      "expected_units": "USD millions",
+      "actual_display": "242,290",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "field": "net_income",
+      "expected": 6292,
+      "expected_units": "USD millions",
+      "actual_display": "6,292",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "field": "operating_cash_flow",
+      "expected": 11068,
+      "expected_units": "USD millions",
+      "actual_display": "11,068",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "field": "capital_spending",
+      "expected": 4323,
+      "expected_units": "USD millions",
+      "actual_display": "4,323",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "field": "equity",
+      "expected": 25058,
+      "expected_units": "USD millions",
+      "actual_display": "25,058",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "field": "roe",
+      "expected": 25.1,
+      "expected_units": "percent",
+      "actual_display": "25.1%",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2023-09-03",
+      "field": "owner_earnings",
+      "expected": 6745,
+      "expected_units": "USD millions",
+      "actual_display": "6,745",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "field": "revenue",
+      "expected": 254453,
+      "expected_units": "USD millions",
+      "actual_display": "254,453",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "field": "net_income",
+      "expected": 7367,
+      "expected_units": "USD millions",
+      "actual_display": "7,367",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "field": "operating_cash_flow",
+      "expected": 11339,
+      "expected_units": "USD millions",
+      "actual_display": "11,339",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "field": "capital_spending",
+      "expected": 4710,
+      "expected_units": "USD millions",
+      "actual_display": "4,710",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "field": "equity",
+      "expected": 23622,
+      "expected_units": "USD millions",
+      "actual_display": "23,622",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "field": "roe",
+      "expected": 31.2,
+      "expected_units": "percent",
+      "actual_display": "31.2%",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2024-09-01",
+      "field": "owner_earnings",
+      "expected": 6629,
+      "expected_units": "USD millions",
+      "actual_display": "6,629",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "field": "revenue",
+      "expected": 275235,
+      "expected_units": "USD millions",
+      "actual_display": "275,235",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "field": "net_income",
+      "expected": 8099,
+      "expected_units": "USD millions",
+      "actual_display": "8,099",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "field": "operating_cash_flow",
+      "expected": 13335,
+      "expected_units": "USD millions",
+      "actual_display": "13,335",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "field": "capital_spending",
+      "expected": 5498,
+      "expected_units": "USD millions",
+      "actual_display": "5,498",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "field": "equity",
+      "expected": 29164,
+      "expected_units": "USD millions",
+      "actual_display": "29,164",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "field": "roe",
+      "expected": 27.8,
+      "expected_units": "percent",
+      "actual_display": "27.8%",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2025-08-31",
+      "field": "owner_earnings",
+      "expected": 7837,
+      "expected_units": "USD millions",
+      "actual_display": "7,837",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "field": "revenue",
+      "expected": 303154,
+      "expected_units": "USD millions",
+      "actual_display": "303,154",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "field": "net_income",
+      "expected": 9226,
+      "expected_units": "USD millions",
+      "actual_display": "9,226",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "field": "operating_cash_flow",
+      "expected": 15817,
+      "expected_units": "USD millions",
+      "actual_display": "15,817",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "field": "capital_spending",
+      "expected": 6435,
+      "expected_units": "USD millions",
+      "actual_display": "6,435",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "field": "equity",
+      "expected": 35803,
+      "expected_units": "USD millions",
+      "actual_display": "35,803",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "field": "roe",
+      "expected": 25.8,
+      "expected_units": "percent",
+      "actual_display": "25.8%",
+      "match": true
+    },
+    {
+      "fiscal_year_end": "2026-08-30",
+      "field": "owner_earnings",
+      "expected": 9382,
+      "expected_units": "USD millions",
+      "actual_display": "9,382",
+      "match": true
+    }
+  ],
+  "actual_fiscal_year_ends": [
+    "2022-08-28",
+    "2023-09-03",
+    "2024-09-01",
+    "2025-08-31",
+    "2026-08-30"
+  ],
+  "memo_flags": {
+    "COST": [],
+    "JPM": []
+  },
+  "injection_flags": [
+    {
+      "token": "40.0%",
+      "start": 17,
+      "end": 22
+    }
+  ],
+  "sources": {
+    "COST": {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000909832.json",
+      "retrieved_utc": "2026-11-03T18:22:11.118990+00:00",
+      "sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff"
+    },
+    "JPM": {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000019617.json",
+      "retrieved_utc": "2026-11-03T18:22:14.407211+00:00",
+      "sha256": "7fe1b8a1049390f61a0b642a5c2f1ac8f177e427ec6f6059b036570950fabdea"
+    }
+  }
+}

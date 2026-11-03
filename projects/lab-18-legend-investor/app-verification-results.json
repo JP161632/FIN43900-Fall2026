@@ -1,0 +1,11 @@
+{
+  "method": "Streamlit AppTest with real archived SEC responses; no live network or browser screenshot",
+  "checks": {
+    "COST_table_checks_memo_and_notice": true,
+    "COST_chart_both_series_correct_endpoints": true,
+    "hand_entered_number_flagged_then_reload_clears": true,
+    "JPM_gaps_checks_and_memo_visible": true,
+    "invalid_ticker_isolated_without_exception": true,
+    "unknown_ticker_error_without_fabricated_table": true
+  }
+}

@@ -1,0 +1,13 @@
+# Lab 18 build request
+
+Can an investor's philosophy become a skill your AI runs the same way every time—every number computed by code from the 10-K, the judgment the model's?
+
+Create a repository-discoverable Codex skill, buffett-edgar, with a bundled Python SEC companyfacts downloader. Read the instructor's FAskills Buffett page for philosophy only; do not install it or use its paid feeds. Retrieve ticker-to-CIK and companyfacts directly from SEC EDGAR with a runtime User-Agent identifying me and my email; do not commit my identity. Keep public raw responses, retrieval dates, source links, hashes and individual observation provenance.
+
+Use only 10-K records and show the last five fiscal-year-end dates, oldest first. Select one-year flows, including 52/53-week fiscal years, never quarters. For duplicate annual periods use the latest filed observation. Use the lab's exact tag priorities for revenue and capital spending and its exact net-income, operating-cash-flow and equity tags. Compute ROE as net income divided by year-end equity and owner earnings as operating cash flow minus capital spending. Missing amounts must be “not found”; undefined ROE and checks with missing inputs must be “not known.” Never substitute answer-key values, estimates or a bank-specific capital-spending proxy.
+
+Compute in code all three checks: ROE at least 15% in every year, owner earnings positive in every year, final owner earnings greater than initial owner earnings. Then use the skill on COST and JPM. You, the model, write a brief Buffett-style business-quality memo for each ticker, saved as Markdown, using only numbers the script actually printed. Select own the business, watch it, or pass and explain uncertainty. Include no price data or valuation recommendation. When owner earnings is missing, explicitly say you cannot judge it.
+
+Build a Streamlit ticker app showing both chart series, the table, the checks, tags and provenance, and the saved editable memo. Flag every numeric occurrence absent from script output, including the hand-inserted 40.0% probe, and show the required SEC/AI/learning/not-investment-advice notice under the title. Preserve missing chart inputs without replacing them with zeros. Let me save and download memo edits.
+
+Verify each COST answer-key value separately from production code, prove JPM's missing-data behavior, test the altered memo and invalid ticker, and preserve actual verification results. Explain the annual-row function and missing-value paths. Ask me for my personal decision, real partner exchange, fresh-chat result and reflections; do not claim those activities happened without my report. Push only the lab's files and skill to my submission GitHub repository after verifying them.
