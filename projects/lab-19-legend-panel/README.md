@@ -4,7 +4,7 @@
 
 The panel extends Lab 18 with Graham's liquidity/earnings checks and Burry's cash-backing/leverage checks. All investors share the same annual SEC facts; each memo is a disclosed model interpretation. The original Lab 18 app and evidence remain available.
 
-**Verified:** COST matches all ten supplied ratios and all eight checks: Buffett 3 of 3, Graham 2 of 3 with current ratio failing at 1.06, Burry 2 of 2. Twenty calculation/source/memo probes and nine Streamlit app checks pass. The temporary 1.0 threshold makes Graham pass; the student confirmed retaining 2.0. The student's decision, partner activities and reflections are recorded. NVDA, the selected SMH holding, awaits its SEC download because a runtime identifying contact has not yet been supplied; JPM is only an additional gap probe.
+**Verified:** COST matches all ten supplied ratios and all eight checks: Buffett 3 of 3, Graham 2 of 3 with current ratio failing at 1.06, Burry 2 of 2. NVDA, the selected SMH holding, passes Buffett 3 of 3 and Graham 3 of 3, but Burry 1 of 2 because cash backing fails. All 23 calculation/source/memo checks and ten Streamlit app checks pass. The temporary 1.0 threshold makes Graham pass COST; the student confirmed retaining 2.0. Nine supported memos, the student's conditional decision, reported partner activities and evidence-corrected reflections are complete. JPM is an additional gap probe.
 
 ## Run
 
@@ -15,6 +15,7 @@ From the repository root:
 .venv/Scripts/python.exe projects/lab-19-legend-panel/panel.py COST --offline --check-memos
 .venv/Scripts/python.exe projects/lab-19-legend-panel/panel.py COST --offline --graham-threshold 1.0
 .venv/Scripts/python.exe projects/lab-19-legend-panel/panel.py JPM --offline --check-memos
+.venv/Scripts/python.exe projects/lab-19-legend-panel/panel.py NVDA --offline --check-memos
 .venv/Scripts/python.exe -m streamlit run projects/lab-19-legend-panel/app.py
 ```
 
@@ -33,7 +34,8 @@ Use the repository skills `$buffett-edgar`, `$graham-edgar` and `$burry-edgar` a
 | [Graham skill](../../.agents/skills/graham-edgar/SKILL.md) / [Burry skill](../../.agents/skills/burry-edgar/SKILL.md) | Reusable source-informed memo workflows |
 | [Buffett skill](../../.agents/skills/buffett-edgar/SKILL.md) | Existing workflow with a Lab 19 output-path option |
 | [COST report](evidence/COST-report.md) / [probe report](evidence/COST-probe-report.md) | Printed baseline and temporary-threshold evidence |
-| [COST memos](memos/COST) / [JPM memos](memos/JPM) | Separate judgments written after reading script output |
+| [NVDA report](evidence/NVDA-report.md) / [holding selection](evidence/SMH-holding-selection.md) | Confirmed SMH company run and issuer holdings cross-check |
+| [COST memos](memos/COST) / [NVDA memos](memos/NVDA) / [JPM memos](memos/JPM) | Separate judgments written after reading script output |
 | [verify_lab19.py](verify_lab19.py) / [results](verification-results.json) | Independent known-answer audit and behavioral checks |
 | [verify_app.py](verify_app.py) / [results](app-verification-results.json) | Actual Streamlit page interaction checks |
 | [rubric-audit.md](rubric-audit.md) | Evidence and unresolved requirements by criterion |
@@ -55,7 +57,7 @@ The existing numeric checker applies to all three complete memo texts, preservin
 .venv/Scripts/python.exe projects/lab-19-legend-panel/verify_app.py
 ```
 
-The instructor key lives only in the independent verifier. Production ratios come from archived SEC inputs. Controlled mutations are synthetic tests, never company evidence. Tests cover missing interior income, missing/nonpositive denominators, inclusive boundaries, rounding, short/empty histories, exact instant-context selection, preserved JPM gaps and injection into every memo. App tests exercise the real page, three columns, tables, verdicts, chart/provenance, probe/restoration, per-memo injection/reload, invalid ticker and absent ticker. They are framework tests, not claims of a browser or partner session.
+The instructor key lives only in the independent verifier. Production ratios come from archived SEC inputs. Controlled mutations are synthetic tests, never company evidence. Tests cover missing interior income, missing/nonpositive denominators, inclusive boundaries, rounding, short/empty histories, exact instant-context selection, preserved JPM gaps and injection into every memo. NVDA tests retain its cash-backing exceptions and validate all its memos. App tests exercise the real page, three columns, COST and NVDA panels, verdicts, chart/provenance, probe/restoration, per-memo injection/reload, invalid ticker and absent ticker. They are framework tests, not claims of a browser or partner session.
 
 ## Sources
 

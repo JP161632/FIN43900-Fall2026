@@ -74,7 +74,17 @@ def run():
         {"form": "10-K", "start": "2025-01-01", "end": "2025-12-31", "filed": "2026-06-01", "val": 777},
     ]}}}}}
     checks["instant_selection_latest_10K_excludes_duration_quarter_amendment"] = panel.select_instant(facts, "AssetsCurrent", "2025-12-31")["value"] == 2
-    results = {"checks": checks, "COST_comparisons": comparisons, "sources": {"COST": cost["source"], "JPM": jpm["source"]},
+    nvda = panel.run("NVDA")
+    panel.save(nvda)
+    checks["NVDA_all_eight_checks_and_no_unknowns"] = [list(v.values()) for v in nvda["panel"].values()] == [
+        ["pass"] * 3, ["pass"] * 3, ["fail", "pass"]]
+    checks["NVDA_cash_exceptions_retained"] = [r["fiscal_year_end"] for r in nvda["rows"]
+        if r["operating_cash_flow"]["value"] < r["net_income"]["value"]] == ["2022-01-30", "2024-01-28", "2025-01-26", "2026-01-25"]
+    checks["NVDA_all_memos_present_supported_and_have_verdicts"] = (
+        all(panel.load_memos("NVDA").values())
+        and not any(panel.memo_flags(panel.load_memos("NVDA"), panel.report_text(nvda)).values())
+        and all(panel.verdict(m) != "pending memo" for m in panel.load_memos("NVDA").values()))
+    results = {"checks": checks, "COST_comparisons": comparisons, "sources": {"COST": cost["source"], "JPM": jpm["source"], "NVDA": nvda["source"]},
                "probe": {"threshold": probe["graham_threshold"], "Graham": probe["panel"]["Graham"]}}
     (HERE / "verification-results.json").write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(checks, indent=2))

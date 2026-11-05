@@ -7,6 +7,7 @@
     "numeric_injection_flag_and_reload_work_for_every_memo": true,
     "threshold_probe_in_real_app": true,
     "baseline_restored_after_probe": true,
+    "NVDA_company_panel_and_three_memos_visible": true,
     "JPM_gaps_and_all_three_memos_visible": true,
     "invalid_ticker_handled": true,
     "unknown_ticker_handled": true

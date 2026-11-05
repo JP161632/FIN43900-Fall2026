@@ -28,6 +28,14 @@ def run():
     checks["threshold_probe_in_real_app"] = list(app.table[0].value["Result"]) == ["pass"] * 8 and any("Temporary probe" in w.value for w in app.warning)
     app.sidebar.checkbox[0].uncheck().run()
     checks["baseline_restored_after_probe"] = app.table[0].value.iloc[3]["Result"] == "fail"
+    app.sidebar.text_input[0].set_value("NVDA").run()
+    checks["NVDA_company_panel_and_three_memos_visible"] = (
+        not app.exception and not app.error and len(app.text_area) == 3
+        and app.dataframe[0].value.iloc[-1]["current_ratio"] == "3.91"
+        and app.dataframe[0].value.iloc[-1]["liabilities_to_equity"] == "0.31"
+        and list(app.table[0].value["Result"]) == ["pass"] * 6 + ["fail", "pass"]
+        and all("# NVDA" in memo.value for memo in app.text_area)
+        and "cash-backing failure" in app.text_area[2].value)
     app.sidebar.text_input[0].set_value("JPM").run()
     checks["JPM_gaps_and_all_three_memos_visible"] = (
         not app.exception and not app.error and len(app.text_area) == 3

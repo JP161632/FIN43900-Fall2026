@@ -1,6 +1,6 @@
 # Lab 19 — Legend Panel
 
-**Status:** COST panel, investor skills, six printed-number-checked memos (COST plus the JPM gap probe), app and verification complete. The student supplied SMH/NVDA, the retained threshold, decision and partner exchanges. NVDA's SEC download and panel remain pending the required runtime contact; its exact check results are not assumed. JPM is only an extra gap probe.
+**Status:** COST known answer, NVDA company run, three investor skills, nine printed-number-checked memos, app, threshold probe, student decision and reported partner activities complete. All 23 calculation/source/memo checks and ten Streamlit app checks pass. JPM remains an extra gap probe. Brightspace quiz submission is a separate student checkout action.
 
 ## D — The question
 
@@ -39,7 +39,7 @@ The [printed report](evidence/COST-report.md) reproduces every assigned ratio. R
 | Burry | Operating cash flow at least net income every year | pass |
 | Burry | Liabilities no more than twice equity, latest year | pass: 1.49 |
 
-Buffett passes **3 of 3**, Graham **2 of 3**, Burry **2 of 2**. The [independent audit](verification-results.json) confirms the ten ratios and eight check outcomes. Twenty source/calculation/memo checks and nine [app checks](app-verification-results.json) pass. Injection into each investor's memo produces an investor-specific unsupported-number flag; reloading clears the unsaved edit. All six saved memos have no unsupported numeric tokens and were also read for correct attribution.
+Buffett passes **3 of 3**, Graham **2 of 3**, Burry **2 of 2**. The [independent audit](verification-results.json) confirms the ten ratios and eight check outcomes. All 23 source/calculation/memo checks and ten [app checks](app-verification-results.json) pass. Injection into each investor's memo produces an investor-specific unsupported-number flag; reloading clears the unsaved edit. All nine saved memos have no unsupported numeric tokens and were also read for correct attribution.
 
 **Investor judgments:** [Buffett](memos/COST/buffett.md) says watch it because consistent returns warrant further investigation of durability. [Graham](memos/COST/graham.md) passes on the strict defensive screen because liquidity fails. [Burry](memos/COST/burry.md) says watch it with the assigned accounting checks passing, while reserving judgment about footnotes and hidden risks. A quantitative pass count is distinct from an investment verdict.
 
@@ -51,7 +51,32 @@ The [temporary-threshold report](evidence/COST-probe-report.md) runs identical f
 
 ## Your company — NVIDIA in SMH
 
-The student selected **VanEck Semiconductor ETF (SMH)** and its largest holding, **NVIDIA (NVDA)**. The student reports roughly 20% weight and cites the September 30, 2026 issuer holdings and SEC Form N-PORT. That exact month-end weight and N-PORT accession have not been independently reproduced; they are not inputs to the company screen. The [official VanEck page](https://www.vaneck.com/us/en/investments/semiconductor-etf-smh?redirectVE=generic), read November 5, lists NVDA as largest at **20.46% as of November 4, 2026**. The [selection note](evidence/SMH-holding-selection.md) keeps those dates distinct. NVIDIA files 10-Ks, so no next-largest-company substitution is needed. The SEC companyfacts download and panel execution await the runtime SEC contact requested from the student.
+The student selected **VanEck Semiconductor ETF (SMH)** and its largest holding, **NVIDIA (NVDA)**. The student reports roughly 20% weight and cites the September 30, 2026 issuer holdings and SEC Form N-PORT. That exact month-end weight and N-PORT accession have not been independently reproduced; they are not inputs to the company screen. The [official VanEck page](https://www.vaneck.com/us/en/investments/semiconductor-etf-smh?redirectVE=generic), read November 5, lists NVDA as largest at **20.46% as of November 4, 2026**. The [selection note](evidence/SMH-holding-selection.md) keeps those dates distinct. NVIDIA files 10-Ks, so no next-largest-company substitution is needed. Its [public SEC response](../lab-18-legend-investor/evidence/NVDA-companyfacts.json) was downloaded November 5, 2026; the [source metadata](../lab-18-legend-investor/evidence/NVDA-companyfacts.source.json) preserves the retrieval time and hash without the runtime contact.
+
+The [NVDA report](evidence/NVDA-report.md) prints the five fiscal periods, all source amounts, ratios, checks and selected filing provenance. No required panel input is missing in this run; that is a computed finding, not a filled gap. Capital spending uses the permitted `PaymentsToAcquireProductiveAssets` fallback; revenue retains the assigned tag priority by period.
+
+| Fiscal-year end | Net income | Operating cash flow | ROE | Owner earnings | Current ratio | Liabilities/equity |
+|---|---:|---:|---:|---:|---:|---:|
+| 2022-01-30 | 9,752 | 9,108 | 36.6% | 8,132 | 6.65 | 0.66 |
+| 2023-01-29 | 4,368 | 5,641 | 19.8% | 3,808 | 3.52 | 0.86 |
+| 2024-01-28 | 29,760 | 28,090 | 69.2% | 27,021 | 4.17 | 0.53 |
+| 2025-01-26 | 72,880 | 64,089 | 91.9% | 60,853 | 4.44 | 0.41 |
+| 2026-01-25 | 120,067 | 102,718 | 76.3% | 96,676 | 3.91 | 0.31 |
+
+Amounts are USD millions; ratios are times. The code uses unrounded inputs for checks.
+
+| Investor | Check | NVDA |
+|---|---|---|
+| Buffett | ROE at least 15% every year | pass |
+| Buffett | Owner earnings positive every year | pass |
+| Buffett | Owner earnings grew, first to last | pass |
+| Graham | Current ratio at least 2.0, latest year | pass: 3.91 |
+| Graham | Net income positive every year | pass |
+| Graham | Net income grew, first to last | pass |
+| Burry | Operating cash flow at least net income every year | fail |
+| Burry | Liabilities no more than twice equity, latest year | pass: 0.31 |
+
+**Results and judgments:** Buffett passes **3 of 3** and [says watch it](memos/NVDA/buffett.md); Graham passes **3 of 3** and [accepts the assigned defensive screen for further investigation](memos/NVDA/graham.md); Burry passes **1 of 2** and [calls for investigation of cash backing](memos/NVDA/burry.md). Cash flow trails income in FY2022, FY2024, FY2025 and FY2026. Thus the supplied assumption that NVDA passes Burry's cash-backing test was corrected from the actual output. Strong positive cash flow is different from cash flow exceeding income every year.
 
 **Additional gap probe:** [JPM's printed panel](evidence/JPM-report.md) preserves missing capital spending and owner earnings, and its current-assets/current-liabilities tags are not found throughout. Graham's current ratio stays not known; the earnings checks pass. Buffett has a failed ROE check and two unknown owner-earnings checks; Burry fails both checks. These results show honest gaps and the need for sector-specific interpretation. JPM is an extra probe, not the selected fund holding.
 
@@ -74,21 +99,25 @@ The shared `check` helper first tests completeness and missing inputs. If either
 
 **Actual exchange — student-reported:** I explained `graham_checks` line by line without AI: latest liquidity against the hurdle, positive income across five years, endpoint growth and the helper's missing-input guard. On the role swap, my partner explained `burry_checks`. I asked what happens when operating cash flow is below net income in just one year; my partner answered that the every-year cash-backing check fails. This is correct when all required inputs are present. If any required input is missing, this implementation returns not known before evaluating comparisons. Passing this consistency check supports cash backing but does not prove all profits are free of accounting manipulation.
 
-## Bull and bear — student-reported exchange, evidence check pending
+## Bull and bear — reported positions reconciled with the computed panel
 
-**Student's reported bull position:** Strong ROE, cash backing and earnings growth favor further research into NVIDIA's franchise. The submitted explanation also asserted large cash reserves and an unmatched competitive moat; these are not established by the assigned panel, and no unsupported cash-reserve figure or moat conclusion is adopted.
+**Bull case — two sentences, edited from the student's position:** NVIDIA passes every assigned Buffett and Graham check, with positive owner earnings rising from 8,132 to 96,676 and latest current ratio of 3.91. Those results support further investigation of earning power and financial resilience, while leaving moat durability and valuation open.
 
-**Partner's reported bear position:** Rapid expansion may expose the business to inventory, receivable and funding pressures, while concentrated customer demand may make earnings sensitive to data-center spending. Those are hypotheses to investigate; the panel does not contain turnover, customer concentration or supply-chain evidence. The supplied claim about more than 40% of sales going to four hyperscalers is omitted because it is outside the printed facts and lacks a verified source in this lab. The final two-sentence cases will use NVDA's actual computed panel rather than assume that Graham or Burry fails it.
+**Bear case — two sentences, edited to use the panel:** NVIDIA fails Burry's every-year cash-backing check, with latest operating cash flow of 102,718 below net income of 120,067. The FY2023 decline in both income and owner earnings also shows that impressive endpoint growth does not establish stable annual performance, so the cash reconciliation and business-cycle risks need further review.
+
+**Evidence correction:** The student reports that the actual discussion emphasized inventory, receivables, supply chains and customer concentration. These remain hypotheses outside the panel's measured inputs. The supplied customer-percentage assertion and unmatched-moat claim are excluded from the final cases because they are unverified here; the bull/bear sentences above are AI-assisted revisions using printed results, not a verbatim transcript of the partner exchange. Graham actually passes the liquidity check, while Burry actually fails cash backing.
 
 **Role swap — student-reported:** We immediately swapped bull and bear roles to defend the opposing sides. These activity descriptions are supplied by the student; the assistant did not observe the exchange.
 
-**Company reflection awaiting the run:** The submitted reflection described agreement on genuine cash earnings and a split over valuation, peak earnings and customer concentration. The assigned checks cannot prove clean accounting, measure stock valuation or quantify customer concentration. Agreement and disagreement will be reported from the actual NVDA check results, with broader qualitative risks identified as open research questions.
+**Company reflection, reconciled with the run:** Buffett and Graham agree that the assigned earnings and growth screens pass; Graham's liquidity and Burry's leverage checks also pass. The numerical split is Burry's cash-backing failure, not a Graham liquidity rejection. The panel supports strong earning power alongside a cash-conversion question; it does not establish that all earnings are genuine or free from accounting problems. The memos differ in emphasis, and none proves valuation or a durable moat.
 
 ## Your decision
 
 **Student decision:** Only with a condition: use the panel as an initial negative screen to flag accounting or balance-sheet concerns, preserve unknowns for review, and require industry-specific context plus an independent discounted cash flow valuation before allocating capital.
 
 A failed check is an investigation flag rather than proof of an accounting red flag; an unknown cannot be treated as a clean bill of health. This condition limits what the panel is allowed to decide and preserves the student's intended screening role.
+
+For NVDA, that means the Burry cash-backing failure triggers review of the earnings-to-cash reconciliation despite Buffett's and Graham's passes. It does not automatically establish misconduct or require exclusion before investigation. The independent DCF is a condition for a later investment decision, not an additional deliverable in this lab.
 
 ## Learn on your own — a panel of AI agents
 

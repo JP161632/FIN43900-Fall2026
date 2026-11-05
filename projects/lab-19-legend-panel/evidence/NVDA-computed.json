@@ -1,0 +1,500 @@
+{
+  "ticker": "NVDA",
+  "company": "NVIDIA CORP",
+  "cik": 1045810,
+  "units": "USD; displayed amounts in USD millions",
+  "rows": [
+    {
+      "fiscal_year_end": "2022-01-30",
+      "period_start": "2021-02-01",
+      "revenue": {
+        "value": 26914000000,
+        "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2021-02-01",
+        "end": "2022-01-30",
+        "filed": "2022-03-18",
+        "accession": "0001045810-22-000036",
+        "form": "10-K"
+      },
+      "net_income": {
+        "value": 9752000000,
+        "tag": "NetIncomeLoss",
+        "start": "2021-02-01",
+        "end": "2022-01-30",
+        "filed": "2024-02-21",
+        "accession": "0001045810-24-000029",
+        "form": "10-K"
+      },
+      "operating_cash_flow": {
+        "value": 9108000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "start": "2021-02-01",
+        "end": "2022-01-30",
+        "filed": "2024-02-21",
+        "accession": "0001045810-24-000029",
+        "form": "10-K"
+      },
+      "capital_spending": {
+        "value": 976000000,
+        "tag": "PaymentsToAcquireProductiveAssets",
+        "start": "2021-02-01",
+        "end": "2022-01-30",
+        "filed": "2024-02-21",
+        "accession": "0001045810-24-000029",
+        "form": "10-K"
+      },
+      "equity": {
+        "value": 26612000000,
+        "tag": "StockholdersEquity",
+        "start": null,
+        "end": "2022-01-30",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023",
+        "form": "10-K"
+      },
+      "roe": {
+        "value": 0.3664512250112731,
+        "tag": "NetIncomeLoss / StockholdersEquity",
+        "missing": "not known"
+      },
+      "owner_earnings": {
+        "value": 8132000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities - PaymentsToAcquireProductiveAssets"
+      },
+      "liabilities": {
+        "value": 17575000000,
+        "tag": "Liabilities",
+        "end": "2022-01-30",
+        "form": "10-K",
+        "filed": "2023-02-24",
+        "accession": "0001045810-23-000017"
+      },
+      "current_assets": {
+        "value": 28829000000,
+        "tag": "AssetsCurrent",
+        "end": "2022-01-30",
+        "form": "10-K",
+        "filed": "2023-02-24",
+        "accession": "0001045810-23-000017"
+      },
+      "current_liabilities": {
+        "value": 4335000000,
+        "tag": "LiabilitiesCurrent",
+        "end": "2022-01-30",
+        "form": "10-K",
+        "filed": "2023-02-24",
+        "accession": "0001045810-23-000017"
+      },
+      "current_ratio": {
+        "value": 6.650288350634371,
+        "tag": "AssetsCurrent / LiabilitiesCurrent",
+        "missing": "not known"
+      },
+      "liabilities_to_equity": {
+        "value": 0.6604163535247257,
+        "tag": "Liabilities / StockholdersEquity",
+        "missing": "not known"
+      }
+    },
+    {
+      "fiscal_year_end": "2023-01-29",
+      "period_start": "2022-01-31",
+      "revenue": {
+        "value": 26974000000,
+        "tag": "Revenues",
+        "start": "2022-01-31",
+        "end": "2023-01-29",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023",
+        "form": "10-K"
+      },
+      "net_income": {
+        "value": 4368000000,
+        "tag": "NetIncomeLoss",
+        "start": "2022-01-31",
+        "end": "2023-01-29",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023",
+        "form": "10-K"
+      },
+      "operating_cash_flow": {
+        "value": 5641000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "start": "2022-01-31",
+        "end": "2023-01-29",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023",
+        "form": "10-K"
+      },
+      "capital_spending": {
+        "value": 1833000000,
+        "tag": "PaymentsToAcquireProductiveAssets",
+        "start": "2022-01-31",
+        "end": "2023-01-29",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023",
+        "form": "10-K"
+      },
+      "equity": {
+        "value": 22101000000,
+        "tag": "StockholdersEquity",
+        "start": null,
+        "end": "2023-01-29",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "roe": {
+        "value": 0.19763811592235644,
+        "tag": "NetIncomeLoss / StockholdersEquity",
+        "missing": "not known"
+      },
+      "owner_earnings": {
+        "value": 3808000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities - PaymentsToAcquireProductiveAssets"
+      },
+      "liabilities": {
+        "value": 19081000000,
+        "tag": "Liabilities",
+        "end": "2023-01-29",
+        "form": "10-K",
+        "filed": "2024-02-21",
+        "accession": "0001045810-24-000029"
+      },
+      "current_assets": {
+        "value": 23073000000,
+        "tag": "AssetsCurrent",
+        "end": "2023-01-29",
+        "form": "10-K",
+        "filed": "2024-02-21",
+        "accession": "0001045810-24-000029"
+      },
+      "current_liabilities": {
+        "value": 6563000000,
+        "tag": "LiabilitiesCurrent",
+        "end": "2023-01-29",
+        "form": "10-K",
+        "filed": "2024-02-21",
+        "accession": "0001045810-24-000029"
+      },
+      "current_ratio": {
+        "value": 3.515617857687033,
+        "tag": "AssetsCurrent / LiabilitiesCurrent",
+        "missing": "not known"
+      },
+      "liabilities_to_equity": {
+        "value": 0.8633545993393964,
+        "tag": "Liabilities / StockholdersEquity",
+        "missing": "not known"
+      }
+    },
+    {
+      "fiscal_year_end": "2024-01-28",
+      "period_start": "2023-01-30",
+      "revenue": {
+        "value": 60922000000,
+        "tag": "Revenues",
+        "start": "2023-01-30",
+        "end": "2024-01-28",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "net_income": {
+        "value": 29760000000,
+        "tag": "NetIncomeLoss",
+        "start": "2023-01-30",
+        "end": "2024-01-28",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "operating_cash_flow": {
+        "value": 28090000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "start": "2023-01-30",
+        "end": "2024-01-28",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "capital_spending": {
+        "value": 1069000000,
+        "tag": "PaymentsToAcquireProductiveAssets",
+        "start": "2023-01-30",
+        "end": "2024-01-28",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "equity": {
+        "value": 42978000000,
+        "tag": "StockholdersEquity",
+        "start": null,
+        "end": "2024-01-28",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "roe": {
+        "value": 0.6924472986178976,
+        "tag": "NetIncomeLoss / StockholdersEquity",
+        "missing": "not known"
+      },
+      "owner_earnings": {
+        "value": 27021000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities - PaymentsToAcquireProductiveAssets"
+      },
+      "liabilities": {
+        "value": 22750000000,
+        "tag": "Liabilities",
+        "end": "2024-01-28",
+        "form": "10-K",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023"
+      },
+      "current_assets": {
+        "value": 44345000000,
+        "tag": "AssetsCurrent",
+        "end": "2024-01-28",
+        "form": "10-K",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023"
+      },
+      "current_liabilities": {
+        "value": 10631000000,
+        "tag": "LiabilitiesCurrent",
+        "end": "2024-01-28",
+        "form": "10-K",
+        "filed": "2025-02-26",
+        "accession": "0001045810-25-000023"
+      },
+      "current_ratio": {
+        "value": 4.171291505973097,
+        "tag": "AssetsCurrent / LiabilitiesCurrent",
+        "missing": "not known"
+      },
+      "liabilities_to_equity": {
+        "value": 0.529340592861464,
+        "tag": "Liabilities / StockholdersEquity",
+        "missing": "not known"
+      }
+    },
+    {
+      "fiscal_year_end": "2025-01-26",
+      "period_start": "2024-01-29",
+      "revenue": {
+        "value": 130497000000,
+        "tag": "Revenues",
+        "start": "2024-01-29",
+        "end": "2025-01-26",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "net_income": {
+        "value": 72880000000,
+        "tag": "NetIncomeLoss",
+        "start": "2024-01-29",
+        "end": "2025-01-26",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "operating_cash_flow": {
+        "value": 64089000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "start": "2024-01-29",
+        "end": "2025-01-26",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "capital_spending": {
+        "value": 3236000000,
+        "tag": "PaymentsToAcquireProductiveAssets",
+        "start": "2024-01-29",
+        "end": "2025-01-26",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "equity": {
+        "value": 79327000000,
+        "tag": "StockholdersEquity",
+        "start": null,
+        "end": "2025-01-26",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "roe": {
+        "value": 0.9187288060811577,
+        "tag": "NetIncomeLoss / StockholdersEquity",
+        "missing": "not known"
+      },
+      "owner_earnings": {
+        "value": 60853000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities - PaymentsToAcquireProductiveAssets"
+      },
+      "liabilities": {
+        "value": 32274000000,
+        "tag": "Liabilities",
+        "end": "2025-01-26",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021"
+      },
+      "current_assets": {
+        "value": 80126000000,
+        "tag": "AssetsCurrent",
+        "end": "2025-01-26",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021"
+      },
+      "current_liabilities": {
+        "value": 18047000000,
+        "tag": "LiabilitiesCurrent",
+        "end": "2025-01-26",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021"
+      },
+      "current_ratio": {
+        "value": 4.439851498864077,
+        "tag": "AssetsCurrent / LiabilitiesCurrent",
+        "missing": "not known"
+      },
+      "liabilities_to_equity": {
+        "value": 0.4068476054811098,
+        "tag": "Liabilities / StockholdersEquity",
+        "missing": "not known"
+      }
+    },
+    {
+      "fiscal_year_end": "2026-01-25",
+      "period_start": "2025-01-27",
+      "revenue": {
+        "value": 215938000000,
+        "tag": "Revenues",
+        "start": "2025-01-27",
+        "end": "2026-01-25",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "net_income": {
+        "value": 120067000000,
+        "tag": "NetIncomeLoss",
+        "start": "2025-01-27",
+        "end": "2026-01-25",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "operating_cash_flow": {
+        "value": 102718000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "start": "2025-01-27",
+        "end": "2026-01-25",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "capital_spending": {
+        "value": 6042000000,
+        "tag": "PaymentsToAcquireProductiveAssets",
+        "start": "2025-01-27",
+        "end": "2026-01-25",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "equity": {
+        "value": 157293000000,
+        "tag": "StockholdersEquity",
+        "start": null,
+        "end": "2026-01-25",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021",
+        "form": "10-K"
+      },
+      "roe": {
+        "value": 0.7633333969089534,
+        "tag": "NetIncomeLoss / StockholdersEquity",
+        "missing": "not known"
+      },
+      "owner_earnings": {
+        "value": 96676000000,
+        "tag": "NetCashProvidedByUsedInOperatingActivities - PaymentsToAcquireProductiveAssets"
+      },
+      "liabilities": {
+        "value": 49510000000,
+        "tag": "Liabilities",
+        "end": "2026-01-25",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021"
+      },
+      "current_assets": {
+        "value": 125605000000,
+        "tag": "AssetsCurrent",
+        "end": "2026-01-25",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021"
+      },
+      "current_liabilities": {
+        "value": 32163000000,
+        "tag": "LiabilitiesCurrent",
+        "end": "2026-01-25",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "accession": "0001045810-26-000021"
+      },
+      "current_ratio": {
+        "value": 3.905263812455306,
+        "tag": "AssetsCurrent / LiabilitiesCurrent",
+        "missing": "not known"
+      },
+      "liabilities_to_equity": {
+        "value": 0.3147628947251308,
+        "tag": "Liabilities / StockholdersEquity",
+        "missing": "not known"
+      }
+    }
+  ],
+  "checks": {
+    "ROE >= 15% every year": "pass",
+    "Owner earnings positive every year": "pass",
+    "Owner earnings grew, first to last": "pass"
+  },
+  "source": {
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+    "retrieved_utc": "2026-11-05T19:12:05.978441+00:00",
+    "sha256": "19ef503a5770f5660964b3c3aea6937579d9b359da344afe6a9adf59c63d26ff"
+  },
+  "ticker_source": {
+    "url": "https://www.sec.gov/files/company_tickers.json",
+    "retrieved_utc": "2026-11-03T18:22:12.760630+00:00",
+    "sha256": "de59c00edabfb8b540c61ea4805446763bc9ba6aa8b42fa2955f5439556558d2"
+  },
+  "graham_threshold": 2.0,
+  "panel": {
+    "Buffett": {
+      "ROE >= 15% every year": "pass",
+      "Owner earnings positive every year": "pass",
+      "Owner earnings grew, first to last": "pass"
+    },
+    "Graham": {
+      "Current ratio >= 2.0, latest year": "pass",
+      "Net income positive every year": "pass",
+      "Net income grew, first to last": "pass"
+    },
+    "Burry": {
+      "Operating cash flow >= net income every year": "fail",
+      "Liabilities <= twice equity, latest year": "pass"
+    }
+  }
+}
