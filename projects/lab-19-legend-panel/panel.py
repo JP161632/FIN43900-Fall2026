@@ -1,4 +1,4 @@
-"""Shared SEC facts and deterministic investor checks; memos remain model judgments."""
+"""Shared SEC facts and deterministic investor checks; memos interpret the printed results."""
 import argparse
 from copy import deepcopy
 from decimal import Decimal, ROUND_HALF_UP

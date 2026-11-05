@@ -1,6 +1,6 @@
 # NVDA — Burry-style memo
 
-*Educational AI simulation, not Michael Burry's actual opinion. Amounts are USD millions; ratios are times.*
+*Educational simulation, not Michael Burry's actual opinion. Amounts are USD millions; ratios are times.*
 
 **Verdict: investigate the cash-backing failure.** The every-year cash-backing check fails. Operating cash flow of 9,108 is below net income of 9,752 in FY2022; the same comparison fails in FY2024, FY2025 and FY2026. Latest cash flow of 102,718 trails reported income of 120,067. Strong earnings growth does not resolve those exceptions.
 

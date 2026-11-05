@@ -1,6 +1,6 @@
 # COST — Burry-style memo
 
-*Educational AI simulation, not Michael Burry's actual opinion. Amounts are USD millions; ratios are times.*
+*Educational simulation, not Michael Burry's actual opinion. Amounts are USD millions; ratios are times.*
 
 **Verdict: watch it; the assigned accounting checks pass.** I want reported profits backed by cash. Operating cash flow is at least net income in every printed year, including latest cash flow of 15,817 against net income of 9,226. Latest liabilities of 53,242 against equity of 35,803 produce liabilities/equity of 1.49, within the 2.0 limit.
 

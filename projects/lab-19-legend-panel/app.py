@@ -11,7 +11,7 @@ import panel
 
 st.set_page_config(page_title="Legend panel", layout="wide")
 st.title("Legend panel: Buffett · Graham · Burry")
-st.caption("Data from SEC EDGAR; built with AI help, a learning demonstration, not investment advice.")
+st.caption("Data from SEC EDGAR; a learning demonstration, not investment advice.")
 ticker_input = st.sidebar.text_input("Ticker", "COST")
 mode = st.sidebar.radio("SEC data", ["Saved SEC responses", "Download / refresh SEC responses"])
 st.sidebar.caption("Live downloads require SEC_USER_AGENT in the launch environment. No API key; identity is never saved.")
@@ -52,7 +52,7 @@ with st.expander("XBRL tags and selected filing provenance"):
     st.json(result)
 st.download_button("Download computed report", report, file_name=f"{ticker}-panel-report.md")
 
-st.subheader("Investor verdicts and memos · educational AI simulations")
+st.subheader("Investor verdicts and memos · educational simulations")
 saved = panel.load_memos(ticker)
 for i in panel.INVESTORS:
     key = f"memo_{ticker}_{i}"

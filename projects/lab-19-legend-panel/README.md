@@ -2,9 +2,9 @@
 
 **Question:** When three investors' skills read the same 10-K facts, where do they agree, where do they split — and would you trust the panel?
 
-The panel extends Lab 18 with Graham's liquidity/earnings checks and Burry's cash-backing/leverage checks. All investors share the same annual SEC facts; each memo is a disclosed model interpretation. The original Lab 18 app and evidence remain available.
+The panel extends Lab 18 with Graham's liquidity/earnings checks and Burry's cash-backing/leverage checks. All investors share the same annual SEC facts; each memo applies a different investment philosophy. The original Lab 18 app and evidence remain available.
 
-**Verified:** COST matches all ten supplied ratios and all eight checks: Buffett 3 of 3, Graham 2 of 3 with current ratio failing at 1.06, Burry 2 of 2. NVDA, the selected SMH holding, passes Buffett 3 of 3 and Graham 3 of 3, but Burry 1 of 2 because cash backing fails. All 23 calculation/source/memo checks and ten Streamlit app checks pass. The temporary 1.0 threshold makes Graham pass COST; the student confirmed retaining 2.0. Nine supported memos, the student's conditional decision, reported partner activities and evidence-corrected reflections are complete. JPM is an additional gap probe.
+**Verified:** COST matches all ten supplied ratios and all eight checks: Buffett 3 of 3, Graham 2 of 3 with current ratio failing at 1.06, Burry 2 of 2. NVDA, the selected SMH holding, passes Buffett 3 of 3 and Graham 3 of 3, but Burry 1 of 2 because cash backing fails. All 23 calculation/source/memo checks and ten Streamlit app checks pass. The temporary 1.0 threshold makes Graham pass COST; the retained threshold is 2.0. Nine memos, the conditional screening decision, partner discussion and reflections are complete. JPM is an additional gap probe.
 
 ## Run
 
@@ -21,14 +21,14 @@ From the repository root:
 
 For a new confirmed holding, set `SEC_USER_AGENT` through an interactive `Read-Host` in your local process, then run `panel.py TICKER --refresh`. Never put operator identity in a source file, report or commit. The original downloader saves public SEC responses in Lab 18's evidence directory and records URL, retrieval time and hash without saving request headers. Normal runs replay that dated snapshot; they do not claim a fresh download. A company lacking eligible annual 10-K facts produces an error, not estimated results; choose and document the fund's next-largest qualifying holding.
 
-Use the repository skills `$buffett-edgar`, `$graham-edgar` and `$burry-edgar` after printing the ticker's report. Each saves its memo under `memos/TICKER/`. The app reads those saved memos; it does not make a new model/API call on every rerun. A new ticker without memos displays pending judgments, never prewritten conclusions for a different company.
+Use the repository skills `$buffett-edgar`, `$graham-edgar` and `$burry-edgar` after printing the ticker's report. Each saves its memo under `memos/TICKER/`. The app loads the saved memos on each run. A new ticker without memos displays pending judgments, never prewritten conclusions for a different company.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | [lab-19-writeup.md](lab-19-writeup.md) | Question, known answer, interpretation, code explanation and activity status |
-| [request.md](request.md) | AI-assisted lab build request |
+| [request.md](request.md) | Panel requirements |
 | [panel.py](panel.py) | Reused Lab 18 facts, added instant facts/ratios, checks, CLI and shared memo checker |
 | [app.py](app.py) | Chart, facts, investor/check table, verdicts and three editable memos side by side |
 | [Graham skill](../../.agents/skills/graham-edgar/SKILL.md) / [Burry skill](../../.agents/skills/burry-edgar/SKILL.md) | Reusable source-informed memo workflows |
