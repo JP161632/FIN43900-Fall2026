@@ -6,4 +6,4 @@
 
 Net income is positive throughout and grows from 48,334 to 57,048, passing the earnings checks. Those results do not resolve the missing liquidity evidence or establish an investment margin of safety. A bank's balance sheet needs appropriate funding analysis outside this simplified screen.
 
-Threshold kept: 2.0, proposed pending student confirmation, to preserve the same rule across companies while keeping missing inputs explicit.
+Threshold kept: 2.0, confirmed by the student, to preserve the same rule across companies while keeping missing inputs explicit.

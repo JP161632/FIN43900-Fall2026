@@ -4,7 +4,7 @@
 
 The panel extends Lab 18 with Graham's liquidity/earnings checks and Burry's cash-backing/leverage checks. All investors share the same annual SEC facts; each memo is a disclosed model interpretation. The original Lab 18 app and evidence remain available.
 
-**Verified:** COST matches all ten supplied ratios and all eight checks: Buffett 3 of 3, Graham 2 of 3 with current ratio failing at 1.06, Burry 2 of 2. Twenty calculation/source/memo probes and nine Streamlit app checks pass. The temporary 1.0 threshold makes Graham pass; the retained setting is 2.0. The confirmed Project 2 company and student responses are still pending; JPM is only an additional gap probe.
+**Verified:** COST matches all ten supplied ratios and all eight checks: Buffett 3 of 3, Graham 2 of 3 with current ratio failing at 1.06, Burry 2 of 2. Twenty calculation/source/memo probes and nine Streamlit app checks pass. The temporary 1.0 threshold makes Graham pass; the student confirmed retaining 2.0. The student's decision, partner activities and reflections are recorded. NVDA, the selected SMH holding, awaits its SEC download because a runtime identifying contact has not yet been supplied; JPM is only an additional gap probe.
 
 ## Run
 

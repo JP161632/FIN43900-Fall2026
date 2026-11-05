@@ -6,4 +6,4 @@
 
 The panel does not establish lending quality, funding resilience or management discipline. I would investigate banking economics and missing inputs before applying a general business screen; Burry's failed cash-flow and leverage checks need sector context rather than an invented adjustment.
 
-Student decision: pending student response.
+Student decision: use the panel only as an initial negative screen, with industry context and an independent discounted cash flow valuation before allocating capital. This policy does not replace the missing owner-earnings evidence for JPM.

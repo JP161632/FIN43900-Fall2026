@@ -1,6 +1,6 @@
 # Lab 19 — Legend Panel
 
-**Status:** COST panel, investor skills, six printed-number-checked memos (COST plus the JPM gap probe), app and verification complete. The Project 2 fund/holding, personal decision and actual partner exchanges await student input. JPM is not claimed as the fund's largest holding.
+**Status:** COST panel, investor skills, six printed-number-checked memos (COST plus the JPM gap probe), app and verification complete. The student supplied SMH/NVDA, the retained threshold, decision and partner exchanges. NVDA's SEC download and panel remain pending the required runtime contact; its exact check results are not assumed. JPM is only an extra gap probe.
 
 ## D — The question
 
@@ -8,7 +8,7 @@ When three investors' skills read the same 10-K facts, where do they agree, wher
 
 The same evidence can support different judgments because each investor emphasizes different risks. Buffett's assigned rules reward profitability and owner earnings, Graham demands liquidity plus positive/growing earnings, and Burry checks cash backing and leverage. The split can reflect a stated rule rather than a disagreement about facts. A panel merits conditional use as a transparent screen; its shared data and model can also produce shared errors.
 
-**Opening discussion preparation, not an invented exchange:** Graham can reject COST under a strict liquidity hurdle even while Buffett's earning-power checks pass. Burry would question whether reported profits are supported by operating cash and what balance-sheet risks remain after his simple tests. The assigned [Graham](https://github.com/CinderZhang/FAskills/blob/main/financial-researcher/experts/ben_graham.md) and [Burry](https://github.com/CinderZhang/FAskills/blob/main/financial-researcher/experts/michael_burry.md) pages inform those perspectives; the lab defines the exact executable checks.
+**Opening discussion — student-reported:** I explained that Buffett's earning-power checks pass COST, while Graham's current ratio of 1.06 falls below the defensive hurdle of 2.0. Burry's assigned checks pass because operating cash flow meets or exceeds net income in every selected year and latest liabilities/equity is 1.49. When we swapped, my partner described Graham's focus on liquidation protection and financing buffers and Burry's skepticism toward revenue recognition and hidden obligations. The assigned [Graham](https://github.com/CinderZhang/FAskills/blob/main/financial-researcher/experts/ben_graham.md) and [Burry](https://github.com/CinderZhang/FAskills/blob/main/financial-researcher/experts/michael_burry.md) pages inform those lenses; the lab defines the exact executable checks. The leverage pass applies to the latest year, not the entire history: COST's earliest printed ratio is 2.11.
 
 ## Build — shared facts and distinct lenses
 
@@ -47,15 +47,15 @@ Buffett passes **3 of 3**, Graham **2 of 3**, Burry **2 of 2**. The [independent
 
 The [temporary-threshold report](evidence/COST-probe-report.md) runs identical facts at a 1.0 Graham hurdle. Graham becomes **3 of 3**; Buffett and Burry are unchanged. The retained skill setting remains **2.0**. The probe was executed through the explicit CLI override and the actual app checkbox; the original saved setting was preserved.
 
-**Proposed threshold choice, awaiting student confirmation:** Keep 2.0 to preserve the assigned defensive liquidity cushion and comparability across companies rather than selecting a hurdle after observing COST. This line also appears under Graham's memo. A threshold can change a verdict without changing the business, so it must be stated and justified before relying on a screen.
+**Student's threshold choice:** Keep 2.0. Lowering the hurdle after seeing COST's result would move the goalposts; keeping the assigned liquidity cushion preserves a consistent screening policy across companies. This choice also appears under Graham's memo. A threshold can change a verdict without changing the business, so it must be stated and justified before relying on a screen.
 
-## Your company — confirmation pending
+## Your company — NVIDIA in SMH
 
-The student has been asked for the Project 2 fund, holdings date/source and largest-company ticker. No holding is assumed. If that company lacks an eligible 10-K, the next-largest qualifying company must be identified and the substitution explained. Its panel, three judgments, memos, gaps and discussion will be added after confirmation.
+The student selected **VanEck Semiconductor ETF (SMH)** and its largest holding, **NVIDIA (NVDA)**. The student reports roughly 20% weight and cites the September 30, 2026 issuer holdings and SEC Form N-PORT. That exact month-end weight and N-PORT accession have not been independently reproduced; they are not inputs to the company screen. The [official VanEck page](https://www.vaneck.com/us/en/investments/semiconductor-etf-smh?redirectVE=generic), read November 5, lists NVDA as largest at **20.46% as of November 4, 2026**. The [selection note](evidence/SMH-holding-selection.md) keeps those dates distinct. NVIDIA files 10-Ks, so no next-largest-company substitution is needed. The SEC companyfacts download and panel execution await the runtime SEC contact requested from the student.
 
-**Additional gap probe:** [JPM's printed panel](evidence/JPM-report.md) preserves missing capital spending and owner earnings, and its current-assets/current-liabilities tags are not found throughout. Graham's current ratio stays not known; the earnings checks pass. Buffett has a failed ROE check and two unknown owner-earnings checks; Burry fails both checks. These results show honest gaps and the need for sector-specific interpretation. They do not satisfy the unconfirmed fund-holding requirement.
+**Additional gap probe:** [JPM's printed panel](evidence/JPM-report.md) preserves missing capital spending and owner earnings, and its current-assets/current-liabilities tags are not found throughout. Graham's current ratio stays not known; the earnings checks pass. Buffett has a failed ROE check and two unknown owner-earnings checks; Burry fails both checks. These results show honest gaps and the need for sector-specific interpretation. JPM is an extra probe, not the selected fund holding.
 
-## Explain the code — preparation for the no-AI exercise
+## Explain the code — student-reported no-AI exercise
 
 Open `graham_checks` in [panel.py](panel.py). Read it line by line:
 
@@ -70,19 +70,25 @@ Open `graham_checks` in [panel.py](panel.py). Read it line by line:
 
 The shared `check` helper first tests completeness and missing inputs. If either fails, it returns `not known` before evaluating the predicate; otherwise it returns pass or fail. Missing data therefore never silently becomes zero or a failed screen. A one-row history can support a latest-year check while its annual checks remain unknown. An interior missing income makes both annual Graham checks unknown even if their endpoints exist.
 
-**Partner missing-input question to practice:** What if latest current liabilities are absent? The raw amount prints not found, the ratio helper returns `None`, and the liquidity check returns not known. No division or guessed denominator occurs.
+**Partner question and student's answer:** My partner asked what happens if latest current liabilities are missing from a company's 10-K. I answered that the ratio helper returns `None` and the shared check returns not known without guessing or dividing by zero. More precisely, the raw liabilities cell prints **not found**, while the derived current ratio prints **not known**. The ratio helper does not label the missing ratio not found.
 
-**Actual partner exercise:** Pending the student's account of the explanation, question/answer and role swap. Preparation above is not a claim that a no-AI exchange occurred.
+**Actual exchange — student-reported:** I explained `graham_checks` line by line without AI: latest liquidity against the hurdle, positive income across five years, endpoint growth and the helper's missing-input guard. On the role swap, my partner explained `burry_checks`. I asked what happens when operating cash flow is below net income in just one year; my partner answered that the every-year cash-backing check fails. This is correct when all required inputs are present. If any required input is missing, this implementation returns not known before evaluating comparisons. Passing this consistency check supports cash backing but does not prove all profits are free of accounting manipulation.
 
-## Bull and bear — awaiting the confirmed company
+## Bull and bear — student-reported exchange, evidence check pending
 
-The required two-sentence bull case and two-sentence partner bear case must use the same confirmed company panel. They remain pending rather than being attributed to a partner who has not supplied them. The student has been prompted for the actual exchange and swap.
+**Student's reported bull position:** Strong ROE, cash backing and earnings growth favor further research into NVIDIA's franchise. The submitted explanation also asserted large cash reserves and an unmatched competitive moat; these are not established by the assigned panel, and no unsupported cash-reserve figure or moat conclusion is adopted.
+
+**Partner's reported bear position:** Rapid expansion may expose the business to inventory, receivable and funding pressures, while concentrated customer demand may make earnings sensitive to data-center spending. Those are hypotheses to investigate; the panel does not contain turnover, customer concentration or supply-chain evidence. The supplied claim about more than 40% of sales going to four hyperscalers is omitted because it is outside the printed facts and lacks a verified source in this lab. The final two-sentence cases will use NVDA's actual computed panel rather than assume that Graham or Burry fails it.
+
+**Role swap — student-reported:** We immediately swapped bull and bear roles to defend the opposing sides. These activity descriptions are supplied by the student; the assistant did not observe the exchange.
+
+**Company reflection awaiting the run:** The submitted reflection described agreement on genuine cash earnings and a split over valuation, peak earnings and customer concentration. The assigned checks cannot prove clean accounting, measure stock valuation or quantify customer concentration. Agreement and disagreement will be reported from the actual NVDA check results, with broader qualitative risks identified as open research questions.
 
 ## Your decision
 
-**Proposed one-line decision for student review:** Only with a condition: use the panel to prioritize research after checking the filings, preserving every unknown and fixing thresholds in advance; require sector context and independent business/valuation work before selecting a Project 2 investment.
+**Student decision:** Only with a condition: use the panel as an initial negative screen to flag accounting or balance-sheet concerns, preserve unknowns for review, and require industry-specific context plus an independent discounted cash flow valuation before allocating capital.
 
-**Student's own decision:** Pending response. The proposal above is an AI draft, not an attributed student choice.
+A failed check is an investigation flag rather than proof of an accounting red flag; an unknown cannot be treated as a clean bill of health. This condition limits what the panel is allowed to decide and preserves the student's intended screening role.
 
 ## Learn on your own — a panel of AI agents
 
@@ -90,4 +96,8 @@ A panel brings multiple roles or analytical lenses to a common problem and compa
 
 The personas disagree because the objectives and rules differ: earning power, liquidity protection and accounting skepticism ask different questions of identical facts. The code makes those differences visible; the memo explains the judgment. More personas do not create more independent evidence when they share a source, selector and model. Agreement can reflect a shared blind spot, and a majority vote cannot repair a missing input.
 
-**Partner teaching and reflection:** Pending the student's report. Explain where the confirmed company's panel agrees and splits, then connect the threshold probe to the distinction between a financial fact and a screening-policy choice. The no-AI activities and quiz checkout have not been claimed as completed.
+**Partner teaching — student-reported:** I explained that the same reported 10-K facts can yield different judgments because the personas emphasize earning power, defensive liquidity or cash-backing/leverage risk. I emphasized that unanimous agreement is not foolproof if the underlying SEC-reported data contains flaws. A filing's reported values and a panel's successful checks do not independently establish every accounting judgment as correct.
+
+**Threshold reflection, edited for accuracy:** COST moving from failure at 2.0 to pass at 1.0 demonstrates that a screen's conclusion depends on policy thresholds as well as company facts. The business did not change during the probe. Sector and operating-cycle context may justify a different hurdle, but a ratio near 1.0 alone does not prove healthy liquidity, rapid turnover or a negative-working-capital model. COST's latest printed current ratio exceeds 1.0, so latest current assets exceed current liabilities; the supplied negative-working-capital claim is not supported for that period. Keep the threshold explicit and investigate the operating model before interpreting the verdict.
+
+**Brightspace:** Quiz completion has not been reported and is not claimed here.
