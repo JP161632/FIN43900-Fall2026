@@ -1,0 +1,76 @@
+{
+  "checks": {
+    "COST_all_ten_ratios_match": true,
+    "COST_all_eight_checks_match": true,
+    "threshold_probe_changes_only_Graham_liquidity": true,
+    "retained_skill_threshold_is_two": true,
+    "all_COST_memos_present_and_supported": true,
+    "injection_detected_in_Buffett_only": true,
+    "injection_detected_in_Graham_only": true,
+    "injection_detected_in_Burry_only": true,
+    "interior_missing_income_blocks_both_Graham_annual_checks": true,
+    "interior_missing_income_blocks_Burry_cash_check": true,
+    "ratio_denominator_None_not_known": true,
+    "ratio_denominator_0_not_known": true,
+    "ratio_denominator_-1_not_known": true,
+    "inclusive_ratio_boundaries": true,
+    "threshold_uses_unrounded_value": true,
+    "short_history_keeps_latest_checks_but_blocks_annual_checks": true,
+    "empty_history_unknown": true,
+    "JPM_real_gaps_preserved": true,
+    "JPM_memos_present_supported_and_disclose_gaps": true,
+    "instant_selection_latest_10K_excludes_duration_quarter_amendment": true
+  },
+  "COST_comparisons": [
+    {
+      "end": "2022-08-28",
+      "current_ratio": "1.02",
+      "liabilities_to_equity": "2.11",
+      "match": true
+    },
+    {
+      "end": "2023-09-03",
+      "current_ratio": "1.07",
+      "liabilities_to_equity": "1.75",
+      "match": true
+    },
+    {
+      "end": "2024-09-01",
+      "current_ratio": "0.97",
+      "liabilities_to_equity": "1.96",
+      "match": true
+    },
+    {
+      "end": "2025-08-31",
+      "current_ratio": "1.03",
+      "liabilities_to_equity": "1.64",
+      "match": true
+    },
+    {
+      "end": "2026-08-30",
+      "current_ratio": "1.06",
+      "liabilities_to_equity": "1.49",
+      "match": true
+    }
+  ],
+  "sources": {
+    "COST": {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000909832.json",
+      "retrieved_utc": "2026-11-03T18:22:11.118990+00:00",
+      "sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff"
+    },
+    "JPM": {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000019617.json",
+      "retrieved_utc": "2026-11-03T18:22:14.407211+00:00",
+      "sha256": "7fe1b8a1049390f61a0b642a5c2f1ac8f177e427ec6f6059b036570950fabdea"
+    }
+  },
+  "probe": {
+    "threshold": 1.0,
+    "Graham": {
+      "Current ratio >= 1.0, latest year": "pass",
+      "Net income positive every year": "pass",
+      "Net income grew, first to last": "pass"
+    }
+  }
+}

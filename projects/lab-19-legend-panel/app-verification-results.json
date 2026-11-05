@@ -1,0 +1,14 @@
+{
+  "method": "Streamlit AppTest on actual page; offline SEC snapshots; no browser screenshot",
+  "checks": {
+    "COST_table_ratios_and_eight_checks": true,
+    "three_memos_in_three_columns_with_verdicts": true,
+    "inherited_chart_and_provenance_visible": true,
+    "numeric_injection_flag_and_reload_work_for_every_memo": true,
+    "threshold_probe_in_real_app": true,
+    "baseline_restored_after_probe": true,
+    "JPM_gaps_and_all_three_memos_visible": true,
+    "invalid_ticker_handled": true,
+    "unknown_ticker_handled": true
+  }
+}

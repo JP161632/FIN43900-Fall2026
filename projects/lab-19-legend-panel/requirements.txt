@@ -1,0 +1,1 @@
+-r ../lab-18-legend-investor/requirements.txt
